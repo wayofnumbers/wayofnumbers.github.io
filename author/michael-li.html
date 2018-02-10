@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>First Post</title>
+        <title>Way of Numbers - Michael Li</title>
         <link rel="stylesheet" href="https://wayofnumbers.github.io/theme/css/main.css" />
         <link href="https://wayofnumbers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers Atom Feed" />
 
@@ -15,29 +15,24 @@
         <header id="banner" class="body">
                 <h1><a href="https://wayofnumbers.github.io/">Way of Numbers </a></h1>
                 <nav><ul>
-                    <li class="active"><a href="https://wayofnumbers.github.io/category/posts.html">posts</a></li>
+                    <li><a href="https://wayofnumbers.github.io/category/posts.html">posts</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="https://wayofnumbers.github.io/first-post.html" rel="bookmark"
-           title="Permalink to First Post">First Post</a></h1>
-    </header>
 
-    <div class="entry-content">
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="https://wayofnumbers.github.io/MLN:Numpyandpandas.html">Machine Learning Notes : Numpy and Pandas</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2016-06-08T20:00:00-05:00">
-                Published: Wed 08 June 2016
+        <abbr class="published" title="0201-02-10T17:00:00-05:51">
+                Published: Tue 10 February 201
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="https://wayofnumbers.github.io/author/vik-paruchuri.html">Vik Paruchuri</a>
+                By                         <a class="url fn" href="https://wayofnumbers.github.io/author/michael-li.html">Michael Li</a>
         </address>
 <p>In <a href="https://wayofnumbers.github.io/category/posts.html">posts</a>.</p>
-<p>tags: <a href="https://wayofnumbers.github.io/tag/python-firsts.html">python firsts</a> </p>
-</footer><!-- /.post-info -->      <style type="text/css">/*!
+<p>tags: <a href="https://wayofnumbers.github.io/tag/machinelearning-numpy-pandas.html">machinelearning numpy pandas</a> </p>
+</footer><!-- /.post-info --><style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -1013,23 +1008,34 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Exporting-org-mode-to-Jupyter-notebooks">Exporting org-mode to Jupyter notebooks<a class="anchor-link" href="#Exporting-org-mode-to-Jupyter-notebooks">¶</a></h1><h1 align="center"><font color="0066FF" size="110%">A notebook from org-mode</font></h1><p>I am going to use Jupyter notebooks to teach from this semester. I really dislike preparing notebooks though. A browser is a really poor editor, and I really dislike Markdown. Notebooks do not seem to have any real structure in them, e.g. the collapsible outline that I am used to in org-mode, so for long notebooks, it is difficult to get a sense for the structure. I am anticipating spending up to 80 hours preparing notebooks this semester, so today I worked out some code to export org-mode to an ipython notebook!</p>
-<p>This will let me use the power tools I am accustomed to for the creation of IPython notebooks for my students, and perhaps others who do not use org-mode.</p>
-<p>Jupyter notebooks are just json files, so all we need to do is generate it from an org document. The basic strategy was to build up a lisp data structure that represents the notebook and then just convert that data structure to json. I split the document up into sequential markdown and code cells, and then encode those in the format required for the notebook (json).</p>
-<p>So, here is an example of what can be easily written in org-mode, posted to this blog, and exported to an IPython notebook, all from one org-document.</p>
-<p>Check out the notebook:  <a href="./exporting-orgmode-to-ipynb.ipynb">./exporting-orgmode-to-ipynb.ipynb</a>.</p>
-<h2 id="Solve-a-nonlinear-problem">Solve a nonlinear problem<a class="anchor-link" href="#Solve-a-nonlinear-problem">¶</a></h2><p>Consider the equation $x^2 = 4$. Find a solution to it in Python using a nonlinear solver.</p>
-<p>To do that, we need to define an objective function that will be equal to zero at the solution. Here is the function:</p>
+<h1 id="Machine-Learning-Notes-:-Numpy-and-Pandas">Machine Learning Notes : Numpy and Pandas<a class="anchor-link" href="#Machine-Learning-Notes-:-Numpy-and-Pandas">¶</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><p>This will be a series of notes to record the thinking and learning of my Machine Learning journey. Hopefully it can serve as a place to record the learning process/progress as well as providing some reference for others just entering this field.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Numpy">Numpy<a class="anchor-link" href="#Numpy">¶</a></h2><p>Numpy is a powerful module of Python. It covers a lot of basics of Linear algebra, and are great when it comes to doing sceintific and mathematical calculations. That's why it is the 'go-to' solution for Machine Learning. There are other 'highler-level' and more dedicated modules out there like Pandas, seaborn that also utilize or even built on Numpy. Thus proves the powerfulness of Numpy in another way. Though works mostly on the fundation level, Numpy should be considered an equivelant to other more 'advanced' modules and whichever fits the most to solve the problem at hand should be used. 
+Without further ado, let's jump right into some code</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>   <span class="c1"># use 'np' to represent Numpy is kind of a coding convention</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Numpy version: '</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1039,7 +1045,8 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre></pre>
+<pre>Numpy version:  1.13.3
+</pre>
 </div>
 </div>
 </div>
@@ -1049,19 +1056,51 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Next, we use fsolve with an initial guess. We get fsolve from <a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.optimize.fsolve.html#scipy.optimize.fsolve">scipy.optimize</a>.</p>
+<p>Now it's imported, let's use it to do some basic stuffs.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="k">import</span> <span class="n">fsolve</span>
-
-<span class="n">ans</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 0.99082281,  0.99574266,  0.68103016],
+       [ 0.02280371,  0.52490083,  0.76850488],
+       [ 0.48789963,  0.76641899,  0.55770887],
+       [ 0.50984645,  0.72081923,  0.72736904],
+       [ 0.10045068,  0.99868411,  0.01836912]])</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Manipulate with array is what Numpy do best. Here we generated an 5 row 3 columns array of randome numbers (from 0 to 1)</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1071,7 +1110,9 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[ 2.]</pre>
+<pre>(5, 3)
+float64
+</pre>
 </div>
 </div>
 </div>
@@ -1081,17 +1122,18 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>That should have been an obvious answer. The answer is in brackets because fsolve returns an array. In the next block we will unpack the solution into the answer using the comma operator. Also, we can see that using a different guess leads to a different answer. There are, of course, two answers: $x = \pm 2$</p>
+<p>We can look at the shape of an array and what data type it is. Obviously it's a float since it's generated from np.random.rand.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ans</span><span class="p">,</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">z</span>
 </pre></div>
 </div>
 </div>
@@ -1099,32 +1141,36 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>-2.0</pre>
+<div class="prompt output_prompt">Out[10]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 1.20007174,  0.85741976,  0.72938949,  0.85038025],
+       [ 0.31774752,  0.58516212,  0.33099611,  0.45153268],
+       [ 0.70892815,  0.66759538,  0.50324908,  0.57621354],
+       [ 0.75194448,  0.69800217,  0.51543393,  0.64382753],
+       [ 0.337497  ,  0.62003878,  0.42647586,  0.27492106]])</pre>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now you see we get a float answer!</p>
-<p>Here are some other ways to get a float:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ans</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ans</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Doing</span> <span class="n">some</span> <span class="n">good</span> <span class="n">old</span> <span class="n">dot</span> <span class="n">product</span><span class="o">.</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">@</span> <span class="n">y</span>
+<span class="n">z</span>
 </pre></div>
 </div>
 </div>
@@ -1132,10 +1178,13 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>-2.0000000000000084
--2.0</pre>
+<div class="prompt output_prompt">Out[12]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 1.20007174,  0.85741976,  0.72938949,  0.85038025],
+       [ 0.31774752,  0.58516212,  0.33099611,  0.45153268],
+       [ 0.70892815,  0.66759538,  0.50324908,  0.57621354],
+       [ 0.75194448,  0.69800217,  0.51543393,  0.64382753],
+       [ 0.337497  ,  0.62003878,  0.42647586,  0.27492106]])</pre>
 </div>
 </div>
 </div>
@@ -1145,78 +1194,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is worth noting from the first result that fsolve is iterative and stops when it reaches zero within a tolerance. That is why it is not exactly -2.</p>
-<h1 id="Benefits-of-export-to-ipynb">Benefits of export to ipynb<a class="anchor-link" href="#Benefits-of-export-to-ipynb">¶</a></h1><ol>
-<li>I can use org-mode</li>
-<li>And emacs</li>
-<li>and ipynb for teaching.</li>
-</ol>
-<p>The export supports org-markup: <strong>bold</strong>, <em>italic</em>, <span class="underline">underlined</span>, and <del>strike</del>.</p>
-<p>We can use tables:</p>
-<table border="2" cellpadding="6" cellspacing="0" frame="hsides" rules="groups">
-<caption class="t-above"><span class="table-number">Table 1:</span> A table of squares.</caption>
-<colgroup>
-<col class="org-right" />
-<col class="org-right" />
-</colgroup>
-<thead>
-<tr>
-<th class="org-right" scope="col">x</th>
-<th class="org-right" scope="col">y</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">1</td>
-<td class="org-right">2</td>
-</tr>
-<tr>
-<td class="org-right">2</td>
-<td class="org-right">4</td>
-</tr>
-<tr>
-<td class="org-right">3</td>
-<td class="org-right">9</td>
-</tr>
-<tr>
-<td class="org-right">4</td>
-<td class="org-right">16</td>
-</tr>
-</tbody>
-</table><p>We can make plots.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [1]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'circle.png'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre></pre>
-</div>
-</div>
+<p>Or more intuitively use '@' operand.</p>
 </div>
 </div>
 </div>
@@ -1224,21 +1202,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img alt="img" src="./circle.png" /></p>
-<p>Even include HTML:
-<font color="red">Pay special attention to the axis labels!</font></p>
-<h1 id="Limitations">Limitations<a class="anchor-link" href="#Limitations">¶</a></h1><ul>
-<li>Only supports iPython blocks</li>
-<li>Does not do inline images in results</li>
-<li>Will not support src-block variables</li>
-<li>Currently only supports vanilla output results</li>
-</ul>
-<h1 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h1><p>The code that does this is here: <a href="./ox-ipynb.el">./ox-ipynb.el</a>. After I use it a while I will put it in scimax. There are some tricks in it to fix up some markdown export of latex fragments and links with no descriptions.</p>
-<p>I just run this command in Emacs to get the notebook. Even it renders reasonably in the notebook.</p>
-<pre><code>(export-ipynb-buffer)
-
-</code></pre>
-<p>Overall, this looks extremely promising to develop lecture notes and assignments in org-mode, but export them to Ipython notebooks for the students.</p>
+<p>...to be continued...</p>
 </div>
 </div>
 </div>
@@ -1271,11 +1235,8 @@ h6:hover .anchor-link {
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
-
-    </div><!-- /.entry-content -->
-
-  </article>
-</section>
+                </article>
+            </aside><!-- /#featured -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>
