@@ -38,3 +38,8 @@ MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATH = './plugins'
 PLUGINS = ['ipynb.markup']
+
+TYPOGRIFY = True
+
+THEME = "~/home/lisper/pelican-themes/blueidea"
+
