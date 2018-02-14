@@ -1,58 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- ## for client-side less
-  <link rel="stylesheet/less" type="text/css" href="https://wayofnumbers.github.io/theme/css/style.less">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
-  -->
-  <link rel="icon" type="image/vnd.microsoft.icon" href="https://wayofnumbers.github.io/">
-  <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/pygments.css">
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
-  <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/hatena-bookmark-icon.css">
+	<meta charset="utf-8">
+	<title>Way of Numbers</title>
+	<meta name="description" content="">
+	<meta name="author" content="Michael Li">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://wayofnumbers.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://wayofnumbers.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://wayofnumbers.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://wayofnumbers.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://wayofnumbers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers Atom Feed" />
 
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Michael Li">
-  <meta name="description" content="Posts and writings by Michael Li">
 
-  <link href="https://wayofnumbers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers Atom" />
-
-<link href="https://wayofnumbers.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers posts Category Atom" />
-
-  <title>
-    Way of Numbers
-&ndash; Category: posts  </title>
 
 </head>
-
 <body>
-  <main>
-    <header>
-      <div class="site-name">
-        <a href="https://wayofnumbers.github.io">Way of Numbers</a>
-      </div>
-      <p>
-        <a href="https://wayofnumbers.github.io/archives.html"><i class="fa fa-archive"></i> Archive</a>
-&gt; Category: posts
-&brvbar; <a href="https://wayofnumbers.github.io/feeds/posts.atom.xml">Atom</a>
-      </p>
-    </header>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://wayofnumbers.github.io/">Way of Numbers</a>
+			<ul class="nav">
+					<li class="active"><a href="https://wayofnumbers.github.io/category/posts.html">posts</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://wayofnumbers.github.io/archives.html">[archives]</a> <a href="https://wayofnumbers.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
 
-<article>
-  <div class="article__title">
-    <h1><a href="https://wayofnumbers.github.io/MLN:Numpyandpandas.html">Machine Learning Notes : Numpy and Pandas</a></h1>
-  </div>
-  <div class="article__meta">
-    <p class="article__meta__post-date">Posted on: Tue 10 February 201</p>
- Tags:
-      <a href="https://wayofnumbers.github.io/tag/machinelearning-numpy-pandas.html">#machinelearning numpy pandas</a>    </p>
-  </div>
-  <div class="article__text">
-    
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="http://getpelican.com/">Pelican</a></li>
+				<li><a href="http://python.org/">Python.org</a></li>
+				<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="#">Another social link</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+<div class="page-header"><h1>Way of Numbers <small>posts</small></h1></div>
+<div class='article'>
+	<h2>Machine Learning Notes : Numpy and Pandas</h2>
+	<div class="well small">Permalink: <a class="more" href="https://wayofnumbers.github.io/MLN:Numpyandpandas.html">0201-02-10 17:00:00-05:51</a>
+by <a class="url fn" href="https://wayofnumbers.github.io/author/michael-li.html">Michael Li </a>
+ in <a href="https://wayofnumbers.github.io/category/posts.html">posts</a>
+tags: <a href="https://wayofnumbers.github.io/tag/machinelearning-numpy-pandas.html">machinelearning numpy pandas</a> </div>
+	<div class="summary">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -74,58 +83,17 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Numpy-Basics">Numpy Basics<a class="anchor-link" href="#Numpy-Basics">¶</a></h2><p>Numpy is a powerful module of Python. It covers a lot of basics of Linear algebra, and are great when it comes to doing sceintific and mathematical calculations. That's why it is the 'go-to' solution for Machine Learning. There are other 'highler-level' and more dedicated modules out there like Pandas, seaborn that also utilize or even built on Numpy. Thus proves the powerfulness of Numpy in another way. Though works mostly on the fundation level, Numpy should be considered an equivelant to other more 'advanced' modules and whichever fits the most to solve the problem at hand should be used. 
-Without further ado, let's jump right into some code</p>
-  </div>
-</article>
-
-<div class="pagination">
-    <ul>
-        <li class="pagination__prev">
-            <div class="pagination__prev--none">&laquo;</div>
-        </li>
+Without further ado, let's jump right into some code</p> <a class="btn primary xsmall" href="https://wayofnumbers.github.io/MLN:Numpyandpandas.html">more…</a>
+	</div>
+</div>	
 
 
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; Michael Li</p>
+		</footer>
+	  </div>
 
-          <li>
-            <a class="pagination__page--current" href="https://wayofnumbers.github.io/category/posts.html">1</a>
-          </li>
-
-        <li class="pagination__next">
-            <div class="pagination__next--none">&raquo;</div>
-        </li>
-    </ul>
-</div>
-
-  </main>
-    <footer>
-      <div class="author__logo">
-          <img src="https://wayofnumbers.github.io/theme/images/logo.png" alt="logo">
-      </div>
-      <section class="author">
-        <div class="author__name">
-          <a href="https://wayofnumbers.github.io/pages/about.html">Michael Li</a>
-          <p></p>
-        </div>
-        <div class="author__link">
-          <ul>
-            <li><a href="http://getpelican.com/" title="Pelican"><i class="fa fa-link"></i></a></li>
-            <li><a href="http://python.org/" title="Python.org"><i class="fa fa-link"></i></a></li>
-            <li><a href="http://jinja.pocoo.org/" title="Jinja2"><i class="fa fa-link"></i></a></li>
-            <li>
-              <a href="#" target="_blank" title="Another social link">
-              </a>
-            </li>
-            <li>
-              <a href="https://wayofnumbers.github.io/feeds/all.atom.xml" target="_blank" title="Feed">
-                <i class="fa fa-rss"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <div class="ending-message">
-        <p>&copy; Michael Li. Powered by <a href="http://getpelican.com" target="_blank">Pelican</a>, Theme is using <a href="https://github.com/laughk/pelican-hss" target="_blank">HSS</a>. </p>
-      </div>
-    </footer>
+	</div>
 </body>
 </html>
