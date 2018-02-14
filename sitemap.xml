@@ -5,56 +5,77 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://wayofnumbers.github.io/</loc>
-<lastmod>2018-02-14T14:48:21-00:00</lastmod>
+<lastmod>2018-02-14T16:32:58-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.github.io/archives.html</loc>
-<lastmod>2018-02-14T14:48:21-00:00</lastmod>
+<lastmod>2018-02-14T16:32:58-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.github.io/tags.html</loc>
-<lastmod>2018-02-14T14:48:21-00:00</lastmod>
+<lastmod>2018-02-14T16:32:58-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.github.io/categories.html</loc>
-<lastmod>2018-02-14T14:48:21-00:00</lastmod>
+<lastmod>2018-02-14T16:32:58-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/MLN:Numpyandpandas.html</loc>
-<lastmod>201-02-10T17:00:00-05:51</lastmod>
+<loc>https://wayofnumbers.github.io/MLN-Numpyandpandas.html</loc>
+<lastmod>2018-02-14T17:00:00-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.github.io/category/posts.html</loc>
-<lastmod>201-02-10T17:00:00-05:51</lastmod>
+<lastmod>2018-02-14T17:00:00-05:51</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/tag/machinelearning-numpy-pandas.html</loc>
-<lastmod>201-02-10T17:00:00-05:51</lastmod>
+<loc>https://wayofnumbers.github.io/tag/machinelearning.html</loc>
+<lastmod>2018-02-14T17:00:00-05:51</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://wayofnumbers.github.io/tag/numpy.html</loc>
+<lastmod>2018-02-14T17:00:00-05:51</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://wayofnumbers.github.io/tag/pandas.html</loc>
+<lastmod>2018-02-14T17:00:00-05:51</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://wayofnumbers.github.io/tag/jupyter-notebook.html</loc>
+<lastmod>2018-02-14T17:00:00-05:51</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.github.io/author/michael-li.html</loc>
-<lastmod>201-02-10T17:00:00-05:51</lastmod>
+<lastmod>2018-02-14T17:00:00-05:51</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>

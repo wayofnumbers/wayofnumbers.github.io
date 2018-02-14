@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Way of Numbers</title><link href="https://wayofnumbers.github.io/" rel="alternate"></link><link href="https://wayofnumbers.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wayofnumbers.github.io/</id><updated>0201-02-10T17:00:00-06:09</updated><entry><title>Machine Learning Notes : Numpy and Pandas</title><link href="https://wayofnumbers.github.io/MLN:Numpyandpandas.html" rel="alternate"></link><published>0201-02-10T17:00:00-06:09</published><updated>0201-02-10T17:00:00-06:09</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,0201-02-10:MLN:Numpyandpandas.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Way of Numbers</title><link href="https://wayofnumbers.github.io/" rel="alternate"></link><link href="https://wayofnumbers.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wayofnumbers.github.io/</id><updated>2018-02-14T17:00:00-06:00</updated><entry><title>Machine Learning Notes : Numpy and Pandas</title><link href="https://wayofnumbers.github.io/MLN-Numpyandpandas.html" rel="alternate"></link><published>2018-02-14T17:00:00-06:00</published><updated>2018-02-14T17:00:00-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,2018-02-14:MLN-Numpyandpandas.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -2045,4 +2045,4 @@ memory usage: 200.0 bytes
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="machinelearning numpy pandas"></category></entry></feed>
+</summary><category term="machinelearning"></category><category term="numpy"></category><category term="pandas"></category><category term="jupyter notebook"></category></entry></feed>
