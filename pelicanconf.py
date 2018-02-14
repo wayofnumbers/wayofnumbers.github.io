@@ -23,10 +23,10 @@ AUTHOR_FEED_RSS = None
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         )
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
+SOCIAL = (
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
@@ -39,7 +39,7 @@ MARKUP = ('md', 'ipynb')
 PLUGIN_PATHS= ['./plugins']
 PLUGINS = ['ipynb.markup']
 
-TYPOGRIFY = True
+# TYPOGRIFY = True
 
-THEME = "/home/lisper/pelican-themes/blueidea"
-
+# THEME = "/home/lisper/pelican-themes/blueidea"
+THEME = "notmyidea"
