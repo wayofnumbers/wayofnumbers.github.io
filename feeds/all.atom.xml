@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Way of Numbers</title><link href="https://wayofnumbers.github.io/" rel="alternate"></link><link href="https://wayofnumbers.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wayofnumbers.github.io/</id><updated>0201-02-10T17:00:00-06:09</updated><entry><title>Machine Learning Notes : Numpy and Pandas</title><link href="https://wayofnumbers.github.io/MLN:Numpyandpandas.html" rel="alternate"></link><published>0201-02-10T17:00:00-06:09</published><updated>0201-02-10T17:00:00-06:09</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,0201-02-10:MLN:Numpyandpandas.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Way of Numbers</title><link href="https://wayofnumbers.github.io/" rel="alternate"></link><link href="https://wayofnumbers.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wayofnumbers.github.io/</id><updated>0201-02-10T17:00:00-06:09</updated><entry><title>Machine Learning Notes : Numpy and Pandas</title><link href="https://wayofnumbers.github.io/MLN:Numpyandpandas.html" rel="alternate"></link><published>0201-02-10T17:00:00-06:09</published><updated>0201-02-10T17:00:00-06:09</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,0201-02-10:MLN:Numpyandpandas.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
 */
-/* &lt;span class="caps"&gt;CSS&lt;/span&gt; font colors for translated &lt;span class="caps"&gt;ANSI&lt;/span&gt; colors. */
+/* CSS font colors for translated ANSI colors. */
 .ansibold {
   font-weight: bold;
 }
@@ -90,13 +90,13 @@ div.cell {
   background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #&lt;span class="caps"&gt;90CAF9&lt;/span&gt;;
-  border-left-color: #&lt;span class="caps"&gt;E3F2FD&lt;/span&gt;;
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
-  border-right-color: #&lt;span class="caps"&gt;E3F2FD&lt;/span&gt;;
+  border-right-color: #E3F2FD;
   border-right-width: 1px;
-  background: #&lt;span class="caps"&gt;E3F2FD&lt;/span&gt;;
+  background: #E3F2FD;
 }
 @media print {
   div.cell.jupyter-soft-selected {
@@ -107,7 +107,7 @@ div.cell.selected {
   border-color: #ababab;
   border-left-width: 0px;
   padding-left: 6px;
-  background: linear-gradient(to right, #&lt;span class="caps"&gt;42A5F5&lt;/span&gt; -40px, #&lt;span class="caps"&gt;42A5F5&lt;/span&gt; 5px, transparent 5px, transparent 100%);
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
 }
 @media print {
   div.cell.selected {
@@ -117,13 +117,13 @@ div.cell.selected {
 div.cell.selected.jupyter-soft-selected {
   border-left-width: 0;
   padding-left: 6px;
-  background: linear-gradient(to right, #&lt;span class="caps"&gt;42A5F5&lt;/span&gt; -40px, #&lt;span class="caps"&gt;42A5F5&lt;/span&gt; 7px, #&lt;span class="caps"&gt;E3F2FD&lt;/span&gt; 7px, #&lt;span class="caps"&gt;E3F2FD&lt;/span&gt; 100%);
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
 }
 .edit_mode div.cell.selected {
-  border-color: #&lt;span class="caps"&gt;66BB6A&lt;/span&gt;;
+  border-color: #66BB6A;
   border-left-width: 0px;
   padding-left: 6px;
-  background: linear-gradient(to right, #&lt;span class="caps"&gt;66BB6A&lt;/span&gt; -40px, #&lt;span class="caps"&gt;66BB6A&lt;/span&gt; 5px, transparent 5px, transparent 100%);
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -276,7 +276,7 @@ div.input {
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_prompt {
-  color: #&lt;span class="caps"&gt;303F9F&lt;/span&gt;;
+  color: #303F9F;
   border-top: 1px solid transparent;
 }
 div.input_area &gt; div.highlight {
@@ -317,7 +317,7 @@ div.input_area &gt; div.highlight &gt; pre {
   overflow-x: auto;
 }
 .CodeMirror-lines {
-  /* In &lt;span class="caps"&gt;CM2&lt;/span&gt;, this used to be 0.4em, but in &lt;span class="caps"&gt;CM3&lt;/span&gt; it went to 4px. We need the em value because */
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
   padding: 0.4em;
 }
@@ -329,7 +329,7 @@ div.input_area &gt; div.highlight &gt; pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In &lt;span class="caps"&gt;CM3&lt;/span&gt; this went to 4px from 0 in &lt;span class="caps"&gt;CM2&lt;/span&gt;. We need the 0 value because of how we size */
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
   /* .CodeMirror-lines */
   padding: 0;
   border: 0;
@@ -354,7 +354,7 @@ Adapted from GitHub theme
   color: #333333;
 }
 .highlight-string {
-  color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt;;
+  color: #BA2121;
 }
 .highlight-comment {
   color: #408080;
@@ -377,11 +377,11 @@ Adapted from GitHub theme
   color: #f00;
 }
 .highlight-operator {
-  color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt;;
+  color: #AA22FF;
   font-weight: bold;
 }
 .highlight-meta {
-  color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt;;
+  color: #AA22FF;
 }
 /* previously not defined, copying from default codemirror */
 .highlight-def {
@@ -429,7 +429,7 @@ Adapted from GitHub theme
   color: #000;
 }
 .cm-s-ipython span.cm-operator {
-  color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt;;
+  color: #AA22FF;
   font-weight: bold;
 }
 .cm-s-ipython span.cm-variable-2 {
@@ -443,13 +443,13 @@ Adapted from GitHub theme
   font-style: italic;
 }
 .cm-s-ipython span.cm-string {
-  color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt;;
+  color: #BA2121;
 }
 .cm-s-ipython span.cm-string-2 {
   color: #f50;
 }
 .cm-s-ipython span.cm-meta {
-  color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt;;
+  color: #AA22FF;
 }
 .cm-s-ipython span.cm-qualifier {
   color: #555;
@@ -504,9 +504,9 @@ div.output_wrapper {
 }
 /* class for the output area when it should be height-limited */
 div.output_scroll {
-  /* ideally, this would be max-height, but &lt;span class="caps"&gt;FF&lt;/span&gt; barfs all over that */
+  /* ideally, this would be max-height, but FF barfs all over that */
   height: 24em;
-  /* &lt;span class="caps"&gt;FF&lt;/span&gt; needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
   width: 100%;
   overflow: auto;
   border-radius: 2px;
@@ -540,7 +540,7 @@ div.out_prompt_overlay {
   border-radius: 2px;
 }
 div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/&lt;span class="caps"&gt;FF&lt;/span&gt; */
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
   -webkit-box-shadow: inset 0 0 1px #000;
   box-shadow: inset 0 0 1px #000;
   background: rgba(240, 240, 240, 0.5);
@@ -868,25 +868,25 @@ h6:hover .anchor-link {
 &lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #&lt;span class="caps"&gt;FF0000&lt;/span&gt; } /* Error */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
 .highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #&lt;span class="caps"&gt;BC7A00&lt;/span&gt; } /* Comment.Preproc */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
 .highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #&lt;span class="caps"&gt;FF0000&lt;/span&gt; } /* Generic.Error */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .highlight .gi { color: #00A000 } /* Generic.Inserted */
 .highlight .go { color: #888888 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #&lt;span class="caps"&gt;0044DD&lt;/span&gt; } /* Generic.Traceback */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
 .highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
 .highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
 .highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
@@ -894,41 +894,41 @@ h6:hover .anchor-link {
 .highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String */
+.highlight .s { color: #BA2121 } /* Literal.String */
 .highlight .na { color: #7D9029 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #&lt;span class="caps"&gt;0000FF&lt;/span&gt;; font-weight: bold } /* Name.Class */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt; } /* Name.Decorator */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
 .highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #&lt;span class="caps"&gt;D2413A&lt;/span&gt;; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #&lt;span class="caps"&gt;0000FF&lt;/span&gt; } /* Name.Function */
-.highlight .nl { color: #&lt;span class="caps"&gt;A0A000&lt;/span&gt; } /* Name.Label */
-.highlight .nn { color: #&lt;span class="caps"&gt;0000FF&lt;/span&gt;; font-weight: bold } /* Name.Namespace */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt;; font-weight: bold } /* Operator.Word */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
 .highlight .mb { color: #666666 } /* Literal.Number.Bin */
 .highlight .mf { color: #666666 } /* Literal.Number.Float */
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Affix */
-.highlight .sb { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Backtick */
-.highlight .sc { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Char */
-.highlight .dl { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Delimiter */
-.highlight .sd { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt;; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Double */
-.highlight .se { color: #&lt;span class="caps"&gt;BB6622&lt;/span&gt;; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Heredoc */
-.highlight .si { color: #&lt;span class="caps"&gt;BB6688&lt;/span&gt;; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #&lt;span class="caps"&gt;BB6688&lt;/span&gt; } /* Literal.String.Regex */
-.highlight .s1 { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Single */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #&lt;span class="caps"&gt;0000FF&lt;/span&gt; } /* Name.Function.Magic */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
@@ -936,38 +936,38 @@ h6:hover .anchor-link {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
 &lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #&lt;span class="caps"&gt;3E424D&lt;/span&gt;; }
-.ansi-black-bg { background-color: #&lt;span class="caps"&gt;3E424D&lt;/span&gt;; }
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
 .ansi-black-intense-fg { color: #282C36; }
 .ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #&lt;span class="caps"&gt;E75C58&lt;/span&gt;; }
-.ansi-red-bg { background-color: #&lt;span class="caps"&gt;E75C58&lt;/span&gt;; }
-.ansi-red-intense-fg { color: #&lt;span class="caps"&gt;B22B31&lt;/span&gt;; }
-.ansi-red-intense-bg { background-color: #&lt;span class="caps"&gt;B22B31&lt;/span&gt;; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
 .ansi-green-fg { color: #00A250; }
 .ansi-green-bg { background-color: #00A250; }
 .ansi-green-intense-fg { color: #007427; }
 .ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #&lt;span class="caps"&gt;DDB62B&lt;/span&gt;; }
-.ansi-yellow-bg { background-color: #&lt;span class="caps"&gt;DDB62B&lt;/span&gt;; }
-.ansi-yellow-intense-fg { color: #&lt;span class="caps"&gt;B27D12&lt;/span&gt;; }
-.ansi-yellow-intense-bg { background-color: #&lt;span class="caps"&gt;B27D12&lt;/span&gt;; }
-.ansi-blue-fg { color: #&lt;span class="caps"&gt;208FFB&lt;/span&gt;; }
-.ansi-blue-bg { background-color: #&lt;span class="caps"&gt;208FFB&lt;/span&gt;; }
-.ansi-blue-intense-fg { color: #&lt;span class="caps"&gt;0065CA&lt;/span&gt;; }
-.ansi-blue-intense-bg { background-color: #&lt;span class="caps"&gt;0065CA&lt;/span&gt;; }
-.ansi-magenta-fg { color: #&lt;span class="caps"&gt;D160C4&lt;/span&gt;; }
-.ansi-magenta-bg { background-color: #&lt;span class="caps"&gt;D160C4&lt;/span&gt;; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
 .ansi-magenta-intense-fg { color: #A03196; }
 .ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #&lt;span class="caps"&gt;60C6C8&lt;/span&gt;; }
-.ansi-cyan-bg { background-color: #&lt;span class="caps"&gt;60C6C8&lt;/span&gt;; }
-.ansi-cyan-intense-fg { color: #&lt;span class="caps"&gt;258F8F&lt;/span&gt;; }
-.ansi-cyan-intense-bg { background-color: #&lt;span class="caps"&gt;258F8F&lt;/span&gt;; }
-.ansi-white-fg { color: #&lt;span class="caps"&gt;C5C1B4&lt;/span&gt;; }
-.ansi-white-bg { background-color: #&lt;span class="caps"&gt;C5C1B4&lt;/span&gt;; }
-.ansi-white-intense-fg { color: #&lt;span class="caps"&gt;A1A6B2&lt;/span&gt;; }
-.ansi-white-intense-bg { background-color: #&lt;span class="caps"&gt;A1A6B2&lt;/span&gt;; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
@@ -983,7 +983,7 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Overview"&gt;Overview&lt;a class="anchor-link" href="#Overview"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This will be a series of notes to record the thinking and learning of my Machine Learning journey. Hopefully it can serve as a place to record the learning process/progress as well as providing some reference for others just entering this&amp;nbsp;field.&lt;/p&gt;
+&lt;h2 id="Overview"&gt;Overview&lt;a class="anchor-link" href="#Overview"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This will be a series of notes to record the thinking and learning of my Machine Learning journey. Hopefully it can serve as a place to record the learning process/progress as well as providing some reference for others just entering this field.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -991,14 +991,14 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Numpy"&gt;Numpy&lt;a class="anchor-link" href="#Numpy"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Numpy is a powerful module of Python. It covers a lot of basics of Linear algebra, and are great when it comes to doing sceintific and mathematical calculations. That&amp;#8217;s why it is the &amp;#8216;go-to&amp;#8217; solution for Machine Learning. There are other &amp;#8216;highler-level&amp;#8217; and more dedicated modules out there like Pandas, seaborn that also utilize or even built on Numpy. Thus proves the powerfulness of Numpy in another way. Though works mostly on the fundation level, Numpy should be considered an equivelant to other more &amp;#8216;advanced&amp;#8217; modules and whichever fits the most to solve the problem at hand should be used. 
-Without further ado, let&amp;#8217;s jump right into some&amp;nbsp;code&lt;/p&gt;
+&lt;h2 id="Numpy-Basics"&gt;Numpy Basics&lt;a class="anchor-link" href="#Numpy-Basics"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Numpy is a powerful module of Python. It covers a lot of basics of Linear algebra, and are great when it comes to doing sceintific and mathematical calculations. That's why it is the 'go-to' solution for Machine Learning. There are other 'highler-level' and more dedicated modules out there like Pandas, seaborn that also utilize or even built on Numpy. Thus proves the powerfulness of Numpy in another way. Though works mostly on the fundation level, Numpy should be considered an equivelant to other more 'advanced' modules and whichever fits the most to solve the problem at hand should be used. 
+Without further ado, let's jump right into some code&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;   &lt;span class="c1"&gt;# use 'np' to represent Numpy is kind of a coding convention&lt;/span&gt;
@@ -1023,13 +1023,13 @@ Without further ado, let&amp;#8217;s jump right into some&amp;nbsp;code&lt;/p&gt
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Now it&amp;#8217;s imported, let&amp;#8217;s use it to do some basic&amp;nbsp;stuffs.&lt;/p&gt;
+&lt;p&gt;Now it's imported, let's use it to do some basic stuffs.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1041,13 +1041,13 @@ Without further ado, let&amp;#8217;s jump right into some&amp;nbsp;code&lt;/p&gt
 &lt;div class="output_wrapper"&gt;
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
-&lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
 &lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;array([[ 0.99082281,  0.99574266,  0.68103016],
-       [ 0.02280371,  0.52490083,  0.76850488],
-       [ 0.48789963,  0.76641899,  0.55770887],
-       [ 0.50984645,  0.72081923,  0.72736904],
-       [ 0.10045068,  0.99868411,  0.01836912]])&lt;/pre&gt;
+&lt;pre&gt;array([[ 0.06584995,  0.58936577,  0.02054667],
+       [ 0.90132301,  0.62575129,  0.76350867],
+       [ 0.70707616,  0.19462487,  0.35358817],
+       [ 0.44329537,  0.57977487,  0.78594087],
+       [ 0.76109628,  0.86614311,  0.51521077]])&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1057,13 +1057,13 @@ Without further ado, let&amp;#8217;s jump right into some&amp;nbsp;code&lt;/p&gt
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Manipulate with array is what Numpy do best. Here we generated an 5 row 3 columns array of randome numbers (from 0 to&amp;nbsp;1)&lt;/p&gt;
+&lt;p&gt;Manipulate with array is what Numpy do best. Here we generated an 5 row 3 columns array of randome numbers (from 0 to 1)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1089,13 +1089,13 @@ float64
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;We can look at the shape of an array and what data type it is. Obviously it&amp;#8217;s a float since it&amp;#8217;s generated from&amp;nbsp;np.random.rand.&lt;/p&gt;
+&lt;p&gt;We can look at the shape of an array and what data type it is. Obviously it's a float since it's generated from np.random.rand.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1108,32 +1108,29 @@ float64
 &lt;div class="output_wrapper"&gt;
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
-&lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
 &lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;array([[ 1.20007174,  0.85741976,  0.72938949,  0.85038025],
-       [ 0.31774752,  0.58516212,  0.33099611,  0.45153268],
-       [ 0.70892815,  0.66759538,  0.50324908,  0.57621354],
-       [ 0.75194448,  0.69800217,  0.51543393,  0.64382753],
-       [ 0.337497  ,  0.62003878,  0.42647586,  0.27492106]])&lt;/pre&gt;
+&lt;pre&gt;array([[ 0.60055916,  0.43108417,  0.35430406,  0.32056793],
+       [ 2.10608162,  0.91944706,  0.73772388,  1.22819697],
+       [ 1.1554381 ,  0.48784172,  0.3088563 ,  0.63719203],
+       [ 1.66918268,  0.69113499,  0.68490871,  1.04397122],
+       [ 1.95288349,  0.98819028,  0.76639304,  1.09896047]])&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Doing&lt;/span&gt; &lt;span class="n"&gt;some&lt;/span&gt; &lt;span class="n"&gt;good&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt; &lt;span class="n"&gt;dot&lt;/span&gt; &lt;span class="n"&gt;product&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Doing some good old dot product.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;@&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
@@ -1145,13 +1142,237 @@ float64
 &lt;div class="output_wrapper"&gt;
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;array([[ 0.60055916,  0.43108417,  0.35430406,  0.32056793],
+       [ 2.10608162,  0.91944706,  0.73772388,  1.22819697],
+       [ 1.1554381 ,  0.48784172,  0.3088563 ,  0.63719203],
+       [ 1.66918268,  0.69113499,  0.68490871,  1.04397122],
+       [ 1.95288349,  0.98819028,  0.76639304,  1.09896047]])&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Or more intuitively use '@' operand.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="How-to-index-Numpy-array"&gt;How to index Numpy array&lt;a class="anchor-link" href="#How-to-index-Numpy-array"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;First create a sample array using np.array function.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+               &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+               &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;span class="n"&gt;x1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Array[row, col] represent array element in 'row' and 'col'. Note that&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c1"&gt;#row 1, col 1, since Python list starts from 0, so it's 2nd row and col;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;5&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c1"&gt;#':' means all elements, so this means all elements on 3rd column, let's see&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;array([3, 6, 9])&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;&gt;&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;  &lt;span class="c1"&gt;# an array condition equation will generate an array of boolean values;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;array([False,  True,  True], dtype=bool)&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [11]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;&gt;&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# This means index the rows that the 2nd column is greater than 3;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;array([[4, 5, 6],
+       [7, 8, 9]])&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Shape-Manipulations"&gt;Shape Manipulations&lt;a class="anchor-link" href="#Shape-Manipulations"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="c1"&gt;#reshape x1 into one row&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
 &lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
 &lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;array([[ 1.20007174,  0.85741976,  0.72938949,  0.85038025],
-       [ 0.31774752,  0.58516212,  0.33099611,  0.45153268],
-       [ 0.70892815,  0.66759538,  0.50324908,  0.57621354],
-       [ 0.75194448,  0.69800217,  0.51543393,  0.64382753],
-       [ 0.337497  ,  0.62003878,  0.42647586,  0.27492106]])&lt;/pre&gt;
+&lt;pre&gt;array([1, 2, 3, 4, 5, 6, 7, 8, 9])&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="c1"&gt;#reshape back to 3x3&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [14]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="c1"&gt;#reshape into 9x1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;array([[1],
+       [2],
+       [3],
+       [4],
+       [5],
+       [6],
+       [7],
+       [8],
+       [9]])&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1161,7 +1382,61 @@ float64
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Or more intuitively use &amp;#8216;@&amp;#8217;&amp;nbsp;operand.&lt;/p&gt;
+&lt;h2 id="Dot-and-Mutiplication"&gt;Dot and Mutiplication&lt;a class="anchor-link" href="#Dot-and-Mutiplication"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [15]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;x2&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [16]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;multi&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;
+&lt;span class="n"&gt;dot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'x1 * x2 ='&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;multi&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'x1 dot x2 ='&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;x1 * x2 = [[ 0  2  6]
+ [12 20 30]
+ [42 56 72]]
+x1 dot x2 = [[ 24  30  36]
+ [ 51  66  81]
+ [ 78 102 126]]
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1169,7 +1444,575 @@ float64
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&amp;#8230;to be&amp;nbsp;continued&amp;#8230;&lt;/p&gt;
+&lt;h2 id="Pandas-Basics"&gt;Pandas Basics&lt;a class="anchor-link" href="#Pandas-Basics"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [17]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# set some basic data&lt;/span&gt;
+&lt;span class="n"&gt;col_names&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'temperature'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'time'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'day'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;64&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;48&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2300&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;34&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;   &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[17]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;array([[  64, 2100,    1],
+       [  50, 2200,    1],
+       [  48, 2300,    1],
+       [  34,    0,    2],
+       [  30,  100,    5]])&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [18]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# explore the data using numpy, it's clumsy&lt;/span&gt;
+&lt;span class="n"&gt;data2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;&gt;&lt;/span&gt;&lt;span class="mi"&gt;1500&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;data2&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;array([[  64, 2100,    1],
+       [  50, 2200,    1],
+       [  48, 2300,    1]])&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [19]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# now let's try use Pandas&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;col_names&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[19]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;temperature&lt;/th&gt;
+&lt;th&gt;time&lt;/th&gt;
+&lt;th&gt;day&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;2100&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;2200&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;2300&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Pandas DataFrame will put all the data into a much nicer form with neat labels&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [20]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;&gt;&lt;/span&gt;&lt;span class="mi"&gt;1500&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;#Now do it again with data exploration, this time using Pandas DataFrame&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;temperature&lt;/th&gt;
+&lt;th&gt;time&lt;/th&gt;
+&lt;th&gt;day&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;2100&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;2200&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;2300&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Much nicer!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [22]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# now let's get some basic info of the DataFrame&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;info&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;describe&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;&lt;class &amp;#x27;pandas.core.frame.dataframe&amp;#x27;&gt;
+RangeIndex: 5 entries, 0 to 4
+Data columns (total 3 columns):
+temperature    5 non-null int64
+time           5 non-null int64
+day            5 non-null int64
+dtypes: int64(3)
+memory usage: 200.0 bytes
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[22]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;temperature&lt;/th&gt;
+&lt;th&gt;time&lt;/th&gt;
+&lt;th&gt;day&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;count&lt;/th&gt;
+&lt;td&gt;5.000000&lt;/td&gt;
+&lt;td&gt;5.00000&lt;/td&gt;
+&lt;td&gt;5.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;mean&lt;/th&gt;
+&lt;td&gt;45.200000&lt;/td&gt;
+&lt;td&gt;1340.00000&lt;/td&gt;
+&lt;td&gt;2.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;std&lt;/th&gt;
+&lt;td&gt;13.608821&lt;/td&gt;
+&lt;td&gt;1180.25421&lt;/td&gt;
+&lt;td&gt;1.732051&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;min&lt;/th&gt;
+&lt;td&gt;30.000000&lt;/td&gt;
+&lt;td&gt;0.00000&lt;/td&gt;
+&lt;td&gt;1.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;25%&lt;/th&gt;
+&lt;td&gt;34.000000&lt;/td&gt;
+&lt;td&gt;100.00000&lt;/td&gt;
+&lt;td&gt;1.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;50%&lt;/th&gt;
+&lt;td&gt;48.000000&lt;/td&gt;
+&lt;td&gt;2100.00000&lt;/td&gt;
+&lt;td&gt;1.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;75%&lt;/th&gt;
+&lt;td&gt;50.000000&lt;/td&gt;
+&lt;td&gt;2200.00000&lt;/td&gt;
+&lt;td&gt;2.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;max&lt;/th&gt;
+&lt;td&gt;64.000000&lt;/td&gt;
+&lt;td&gt;2300.00000&lt;/td&gt;
+&lt;td&gt;5.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [23]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# you can change the element in DataFrame like so:&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Mon'&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;temperature&lt;/th&gt;
+&lt;th&gt;time&lt;/th&gt;
+&lt;th&gt;day&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;2100&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;2200&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;2300&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [24]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# or do it the Pandas way&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;to_replace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+               &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'Su'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Mon'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Tues'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Wed'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Th'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Fri'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Sat'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+               &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[24]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;temperature&lt;/th&gt;
+&lt;th&gt;time&lt;/th&gt;
+&lt;th&gt;day&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;2100&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;2200&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;2300&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;Tues&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;Fri&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [25]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# one hot encoding example&lt;/span&gt;
+&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_dummies&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[25]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Fri&lt;/th&gt;
+&lt;th&gt;Mon&lt;/th&gt;
+&lt;th&gt;Tues&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
