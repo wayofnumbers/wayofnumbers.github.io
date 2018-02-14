@@ -41,5 +41,5 @@ PLUGINS = ['ipynb.markup']
 
 # TYPOGRIFY = True
 
-# THEME = "/home/lisper/pelican-themes/blueidea"
-THEME = "notmyidea"
+THEME = "/home/lisper/pelican-themes/MinimalXY"
+# THEME = "notmyidea"
