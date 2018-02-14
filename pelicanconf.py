@@ -57,3 +57,6 @@ SITEMAP = {
         'pages': 'monthly'
     }
 }
+
+DISQUS_SITENAME = "WayofNumbers"
+DISQUSURL = 'https://wayofnumbers.github.io'

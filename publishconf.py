@@ -20,5 +20,5 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 
-DISQUS_SITENAME = "WayofNumbers"
+# DISQUS_SITENAME = "WayofNumbers"
 GOOGLE_ANALYTICS = "UA-114137939-1"
