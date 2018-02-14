@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'Michael Li'
-SITENAME = 'Way of Numbers'
+AUTHOR = u'Michael Li'
+SITENAME = u'Way of Numbers'
 SITEURL = ''
 
 PATH = 'content'
 
 TIMEZONE = 'America/Chicago'
 
-DEFAULT_LANG = 'en'
+DEFAULT_LANG = u'en'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -26,8 +26,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          )
 
 # Social widget
-SOCIAL = (
-          ('Another social link', '#'),)
+SOCIAL = (('Twitter', 'https://twitter.com/lymenlee'),)
 
 DEFAULT_PAGINATION = 10
 
@@ -37,9 +36,24 @@ DEFAULT_PAGINATION = 10
 MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS= ['./plugins']
-PLUGINS = ['ipynb.markup']
+PLUGINS = ['ipynb.markup','sitemap']
 
 # TYPOGRIFY = True
 
-THEME = "/home/lisper/pelican-themes/MinimalXY"
+THEME = "/home/lisper/pelican-themes/pelican-chameleon"
 # THEME = "notmyidea"
+
+# Configuration for the "sitemap" plugin
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 1,
+        'indexes': 0.5,
+        'pages': 0.5,
+    },
+    'changefreqs': {
+        'articles': 'always',
+        'indexes': 'hourly',
+        'pages': 'monthly'
+    }
+}
