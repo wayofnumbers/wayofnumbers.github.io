@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Michael Li'
+# AUTHOR = u'Michael Li'
 SITENAME = u'Way of Numbers'
 SITEURL = ''
 
@@ -19,6 +19,11 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+AUTHORS = {
+    u'Michael Li': '/author.html',
+    u'Xiao Xu': 'http://mary.info',
+}
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
