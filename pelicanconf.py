@@ -78,7 +78,7 @@ THEME = "/home/lisper/pelican-themes/pelican-chameleon"
 
 # THEME = "notmyidea"
 
-BS3_THEME = 'http://maxcdn.bootstrapcdn.com/bootswatch/3.3.1/flatly/bootstrap.min.css'
+# BS3_THEME = 'http://maxcdn.bootstrapcdn.com/bootswatch/3.3.1/flatly/bootstrap.min.css'
 # BS3_JS = '/home/lisper/Downloads/jupyter-blog/3rdparty/bootstrap/3.0.0/js/bootstrap.min.js'
 BS3_URL = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
 # BS3_JS  = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'
