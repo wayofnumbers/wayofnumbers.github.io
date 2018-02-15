@@ -6,7 +6,7 @@
     <meta name="description" content="Way of Numbers">
     <meta name="author" content="Michael Li">
 
-        <title>Machine Learning Notes : Numpy and Pandas · Way of Numbers</title>
+        <title>Setup Data Science Blog with Pelican + GitHub Pages · Way of Numbers</title>
 
 
     <!-- Bootstrap core CSS -->
@@ -62,7 +62,7 @@
       <div class="col-md-8">
         <div class="row">
               <div class="page-header">
-        <h1><a href="https://wayofnumbers.github.io/MLN-Numpyandpandas.html">Machine Learning Notes : Numpy and Pandas</a></h1>
+        <h1><a href="https://wayofnumbers.github.io/Setup-Pelican.html">Setup Data Science Blog with Pelican + GitHub Pages</a></h1>
     </div>
 
         </div>
@@ -74,13 +74,19 @@
       href="https://wayofnumbers.github.io/category/posts.html">posts</a>
       <b> · </b>
         <a class="label label-primary"
-          href="https://wayofnumbers.github.io/tag/machinelearning.html">machinelearning</a>
+          href="https://wayofnumbers.github.io/tag/pelican.html">Pelican</a>
         <a class="label label-primary"
-          href="https://wayofnumbers.github.io/tag/numpy.html">numpy</a>
+          href="https://wayofnumbers.github.io/tag/data-science.html">Data Science</a>
         <a class="label label-primary"
-          href="https://wayofnumbers.github.io/tag/pandas.html">pandas</a>
+          href="https://wayofnumbers.github.io/tag/blog.html">Blog</a>
         <a class="label label-primary"
-          href="https://wayofnumbers.github.io/tag/jupyter-notebook.html">jupyter notebook</a>
+          href="https://wayofnumbers.github.io/tag/github.html">Github</a>
+        <a class="label label-primary"
+          href="https://wayofnumbers.github.io/tag/jupyter-notebook.html">Jupyter Notebook</a>
+        <a class="label label-primary"
+          href="https://wayofnumbers.github.io/tag/disqus.html">Disqus</a>
+        <a class="label label-primary"
+          href="https://wayofnumbers.github.io/tag/google-analytics.html">Google Analytics</a>
     <!--<span class="glyphicon glyphicon-calendar"></span>-->
       <b> · </b>
       <a href="https://wayofnumbers.github.io/archives.html#Year2018">2018</a>-<a href="https://wayofnumbers.github.io/archives.html#Year2018Month02">02</a>-<a href="https://wayofnumbers.github.io/archives.html#Year2018Month02">14</a>
@@ -1069,7 +1075,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Machine-Learning-Notes-:-Numpy-and-Pandas">Machine Learning Notes : Numpy and Pandas<a class="anchor-link" href="#Machine-Learning-Notes-:-Numpy-and-Pandas">¶</a></h1>
+<p><img alt="Coding Background" src="https://wayofnumbers.github.io/images/coding.jpeg" /></p>
 </div>
 </div>
 </div>
@@ -1077,7 +1083,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><p>This will be a series of notes to record the thinking and learning of my Machine Learning journey. Hopefully it can serve as a place to record the learning process/progress as well as providing some reference for others just entering this field.</p>
+<h1 id="Setting-Up-Data-Science-Blog-w/-Pelican-+-GitHub-Pages">Setting Up Data Science Blog w/ Pelican + GitHub Pages<a class="anchor-link" href="#Setting-Up-Data-Science-Blog-w/-Pelican-+-GitHub-Pages">¶</a></h1>
 </div>
 </div>
 </div>
@@ -1085,31 +1091,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Numpy-Basics">Numpy Basics<a class="anchor-link" href="#Numpy-Basics">¶</a></h2><p>Numpy is a powerful module of Python. It covers a lot of basics of Linear algebra, and are great when it comes to doing sceintific and mathematical calculations. That's why it is the 'go-to' solution for Machine Learning. There are other 'highler-level' and more dedicated modules out there like Pandas, seaborn that also utilize or even built on Numpy. Thus proves the powerfulness of Numpy in another way. Though works mostly on the fundation level, Numpy should be considered an equivelant to other more 'advanced' modules and whichever fits the most to solve the problem at hand should be used. 
-Without further ado, let's jump right into some code</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [1]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>   <span class="c1"># use 'np' to represent Numpy is kind of a coding convention</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Numpy version: '</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Numpy version:  1.13.3
-</pre>
-</div>
-</div>
+<p>First of all, this is by no means a thorough tutorial. I've followed Dataquest's blog post: <a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/">Building a data science portfolio: Making a data science blog</a> to get this one setup. Here are some insights and hiccups that may be helpful to others who want to do the same thing.</p>
 </div>
 </div>
 </div>
@@ -1117,33 +1099,7 @@ Without further ado, let's jump right into some code</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now it's imported, let's use it to do some basic stuffs.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [2]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">x</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[2]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[ 0.06584995,  0.58936577,  0.02054667],
-       [ 0.90132301,  0.62575129,  0.76350867],
-       [ 0.70707616,  0.19462487,  0.35358817],
-       [ 0.44329537,  0.57977487,  0.78594087],
-       [ 0.76109628,  0.86614311,  0.51521077]])</pre>
-</div>
-</div>
+<h2 id="Static-sites-and-static-sites-generator">Static sites and static sites generator<a class="anchor-link" href="#Static-sites-and-static-sites-generator">¶</a></h2>
 </div>
 </div>
 </div>
@@ -1151,31 +1107,9 @@ Without further ado, let's jump right into some code</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Manipulate with array is what Numpy do best. Here we generated an 5 row 3 columns array of randome numbers (from 0 to 1)</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(5, 3)
-float64
-</pre>
-</div>
-</div>
+<p>If you have never experienced the web development world, static site might be a new word to you. Actually it's quite simple, it's just plan web-site with HTML files, CSS sheets and Javascript files. These file never changes unless you make them, thus the word 'static'. The 'dynamic' site, on the other hand, use database and complex post-end technology to 'dynamically' generate these HTML/CSS/Javascripts files. It's much harder to develop and maintain. 
+But I don't want that complexity you say. I just want to write something and post them and make them look neat. Then, my friend, look no further than a static site. Good news to us, there are a lot of static sites generators out there that can help us do the heavy-lifting of developing a website. 
+The static sites generators come with many flavors, <a href="https://jekyllrb.com/">Jekyell(based on Ruby)</a>, <a href="https://blog.getpelican.com/">Pelican(based on Python</a> are too popular one. Since I'm more familiar with Python. I decided to use Pelican to build my data science blog.</p>
 </div>
 </div>
 </div>
@@ -1183,34 +1117,7 @@ float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can look at the shape of an array and what data type it is. Obviously it's a float since it's generated from np.random.rand.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [4]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">z</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[4]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[ 0.60055916,  0.43108417,  0.35430406,  0.32056793],
-       [ 2.10608162,  0.91944706,  0.73772388,  1.22819697],
-       [ 1.1554381 ,  0.48784172,  0.3088563 ,  0.63719203],
-       [ 1.66918268,  0.69113499,  0.68490871,  1.04397122],
-       [ 1.95288349,  0.98819028,  0.76639304,  1.09896047]])</pre>
-</div>
-</div>
+<p>The beautiful thing here is, since Pelican is written in Python, it's quite easy to make it work with Jupyter Notebook, which is a huge bonus for data science. This means you can write your blog posts using Jupyter Notebook, leverage all the powerful snippets, data visualization and code executing it has and roll all those into your post, with ease.</p>
 </div>
 </div>
 </div>
@@ -1218,33 +1125,7 @@ float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Doing some good old dot product.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">@</span> <span class="n">y</span>
-<span class="n">z</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[6]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[ 0.60055916,  0.43108417,  0.35430406,  0.32056793],
-       [ 2.10608162,  0.91944706,  0.73772388,  1.22819697],
-       [ 1.1554381 ,  0.48784172,  0.3088563 ,  0.63719203],
-       [ 1.66918268,  0.69113499,  0.68490871,  1.04397122],
-       [ 1.95288349,  0.98819028,  0.76639304,  1.09896047]])</pre>
-</div>
-</div>
+<h2 id="Install-Pelican">Install Pelican<a class="anchor-link" href="#Install-Pelican">¶</a></h2>
 </div>
 </div>
 </div>
@@ -1252,7 +1133,7 @@ float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Or more intuitively use '@' operand.</p>
+<p>Usually install Pelican will be easy, but if we also want to support Jupyter Notebook it will be harder. Many python modules will need to be installed using <strong>pip</strong>.</p>
 </div>
 </div>
 </div>
@@ -1260,7 +1141,16 @@ float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-index-Numpy-array">How to index Numpy array<a class="anchor-link" href="#How-to-index-Numpy-array">¶</a></h2>
+<p>Here is a list I used:</p>
+<div class="highlight"><pre><span></span><span class="nv">Markdown</span><span class="o">==</span><span class="m">2</span>.6.6    <span class="c1"># Markdown support</span>
+<span class="nv">pelican</span><span class="o">==</span><span class="m">3</span>.6.3     <span class="c1"># Pelican itself</span>
+jupyter><span class="o">=</span><span class="m">1</span>.0       <span class="c1"># Jupyter Notebook</span>
+ipython><span class="o">=</span><span class="m">4</span>.0       <span class="c1"># iPython</span>
+nbconvert><span class="o">=</span><span class="m">4</span>.0     <span class="c1">#</span>
+beautifulsoup4     <span class="c1"># not sure why we need pharsing here, maybe manipulating codes</span>
+ghp-import<span class="o">==</span><span class="m">0</span>.4.1  <span class="c1">#handle git branches</span>
+<span class="nv">matplotlib</span><span class="o">==</span><span class="m">1</span>.5.1  <span class="c1">#data visualization</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -1268,33 +1158,7 @@ float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First create a sample array using np.array function.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [7]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
-               <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
-               <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
-<span class="n">x1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[7]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]])</pre>
-</div>
-</div>
+<p>Once all are installed, run:</p>
 </div>
 </div>
 </div>
@@ -1302,92 +1166,8 @@ float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Array[row, col] represent array element in 'row' and 'col'. Note that</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [8]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>   <span class="c1">#row 1, col 1, since Python list starts from 0, so it's 2nd row and col;</span>
+<div class="highlight"><pre><span></span>pelican-quickstart
 </pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[8]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>5</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [9]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>   <span class="c1">#':' means all elements, so this means all elements on 3rd column, let's see</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[9]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([3, 6, 9])</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [10]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">></span><span class="mi">3</span>  <span class="c1"># an array condition equation will generate an array of boolean values;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[10]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([False,  True,  True], dtype=bool)</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [11]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span> <span class="n">x1</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">></span><span class="mi">3</span> <span class="p">]</span> <span class="c1"># This means index the rows that the 2nd column is greater than 3;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[11]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[4, 5, 6],
-       [7, 8, 9]])</pre>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1395,80 +1175,9 @@ float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Shape-Manipulations">Shape Manipulations<a class="anchor-link" href="#Shape-Manipulations">¶</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [12]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>   <span class="c1">#reshape x1 into one row</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[12]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([1, 2, 3, 4, 5, 6, 7, 8, 9])</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [13]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>   <span class="c1">#reshape back to 3x3</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[13]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]])</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [14]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>   <span class="c1">#reshape into 9x1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[14]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[1],
-       [2],
-       [3],
-       [4],
-       [5],
-       [6],
-       [7],
-       [8],
-       [9]])</pre>
-</div>
-</div>
+<p>Answer couple of questions and the backbone of your site is up. To make the Jupyter Notebook part work, we will need this Pelican plugin (yes, Pelican support plugins!): <a href="https://github.com/danielfrg/pelican-ipynb">Pelican-ipynb</a>. 
+Once installed, activate the plugin in your <code>pelicanconf.py</code>. This is your dot file, and you'll be dealig with it a lot later on. 
+Add these into the bottom:</p>
 </div>
 </div>
 </div>
@@ -1476,207 +1185,11 @@ float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dot-and-Mutiplication">Dot and Mutiplication<a class="anchor-link" href="#Dot-and-Mutiplication">¶</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [15]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">x2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[15]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[0, 1, 2],
-       [3, 4, 5],
-       [6, 7, 8]])</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [16]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">multi</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">x2</span>
-<span class="n">dot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'x1 * x2 ='</span><span class="p">,</span> <span class="n">multi</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'x1 dot x2 ='</span><span class="p">,</span> <span class="n">dot</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>x1 * x2 = [[ 0  2  6]
- [12 20 30]
- [42 56 72]]
-x1 dot x2 = [[ 24  30  36]
- [ 51  66  81]
- [ 78 102 126]]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Pandas-Basics">Pandas Basics<a class="anchor-link" href="#Pandas-Basics">¶</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [17]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># set some basic data</span>
-<span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'temperature'</span><span class="p">,</span><span class="s1">'time'</span><span class="p">,</span><span class="s1">'day'</span><span class="p">]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">64</span><span class="p">,</span><span class="mi">2100</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-                 <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">2200</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-                 <span class="p">[</span><span class="mi">48</span><span class="p">,</span><span class="mi">2300</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-                 <span class="p">[</span><span class="mi">34</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>   <span class="mi">2</span><span class="p">],</span>
-                 <span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
-<span class="n">data</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[17]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[  64, 2100,    1],
-       [  50, 2200,    1],
-       [  48, 2300,    1],
-       [  34,    0,    2],
-       [  30,  100,    5]])</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [18]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># explore the data using numpy, it's clumsy</span>
-<span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">></span><span class="mi">1500</span><span class="p">]</span>
-<span class="n">data2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[18]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[  64, 2100,    1],
-       [  50, 2200,    1],
-       [  48, 2300,    1]])</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [19]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now let's try use Pandas</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight"><pre><span></span><span class="n">MARKUP</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'md'</span><span class="p">,</span> <span class="s1">'ipynb'</span><span class="p">)</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">col_names</span><span class="p">)</span>
-<span class="n">df</span>
+<span class="n">PLUGIN_PATH</span> <span class="o">=</span> <span class="s1">'./plugins'</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'ipynb.markup'</span><span class="p">]</span>
 </pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[19]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>temperature</th>
-<th>time</th>
-<th>day</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>64</td>
-<td>2100</td>
-<td>1</td>
-</tr>
-<tr>
-<th>1</th>
-<td>50</td>
-<td>2200</td>
-<td>1</td>
-</tr>
-<tr>
-<th>2</th>
-<td>48</td>
-<td>2300</td>
-<td>1</td>
-</tr>
-<tr>
-<th>3</th>
-<td>34</td>
-<td>0</td>
-<td>2</td>
-</tr>
-<tr>
-<th>4</th>
-<td>30</td>
-<td>100</td>
-<td>5</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1684,72 +1197,7 @@ x1 dot x2 = [[ 24  30  36]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Pandas DataFrame will put all the data into a much nicer form with neat labels</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [20]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">time</span><span class="o">></span><span class="mi">1500</span><span class="p">]</span> <span class="c1">#Now do it again with data exploration, this time using Pandas DataFrame</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[20]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>temperature</th>
-<th>time</th>
-<th>day</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>64</td>
-<td>2100</td>
-<td>1</td>
-</tr>
-<tr>
-<th>1</th>
-<td>50</td>
-<td>2200</td>
-<td>1</td>
-</tr>
-<tr>
-<th>2</th>
-<td>48</td>
-<td>2300</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
+<h2 id="Write-Post">Write Post<a class="anchor-link" href="#Write-Post">¶</a></h2><p>Well this is the easier part. Just put your Jupyter Notebook file into the <code>'content'</code> folder. Also, for each post, we'll need a meta file to include some meta data of the post. The meta file should have the extension: <code>.ipynb-meta</code>. Here is an example:</p>
 </div>
 </div>
 </div>
@@ -1757,356 +1205,142 @@ x1 dot x2 = [[ 24  30  36]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Much nicer!</p>
+<pre><code>Title: First Post
+Slug: first-post
+Date: 2016-06-08 20:00
+Category: posts
+Tags: python firsts
+author: Vik Paruchuri
+Summary: My first post, read it to find out.</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [22]:</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now let's get some basic info of the DataFrame</span>
-<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's quite easy to figure out what they are so I won't bother explain here. When done, save.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Generating-HTML">Generating HTML<a class="anchor-link" href="#Generating-HTML">¶</a></h2><p>Exit out of content folder, and run <code>pelican content</code> to generate the HTML. Enter <code>output</code> again and run:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span>python -m pelican.server
 </pre></div>
 </div>
 </div>
 </div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><class &#x27;pandas.core.frame.dataframe&#x27;>
-RangeIndex: 5 entries, 0 to 4
-Data columns (total 3 columns):
-temperature    5 non-null int64
-time           5 non-null int64
-day            5 non-null int64
-dtypes: int64(3)
-memory usage: 200.0 bytes
-</pre>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-</div>
-<div class="output_area">
-<div class="prompt output_prompt">Out[22]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>temperature</th>
-<th>time</th>
-<th>day</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>count</th>
-<td>5.000000</td>
-<td>5.00000</td>
-<td>5.000000</td>
-</tr>
-<tr>
-<th>mean</th>
-<td>45.200000</td>
-<td>1340.00000</td>
-<td>2.000000</td>
-</tr>
-<tr>
-<th>std</th>
-<td>13.608821</td>
-<td>1180.25421</td>
-<td>1.732051</td>
-</tr>
-<tr>
-<th>min</th>
-<td>30.000000</td>
-<td>0.00000</td>
-<td>1.000000</td>
-</tr>
-<tr>
-<th>25%</th>
-<td>34.000000</td>
-<td>100.00000</td>
-<td>1.000000</td>
-</tr>
-<tr>
-<th>50%</th>
-<td>48.000000</td>
-<td>2100.00000</td>
-<td>1.000000</td>
-</tr>
-<tr>
-<th>75%</th>
-<td>50.000000</td>
-<td>2200.00000</td>
-<td>2.000000</td>
-</tr>
-<tr>
-<th>max</th>
-<td>64.000000</td>
-<td>2300.00000</td>
-<td>5.000000</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you can change the element in DataFrame like so:</span>
-<span class="n">df</span><span class="o">.</span><span class="n">day</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">day</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Mon'</span>
-<span class="n">df</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then visit: <code>localhost:8000</code> to see your new site.</p>
 </div>
 </div>
 </div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[23]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>temperature</th>
-<th>time</th>
-<th>day</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>64</td>
-<td>2100</td>
-<td>Mon</td>
-</tr>
-<tr>
-<th>1</th>
-<td>50</td>
-<td>2200</td>
-<td>Mon</td>
-</tr>
-<tr>
-<th>2</th>
-<td>48</td>
-<td>2300</td>
-<td>Mon</td>
-</tr>
-<tr>
-<th>3</th>
-<td>34</td>
-<td>0</td>
-<td>2</td>
-</tr>
-<tr>
-<th>4</th>
-<td>30</td>
-<td>100</td>
-<td>5</td>
-</tr>
-</tbody>
-</table>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># or do it the Pandas way</span>
-<span class="n">df</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span>
-               <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="s1">'Su'</span><span class="p">,</span><span class="s1">'Mon'</span><span class="p">,</span><span class="s1">'Tues'</span><span class="p">,</span><span class="s1">'Wed'</span><span class="p">,</span><span class="s1">'Th'</span><span class="p">,</span><span class="s1">'Fri'</span><span class="p">,</span><span class="s1">'Sat'</span><span class="p">],</span>
-               <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Putting-it-on-GitHub-Pages">Putting it on GitHub Pages<a class="anchor-link" href="#Putting-it-on-GitHub-Pages">¶</a></h2>
 </div>
 </div>
 </div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[24]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>temperature</th>
-<th>time</th>
-<th>day</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>64</td>
-<td>2100</td>
-<td>Mon</td>
-</tr>
-<tr>
-<th>1</th>
-<td>50</td>
-<td>2200</td>
-<td>Mon</td>
-</tr>
-<tr>
-<th>2</th>
-<td>48</td>
-<td>2300</td>
-<td>Mon</td>
-</tr>
-<tr>
-<th>3</th>
-<td>34</td>
-<td>0</td>
-<td>Tues</td>
-</tr>
-<tr>
-<th>4</th>
-<td>30</td>
-<td>100</td>
-<td>Fri</td>
-</tr>
-</tbody>
-</table>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># one hot encoding example</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Create a GitHub Page is simple and there are many tutorials out there. Once created, edit your <code>SITEURL</code> in <code>publishconf.py</code> file, make it into <code>https://username.github.io</code>, substitute <code>username</code> with your site name.</p>
 </div>
 </div>
 </div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[25]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Fri</th>
-<th>Mon</th>
-<th>Tues</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<th>1</th>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<th>2</th>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<th>3</th>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr>
-<th>4</th>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Run <code>pelican content -s publishconf.py</code> to generate the real stuff.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Run <code>ghp-import output -b master</code> to import everything into the <code>output</code> folder to the <code>master</code> branch.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Run <code>git push origin master</code> to push changes to GitHub repo.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Themes">Themes<a class="anchor-link" href="#Themes">¶</a></h2><p>There are a lot of <a href="https://github.com/getpelican/pelican-themes">themes</a> to choose from. What you need to do is to configure your <code>pelicanconf.py</code> file and assign the theme name.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Google-Analytics">Google Analytics<a class="anchor-link" href="#Google-Analytics">¶</a></h2><p>Pelican have Google Analytics support out of the box. Register the site on GA, then get the <code>UA-XXXXxxxxx</code> id, put it into the <code>pelicanconf.py</code> file and you're golden.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Disqus">Disqus<a class="anchor-link" href="#Disqus">¶</a></h2><p>Disqus support come out of the box too. Register the site on Disqus, get your shortname correct, and put into <code>pelicanconf.py</code> and you should be good too. Some turorial suggest put into <code>publishconf.py</code>, well mine only works on <code>pelicanconf.py</code> so use your own judgement.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SEO">SEO<a class="anchor-link" href="#SEO">¶</a></h2><p>Basic SEO can be achieved using sitemap plugin. Search for it and put into <code>pelicanconf.py</code>, it will work automatically.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p>Overall the process is not hard at all. Once everything is set. Just focus on putting in solid content using Jupyter Notebook. Enjoy coding, visualizing and writing!</p>
 </div>
 </div>
 </div>
@@ -2145,12 +1379,12 @@ memory usage: 200.0 bytes
   <hr/>
 
       <ul class="pager">
-        <li class="previous">
-          <a href="https://wayofnumbers.github.io/Setup-Pelican.html">
+        <li class="previous disabled">
+          <a >
           &laquo; Newer</a>
         </li>
-        <li class="next disabled">
-          <a >
+        <li class="next">
+          <a href="https://wayofnumbers.github.io/MLN-Numpyandpandas.html">
           Older &raquo;</a>
         </li>
       </ul>
@@ -2160,10 +1394,10 @@ memory usage: 200.0 bytes
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'way-of-numbers'; // required: replace example with your forum shortname
-  var disqus_identifier = 'MLN-Numpyandpandas';
-  var disqus_url = 'https://wayofnumbers.github.io/MLN-Numpyandpandas.html';
+  var disqus_identifier = 'Setup-Pelican';
+  var disqus_url = 'https://wayofnumbers.github.io/Setup-Pelican.html';
  
-/* var disqus_url = 'https://wayofnumbers.github.io/MLN-Numpyandpandas.html'  */
+/* var disqus_url = 'https://wayofnumbers.github.io/Setup-Pelican.html'  */
 
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
