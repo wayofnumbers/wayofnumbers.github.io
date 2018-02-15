@@ -58,7 +58,7 @@ MENUITEMS = [
         ('Github', 'https://github.com/wayofnumbers/wayofnumbers.github.io'),
         ('Twitter', 'https://twitter.com/lymenlee'),
         ]),
-    ('About', '/author.html'),
+    ('About', './pages/about.html'),
     ]
 
 
