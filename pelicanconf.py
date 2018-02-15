@@ -102,11 +102,11 @@ THEME = "/home/lisper/pelican-themes/pelican-chameleon"
 #        BS3_THEME = ('/3rdparty/bootswatch/%s/bootstrap.min.css'
 #                     % _BS3_THEME_NAME)
 
-BS3_THEME = '/home/lisper/Downloads/jupyter-blog/3rdparty/bootswatch/flatly/bootstrap.min.css'
-BS3_JS = '/home/lisper/Downloads/jupyter-blog/3rdparty/bootstrap/3.0.0/js/bootstrap.min.js'
-BS3_URL = '/home/lisper/Downloads/jupyter-blog/3rdparty/bootstrap/3.0.0/css/bootstrap.min.css'
-JQUERY_JS = '/home/lisper/Downloads/jupyter-blog/3rdparty/jquery/jquery-1.10.1.min.js'
-JQUERY_MIGRATE_JS = '/home/lisper/Downloads/jupyter-blog/3rdparty/jquery/jquery-migrate-1.2.1.min.js'
+BS3_THEME = 'https://bootswatch.com/4/cosmo/bootstrap.min.css'
+# BS3_JS = '/home/lisper/Downloads/jupyter-blog/3rdparty/bootstrap/3.0.0/js/bootstrap.min.js'
+BS3_URL = 'https://bootswatch.com/4/cosmo/bootstrap.min.css'
+# JQUERY_JS = '/home/lisper/Downloads/jupyter-blog/3rdparty/jquery/jquery-1.10.1.min.js'
+# JQUERY_MIGRATE_JS = '/home/lisper/Downloads/jupyter-blog/3rdparty/jquery/jquery-migrate-1.2.1.min.js'
 
 
 
