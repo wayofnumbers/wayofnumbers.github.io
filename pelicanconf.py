@@ -11,6 +11,7 @@ PATH = 'content'
 TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = u'en'
+STATIC_PATHS = ['images']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -31,7 +32,7 @@ SOCIAL = (('Twitter', 'https://twitter.com/lymenlee'),)
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = False
 
 MARKUP = ('md', 'ipynb')
 
@@ -39,9 +40,21 @@ PLUGIN_PATHS= ['./plugins']
 PLUGINS = ['ipynb.markup','sitemap']
 
 # TYPOGRIFY = True
+MENUITEMS = [
+    ('Home', '/'),
+    ('Archives', [
+        ('Tags', '/tags.html'),
+        ('Categories', '/categories.html'),
+        ('Chronological', '/archives.html'),
+        ]),
+    ('Social', [
+        ('Email', 'mailto: lemuel.li@gmail.com'),
+        ('Github', 'https://github.com/wayofnumbers/wayofnumbers.github.io'),
+        ('Twitter', 'https://twitter.com/lymenlee'),
+        ]),
+    ]
 
-THEME = "/home/lisper/pelican-themes/pelican-chameleon"
-# THEME = "notmyidea"
+
 
 # Configuration for the "sitemap" plugin
 SITEMAP = {
@@ -58,5 +71,45 @@ SITEMAP = {
     }
 }
 
-DISQUS_SITENAME = "WayofNumbers"
-DISQUSURL = 'https://wayofnumbers.github.io'
+DISQUS_SITENAME = "way-of-numbers"
+
+
+
+
+
+# Pelican Chameleon
+THEME = "/home/lisper/pelican-themes/pelican-chameleon"
+# THEME = "notmyidea"
+if 'pelican-chameleon' in THEME:
+    _BS3_THEME_NAME = (
+        # 'cerulean'
+        # 'cosmo'
+        # 'cyborg'
+        # 'darkly'
+         'flatly'
+        # 'journal'
+        # 'lumen'
+        # 'paper'
+        # 'readable'
+        # 'sandstone'
+        # 'simplex'
+        # 'slate'
+        # 'solar'
+        # 'spacelab'
+        # 'superhero'
+        # 'united'
+        # 'yeti'
+    )
+
+if _BS3_THEME_NAME:
+        BS3_THEME = ('/3rdparty/bootswatch/%s/bootstrap.min.css'
+                     % _BS3_THEME_NAME)
+
+BS3_JS = '/3rdparty/bootstrap/3.0.0/js/bootstrap.min.js'
+BS3_URL = '/3rdparty/bootstrap/3.0.0/css/bootstrap.min.css'
+JQUERY_JS = '/3rdparty/jquery/jquery-1.10.1.min.js'
+JQUERY_MIGRATE_JS = '/3rdparty/jquery/jquery-migrate-1.2.1.min.js'
+
+
+
+
