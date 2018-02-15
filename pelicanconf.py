@@ -73,20 +73,16 @@ SITEMAP = {
 
 DISQUS_SITENAME = "way-of-numbers"
 
-
-
-
-
 # Pelican Chameleon
 THEME = "/home/lisper/pelican-themes/pelican-chameleon"
 # THEME = "notmyidea"
-if 'pelican-chameleon' in THEME:
-    _BS3_THEME_NAME = (
+#if 'pelican-chameleon' in THEME:
+#    _BS3_THEME_NAME = (
         # 'cerulean'
         # 'cosmo'
         # 'cyborg'
         # 'darkly'
-         'flatly'
+#         'flatly'
         # 'journal'
         # 'lumen'
         # 'paper'
@@ -99,13 +95,13 @@ if 'pelican-chameleon' in THEME:
         # 'superhero'
         # 'united'
         # 'yeti'
-    )
+#    )
 
-if _BS3_THEME_NAME:
-        BS3_THEME = ('/3rdparty/bootswatch/%s/bootstrap.min.css'
-                     % _BS3_THEME_NAME)
+#if _BS3_THEME_NAME:
+#        BS3_THEME = ('/3rdparty/bootswatch/%s/bootstrap.min.css'
+#                     % _BS3_THEME_NAME)
 
-BS3_THEME = 'http://bootswatch.com/flatly/bootstrap.min.css'
+BS3_THEME = '/home/lisper/Downloads/jupyter-blog/3rdparty/bootswatch/flatly/bootstrap.min.css'
 
 
 BS3_JS = '/3rdparty/bootstrap/3.0.0/js/bootstrap.min.js'
