@@ -32,7 +32,7 @@ SOCIAL = (('Twitter', 'https://twitter.com/lymenlee'),)
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = False
+RELATIVE_URLS = True
 
 MARKUP = ('md', 'ipynb')
 
@@ -104,6 +104,9 @@ if 'pelican-chameleon' in THEME:
 if _BS3_THEME_NAME:
         BS3_THEME = ('/3rdparty/bootswatch/%s/bootstrap.min.css'
                      % _BS3_THEME_NAME)
+
+BS3_THEME = 'http://bootswatch.com/flatly/bootstrap.min.css'
+
 
 BS3_JS = '/3rdparty/bootstrap/3.0.0/js/bootstrap.min.js'
 BS3_URL = '/3rdparty/bootstrap/3.0.0/css/bootstrap.min.css'
