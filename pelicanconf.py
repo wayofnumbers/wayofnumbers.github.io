@@ -47,11 +47,12 @@ MENUITEMS = [
         ('Categories', '/categories.html'),
         ('Chronological', '/archives.html'),
         ]),
-    ('Social', [
+    ('Find Us', [
         ('Email', 'mailto: lemuel.li@gmail.com'),
         ('Github', 'https://github.com/wayofnumbers/wayofnumbers.github.io'),
         ('Twitter', 'https://twitter.com/lymenlee'),
         ]),
+    ('About', '/author.html'),
     ]
 
 
