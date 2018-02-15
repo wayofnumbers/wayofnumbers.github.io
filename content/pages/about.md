@@ -4,11 +4,9 @@ Date: 2018-02-15 17:00
 Category: about
 Tags: about
 author: Michael Li
-Summary: About this blog and writers
+Summary: About this blog and writers.
 
 
-
-## About
 
 Data science blog for the rest of us.
 
