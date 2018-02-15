@@ -77,32 +77,8 @@ DISQUS_SITENAME = "way-of-numbers"
 THEME = "/home/lisper/pelican-themes/pelican-chameleon"
 
 # THEME = "notmyidea"
-#if 'pelican-chameleon' in THEME:
-#    _BS3_THEME_NAME = (
-        # 'cerulean'
-        # 'cosmo'
-        # 'cyborg'
-        # 'darkly'
-#         'flatly'
-        # 'journal'
-        # 'lumen'
-        # 'paper'
-        # 'readable'
-        # 'sandstone'
-        # 'simplex'
-        # 'slate'
-        # 'solar'
-        # 'spacelab'
-        # 'superhero'
-        # 'united'
-        # 'yeti'
-#    )
 
-#if _BS3_THEME_NAME:
-#        BS3_THEME = ('/3rdparty/bootswatch/%s/bootstrap.min.css'
-#                     % _BS3_THEME_NAME)
-
-BS3_THEME = 'https://bootswatch.com/4/lux/bootstrap.min.css'
+# BS3_THEME = 'https://bootswatch.com/4/flatly/bootstrap.min.css'
 # BS3_JS = '/home/lisper/Downloads/jupyter-blog/3rdparty/bootstrap/3.0.0/js/bootstrap.min.js'
 # BS3_URL = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'
 # BS3_JS  = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'
