@@ -43,7 +43,7 @@ DISPLAY_PAGES_ON_MENU = False
 MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS= ['./plugins']
-PLUGINS = ['ipynb.markup','sitemap', 'assets']
+PLUGINS = ['ipynb.markup','sitemap']
 
 TYPOGRIFY = True
 MENUITEMS = [
@@ -83,14 +83,7 @@ DISQUS_SITENAME = "way-of-numbers"
 # Pelican Chameleon
 # THEME = "/home/lisper/pelican-themes/pelican-chameleon"
 
-import bulrush
-THEME = bulrush.PATH
-JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
-JINJA_FILTERS = bulrush.FILTERS
-# THEME = "/home/lisper/pelican-themes/bulrush"
-# GITHUB_URL = "https://github.com/wayofnumbers/wayofnumbers.github.io/tree/master"
-# TWITTER_USERNAME = "lymenlee"
-
+THEME = "/home/lisper/pelican-themes/nest"
 
 # THEME = "notmyidea"
 
