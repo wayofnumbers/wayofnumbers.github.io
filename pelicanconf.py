@@ -84,8 +84,7 @@ DISQUS_SITENAME = "way-of-numbers"
 # THEME = "/home/lisper/pelican-themes/pelican-chameleon"
 
 import bulrush
-# THEME = bulrush.PATH
-print(THEME)
+THEME = bulrush.PATH
 JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
 JINJA_FILTERS = bulrush.FILTERS
 THEME = "/home/lisper/pelican-themes/bulrush"
