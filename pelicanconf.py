@@ -94,7 +94,7 @@ NEST_CSS_MINIFY = True
 MENUITEMS = [('Homepage', '/'),('Categories','/categories.html'), ('About', './pages/about.html')]
 # Add header background image from content/images : 'background.jpg'
 NEST_HEADER_IMAGES = '/images/coding.jpeg'
-NEST_HEADER_LOGO = '/image/logo.png'
+NEST_HEADER_LOGO = '/images/logo.png'
 # Footer
 NEST_SITEMAP_COLUMN_TITLE = u'Sitemap'
 NEST_SITEMAP_MENU = [('Archives', '/archives.html'),('Tags','/tags.html'), ('Authors','/authors.html')]
