@@ -35,17 +35,17 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 SOCIAL = (('Twitter', 'https://twitter.com/lymenlee'),)
 
 DEFAULT_PAGINATION = 10
-DISPLAY_PAGES_ON_MENU = True
+DISPLAY_PAGES_ON_MENU = False 
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
 MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS= ['./plugins']
-PLUGINS = ['ipynb.markup','sitemap']
+PLUGINS = ['ipynb.markup','sitemap', 'assets']
 
-# TYPOGRIFY = True
+TYPOGRIFY = True
 MENUITEMS = [
     ('Home', '/'),
     ('Archives', [
@@ -82,8 +82,13 @@ DISQUS_SITENAME = "way-of-numbers"
 
 # Pelican Chameleon
 # THEME = "/home/lisper/pelican-themes/pelican-chameleon"
-THEME = "/home/lisper/pelican-themes/mg"
 
+import bulrush
+
+THEME = bulrush.PATH
+JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
+JINJA_FILTERS = bulrush.FILTERS
+THEME = "/home/lisper/pelican-themes/burush"
 
 # THEME = "notmyidea"
 
