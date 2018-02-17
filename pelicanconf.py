@@ -84,10 +84,11 @@ DISQUS_SITENAME = "way-of-numbers"
 # THEME = "/home/lisper/pelican-themes/pelican-chameleon"
 
 import bulrush
-THEME = bulrush.PATH
+#THEME = bulrush.PATH
 JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
 JINJA_FILTERS = bulrush.FILTERS
-THEME = "/home/lisper/pelican-themes/bulrush"
+#THEME = "/home/lisper/pelican-themes/bulrush"
+THEME = 'bulrush/bulrush'
 # GITHUB_URL = "https://github.com/wayofnumbers/wayofnumbers.github.io/tree/master"
 # TWITTER_USERNAME = "lymenlee"
 
