@@ -38,7 +38,7 @@ DEFAULT_PAGINATION = 10
 DISPLAY_PAGES_ON_MENU = False 
 
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+RELATIVE_URLS = False
 
 MARKUP = ('md', 'ipynb')
 
@@ -106,10 +106,10 @@ NEST_COPYRIGHT = u'&copy; Way of Numbers 2018'
 # Footer optional
 NEST_FOOTER_HTML = ''
 # index.html
-NEST_INDEX_HEAD_TITLE = u'Homepage'
-NEST_INDEX_HEADER_TITLE = u'Way of Numbers'
+NEST_INDEX_HEAD_TITLE = u'Way of Numbers'
+NEST_INDEX_HEADER_TITLE = u'Home'
 NEST_INDEX_HEADER_SUBTITLE = u'A Data Science Blog For The Rest of Us'
-NEST_INDEX_CONTENT_TITLE = u'Last Posts'
+NEST_INDEX_CONTENT_TITLE = u'Latest Posts'
 # archives.html
 NEST_ARCHIVES_HEAD_TITLE = u'Archives'
 NEST_ARCHIVES_HEAD_DESCRIPTION = u'Posts Archives'
