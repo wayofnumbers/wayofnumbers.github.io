@@ -89,6 +89,9 @@ THEME = bulrush.PATH
 JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
 JINJA_FILTERS = bulrush.FILTERS
 THEME = "/home/lisper/pelican-themes/bulrush"
+GITHUB_URL = "https://github.com/wayofnumbers/wayofnumbers.github.io/tree/master"
+TWITTER_USERNAME = "lymenlee"
+
 
 # THEME = "notmyidea"
 
