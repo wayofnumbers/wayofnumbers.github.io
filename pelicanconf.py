@@ -82,7 +82,7 @@ DISQUS_SITENAME = "way-of-numbers"
 
 # Pelican Chameleon
 # THEME = "/home/lisper/pelican-themes/pelican-chameleon"
-THEME = "/home/lisper/pelican-themes/bulrush"
+THEME = "/home/lisper/pelican-themes/mg"
 
 
 # THEME = "notmyidea"
