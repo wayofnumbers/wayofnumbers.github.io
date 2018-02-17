@@ -11,7 +11,7 @@ PATH = 'content'
 TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = u'en'
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['images', 'extra/logo.svg']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
