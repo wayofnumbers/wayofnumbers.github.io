@@ -45,7 +45,7 @@ MARKUP = ('md', 'ipynb')
 PLUGIN_PATHS= ['./plugins']
 PLUGINS = ['ipynb.markup','sitemap', 'assets']
 
-# TYPOGRIFY = True
+TYPOGRIFY = True
 MENUITEMS = [
     ('Home', '/'),
     ('Archives', [
@@ -84,7 +84,7 @@ DISQUS_SITENAME = "way-of-numbers"
 # THEME = "/home/lisper/pelican-themes/pelican-chameleon"
 
 import bulrush
-THEME = bulrush.PATH
+# THEME = bulrush.PATH
 print(THEME)
 JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
 JINJA_FILTERS = bulrush.FILTERS
