@@ -33,7 +33,7 @@
   <header>
     <h2 class="entry-title">
       <a href="https://wayofnumbers.github.io/Setup-Pelican.html" rel="bookmark"
-         title="Permalink to Setup Data Science Blog with Pelican + GitHub Pages">Setup Data Science Blog with Pelican + GitHub Pages</a></h2>
+         title="Permalink to Setup Data Science Blog with Pelican + GitHub Pages">Setup Data Science Blog with Pelican + GitHub&nbsp;Pages</a></h2>
  
   </header>
   <footer class="post-info">
@@ -50,7 +50,7 @@
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* <span class="caps">CSS</span> font colors for translated <span class="caps">ANSI</span> colors. */
 .ansibold {
   font-weight: bold;
 }
@@ -136,13 +136,13 @@ div.cell {
   background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
-  border-left-color: #E3F2FD;
+  border-left-color: #<span class="caps">90CAF9</span>;
+  border-left-color: #<span class="caps">E3F2FD</span>;
   border-left-width: 1px;
   padding-left: 5px;
-  border-right-color: #E3F2FD;
+  border-right-color: #<span class="caps">E3F2FD</span>;
   border-right-width: 1px;
-  background: #E3F2FD;
+  background: #<span class="caps">E3F2FD</span>;
 }
 @media print {
   div.cell.jupyter-soft-selected {
@@ -153,7 +153,7 @@ div.cell.selected {
   border-color: #ababab;
   border-left-width: 0px;
   padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+  background: linear-gradient(to right, #<span class="caps">42A5F5</span> -40px, #<span class="caps">42A5F5</span> 5px, transparent 5px, transparent 100%);
 }
 @media print {
   div.cell.selected {
@@ -163,13 +163,13 @@ div.cell.selected {
 div.cell.selected.jupyter-soft-selected {
   border-left-width: 0;
   padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+  background: linear-gradient(to right, #<span class="caps">42A5F5</span> -40px, #<span class="caps">42A5F5</span> 7px, #<span class="caps">E3F2FD</span> 7px, #<span class="caps">E3F2FD</span> 100%);
 }
 .edit_mode div.cell.selected {
-  border-color: #66BB6A;
+  border-color: #<span class="caps">66BB6A</span>;
   border-left-width: 0px;
   padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+  background: linear-gradient(to right, #<span class="caps">66BB6A</span> -40px, #<span class="caps">66BB6A</span> 5px, transparent 5px, transparent 100%);
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -322,7 +322,7 @@ div.input {
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_prompt {
-  color: #303F9F;
+  color: #<span class="caps">303F9F</span>;
   border-top: 1px solid transparent;
 }
 div.input_area > div.highlight {
@@ -363,7 +363,7 @@ div.input_area > div.highlight > pre {
   overflow-x: auto;
 }
 .CodeMirror-lines {
-  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* In <span class="caps">CM2</span>, this used to be 0.4em, but in <span class="caps">CM3</span> it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
   padding: 0.4em;
 }
@@ -375,7 +375,7 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* In <span class="caps">CM3</span> this went to 4px from 0 in <span class="caps">CM2</span>. We need the 0 value because of how we size */
   /* .CodeMirror-lines */
   padding: 0;
   border: 0;
@@ -400,7 +400,7 @@ Adapted from GitHub theme
   color: #333333;
 }
 .highlight-string {
-  color: #BA2121;
+  color: #<span class="caps">BA2121</span>;
 }
 .highlight-comment {
   color: #408080;
@@ -423,11 +423,11 @@ Adapted from GitHub theme
   color: #f00;
 }
 .highlight-operator {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
   font-weight: bold;
 }
 .highlight-meta {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
 }
 /* previously not defined, copying from default codemirror */
 .highlight-def {
@@ -475,7 +475,7 @@ Adapted from GitHub theme
   color: #000;
 }
 .cm-s-ipython span.cm-operator {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
   font-weight: bold;
 }
 .cm-s-ipython span.cm-variable-2 {
@@ -489,13 +489,13 @@ Adapted from GitHub theme
   font-style: italic;
 }
 .cm-s-ipython span.cm-string {
-  color: #BA2121;
+  color: #<span class="caps">BA2121</span>;
 }
 .cm-s-ipython span.cm-string-2 {
   color: #f50;
 }
 .cm-s-ipython span.cm-meta {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
 }
 .cm-s-ipython span.cm-qualifier {
   color: #555;
@@ -550,9 +550,9 @@ div.output_wrapper {
 }
 /* class for the output area when it should be height-limited */
 div.output_scroll {
-  /* ideally, this would be max-height, but FF barfs all over that */
+  /* ideally, this would be max-height, but <span class="caps">FF</span> barfs all over that */
   height: 24em;
-  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  /* <span class="caps">FF</span> needs this *and the wrapper* to specify full width, or it will shrinkwrap */
   width: 100%;
   overflow: auto;
   border-radius: 2px;
@@ -586,7 +586,7 @@ div.out_prompt_overlay {
   border-radius: 2px;
 }
 div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  /* use inner shadow to get border that is computed the same on WebKit/<span class="caps">FF</span> */
   -webkit-box-shadow: inset 0 0 1px #000;
   box-shadow: inset 0 0 1px #000;
   background: rgba(240, 240, 240, 0.5);
@@ -914,25 +914,25 @@ h6:hover .anchor-link {
 <style type="text/css">.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .err { border: 1px solid #<span class="caps">FF0000</span> } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
 .highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cp { color: #<span class="caps">BC7A00</span> } /* Comment.Preproc */
 .highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gr { color: #<span class="caps">FF0000</span> } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .highlight .gi { color: #00A000 } /* Generic.Inserted */
 .highlight .go { color: #888888 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .gt { color: #<span class="caps">0044DD</span> } /* Generic.Traceback */
 .highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
 .highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
 .highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
@@ -940,41 +940,41 @@ h6:hover .anchor-link {
 .highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .s { color: #<span class="caps">BA2121</span> } /* Literal.String */
 .highlight .na { color: #7D9029 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .nc { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .nd { color: #<span class="caps">AA22FF</span> } /* Name.Decorator */
 .highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .ne { color: #<span class="caps">D2413A</span>; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #<span class="caps">0000FF</span> } /* Name.Function */
+.highlight .nl { color: #<span class="caps">A0A000</span> } /* Name.Label */
+.highlight .nn { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .ow { color: #<span class="caps">AA22FF</span>; font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
 .highlight .mb { color: #666666 } /* Literal.Number.Bin */
 .highlight .mf { color: #666666 } /* Literal.Number.Float */
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sa { color: #<span class="caps">BA2121</span> } /* Literal.String.Affix */
+.highlight .sb { color: #<span class="caps">BA2121</span> } /* Literal.String.Backtick */
+.highlight .sc { color: #<span class="caps">BA2121</span> } /* Literal.String.Char */
+.highlight .dl { color: #<span class="caps">BA2121</span> } /* Literal.String.Delimiter */
+.highlight .sd { color: #<span class="caps">BA2121</span>; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #<span class="caps">BA2121</span> } /* Literal.String.Double */
+.highlight .se { color: #<span class="caps">BB6622</span>; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #<span class="caps">BA2121</span> } /* Literal.String.Heredoc */
+.highlight .si { color: #<span class="caps">BB6688</span>; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .sr { color: #<span class="caps">BB6688</span> } /* Literal.String.Regex */
+.highlight .s1 { color: #<span class="caps">BA2121</span> } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .fm { color: #<span class="caps">0000FF</span> } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
@@ -982,38 +982,38 @@ h6:hover .anchor-link {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <style type="text/css">
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-fg { color: #<span class="caps">3E424D</span>; }
+.ansi-black-bg { background-color: #<span class="caps">3E424D</span>; }
 .ansi-black-intense-fg { color: #282C36; }
 .ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-red-fg { color: #<span class="caps">E75C58</span>; }
+.ansi-red-bg { background-color: #<span class="caps">E75C58</span>; }
+.ansi-red-intense-fg { color: #<span class="caps">B22B31</span>; }
+.ansi-red-intense-bg { background-color: #<span class="caps">B22B31</span>; }
 .ansi-green-fg { color: #00A250; }
 .ansi-green-bg { background-color: #00A250; }
 .ansi-green-intense-fg { color: #007427; }
 .ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-yellow-fg { color: #<span class="caps">DDB62B</span>; }
+.ansi-yellow-bg { background-color: #<span class="caps">DDB62B</span>; }
+.ansi-yellow-intense-fg { color: #<span class="caps">B27D12</span>; }
+.ansi-yellow-intense-bg { background-color: #<span class="caps">B27D12</span>; }
+.ansi-blue-fg { color: #<span class="caps">208FFB</span>; }
+.ansi-blue-bg { background-color: #<span class="caps">208FFB</span>; }
+.ansi-blue-intense-fg { color: #<span class="caps">0065CA</span>; }
+.ansi-blue-intense-bg { background-color: #<span class="caps">0065CA</span>; }
+.ansi-magenta-fg { color: #<span class="caps">D160C4</span>; }
+.ansi-magenta-bg { background-color: #<span class="caps">D160C4</span>; }
 .ansi-magenta-intense-fg { color: #A03196; }
 .ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
+.ansi-cyan-fg { color: #<span class="caps">60C6C8</span>; }
+.ansi-cyan-bg { background-color: #<span class="caps">60C6C8</span>; }
+.ansi-cyan-intense-fg { color: #<span class="caps">258F8F</span>; }
+.ansi-cyan-intense-bg { background-color: #<span class="caps">258F8F</span>; }
+.ansi-white-fg { color: #<span class="caps">C5C1B4</span>; }
+.ansi-white-bg { background-color: #<span class="caps">C5C1B4</span>; }
+.ansi-white-intense-fg { color: #<span class="caps">A1A6B2</span>; }
+.ansi-white-intense-bg { background-color: #<span class="caps">A1A6B2</span>; }
 
 .ansi-bold { font-weight: bold; }
 </style>
@@ -1037,7 +1037,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First of all, this is by no means a thorough tutorial. I've followed Dataquest's blog post: <a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/">Building a data science portfolio: Making a data science blog</a> to get this one setup. Here are some insights and hiccups that may be helpful to others who want to do the same thing.</p>
+<p>First of all, this is by no means a thorough tutorial. I&#8217;ve followed Dataquest&#8217;s blog post: <a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/">Building a data science portfolio: Making a data science blog</a> to get this one setup. Here are some insights and hiccups that may be helpful to others who want to do the same&nbsp;thing.</p>
 </div>
 </div>
 </div>
@@ -1053,9 +1053,9 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you have never experienced the web development world, static site might be a new word to you. Actually it's quite simple, it's just plan web-site with HTML files, CSS sheets and Javascript files. These file never changes unless you make them, thus the word 'static'. The 'dynamic' site, on the other hand, use database and complex post-end technology to 'dynamically' generate these HTML/CSS/Javascripts files. It's much harder to develop and maintain. 
-But I don't want that complexity you say. I just want to write something and post them and make them look neat. Then, my friend, look no further than a static site. Good news to us, there are a lot of static sites generators out there that can help us do the heavy-lifting of developing a website. 
-The static sites generators come with many flavors, <a href="https://jekyllrb.com/">Jekyell(based on Ruby)</a>, <a href="https://blog.getpelican.com/">Pelican(based on Python</a> are too popular one. Since I'm more familiar with Python. I decided to use Pelican to build my data science blog.</p>
+<p>If you have never experienced the web development world, static site might be a new word to you. Actually it&#8217;s quite simple, it&#8217;s just plan web-site with <span class="caps">HTML</span> files, <span class="caps">CSS</span> sheets and Javascript files. These file never changes unless you make them, thus the word &#8216;static&#8217;. The &#8216;dynamic&#8217; site, on the other hand, use database and complex post-end technology to &#8216;dynamically&#8217; generate these <span class="caps">HTML</span>/<span class="caps">CSS</span>/Javascripts files. It&#8217;s much harder to develop and maintain. 
+But I don&#8217;t want that complexity you say. I just want to write something and post them and make them look neat. Then, my friend, look no further than a static site. Good news to us, there are a lot of static sites generators out there that can help us do the heavy-lifting of developing a website. 
+The static sites generators come with many flavors, <a href="https://jekyllrb.com/">Jekyell(based on Ruby)</a>, <a href="https://blog.getpelican.com/">Pelican(based on Python</a> are too popular one. Since I&#8217;m more familiar with Python. I decided to use Pelican to build my data science&nbsp;blog.</p>
 </div>
 </div>
 </div>
@@ -1063,7 +1063,7 @@ The static sites generators come with many flavors, <a href="https://jekyllrb.co
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The beautiful thing here is, since Pelican is written in Python, it's quite easy to make it work with Jupyter Notebook, which is a huge bonus for data science. This means you can write your blog posts using Jupyter Notebook, leverage all the powerful snippets, data visualization and code executing it has and roll all those into your post, with ease.</p>
+<p>The beautiful thing here is, since Pelican is written in Python, it&#8217;s quite easy to make it work with Jupyter Notebook, which is a huge bonus for data science. This means you can write your blog posts using Jupyter Notebook, leverage all the powerful snippets, data visualization and code executing it has and roll all those into your post, with&nbsp;ease.</p>
 </div>
 </div>
 </div>
@@ -1087,7 +1087,7 @@ The static sites generators come with many flavors, <a href="https://jekyllrb.co
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here is a list I used:</p>
+<p>Here is a list I&nbsp;used:</p>
 <div class="highlight"><pre><span></span><span class="nv">Markdown</span><span class="o">==</span><span class="m">2</span>.6.6    <span class="c1"># Markdown support</span>
 <span class="nv">pelican</span><span class="o">==</span><span class="m">3</span>.6.3     <span class="c1"># Pelican itself</span>
 jupyter><span class="o">=</span><span class="m">1</span>.0       <span class="c1"># Jupyter Notebook</span>
@@ -1104,7 +1104,7 @@ ghp-import<span class="o">==</span><span class="m">0</span>.4.1  <span class="c1
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Once all are installed, run:</p>
+<p>Once all are installed,&nbsp;run:</p>
 </div>
 </div>
 </div>
@@ -1122,8 +1122,8 @@ ghp-import<span class="o">==</span><span class="m">0</span>.4.1  <span class="c1
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Answer couple of questions and the backbone of your site is up. To make the Jupyter Notebook part work, we will need this Pelican plugin (yes, Pelican support plugins!): <a href="https://github.com/danielfrg/pelican-ipynb">Pelican-ipynb</a>. 
-Once installed, activate the plugin in your <code>pelicanconf.py</code>. This is your dot file, and you'll be dealig with it a lot later on. 
-Add these into the bottom:</p>
+Once installed, activate the plugin in your <code>pelicanconf.py</code>. This is your dot file, and you&#8217;ll be dealig with it a lot later on. 
+Add these into the&nbsp;bottom:</p>
 </div>
 </div>
 </div>
@@ -1143,7 +1143,7 @@ Add these into the bottom:</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Write-Post">Write Post<a class="anchor-link" href="#Write-Post">¶</a></h2><p>Well this is the easier part. Just put your Jupyter Notebook file into the <code>'content'</code> folder. Also, for each post, we'll need a meta file to include some meta data of the post. The meta file should have the extension: <code>.ipynb-meta</code>. Here is an example:</p>
+<h2 id="Write-Post">Write Post<a class="anchor-link" href="#Write-Post">¶</a></h2><p>Well this is the easier part. Just put your Jupyter Notebook file into the <code>'content'</code> folder. Also, for each post, we&#8217;ll need a meta file to include some meta data of the post. The meta file should have the extension: <code>.ipynb-meta</code>. Here is an&nbsp;example:</p>
 </div>
 </div>
 </div>
@@ -1165,7 +1165,7 @@ Summary: My first post, read it to find out.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It's quite easy to figure out what they are so I won't bother explain here. When done, save.</p>
+<p>It&#8217;s quite easy to figure out what they are so I won&#8217;t bother explain here. When done,&nbsp;save.</p>
 </div>
 </div>
 </div>
@@ -1173,7 +1173,7 @@ Summary: My first post, read it to find out.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Generating-HTML">Generating HTML<a class="anchor-link" href="#Generating-HTML">¶</a></h2><p>Exit out of content folder, and run <code>pelican content</code> to generate the HTML. Enter <code>output</code> again and run:</p>
+<h2 id="Generating-HTML">Generating <span class="caps">HTML</span><a class="anchor-link" href="#Generating-HTML">¶</a></h2><p>Exit out of content folder, and run <code>pelican content</code> to generate the <span class="caps">HTML</span>. Enter <code>output</code> again and&nbsp;run:</p>
 </div>
 </div>
 </div>
@@ -1190,7 +1190,7 @@ Summary: My first post, read it to find out.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then visit: <code>localhost:8000</code> to see your new site.</p>
+<p>Then visit: <code>localhost:8000</code> to see your new&nbsp;site.</p>
 </div>
 </div>
 </div>
@@ -1206,7 +1206,7 @@ Summary: My first post, read it to find out.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Create a GitHub Page is simple and there are many tutorials out there. Once created, edit your <code>SITEURL</code> in <code>publishconf.py</code> file, make it into <code>https://username.github.io</code>, substitute <code>username</code> with your site name.</p>
+<p>Create a GitHub Page is simple and there are many tutorials out there. Once created, edit your <code>SITEURL</code> in <code>publishconf.py</code> file, make it into <code>https://username.github.io</code>, substitute <code>username</code> with your site&nbsp;name.</p>
 </div>
 </div>
 </div>
@@ -1222,7 +1222,7 @@ Summary: My first post, read it to find out.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Run <code>pelican content -s publishconf.py</code> to generate the real stuff.</p>
+<p>Run <code>pelican content -s publishconf.py</code> to generate the real&nbsp;stuff.</p>
 </div>
 </div>
 </div>
@@ -1238,7 +1238,7 @@ Summary: My first post, read it to find out.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Run <code>git push origin master</code> to push changes to GitHub repo.</p>
+<p>Run <code>git push origin master</code> to push changes to GitHub&nbsp;repo.</p>
 </div>
 </div>
 </div>
@@ -1254,7 +1254,7 @@ Summary: My first post, read it to find out.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Themes">Themes<a class="anchor-link" href="#Themes">¶</a></h2><p>There are a lot of <a href="https://github.com/getpelican/pelican-themes">themes</a> to choose from. What you need to do is to configure your <code>pelicanconf.py</code> file and assign the theme name.</p>
+<h2 id="Themes">Themes<a class="anchor-link" href="#Themes">¶</a></h2><p>There are a lot of <a href="https://github.com/getpelican/pelican-themes">themes</a> to choose from. What you need to do is to configure your <code>pelicanconf.py</code> file and assign the theme&nbsp;name.</p>
 </div>
 </div>
 </div>
@@ -1262,7 +1262,7 @@ Summary: My first post, read it to find out.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Google-Analytics">Google Analytics<a class="anchor-link" href="#Google-Analytics">¶</a></h2><p>Pelican have Google Analytics support out of the box. Register the site on GA, then get the <code>UA-XXXXxxxxx</code> id, put it into the <code>pelicanconf.py</code> file and you're golden.</p>
+<h2 id="Google-Analytics">Google Analytics<a class="anchor-link" href="#Google-Analytics">¶</a></h2><p>Pelican have Google Analytics support out of the box. Register the site on <span class="caps">GA</span>, then get the <code>UA-XXXXxxxxx</code> id, put it into the <code>pelicanconf.py</code> file and you&#8217;re&nbsp;golden.</p>
 </div>
 </div>
 </div>
@@ -1270,7 +1270,7 @@ Summary: My first post, read it to find out.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Disqus">Disqus<a class="anchor-link" href="#Disqus">¶</a></h2><p>Disqus support come out of the box too. Register the site on Disqus, get your shortname correct, and put into <code>pelicanconf.py</code> and you should be good too. Some turorial suggest put into <code>publishconf.py</code>, well mine only works on <code>pelicanconf.py</code> so use your own judgement.</p>
+<h2 id="Disqus">Disqus<a class="anchor-link" href="#Disqus">¶</a></h2><p>Disqus support come out of the box too. Register the site on Disqus, get your shortname correct, and put into <code>pelicanconf.py</code> and you should be good too. Some turorial suggest put into <code>publishconf.py</code>, well mine only works on <code>pelicanconf.py</code> so use your own&nbsp;judgement.</p>
 </div>
 </div>
 </div>
@@ -1278,7 +1278,7 @@ Summary: My first post, read it to find out.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="SEO">SEO<a class="anchor-link" href="#SEO">¶</a></h2><p>Basic SEO can be achieved using sitemap plugin. Search for it and put into <code>pelicanconf.py</code>, it will work automatically.</p>
+<h2 id="SEO"><span class="caps">SEO</span><a class="anchor-link" href="#SEO">¶</a></h2><p>Basic <span class="caps">SEO</span> can be achieved using sitemap plugin. Search for it and put into <code>pelicanconf.py</code>, it will work&nbsp;automatically.</p>
 </div>
 </div>
 </div>
@@ -1286,7 +1286,7 @@ Summary: My first post, read it to find out.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p>Overall the process is not hard at all. Once everything is set. Just focus on putting in solid content using Jupyter Notebook. Enjoy coding, visualizing and writing!</p>
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p>Overall the process is not hard at all. Once everything is set. Just focus on putting in solid content using Jupyter Notebook. Enjoy coding, visualizing and&nbsp;writing!</p>
 </div>
 </div>
 </div>
