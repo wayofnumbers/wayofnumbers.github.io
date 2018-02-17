@@ -11,7 +11,7 @@ PATH = 'content'
 TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = u'en'
-STATIC_PATHS = ['images', 'extra/logo.svg']
+STATIC_PATHS = ['images', 'extras/logo.svg']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -167,13 +167,6 @@ NEST_TAGS_CONTENT_LIST = u'tagged'
  #   'extra/robots.txt': {'path': 'robots.txt'},
  #   'extra/favicon.ico': {'path': 'favicon.ico'},
  #   'extra/logo.svg': {'path': 'logo.svg'}
-
-
-
-
-
-
-
 
 
 # THEME = "notmyidea"
