@@ -88,7 +88,7 @@ import bulrush
 THEME = bulrush.PATH
 JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
 JINJA_FILTERS = bulrush.FILTERS
-THEME = "/home/lisper/pelican-themes/burush"
+THEME = "/home/lisper/pelican-themes/bulrush"
 
 # THEME = "notmyidea"
 
