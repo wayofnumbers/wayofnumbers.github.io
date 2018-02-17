@@ -32,7 +32,10 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          )
 
 # Social widget
-SOCIAL = (('Twitter', 'https://twitter.com/lymenlee'),)
+SOCIAL = (('Twitter', 'https://twitter.com/lymenlee'),
+	  ('GitHub', 'https://github.com/wayofnumbers'),
+	  ('LinkedIn', 'www.linkedin.com/in/michael-li-dfw'),	
+)
 
 DEFAULT_PAGINATION = 10
 DISPLAY_PAGES_ON_MENU = False 
