@@ -184,7 +184,7 @@ TAG_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
 LANDING_PAGE_ABOUT = {'title': "Welcome!", 
-		      'details' : "We are a small team of researchers, designers, developers that likes to explore. Data science don't have to be boring, and we want to help"
+		      'details' : "We are a small team of researchers, designers, developers that likes to explore. Data science don't have to be boring, and we are here to help."
 			}
 PROJECTS = [{
     'name': 'Mucraft.net',
