@@ -1,7 +1,7 @@
 Title: Setup Data Science Blog with Pelican + GitHub Pages 
 Slug: Setup-Pelican
 Date: 2018-02-14 20:00
-Category: posts
+Category: Tools
 Tags: Pelican, Data Science, Blog, Github, Jupyter Notebook, Disqus, Google Analytics
 author: Michael Li
 Summary: My notes on how to setup Data Science blog using Pelican static site generater and GitHub Pages.
