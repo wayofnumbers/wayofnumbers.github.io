@@ -192,6 +192,12 @@ PROJECTS = [{
     'description': 'Thoughts about design and UI/UX'},
     ]
 
+
+MAILCHIMP_FORM_ACTION = "https://github.us17.list-manage.com/subscribe/post?u=c212184cc0965bdf1658f69f0&amp;id=5677a7b75e"
+
+
+
+
 # THEME = "notmyidea"
 
 # BS3_THEME = 'http://maxcdn.bootstrapcdn.com/bootswatch/3.3.1/flatly/bootstrap.min.css'
