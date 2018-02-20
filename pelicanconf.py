@@ -177,7 +177,7 @@ EXTRA_PATH_METADATA = {
 
 #elegant
 THEME = "/home/lisper/pelican-themes/elegant"
-MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc']
+MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(anchorlink=true)']
 DIRECT_TEMPLATES = (('index', 'tags', 'categories','archives', 'search', '404'))
 STATIC_PATHS = ['theme/images', 'images']
 TAG_SAVE_AS = ''
@@ -203,7 +203,7 @@ COMMENTS_INTRO = "So what do you think? Did I miss anything? Is any part unclear
 
 MARKDOWN = {
     'extension_configs': {
-        'markdown.extensions.toc' :{'permalink' : 'true'}
+        'markdown.extensions.toc' :{'anchorlink' : 'true'}
     }
 }
 
