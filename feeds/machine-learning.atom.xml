@@ -975,7 +975,7 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Machine-Learning-Notes-:-Text-Data-Analysis"&gt;Machine Learning Notes : Text Data Analysis&lt;a class="anchor-link" href="#Machine-Learning-Notes-:-Text-Data-Analysis"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Note: This is the notebook of one of the project I did, it&amp;#8217;s quite long but I&amp;#8217;m sure you&amp;#8217;ll find some good example of how text data analysis can be done with ease leveraging the power of Pandas, Sklearn, &lt;span class="caps"&gt;NLTK&lt;/span&gt;&amp;nbsp;etc.&lt;/p&gt;
+&lt;p&gt;Note: This is the notebook of one of the project I did, it&amp;#8217;s quite long but I&amp;#8217;m sure you&amp;#8217;ll find some good example of how text data analysis can be done with ease leveraging the power of Pandas, Sklearn, &lt;span class="caps"&gt;NLTK&lt;/span&gt;&amp;nbsp;etc.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3622,14 +3622,6 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Machine-Learning-Notes-:-Numpy-and-Pandas"&gt;Machine Learning Notes : Numpy and Pandas&lt;a class="anchor-link" href="#Machine-Learning-Notes-:-Numpy-and-Pandas"&gt;¶&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
