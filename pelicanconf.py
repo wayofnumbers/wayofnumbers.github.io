@@ -188,7 +188,7 @@ LANDING_PAGE_ABOUT = {'title': "Welcome!",
 			}
 PROJECTS = [{
     'name': 'Mucraft.net',
-    'url': 'https://mucraft.net',
+    'url': 'mucraft.net',
     'description': 'Thoughts about design and UI/UX'},
     ]
 
