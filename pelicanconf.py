@@ -44,6 +44,7 @@ DISPLAY_PAGES_ON_MENU = False
 RELATIVE_URLS = False
 
 MARKUP = ('md', 'ipynb')
+STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'extra/logo.svg']
 
 PLUGIN_PATHS= ['./plugins']
 PLUGINS = ['ipynb.markup','sitemap']
