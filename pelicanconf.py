@@ -34,11 +34,11 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 # Social widget
 SOCIAL = (('Twitter', 'https://twitter.com/lymenlee'),
 	  ('GitHub', 'https://github.com/wayofnumbers'),
-	  ('LinkedIn', 'www.linkedin.com/in/michael-li-dfw'),	
+	  ('LinkedIn', 'www.linkedin.com/in/michael-li-dfw'),
 )
 
 DEFAULT_PAGINATION = 10
-DISPLAY_PAGES_ON_MENU = False 
+DISPLAY_PAGES_ON_MENU = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = False
@@ -88,6 +88,7 @@ DISQUS_SITENAME = "way-of-numbers"
 # Pelican Chameleon
 # THEME = "/home/lisper/pelican-themes/pelican-chameleon"
 
+'''
 #Theme nest configuration
 THEME = "/home/lisper/pelican-themes/nest"
 SITESUBTITLE = u'A Data Science Blog For The Rest of Us'
@@ -171,6 +172,10 @@ EXTRA_PATH_METADATA = {
 #	'extra/favicon.ico': {'path': 'favicon.ico'},
 	'extra/logo.svg': {'path': 'logo.svg'}
 }
+''' # end of nest
+
+#elegant
+THEME = "/home/lisper/pelican-themes/elegant"
 
 
 # THEME = "notmyidea"
