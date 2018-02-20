@@ -6,7 +6,7 @@ Tags: about
 author: Michael Li
 Summary: About this blog and writers.
 
-[toc]
+[TOC]
 
 
 # Data science blog for the rest of us.

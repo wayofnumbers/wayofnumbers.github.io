@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Way of Numbers</title><link href="https://wayofnumbers.github.io/" rel="alternate"></link><link href="https://wayofnumbers.github.io/feeds/about.atom.xml" rel="self"></link><id>https://wayofnumbers.github.io/</id><updated>2018-02-15T17:00:00-06:00</updated><entry><title>About</title><link href="https://wayofnumbers.github.io/about.html" rel="alternate"></link><published>2018-02-15T17:00:00-06:00</published><updated>2018-02-15T17:00:00-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,2018-02-15:about.html</id><summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id="data-science-blog-for-the-rest-of-us"&gt;&lt;a class="toclink" href="#data-science-blog-for-the-rest-of-us"&gt;Data science blog for the rest of&amp;nbsp;us.&lt;/a&gt;&lt;/h1&gt;
-&lt;h3 id="michael-li"&gt;&lt;a class="toclink" href="#michael-li"&gt;Michael&amp;nbsp;Li&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Designer,&amp;nbsp;Developer.&lt;/p&gt;
-&lt;h3 id="xiao-xu"&gt;&lt;a class="toclink" href="#xiao-xu"&gt;Xiao&amp;nbsp;Xu&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Deep&amp;nbsp;thinker.&lt;/p&gt;</summary><category term="about"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Way of Numbers</title><link href="https://wayofnumbers.github.io/" rel="alternate"></link><link href="https://wayofnumbers.github.io/feeds/about.atom.xml" rel="self"></link><id>https://wayofnumbers.github.io/</id><updated>2018-02-15T17:00:00-06:00</updated><entry><title>About</title><link href="https://wayofnumbers.github.io/about.html" rel="alternate"></link><published>2018-02-15T17:00:00-06:00</published><updated>2018-02-15T17:00:00-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,2018-02-15:about.html</id><summary type="html">
+&lt;h1 id="data-science-blog-for-the-rest-of-us"&gt;&lt;a class="toclink" href="#data-science-blog-for-the-rest-of-us"&gt;Data science blog for the rest of us.&lt;/a&gt;&lt;/h1&gt;
+&lt;h3 id="michael-li"&gt;&lt;a class="toclink" href="#michael-li"&gt;Michael Li&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Designer, Developer.&lt;/p&gt;
+&lt;h3 id="xiao-xu"&gt;&lt;a class="toclink" href="#xiao-xu"&gt;Xiao Xu&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Deep thinker.&lt;/p&gt;</summary><category term="about"></category></entry></feed>
