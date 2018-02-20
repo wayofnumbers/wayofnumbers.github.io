@@ -194,7 +194,8 @@ PROJECTS = [{
 
 
 MAILCHIMP_FORM_ACTION = "https://github.us17.list-manage.com/subscribe/post?u=c212184cc0965bdf1658f69f0&amp;id=5677a7b75e"
-
+EMAIL_SUBSCRIPTION_LABEL = "Get Monthly Updates"
+SUBSCRIBE_BUTTON_TITLE = "Send me Free Updates"	
 
 
 
