@@ -2,3 +2,8 @@
 .site-name {
     font-family: 'Calibri', 'Tahoma', 'Arial', 'Sans-Serif';
 }
+
+.article-content, div.recent-posts p {
+    font: 1.2em/1.6em 'PT Sans', 'Calibri', 'Tahoma', 'Arial', 'Sans-Serif';
+    text-align: justify;
+}
