@@ -1,10 +1,10 @@
 /* site title */
 .site-name {
-    font-family: 'PT Sans', 'Calibri', 'Tahoma', 'Arial', 'Sans-Serif';
+    font-family: 'PT Sans Narrow', 'Calibri', 'Tahoma', 'Arial', 'Sans-Serif';
 }
 
 .article-content, div.recent-posts p {
-    font: 1.2em/1.6em 'PT Sans', 'Calibri', 'Tahoma', 'Arial', 'Sans-Serif';
+    font: 1.2em/1.6em 'Calibri', 'Tahoma', 'Arial', 'Sans-Serif';
     text-align: justify;
 }
 
