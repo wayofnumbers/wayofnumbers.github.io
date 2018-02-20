@@ -37,6 +37,9 @@ SOCIAL = (('Twitter', 'https://twitter.com/lymenlee'),
 	  ('LinkedIn', 'www.linkedin.com/in/michael-li-dfw'),
 )
 
+TWITTER_USERNAME = 'lymenlee'
+
+
 DEFAULT_PAGINATION = 10
 DISPLAY_PAGES_ON_MENU = False
 
@@ -183,6 +186,8 @@ STATIC_PATHS = ['theme/images', 'images']
 TAG_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
+#added only for elegent theme, which does not process the favicon with this.
+USE_SHORTCUT_ICONS=True
 LANDING_PAGE_ABOUT = {'title': "Welcome!", 
 		      'details' : "We are a small team of researchers, designers, developers that likes to explore. Data science don't have to be boring, and we are here to help."}
 SITESUBTITLE = "Data science for the rest of us."
@@ -203,8 +208,13 @@ COMMENTS_INTRO = "So what do you think? Did I miss anything? Is any part unclear
 
 MARKDOWN = {
     'extension_configs': {
-        'markdown.extensions.toc' :{'anchorlink' : 'true'}
-    }
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        'markdown.extensions.toc' :{'permalink' : 'true'},
+
+    },
+    'output_format': 'html5',
 }
 
 
