@@ -183,7 +183,7 @@ STATIC_PATHS = ['theme/images', 'images']
 TAG_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
-LANDING_PAGE_ABOUT = 'We are a small team of researchers, designers, developers that likes to explore. Data science don't have to be boring, and we want to help'
+LANDING_PAGE_ABOUT = "We are a small team of researchers, designers, developers that likes to explore. Data science don't have to be boring, and we want to help"
 
 # THEME = "notmyidea"
 
