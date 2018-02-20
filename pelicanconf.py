@@ -47,7 +47,7 @@ MARKUP = ('md', 'ipynb')
 # STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'extra/logo.svg']
 MENUITEMS = [('Homepage', '/'),('Categories','/categories.html'), ('About', './pages/about.html')]
 PLUGIN_PATHS= ['./plugins']
-PLUGINS = ['ipynb.markup','sitemap', 'extract_toc', 'neighbors']
+PLUGINS = ['ipynb.markup','sitemap', 'extract_toc', 'neighbors', 'tipue_search']
 
 TYPOGRIFY = True
 
@@ -185,6 +185,7 @@ CATEGORY_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
 LANDING_PAGE_ABOUT = {'title': "Welcome!", 
 		      'details' : "We are a small team of researchers, designers, developers that likes to explore. Data science don't have to be boring, and we are here to help."
+SITESUBTITLE = "Data science for the rest of us."
 			}
 PROJECTS = [{
     'name': 'Mucraft.net',
@@ -199,6 +200,13 @@ SUBSCRIBE_BUTTON_TITLE = "Send me Free Updates"
 
 #comments
 COMMENTS_INTRO = "So what do you think? Did I miss anything? Is any part unclear? Leave your comments below."
+
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.toc' :{'permalink' : 'true'}
+    }
+}
+
 
 # THEME = "notmyidea"
 
