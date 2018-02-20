@@ -9,7 +9,16 @@
 
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
-        <title>Way of Numbers - Authors</title>
+
+<meta property="og:title" content="Search · Way of Numbers"/>
+<meta name="twitter:title" content="Search · Way of Numbers">
+<meta property="og:url" content="https://wayofnumbers.github.io/search.html" />
+<meta property="og:description" content="Search results for Way of Numbers blog" />
+<meta name="twitter:description" content="Search results for Way of Numbers blog">
+<meta property="og:site_name" content="Way of Numbers" />
+<meta property="og:article:author" content="" />
+        <title>Search · Way of Numbers
+</title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/pygments.css" media="screen">
@@ -53,10 +62,11 @@
             <div class="row-fluid">
                 <div class="span1"></div>
                 <div class="span10">
-    <h1>Authors on Way of Numbers</h1>
-
-    <ul>        <li><a href="https://wayofnumbers.github.io/author/michael-li.html">Michael Li</a> (2)</li>
-    </ul>
+<article>
+    <div class="span8 offset2">
+        <div id="tipue_search_content"><div id="tipue_search_loading"></div></div>
+    </div>
+</article>
                 </div>
                 <div class="span1"></div>
             </div>
@@ -69,14 +79,19 @@
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>
-</footer>        <script src="http://code.jquery.com/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script>
-            function validateForm(query)
-            {
-                return (query.length > 0);
-            }
-        </script>
+</footer><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://wayofnumbers.github.io/theme/tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="https://wayofnumbers.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+<script>
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+             'mode': 'live',
+         'show': 10,
+         'newWindow': false,
+             'liveDescription': '.article-content'
+     });
+});
+</script>
     </body>
     <!-- Theme: Elegant built for Pelican
     License : http://oncrashreboot.com/pelican-elegant -->
