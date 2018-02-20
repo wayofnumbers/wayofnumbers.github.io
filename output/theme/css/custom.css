@@ -17,3 +17,7 @@ h6 {
     font-family: 'PT Sans Narrow', 'Arial Narrow', Helvetica, sans-serif;
     font-weight: normal;
 }
+
+.table-of-content .toc {
+    font-size: 1em;
+}
