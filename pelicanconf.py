@@ -44,7 +44,7 @@ DISPLAY_PAGES_ON_MENU = False
 RELATIVE_URLS = False
 
 MARKUP = ('md', 'ipynb')
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'extra/logo.svg']
+# STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'extra/logo.svg']
 MENUITEMS = [('Homepage', '/'),('Categories','/categories.html'), ('About', './pages/about.html')]
 PLUGIN_PATHS= ['./plugins']
 PLUGINS = ['ipynb.markup','sitemap']
@@ -177,7 +177,12 @@ EXTRA_PATH_METADATA = {
 
 #elegant
 THEME = "/home/lisper/pelican-themes/elegant"
-
+MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc']
+DIRECT_TEMPLATES = (('index', 'tags', 'categories','archives', 'search', '404'))
+STATIC_PATHS = ['theme/images', 'images']
+TAG_SAVE_AS = ''
+CATEGORY_SAVE_AS = ''
+AUTHOR_SAVE_AS = ''
 
 # THEME = "notmyidea"
 
