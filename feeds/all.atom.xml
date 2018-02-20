@@ -2341,12 +2341,7 @@ There are 1232 articles by Romain Dillet.
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="machinelearning"></category><category term="sklearn"></category><category term="pandas"></category><category term="nltk"></category><category term="text analysis"></category></entry><entry><title>About</title><link href="https://wayofnumbers.github.io/about.html" rel="alternate"></link><published>2018-02-15T17:00:00-06:00</published><updated>2018-02-15T17:00:00-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,2018-02-15:about.html</id><summary type="html">
-&lt;h1 id="data-science-blog-for-the-rest-of-us"&gt;&lt;a class="toclink" href="#data-science-blog-for-the-rest-of-us"&gt;Data science blog for the rest of us.&lt;/a&gt;&lt;/h1&gt;
-&lt;h3 id="michael-li"&gt;&lt;a class="toclink" href="#michael-li"&gt;Michael Li&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Designer, Developer.&lt;/p&gt;
-&lt;h3 id="xiao-xu"&gt;&lt;a class="toclink" href="#xiao-xu"&gt;Xiao Xu&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Deep thinker.&lt;/p&gt;</summary><category term="about"></category></entry><entry><title>Setup Data Science Blog with Pelican + GitHub Pages</title><link href="https://wayofnumbers.github.io/Setup-Pelican.html" rel="alternate"></link><published>2018-02-14T20:00:00-06:00</published><updated>2018-02-14T20:00:00-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,2018-02-14:Setup-Pelican.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+</summary><category term="machinelearning"></category><category term="sklearn"></category><category term="pandas"></category><category term="nltk"></category><category term="text analysis"></category></entry><entry><title>Setup Data Science Blog with Pelican + GitHub Pages</title><link href="https://wayofnumbers.github.io/Setup-Pelican.html" rel="alternate"></link><published>2018-02-14T20:00:00-06:00</published><updated>2018-02-14T20:00:00-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,2018-02-14:Setup-Pelican.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
