@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://wayofnumbers.github.io/</loc>
-<lastmod>2018-02-21T09:47:04-00:00</lastmod>
+<lastmod>2018-02-21T09:49:32-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.github.io/archives.html</loc>
-<lastmod>2018-02-21T09:47:04-00:00</lastmod>
+<lastmod>2018-02-21T09:49:32-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.github.io/tags.html</loc>
-<lastmod>2018-02-21T09:47:04-00:00</lastmod>
+<lastmod>2018-02-21T09:49:32-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.github.io/categories.html</loc>
-<lastmod>2018-02-21T09:47:04-00:00</lastmod>
+<lastmod>2018-02-21T09:49:32-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -46,13 +46,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/Setup-Pelican.html</loc>
-<lastmod>2018-02-14T20:00:00-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
-</url>
-
-<url>
 <loc>https://wayofnumbers.github.io/Setup-Pelican-1.html</loc>
 <lastmod>2018-02-14T20:00:00-06:00</lastmod>
 <changefreq>always</changefreq>
@@ -61,13 +54,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://wayofnumbers.github.io/MLN-Numpyandpandas.html</loc>
-<lastmod>2018-02-14T17:00:00-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
-</url>
-
-<url>
-<loc>https://wayofnumbers.github.io/MLN-Numpyandpandas1.html</loc>
 <lastmod>2018-02-14T17:00:00-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
