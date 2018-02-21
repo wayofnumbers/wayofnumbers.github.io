@@ -1,5 +1,5 @@
 Title: Machine Learning Notes : Numpy and Pandas 
-Slug: MLN-Numpyandpandas
+Slug: MLN-Numpyandpandas1
 Date: 2018-02-14 17:00
 Category: Machine Learning
 Tags: machinelearning, numpy, pandas, jupyter notebook 
