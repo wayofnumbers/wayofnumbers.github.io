@@ -2341,536 +2341,7 @@ There are 1232 articles by Romain Dillet.
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="machinelearning"></category><category term="sklearn"></category><category term="pandas"></category><category term="nltk"></category><category term="text analysis"></category></entry><entry><title>Machine Learning Notes : Numpy and Pandas</title><link href="https://wayofnumbers.github.io/MLN-Numpyandpandas.html" rel="alternate"></link><published>2018-02-14T17:00:00-06:00</published><updated>2018-02-14T17:00:00-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,2018-02-14:MLN-Numpyandpandas.html</id><summary type="html">
-&lt;h2 id="overview"&gt;&lt;a class="toclink" href="#overview"&gt;Overview&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;This will be a series of notes to record the thinking and learning of my Machine Learning journey. Hopefully it can serve as a place to record the learning process/progress as well as providing some reference for others just entering this field.&lt;/p&gt;
-&lt;h2 id="numpy-basics"&gt;&lt;a class="toclink" href="#numpy-basics"&gt;Numpy Basics&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Numpy is a powerful module of Python. It covers a lot of basics of Linear algebra, and are great when it comes to doing sceintific and mathematical calculations. That’s why it is the ‘go-to’ solution for Machine Learning. There are other ‘highler-level’ and more dedicated modules out there like Pandas, seaborn that also utilize or even built on Numpy. Thus proves the powerfulness of Numpy in another way. Though works mostly on the fundation level, Numpy should be considered an equivelant to other more ‘advanced’ modules and whichever fits the most to solve the problem at hand should be used. 
-Without further ado, let’s jump right into some code&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;   &lt;span class="c1"&gt;# use 'np' to represent Numpy is kind of a coding convention&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Numpy version: '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__version__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Numpy version:  1.13.3
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now it’s imported, let’s use it to do some basic stuffs.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;x&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[ 0.06584995,  0.58936577,  0.02054667],
-       [ 0.90132301,  0.62575129,  0.76350867],
-       [ 0.70707616,  0.19462487,  0.35358817],
-       [ 0.44329537,  0.57977487,  0.78594087],
-       [ 0.76109628,  0.86614311,  0.51521077]])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Manipulate with array is what Numpy do best. Here we generated an 5 row 3 columns array of randome numbers (from 0 to 1)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(5, 3)
-float64
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;We can look at the shape of an array and what data type it is. Obviously it’s a float since it’s generated from np.random.rand. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;z&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[ 0.60055916,  0.43108417,  0.35430406,  0.32056793],
-       [ 2.10608162,  0.91944706,  0.73772388,  1.22819697],
-       [ 1.1554381 ,  0.48784172,  0.3088563 ,  0.63719203],
-       [ 1.66918268,  0.69113499,  0.68490871,  1.04397122],
-       [ 1.95288349,  0.98819028,  0.76639304,  1.09896047]])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Doing some good old dot product. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="err"&gt;@&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
-&lt;span class="n"&gt;z&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[ 0.60055916,  0.43108417,  0.35430406,  0.32056793],
-       [ 2.10608162,  0.91944706,  0.73772388,  1.22819697],
-       [ 1.1554381 ,  0.48784172,  0.3088563 ,  0.63719203],
-       [ 1.66918268,  0.69113499,  0.68490871,  1.04397122],
-       [ 1.95288349,  0.98819028,  0.76639304,  1.09896047]])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Or more intuitively use ‘@’ operand. &lt;/p&gt;
-&lt;h2 id="how-to-index-numpy-array"&gt;&lt;a class="toclink" href="#how-to-index-numpy-array"&gt;How to index Numpy array&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;First create a sample array using np.array function. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-               &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-               &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
-&lt;span class="n"&gt;x1&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Array[row, col] represent array element in ‘row’ and ‘col’. Note that &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c1"&gt;#row 1, col 1, since Python list starts from 0, so it's 2nd row and col;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;5
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c1"&gt;#':' means all elements, so this means all elements on 3rd column, let's see&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([3, 6, 9])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;  &lt;span class="c1"&gt;# an array condition equation will generate an array of boolean values;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([False,  True,  True], dtype=bool)
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# This means index the rows that the 2nd column is greater than 3;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[4, 5, 6],
-       [7, 8, 9]])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="shape-manipulations"&gt;&lt;a class="toclink" href="#shape-manipulations"&gt;Shape Manipulations&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="c1"&gt;#reshape x1 into one row&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([1, 2, 3, 4, 5, 6, 7, 8, 9])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="c1"&gt;#reshape back to 3x3&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="c1"&gt;#reshape into 9x1&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[1],
-       [2],
-       [3],
-       [4],
-       [5],
-       [6],
-       [7],
-       [8],
-       [9]])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="dot-and-mutiplication"&gt;&lt;a class="toclink" href="#dot-and-mutiplication"&gt;Dot and Mutiplication&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;x2&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[0, 1, 2],
-       [3, 4, 5],
-       [6, 7, 8]])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;multi&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;
-&lt;span class="n"&gt;dot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'x1 * x2 ='&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;multi&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'x1 dot x2 ='&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;x1 * x2 = [[ 0  2  6]
- [12 20 30]
- [42 56 72]]
-x1 dot x2 = [[ 24  30  36]
- [ 51  66  81]
- [ 78 102 126]]
-&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="pandas-basics"&gt;&lt;a class="toclink" href="#pandas-basics"&gt;Pandas Basics&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# set some basic data&lt;/span&gt;
-&lt;span class="n"&gt;col_names&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'temperature'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'time'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'day'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;64&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;48&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2300&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;34&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;   &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
-&lt;span class="n"&gt;data&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[  64, 2100,    1],
-       [  50, 2200,    1],
-       [  48, 2300,    1],
-       [  34,    0,    2],
-       [  30,  100,    5]])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# explore the data using numpy, it's clumsy&lt;/span&gt;
-&lt;span class="n"&gt;data2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;1500&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;data2&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[  64, 2100,    1],
-       [  50, 2200,    1],
-       [  48, 2300,    1]])
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# now let's try use Pandas&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-
-&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;col_names&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div&gt;
-&lt;style&gt;
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-&lt;thead&gt;
-&lt;tr style="text-align: right;"&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;temperature&lt;/th&gt;
-&lt;th&gt;time&lt;/th&gt;
-&lt;th&gt;day&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;th&gt;0&lt;/th&gt;
-&lt;td&gt;64&lt;/td&gt;
-&lt;td&gt;2100&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;1&lt;/th&gt;
-&lt;td&gt;50&lt;/td&gt;
-&lt;td&gt;2200&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;2&lt;/th&gt;
-&lt;td&gt;48&lt;/td&gt;
-&lt;td&gt;2300&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;3&lt;/th&gt;
-&lt;td&gt;34&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;4&lt;/th&gt;
-&lt;td&gt;30&lt;/td&gt;
-&lt;td&gt;100&lt;/td&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;p&gt;Pandas DataFrame will put all the data into a much nicer form with neat labels&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;1500&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;#Now do it again with data exploration, this time using Pandas DataFrame&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div&gt;
-&lt;style&gt;
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-&lt;thead&gt;
-&lt;tr style="text-align: right;"&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;temperature&lt;/th&gt;
-&lt;th&gt;time&lt;/th&gt;
-&lt;th&gt;day&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;th&gt;0&lt;/th&gt;
-&lt;td&gt;64&lt;/td&gt;
-&lt;td&gt;2100&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;1&lt;/th&gt;
-&lt;td&gt;50&lt;/td&gt;
-&lt;td&gt;2200&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;2&lt;/th&gt;
-&lt;td&gt;48&lt;/td&gt;
-&lt;td&gt;2300&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;p&gt;Much nicer!&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# now let's get some basic info of the DataFrame&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;info&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;describe&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;class 'pandas.core.frame.DataFrame'&amp;gt;
-RangeIndex: 5 entries, 0 to 4
-Data columns (total 3 columns):
-temperature    5 non-null int64
-time           5 non-null int64
-day            5 non-null int64
-dtypes: int64(3)
-memory usage: 200.0 bytes
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div&gt;
-&lt;style&gt;
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-&lt;thead&gt;
-&lt;tr style="text-align: right;"&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;temperature&lt;/th&gt;
-&lt;th&gt;time&lt;/th&gt;
-&lt;th&gt;day&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;th&gt;count&lt;/th&gt;
-&lt;td&gt;5.000000&lt;/td&gt;
-&lt;td&gt;5.00000&lt;/td&gt;
-&lt;td&gt;5.000000&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;mean&lt;/th&gt;
-&lt;td&gt;45.200000&lt;/td&gt;
-&lt;td&gt;1340.00000&lt;/td&gt;
-&lt;td&gt;2.000000&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;std&lt;/th&gt;
-&lt;td&gt;13.608821&lt;/td&gt;
-&lt;td&gt;1180.25421&lt;/td&gt;
-&lt;td&gt;1.732051&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;min&lt;/th&gt;
-&lt;td&gt;30.000000&lt;/td&gt;
-&lt;td&gt;0.00000&lt;/td&gt;
-&lt;td&gt;1.000000&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;25%&lt;/th&gt;
-&lt;td&gt;34.000000&lt;/td&gt;
-&lt;td&gt;100.00000&lt;/td&gt;
-&lt;td&gt;1.000000&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;50%&lt;/th&gt;
-&lt;td&gt;48.000000&lt;/td&gt;
-&lt;td&gt;2100.00000&lt;/td&gt;
-&lt;td&gt;1.000000&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;75%&lt;/th&gt;
-&lt;td&gt;50.000000&lt;/td&gt;
-&lt;td&gt;2200.00000&lt;/td&gt;
-&lt;td&gt;2.000000&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;max&lt;/th&gt;
-&lt;td&gt;64.000000&lt;/td&gt;
-&lt;td&gt;2300.00000&lt;/td&gt;
-&lt;td&gt;5.000000&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# you can change the element in DataFrame like so:&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Mon'&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div&gt;
-&lt;style&gt;
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-&lt;thead&gt;
-&lt;tr style="text-align: right;"&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;temperature&lt;/th&gt;
-&lt;th&gt;time&lt;/th&gt;
-&lt;th&gt;day&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;th&gt;0&lt;/th&gt;
-&lt;td&gt;64&lt;/td&gt;
-&lt;td&gt;2100&lt;/td&gt;
-&lt;td&gt;Mon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;1&lt;/th&gt;
-&lt;td&gt;50&lt;/td&gt;
-&lt;td&gt;2200&lt;/td&gt;
-&lt;td&gt;Mon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;2&lt;/th&gt;
-&lt;td&gt;48&lt;/td&gt;
-&lt;td&gt;2300&lt;/td&gt;
-&lt;td&gt;Mon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;3&lt;/th&gt;
-&lt;td&gt;34&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;4&lt;/th&gt;
-&lt;td&gt;30&lt;/td&gt;
-&lt;td&gt;100&lt;/td&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# or do it the Pandas way&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;to_replace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-               &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'Su'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Mon'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Tues'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Wed'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Th'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Fri'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Sat'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-               &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div&gt;
-&lt;style&gt;
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-&lt;thead&gt;
-&lt;tr style="text-align: right;"&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;temperature&lt;/th&gt;
-&lt;th&gt;time&lt;/th&gt;
-&lt;th&gt;day&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;th&gt;0&lt;/th&gt;
-&lt;td&gt;64&lt;/td&gt;
-&lt;td&gt;2100&lt;/td&gt;
-&lt;td&gt;Mon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;1&lt;/th&gt;
-&lt;td&gt;50&lt;/td&gt;
-&lt;td&gt;2200&lt;/td&gt;
-&lt;td&gt;Mon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;2&lt;/th&gt;
-&lt;td&gt;48&lt;/td&gt;
-&lt;td&gt;2300&lt;/td&gt;
-&lt;td&gt;Mon&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;3&lt;/th&gt;
-&lt;td&gt;34&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;Tues&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;4&lt;/th&gt;
-&lt;td&gt;30&lt;/td&gt;
-&lt;td&gt;100&lt;/td&gt;
-&lt;td&gt;Fri&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# one hot encoding example&lt;/span&gt;
-&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_dummies&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div&gt;
-&lt;style&gt;
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-&lt;thead&gt;
-&lt;tr style="text-align: right;"&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;Fri&lt;/th&gt;
-&lt;th&gt;Mon&lt;/th&gt;
-&lt;th&gt;Tues&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;th&gt;0&lt;/th&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;1&lt;/th&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;2&lt;/th&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;3&lt;/th&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;4&lt;/th&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;</summary><category term="machinelearning"></category><category term="numpy"></category><category term="pandas"></category><category term="jupyter notebook"></category></entry><entry><title>Machine Learning Notes : Numpy and Pandas</title><link href="https://wayofnumbers.github.io/MLN-Numpyandpandas.html" rel="alternate"></link><published>2018-02-14T17:00:00-06:00</published><updated>2018-02-14T17:00:00-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,2018-02-14:MLN-Numpyandpandas.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+</summary><category term="machinelearning"></category><category term="sklearn"></category><category term="pandas"></category><category term="nltk"></category><category term="text analysis"></category></entry><entry><title>Machine Learning Notes : Numpy and Pandas</title><link href="https://wayofnumbers.github.io/MLN-Numpyandpandas.html" rel="alternate"></link><published>2018-02-14T17:00:00-06:00</published><updated>2018-02-14T17:00:00-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,2018-02-14:MLN-Numpyandpandas.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -4908,4 +4379,533 @@ memory usage: 200.0 bytes
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="machinelearning"></category><category term="numpy"></category><category term="pandas"></category><category term="jupyter notebook"></category></entry></feed>
+</summary><category term="machinelearning"></category><category term="numpy"></category><category term="pandas"></category><category term="jupyter notebook"></category></entry><entry><title>Machine Learning Notes : Numpy and Pandas</title><link href="https://wayofnumbers.github.io/MLN-Numpyandpandas1.html" rel="alternate"></link><published>2018-02-14T17:00:00-06:00</published><updated>2018-02-14T17:00:00-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.github.io,2018-02-14:MLN-Numpyandpandas1.html</id><summary type="html">
+&lt;h2 id="overview"&gt;&lt;a class="toclink" href="#overview"&gt;Overview&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This will be a series of notes to record the thinking and learning of my Machine Learning journey. Hopefully it can serve as a place to record the learning process/progress as well as providing some reference for others just entering this field.&lt;/p&gt;
+&lt;h2 id="numpy-basics"&gt;&lt;a class="toclink" href="#numpy-basics"&gt;Numpy Basics&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Numpy is a powerful module of Python. It covers a lot of basics of Linear algebra, and are great when it comes to doing sceintific and mathematical calculations. That’s why it is the ‘go-to’ solution for Machine Learning. There are other ‘highler-level’ and more dedicated modules out there like Pandas, seaborn that also utilize or even built on Numpy. Thus proves the powerfulness of Numpy in another way. Though works mostly on the fundation level, Numpy should be considered an equivelant to other more ‘advanced’ modules and whichever fits the most to solve the problem at hand should be used. 
+Without further ado, let’s jump right into some code&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;   &lt;span class="c1"&gt;# use 'np' to represent Numpy is kind of a coding convention&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Numpy version: '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__version__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Numpy version:  1.13.3
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now it’s imported, let’s use it to do some basic stuffs.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[ 0.06584995,  0.58936577,  0.02054667],
+       [ 0.90132301,  0.62575129,  0.76350867],
+       [ 0.70707616,  0.19462487,  0.35358817],
+       [ 0.44329537,  0.57977487,  0.78594087],
+       [ 0.76109628,  0.86614311,  0.51521077]])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Manipulate with array is what Numpy do best. Here we generated an 5 row 3 columns array of randome numbers (from 0 to 1)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(5, 3)
+float64
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can look at the shape of an array and what data type it is. Obviously it’s a float since it’s generated from np.random.rand. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;z&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[ 0.60055916,  0.43108417,  0.35430406,  0.32056793],
+       [ 2.10608162,  0.91944706,  0.73772388,  1.22819697],
+       [ 1.1554381 ,  0.48784172,  0.3088563 ,  0.63719203],
+       [ 1.66918268,  0.69113499,  0.68490871,  1.04397122],
+       [ 1.95288349,  0.98819028,  0.76639304,  1.09896047]])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Doing some good old dot product. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="err"&gt;@&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
+&lt;span class="n"&gt;z&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[ 0.60055916,  0.43108417,  0.35430406,  0.32056793],
+       [ 2.10608162,  0.91944706,  0.73772388,  1.22819697],
+       [ 1.1554381 ,  0.48784172,  0.3088563 ,  0.63719203],
+       [ 1.66918268,  0.69113499,  0.68490871,  1.04397122],
+       [ 1.95288349,  0.98819028,  0.76639304,  1.09896047]])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Or more intuitively use ‘@’ operand. &lt;/p&gt;
+&lt;h2 id="how-to-index-numpy-array"&gt;&lt;a class="toclink" href="#how-to-index-numpy-array"&gt;How to index Numpy array&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;First create a sample array using np.array function. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+               &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+               &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;span class="n"&gt;x1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Array[row, col] represent array element in ‘row’ and ‘col’. Note that &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c1"&gt;#row 1, col 1, since Python list starts from 0, so it's 2nd row and col;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;5
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c1"&gt;#':' means all elements, so this means all elements on 3rd column, let's see&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([3, 6, 9])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;  &lt;span class="c1"&gt;# an array condition equation will generate an array of boolean values;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([False,  True,  True], dtype=bool)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# This means index the rows that the 2nd column is greater than 3;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[4, 5, 6],
+       [7, 8, 9]])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="shape-manipulations"&gt;&lt;a class="toclink" href="#shape-manipulations"&gt;Shape Manipulations&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="c1"&gt;#reshape x1 into one row&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="c1"&gt;#reshape back to 3x3&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="c1"&gt;#reshape into 9x1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[1],
+       [2],
+       [3],
+       [4],
+       [5],
+       [6],
+       [7],
+       [8],
+       [9]])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="dot-and-mutiplication"&gt;&lt;a class="toclink" href="#dot-and-mutiplication"&gt;Dot and Mutiplication&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;x2&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;multi&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;
+&lt;span class="n"&gt;dot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'x1 * x2 ='&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;multi&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'x1 dot x2 ='&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;x1 * x2 = [[ 0  2  6]
+ [12 20 30]
+ [42 56 72]]
+x1 dot x2 = [[ 24  30  36]
+ [ 51  66  81]
+ [ 78 102 126]]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="pandas-basics"&gt;&lt;a class="toclink" href="#pandas-basics"&gt;Pandas Basics&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# set some basic data&lt;/span&gt;
+&lt;span class="n"&gt;col_names&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'temperature'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'time'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'day'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;64&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;48&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2300&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;34&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;   &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[  64, 2100,    1],
+       [  50, 2200,    1],
+       [  48, 2300,    1],
+       [  34,    0,    2],
+       [  30,  100,    5]])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# explore the data using numpy, it's clumsy&lt;/span&gt;
+&lt;span class="n"&gt;data2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;1500&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;data2&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[  64, 2100,    1],
+       [  50, 2200,    1],
+       [  48, 2300,    1]])
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# now let's try use Pandas&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;col_names&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;temperature&lt;/th&gt;
+&lt;th&gt;time&lt;/th&gt;
+&lt;th&gt;day&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;2100&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;2200&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;2300&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;Pandas DataFrame will put all the data into a much nicer form with neat labels&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;1500&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;#Now do it again with data exploration, this time using Pandas DataFrame&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;temperature&lt;/th&gt;
+&lt;th&gt;time&lt;/th&gt;
+&lt;th&gt;day&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;2100&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;2200&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;2300&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;Much nicer!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# now let's get some basic info of the DataFrame&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;info&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;describe&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;class 'pandas.core.frame.DataFrame'&amp;gt;
+RangeIndex: 5 entries, 0 to 4
+Data columns (total 3 columns):
+temperature    5 non-null int64
+time           5 non-null int64
+day            5 non-null int64
+dtypes: int64(3)
+memory usage: 200.0 bytes
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;temperature&lt;/th&gt;
+&lt;th&gt;time&lt;/th&gt;
+&lt;th&gt;day&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;count&lt;/th&gt;
+&lt;td&gt;5.000000&lt;/td&gt;
+&lt;td&gt;5.00000&lt;/td&gt;
+&lt;td&gt;5.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;mean&lt;/th&gt;
+&lt;td&gt;45.200000&lt;/td&gt;
+&lt;td&gt;1340.00000&lt;/td&gt;
+&lt;td&gt;2.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;std&lt;/th&gt;
+&lt;td&gt;13.608821&lt;/td&gt;
+&lt;td&gt;1180.25421&lt;/td&gt;
+&lt;td&gt;1.732051&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;min&lt;/th&gt;
+&lt;td&gt;30.000000&lt;/td&gt;
+&lt;td&gt;0.00000&lt;/td&gt;
+&lt;td&gt;1.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;25%&lt;/th&gt;
+&lt;td&gt;34.000000&lt;/td&gt;
+&lt;td&gt;100.00000&lt;/td&gt;
+&lt;td&gt;1.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;50%&lt;/th&gt;
+&lt;td&gt;48.000000&lt;/td&gt;
+&lt;td&gt;2100.00000&lt;/td&gt;
+&lt;td&gt;1.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;75%&lt;/th&gt;
+&lt;td&gt;50.000000&lt;/td&gt;
+&lt;td&gt;2200.00000&lt;/td&gt;
+&lt;td&gt;2.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;max&lt;/th&gt;
+&lt;td&gt;64.000000&lt;/td&gt;
+&lt;td&gt;2300.00000&lt;/td&gt;
+&lt;td&gt;5.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# you can change the element in DataFrame like so:&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Mon'&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;temperature&lt;/th&gt;
+&lt;th&gt;time&lt;/th&gt;
+&lt;th&gt;day&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;2100&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;2200&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;2300&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# or do it the Pandas way&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;to_replace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+               &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'Su'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Mon'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Tues'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Wed'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Th'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Fri'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'Sat'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+               &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;temperature&lt;/th&gt;
+&lt;th&gt;time&lt;/th&gt;
+&lt;th&gt;day&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;2100&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;2200&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;2300&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;Tues&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;Fri&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# one hot encoding example&lt;/span&gt;
+&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_dummies&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Fri&lt;/th&gt;
+&lt;th&gt;Mon&lt;/th&gt;
+&lt;th&gt;Tues&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;</summary><category term="machinelearning"></category><category term="numpy"></category><category term="pandas"></category><category term="jupyter notebook"></category></entry></feed>
