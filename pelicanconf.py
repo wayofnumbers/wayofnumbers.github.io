@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+IGNORE_FILES = ['.ipynb_checkpoints']
+
 
 # AUTHOR = u'Michael Li'
 SITENAME = u'Way of Numbers'
