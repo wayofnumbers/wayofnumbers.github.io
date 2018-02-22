@@ -52,7 +52,7 @@ MARKUP = ('md', 'ipynb')
 # STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'extra/logo.svg']
 MENUITEMS = [('Homepage', '/'),('Categories','/categories.html'), ('About', './pages/about.html')]
 PLUGIN_PATHS= ['./plugins']
-PLUGINS = ['ipynb.markup','sitemap', 'extract_toc', 'neighbors', 'tipue_search']
+PLUGINS = ['ipynb.markup','sitemap', 'extract_toc', 'neighbors', 'tipue_search', 'readtime']
 
 TYPOGRIFY = True
 
