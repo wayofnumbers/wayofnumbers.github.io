@@ -1,13 +1,8 @@
-import urllib
+'''  calculate word count'''
+import math
 import bs4
 from pelican import signals
 
-def extract_text(url):
-    '''extract texts from url'''
-    html = urllib.request.urlopen(url).read()
-    soup = bs4.BeautifulSoup(html, 'html.parser')
-    texts = soup.findAll(text=True)
-    return texts
 
 def is_visible(element):
     '''tell whether text has tags'''
@@ -43,7 +38,7 @@ def estimate_reading_time(content_object):
         total_words = count_words_in_text(filtered_text, WORD_LENGTH)
         minutes = int(math.ceil(total_words/WPM))
         if minutes == 0:
-            minutes =1
+            minutes = 1
 
         content_object.readtime = {
             "minutes": minutes,
