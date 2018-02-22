@@ -3,6 +3,11 @@ import math
 import bs4
 from pelican import signals
 
+def extract_text(html):
+    '''extract text from html content'''
+    soup = bs4.BeautifulSoup(html, 'html.parser')
+    texts = soup.findAll(text=True)
+    return texts
 
 def is_visible(element):
     '''tell whether text has tags'''
@@ -32,8 +37,8 @@ def count_words_in_text(text_list, word_length):
 def estimate_reading_time(content_object):
     '''estimate the reading time of an article'''
     if content_object._content is not None:
-        content = content_object._content
-
+        html = content_object._content
+        content = extract_text(html)
         filtered_text = filter_visible_text(content)
         total_words = count_words_in_text(filtered_text, WORD_LENGTH)
         minutes = int(math.ceil(total_words/WPM))
