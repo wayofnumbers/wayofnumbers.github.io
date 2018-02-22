@@ -47,4 +47,5 @@ def estimate_reading_time(content_object):
 
 def register():
     '''api'''
-    signals.content_object_init.connect(estimate_reading_time)
+#    signals.content_object_init.connect(estimate_reading_time)
+    signals.all_generators_finalized.connect(estimate_reading_time)
