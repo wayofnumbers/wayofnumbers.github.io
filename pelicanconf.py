@@ -52,7 +52,7 @@ MARKUP = ('md', 'ipynb')
 # STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'extra/logo.svg']
 MENUITEMS = [('Homepage', '/'),('Categories','/categories.html'), ('About', './pages/about.html')]
 PLUGIN_PATHS= ['./plugins']
-PLUGINS = ['ipynb.markup','sitemap', 'extract_toc', 'neighbors', 'tipue_search', 'readtime']
+PLUGINS = ['ipynb.markup','sitemap', 'extract_toc', 'neighbors', 'tipue_search', 'readtime-master']
 
 TYPOGRIFY = True
 
@@ -174,7 +174,7 @@ NEST_TAGS_CONTENT_LIST = u'tagged'
 # Static files
 #STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'extra/logo.svg']
 EXTRA_PATH_METADATA = {
-#	'extra/robots.txt': {'path': 'robots.txt'},
+#	'extra/robots.txt': {'path': 'robots.t xt'},
 #	'extra/favicon.ico': {'path': 'favicon.ico'},
 	'extra/logo.svg': {'path': 'logo.svg'}
 }
