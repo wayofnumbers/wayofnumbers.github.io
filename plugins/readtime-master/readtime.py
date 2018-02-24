@@ -2,7 +2,7 @@ import re
 import math
 
 from pelican import signals
-from HTMLParser import HTMLParser
+from html.parser import HTMLParser
 
 
 # http://en.wikipedia.org/wiki/Words_per_minute
