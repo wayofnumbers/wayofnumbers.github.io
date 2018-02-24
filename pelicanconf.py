@@ -198,6 +198,10 @@ PROJECTS = [{
     'name': 'Mucraft.net',
     'url': 'http://mucraft.net',
     'description': 'Thoughts about design and UI/UX'},
+    {
+    'name': 'Pelican Read Time Plugin',
+    'url': 'https://github.com/wayofnumbers/pelican-readtime',
+    'description': 'A Pelican plugin that can display estimated read time on the website'},
     ]
 
 #Mail Chimp
