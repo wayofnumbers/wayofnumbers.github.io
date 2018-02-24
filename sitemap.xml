@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://wayofnumbers.github.io/</loc>
-<lastmod>2018-02-22T17:14:00-00:00</lastmod>
+<lastmod>2018-02-23T19:54:38-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.github.io/archives.html</loc>
-<lastmod>2018-02-22T17:14:00-00:00</lastmod>
+<lastmod>2018-02-23T19:54:38-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.github.io/tags.html</loc>
-<lastmod>2018-02-22T17:14:00-00:00</lastmod>
+<lastmod>2018-02-23T19:54:38-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.github.io/categories.html</loc>
-<lastmod>2018-02-22T17:14:00-00:00</lastmod>
+<lastmod>2018-02-23T19:54:38-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -36,6 +36,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2018-02-15T17:00:00-06:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://wayofnumbers.github.io/The-AI-Shortage.html</loc>
+<lastmod>2018-02-23T17:00:00-06:00</lastmod>
+<changefreq>always</changefreq>
+<priority>1</priority>
 </url>
 
 <url>
