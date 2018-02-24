@@ -8,7 +8,7 @@ Summary: AI talent shortage is not getting better any time soon...
 
 [**Original Story**](https://medium.com/@Moscow25/the-ai-talent-shortage-704d8cf0c4cc)
 
-Nikolai Yakovenko from NVIDIA:        
+[Nikolai Yakovenko](https://medium.com/@Moscow25) from NVIDIA:        
 > But when I look for a designer, a Java developer, a real estate agent, etc — some are way better than others and deserve to get paid more than an AI researcher — but you’re fundamentally talking about pulling from a large well-balanced pool. It’s mostly an information game, and a matter of getting a little better than you need, but not much more than you can afford or should be paying.
 > In AI, it’s different. There just aren’t enough people to go around. And there aren’t enough people for every good project that can be attempted. Either academic, or something that if it works, can save the company $1M.
 
