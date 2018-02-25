@@ -92,16 +92,16 @@ Run `git push origin master` to push changes to GitHub repo.
 ----------------------------
 
 ## Themes
-There are a lot of [themes](https://github.com/getpelican/pelican-themes) to choose from. What you need to do is to configure your `pelicanconf.py` file and assign the theme name. 
+There are a lot of [themes](https://github.com/getpelican/pelican-themes) to choose from. What you need to do is to configure your `pelicanconf.py` file and assign the theme name. Some themes may need to install extra Python modules or have access to other services to work. But overall the process is straight forward.
 
 ## Google Analytics
 Pelican have Google Analytics support out of the box. Register the site on GA, then get the `UA-XXXXxxxxx` id, put it into the `pelicanconf.py` file and you're golden. 
 
 ## Disqus
-Disqus support come out of the box too. Register the site on Disqus, get your shortname correct, and put into `pelicanconf.py` and you should be good too. Some turorial suggest put into `publishconf.py`, well mine only works on `pelicanconf.py` so use your own judgement. 
+Disqus support come out of the box too. Register the site on Disqus, get your **shortname** correct, and put into `pelicanconf.py` and you should be good too. Some turorial suggest put into `publishconf.py`, well mine only works on `pelicanconf.py` so use your own judgement. 
 
 ## SEO
-Basic SEO can be achieved using sitemap plugin. Search for it and put into `pelicanconf.py`, it will work automatically.
+Basic SEO can be achieved using **sitemap** plugin. Search for it and put into `pelicanconf.py`, it will work automatically.
 
 ## Conclusion
 Overall the process is not hard at all. Once everything is set. Just focus on putting in solid content using Jupyter Notebook. Enjoy coding, visualizing and writing!
