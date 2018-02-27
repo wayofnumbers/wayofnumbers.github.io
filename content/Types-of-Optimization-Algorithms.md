@@ -17,7 +17,7 @@ One thing about Machine Learning the overal depth of the topics and algorithms m
 A more visual example of these algorithms, see these two beautifully crafted animations:
 
 <p style="text-align: center;">SGD optimization on loss surface contours:</p>
-![SGD optimization on loss surface contours]({filename}/images/optimization-algorithem-1.gif)
+![SGD optimization on loss surface contours]({filename}/images/optimization-algorithem-1.gif  "test test test")
 
 <p style="text-align: center;">SGD optimization on saddle point:</p>
 ![SGD optimization on saddle point]({filename}/images/optimization-algorithem-2.gif)
