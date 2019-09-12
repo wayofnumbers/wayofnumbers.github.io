@@ -34,12 +34,12 @@
 &lt;/ol&gt;
 &lt;p&gt;&lt;img alt="Google search results for Lishu style" src="https://cdn-images-1.medium.com/max/2000/1*uQPNDb-qXO3mYQIHuxitMQ.png"&gt;&lt;em&gt;Google search results for Lishu&amp;nbsp;style&lt;/em&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Now is where the magic happens. Press Ctrl+Shift+J in Windows/Linux and Cmd+Opt+J in Mac to bring up the JavaScript ‘Console’ window of the browser. The following JavaScript snippet will get the URLs of each of the&amp;nbsp;images.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;iframe src="https://medium.com/media/39e47823b2c7e8cdbb4ac527be5a4378" frameborder=0&gt;&lt;/iframe&gt;
-
-&lt;ol&gt;
-&lt;li&gt;If successfully run, a text file will be downloaded with all the URLs for the images in your search results. You can then set up a folder and use fast.ai’s ‘download_images’ function to download these&amp;nbsp;images.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now is where the magic happens. Press Ctrl+Shift+J in Windows/Linux and Cmd+Opt+J in Mac to bring up the JavaScript ‘Console’ window of the browser. The following JavaScript snippet will get the URLs of each of the&amp;nbsp;images.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If successfully run, a text file will be downloaded with all the URLs for the images in your search results. You can then set up a folder and use fast.ai’s ‘download_images’ function to download these&amp;nbsp;images.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/2000/1*19mOhygnBZfGmX4S2fD4ww.png"&gt;&lt;/p&gt;
 &lt;ol&gt;
