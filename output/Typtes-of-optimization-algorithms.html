@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
     <head>
-	<meta name="google-site-verification" content="84vdTDNj4ZXah6B2OV--40PsKd3srH2UrqZ1gy39rm4" />        
-	<meta charset="utf-8"> 
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Internet" />
-        <meta name="copyright" content="Internet" />
 
         <meta name="twitter:creator" content="@lymenlee">
         <meta property="og:type" content="article" />
@@ -26,12 +24,14 @@
         <title>Types of Optimization Algorithms used in Neural Networks and Ways to Optimize Gradient Descent  · Way of Numbers
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/pygments.css" media="screen">
         <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
         <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/admonition.css" media="screen">
         <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/custom.css" media="screen">
-        <link rel="shortcut icon" href="https://wayofnumbers.github.io/theme/images/favicon.ico" type="image/x-icon" type="image/png" />
+
+        <link rel="shortcut icon" href="https://wayofnumbers.github.io/theme/images/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon-152x152.png" type="image/png" />
         <link rel="apple-touch-icon" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon.png"  type="image/png" />
         <link rel="apple-touch-icon" sizes="57x57" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon-57x57.png" type="image/png" />
@@ -50,44 +50,41 @@
     ga('create', 'UA-114137939-1', 'auto');
     ga('send', 'pageview');
 </script>
-	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
-	<!-- SEO Canonical link -->
-	<link rel="canonical" href="https://wayofnumbers.github.io/Typtes-of-optimization-algorithms.html"/>
-	
-	
 
     </head>
     <body>
-        <div id="content-sans-footer">
-        <div class="navbar navbar-static-top">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="https://wayofnumbers.github.io/"><span class=site-name>Way of Numbers</span></a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav pull-right top-menu">
-                            <li ><a href="https://wayofnumbers.github.io">Home</a></li>
-                            <li ><a href="https://wayofnumbers.github.io/categories.html">Categories</a></li>
-                            <li ><a href="https://wayofnumbers.github.io/tags.html">Tags</a></li>
-                            <li ><a href="https://wayofnumbers.github.io/archives.html">Archives</a></li>
-                            <li><form class="navbar-search" action="https://wayofnumbers.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
-                        </ul>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://wayofnumbers.github.io/"><span class=site-name>Way of Numbers</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://wayofnumbers.github.io
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://wayofnumbers.github.io/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.github.io/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.github.io/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span1"></div>
-                <div class="span10">
-<article>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
     <h1><a href="https://wayofnumbers.github.io/Typtes-of-optimization-algorithms.html"> Types of Optimization Algorithms used in Neural Networks and Ways to Optimize Gradient&nbsp;Descent  </a></h1>
@@ -96,12 +93,8 @@
 
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
-
             
-	    <span>
-		<p style="text-align:right; color:#aaaaaa; ">&nbsp Estimated read time: 1 min.</p>
-	    </span>
-	    <p><a href="https://towardsdatascience.com/types-of-optimization-algorithms-used-in-neural-networks-and-ways-to-optimize-gradient-95ae5d39529f"><strong>Original&nbsp;Story</strong></a></p>
+            <p><a href="https://towardsdatascience.com/types-of-optimization-algorithms-used-in-neural-networks-and-ways-to-optimize-gradient-95ae5d39529f"><strong>Original&nbsp;Story</strong></a></p>
 <p><a href="https://towardsdatascience.com/@anishsingh20">Anish Singh Walia</a>:        </p>
 <blockquote>
 <p>If your input data is sparse then methods such as <strong><span class="caps">SGD</span>,<span class="caps">NAG</span> and momentum</strong> are inferior and perform poorly. <strong>For sparse data sets one should use one of the adaptive learning-rate methods.</strong> An additional benefit is that we won’t need to adjust the learning rate but likely achieve the best results with the default value.
@@ -109,11 +102,16 @@ If one wants fast convergence and train a deep Neural Network Model or a highly 
 </blockquote>
 <p>One thing about Machine Learning the overal depth of the topics and algorithms makes it so easy to totally <em>&#8216;sink&#8217;</em> yourself into it. And there is always something to dig. This article provides a view from a higher ground and compare different optimization algorithms and their application areas, thus pulling you out of the deep hole of deep&nbsp;learning. </p>
 <p>A more visual example of these algorithms, see these two beautifully crafted&nbsp;animations:</p>
-<p><img alt="SGD optimization on loss surface contours" src="https://wayofnumbers.github.io/images/optimization-algorithem-1.gif" title="SGD optimization on loss surface contours" />
+<p><img alt="SGD optimization on loss surface contours" src="https://wayofnumbers.github.io/images/optimization-algorithem-1.gif" title="SGD optimization on loss surface contours">
 <div style="text-align: center;"><span class="caps">SGD</span> optimization on loss surface contours</div>
 <br></p>
-<p><img alt="SGD optimization on saddle point" src="https://wayofnumbers.github.io/images/optimization-algorithem-2.gif" title="SGD optimization on saddle point" />
+<p><img alt="SGD optimization on saddle point" src="https://wayofnumbers.github.io/images/optimization-algorithem-2.gif" title="SGD optimization on saddle point">
 <div style="text-align: center;"><span class="caps">SGD</span> optimization on saddle point</div></p>
+
+
+            <div>
+</div>
+
             
             <section>
 <p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
@@ -121,7 +119,8 @@ If one wants fast convergence and train a deep Neural Network Model or a highly 
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="https://wayofnumbers.github.io/Typtes-of-optimization-algorithms.html#disqus_thread">
+                href="https://wayofnumbers.github.io/Typtes-of-optimization-algorithms.html#disqus_thread",
+                id="disqus-accordion-toggle">
                 Comments
             </a>
         </div>
@@ -140,7 +139,7 @@ If one wants fast convergence and train a deep Neural Network Model or a highly 
          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
      })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
                 </div>
@@ -155,6 +154,7 @@ If one wants fast convergence and train a deep Neural Network Model or a highly 
             <nav>
             <ul class="articles-timeline">
                 <li class="previous-article">« <a href="https://wayofnumbers.github.io/Tweak-Pelican-Elegant-Theme.html" title="Previous: Tweaking Pelican Elegant Theme">Tweaking Pelican Elegant Theme</a></li>
+                <li class="next-article"><a href="https://wayofnumbers.github.io/chinese-calligraphy-classifier-2.html" title="Next: How I Trained Computer to Learn Calligraphy Styles: Part 2">How I Trained Computer to Learn Calligraphy Styles: Part 2</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -162,24 +162,24 @@ If one wants fast convergence and train a deep Neural Network Model or a highly 
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2018-02-26T17:00:00-06:00">Feb 26, 2018</time>
+            <time itemprop="dateCreated" datetime="2018-02-26T17:00:00-06:00">Feb 26, 2018</time>
             <h4>Category</h4>
             <a class="category-link" href="https://wayofnumbers.github.io/categories.html#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.github.io/tags.html#ai-ref">AI
+                <li><a href="https://wayofnumbers.github.io/tags#ai-ref">AI
+                    <span>3</span>
+</a></li>
+                <li><a href="https://wayofnumbers.github.io/tags#gradient-descent-ref">Gradient Descent
+                    <span>1</span>
+</a></li>
+                <li><a href="https://wayofnumbers.github.io/tags#machinelearning-ref">machinelearning
                     <span>2</span>
 </a></li>
-                <li><a href="https://wayofnumbers.github.io/tags.html#gradient-descent-ref">Gradient Descent
+                <li><a href="https://wayofnumbers.github.io/tags#neural-networks-ref">Neural Networks
                     <span>1</span>
 </a></li>
-                <li><a href="https://wayofnumbers.github.io/tags.html#machinelearning-ref">machinelearning
-                    <span>4</span>
-</a></li>
-                <li><a href="https://wayofnumbers.github.io/tags.html#neural-networks-ref">Neural Networks
-                    <span>1</span>
-</a></li>
-                <li><a href="https://wayofnumbers.github.io/tags.html#optimization-algorithm-ref">Optimization Algorithm
+                <li><a href="https://wayofnumbers.github.io/tags#optimization-algorithm-ref">Optimization Algorithm
                     <span>1</span>
 </a></li>
             </ul>
@@ -203,20 +203,23 @@ If one wants fast convergence and train a deep Neural Network Model or a highly 
         </section>
 </div>
 </article>
+                    </div>
+                    <div class="span1"></div>
                 </div>
-                <div class="span1"></div>
             </div>
         </div>
-        <div id="push"></div>
-    </div>
 <footer>
-<div id="footer">
-    <ul class="footer-content">
-        <li class="elegant-subtitle"><span class="site-name">Way of Numbers</span> - Data science for the rest of us.</li>
-        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
-    </ul>
-</div>
-</footer>            <script src="https://code.jquery.com/jquery.min.js"></script>
+
+    <div>
+        <span class="site-name">Way of Numbers</span> - Data science for the rest of us.
+    </div>
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script>
             function validateForm(query)
@@ -250,13 +253,13 @@ window.onhashchange=function(){
 </script>
 <script>
 $('#disqus_thread').on('shown', function () {
-    var link = document.getElementsByClassName('accordion-toggle');
-    var old_innerHTML = link[0].innerHTML;
-    $(link[0]).fadeOut(500, function() {
+    var link = document.getElementById('disqus-accordion-toggle');
+    var old_innerHTML = link.innerHTML;
+    $(link).fadeOut(500, function() {
         $(this).text('Click here to hide comments').fadeIn(500);
     });
     $('#disqus_thread').on('hidden', function () {
-        $(link[0]).fadeOut(500, function() {
+        $(link).fadeOut(500, function() {
             $(this).text(old_innerHTML).fadeIn(500);
         });
     })
@@ -264,10 +267,7 @@ $('#disqus_thread').on('shown', function () {
 </script>
 
 
-
-<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a8cd6913a6550ec"></script>
-
     </body>
     <!-- Theme: Elegant built for Pelican
-    License : http://oncrashreboot.com/pelican-elegant -->
+        License : MIT -->
 </html>
