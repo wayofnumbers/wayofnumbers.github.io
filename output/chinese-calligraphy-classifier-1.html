@@ -12,16 +12,16 @@
 
 <meta name="keywords" content="Machine Learning, AI, Deep Learning, fast.ai, calligraphy, Machine Learning, " />
 
-<meta property="og:title" content="How I Trained Computer to Learn Calligraphy Styles: Part 2 "/>
-<meta property="og:url" content="https://wayofnumbers.github.io/chinese-calligraphy-classifier-2.html" />
-<meta property="og:description" content="Fine-tune model for Chinese Calligraphy Classifier with fast.ai library" />
+<meta property="og:title" content="How I Trained Computer to Learn Calligraphy Styles: Part 1 "/>
+<meta property="og:url" content="https://wayofnumbers.github.io/chinese-calligraphy-classifier-1.html" />
+<meta property="og:description" content="Build a model for Chinese Calligraphy Classifier with fast.ai library" />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
-<meta property="og:article:published_time" content="2019-09-16T20:00:00-05:00" />
-<meta name="twitter:title" content="How I Trained Computer to Learn Calligraphy Styles: Part 2 ">
-<meta name="twitter:description" content="Fine-tune model for Chinese Calligraphy Classifier with fast.ai library">
+<meta property="og:article:published_time" content="2019-09-15T20:00:00-05:00" />
+<meta name="twitter:title" content="How I Trained Computer to Learn Calligraphy Styles: Part 1 ">
+<meta name="twitter:description" content="Build a model for Chinese Calligraphy Classifier with fast.ai library">
 
-        <title>How I Trained Computer to Learn Calligraphy Styles: Part 2  · Way of Numbers
+        <title>How I Trained Computer to Learn Calligraphy Styles: Part 1  · Way of Numbers
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
@@ -87,7 +87,7 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="https://wayofnumbers.github.io/chinese-calligraphy-classifier-2.html"> How I Trained Computer to Learn Calligraphy Styles: Part&nbsp;2  </a></h1>
+    <h1><a href="https://wayofnumbers.github.io/chinese-calligraphy-classifier-1.html"> How I Trained Computer to Learn Calligraphy Styles: Part&nbsp;1  </a></h1>
     </header>
 </div>
 
@@ -95,66 +95,100 @@
         <div class="span8 offset2 article-content">
             
             <p>Build a Deep Learning Model with fast.ai&nbsp;Library</p>
-<p><img alt="Photo by Kon Karampelas on Unsplash" src="https://cdn-images-1.medium.com/max/12000/0*gzpUfcpouuU10xO1"><em>Photo by <a href="https://unsplash.com/@konkarampelas?utm_source=medium&amp;utm_medium=referral">Kon Karampelas</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
+<p><img alt="Photo by Raychan on Unsplash" src="https://cdn-images-1.medium.com/max/10944/0*1vRfrkhsQiTkkBgJ"><em>Photo by <a href="https://unsplash.com/@wx1993?utm_source=medium&amp;utm_medium=referral">Raychan</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
 <p>I wanted to start a series of posts for the projects I finished/polished for my <a href="https://course.fast.ai/">Practical Deep Learning for Coders</a> fast.ai course. Since I’m pretty green on <span class="caps">ML</span>/<span class="caps">DL</span> field, I hope the challenges I faced and overcome could be of value for other people experiencing the same&nbsp;journey.</p>
 <p>Model <a href="https://medium.com/@lymenlee/deep-learning-models-by-fast-ai-library-c1cccc13e2b3">1</a> ・<a href="https://medium.com/datadriveninvestor/chinese-calligraphy-classifier-fine-tuning-cbfbf0e304d8">1a</a></p>
-<h3>Making It Even&nbsp;Better</h3>
-<p>In my <a href="https://medium.com/datadriveninvestor/deep-learning-models-by-fast-ai-library-c1cccc13e2b3">last post</a>, I explained the approach I take for this image recognition problem using fast.ai library. As you can see, once we get the data down to a fast.ai ImageDataBunch, the code is rather simple and we achieve a 90% accuracy rate, which is quite impressive considering the quality of our data(randomly downloaded from Google/Baidu search without much data cleaning). Now, can we do better?
+<h3><strong>Why Build a Chinese Calligraphy&nbsp;Classifier</strong></h3>
+<p>Like any calligraphy, Chinese calligraphy is a form of art. Some great pieces written by some ancient masters have both great art value and economic values (selling at multi-million dollars on&nbsp;auctions).</p>
+<p><img alt="*Jieshi Tie* by Song Dynasty politician and scholar Zeng Gong, $30,000,000" src="https://cdn-images-1.medium.com/max/2000/1*2lrTyRMYIcm6HfnojdgUvg.jpeg">*<em>Jieshi Tie</em> by Song Dynasty politician and scholar Zeng Gong,&nbsp;\$30,000,000*</p>
+<p>There are multiple main styles/schools of calligraphy, mainly belongs to different dynasties. Each has its own way of shaping the character and arranging them. The differences are subtle and abstract. It makes sense to see if a trained deep learning model can do a good job of telling which style it is.
 <a href="https://www.datadriveninvestor.com/2019/03/03/editors-pick-5-machine-learning-books/"><strong><span class="caps">DDI</span> Editor&#8217;s Pick: 5 Machine Learning Books That Turn You from Novice to Expert | Data Driven…</strong>
 <em>The booming growth in the Machine Learning industry has brought renewed interest in people about Artificial…</em>www.datadriveninvestor.com</a></p>
+<p>I picked three&nbsp;styles:</p>
+<ul>
+<li>
+<p>Lishu(隶书)</p>
+</li>
+<li>
+<p>Kaishu(楷书)</p>
+</li>
+<li>
+<p>Xiaozhuan(小篆)</p>
+</li>
+</ul>
+<p>as a proof-of-concept. Once successful trained, the model could serve as a transfer learning base-model for the more fine-grained classifier( e.g. calligraphers classifier). This has some real-life value. From time to time, some ancient artifacts are discovered and some of them are calligraphy artworks. Sometimes it’s hard to tell whose work it is. Is it valuable (like undiscovered artwork by a famous&nbsp;calligrapher)?</p>
 <blockquote>
-<h1>Turns out, we&nbsp;can!</h1>
+<p>This calligrapher classifier can serve as a way to quickly identify artworks by great calligraphers. ( Finding diamond in the rough <em>😉</em>)</p>
 </blockquote>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*sz46EDt2HU_N2YecCXJ9ng.jpeg"></p>
-<p>How? Well, there are two things in our prior pipeline that could&nbsp;improve:</p>
+<h3>Collecting&nbsp;Data</h3>
+<p>To build a calligraphy classifier, we will need some calligraphy examples of each style. I did some search online and cannot find any good already-made data-set for different calligraphy styles. So I’ll have to build it&nbsp;myself.</p>
+<p>Building a images data-set isn’t hard thanks to Google’s Images search functionality and some JavaScript snippets. Here’s&nbsp;how:</p>
 <ol>
 <li>
-<p>Image Pre-processing&nbsp;Tweak</p>
+<p>Go to <a href="https://www.google.com/imghp?hl=en">Google Images</a> and search for “隶书 字帖 网格” (lishu, characters book, grid), this will give you the most relevant&nbsp;results.</p>
 </li>
 <li>
-<p>Model Training Fine&nbsp;Tune.</p>
+<p>Scroll down to show more results, you’ll hit the bottom with ‘<em>Show more results</em>’ button. Click if you want more, but keep in mind that <strong>700</strong> images is the maximum&nbsp;here.</p>
 </li>
 </ol>
-<p>Let’s dive&nbsp;deeper.</p>
-<h3>Image Pre-Processing&nbsp;Tweak</h3>
-<p>Remember when we import our data into fast.ai ImageDataBunch, we used the following&nbsp;code:</p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/0*Prt5fbhL-qj1OoQE.png"></p>
-<p>Notice that on our image pre-processing, i.e. get_transforms function, we didn’t give it any parameter and just used the default. The default will try to apply a variety of image augmentation techniques to make the image data-set generalize better, like flipping, warping, rotating, cropping, etc. This is good, fast.ai library helped us do the ‘best practice’ for the majority of the cases. But in our case here, some default might not work that&nbsp;well.</p>
-<p>The biggest one is ‘flipping’. Because we are trying to classify calligraphy artworks and in real life, it will never randomly flip left/right or up/down. So making the images flips randomly will not reflect the real-life cases and thus won’t help with our training&nbsp;accuracy.</p>
-<p>To fix this, we tweaked our code as&nbsp;below:</p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*9Gv0vDlF12MPKznehyU1LA.png"></p>
-<p>Notice we pass do_flip=False into the get_transforms function, thus telling the module to not randomly flipping our images during&nbsp;importing.</p>
-<h3>Model Training Fine&nbsp;Tune</h3>
-<p>Now that the image pre-processing is done. We can re-structure out model training to avoid overfitting and achieve better accuracy. This approach is introduced in the fast.ai <a href="https://course.fast.ai/">Practical Deep Learning for Coders</a> course <a href="https://course.fast.ai/videos/?lesson=3">lesson 3</a>.</p>
-<blockquote>
-<p>Instead of training the model directly from a 256x256 image size, we’ll gradually scaling up the image size. More concretely, we will first train a <span class="caps">CNN</span> to classify the images of 128x128 size, once we achieved best accuracy, we’ll then use transfer learning and keep training the model on the same data-set, except with 256x256 image size. We’ll call the 128x128 image size training ‘stage 1’ and 256x256 image size training ‘stage&nbsp;2’</p>
-</blockquote>
-<p>After our stage 1 training(where my <a href="https://medium.com/datadriveninvestor/deep-learning-models-by-fast-ai-library-c1cccc13e2b3">last post</a> left off), we have a trained <span class="caps">CNN</span> model called learn , it’s ‘unfreezed’ and achieves an accuracy of around&nbsp;85%.</p>
-<p><img alt="Accuracy 86% after training a 128x128 image size CNN." src="https://cdn-images-1.medium.com/max/2000/1*gereMOAvFIDiK2Mposxw4g.png"><em>Accuracy 86% after training a 128x128 image size <span class="caps">CNN</span>.</em></p>
-<p>Now we need to freeze the network again, create a new ImageDataBunch with 256x256 image size and restart the same training&nbsp;process.</p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*uhQ8i6QTzLJQ1J9EwNtcsg.png"></p>
-<p>After finding the best learning rate, we train the <span class="caps">CNN</span> with another 2 epochs, already breaking into 91% accuracy. We’ll then do the same ‘unfreeze’ and keep&nbsp;training.</p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*CAwRb2bFZFpgTe8u5UA9JQ.png"></p>
-<p>After unfreeze, we trained the model with another 4 epochs, the accuracy broke into <strong>96.5%</strong>. Observed that valudation_losshas already surpassed training_loss, suggesting a sign of overfitting. We’ll stop our training&nbsp;here.</p>
-<p>This simple technique is also called ‘<strong>Progressive resizing</strong>’ by <a href="undefined">Jeremy Howard</a> from <a href="https://www.fast.ai/2018/08/10/fastai-diu-imagenet/">fast.ai</a> and helped his team <a href="https://www.theverge.com/2018/5/7/17316010/fast-ai-speed-test-stanford-dawnbench-google-intel">beat Google in a competition of speed training <span class="caps">IMAGENET</span> in *DAWNBench</a> by training the <span class="caps">IMAGGNET</span> in a whopping<strong>18</strong> minutes and <strong>\$40</strong> Amazon <span class="caps">AWS</span>&nbsp;cost.*</p>
-<h3>To Wrap It&nbsp;Up</h3>
-<p><img alt="Photo by Franki Chamaki on Unsplash" src="https://cdn-images-1.medium.com/max/8064/0*ccqj05oUPQjsG_Jk"><em>Photo by <a href="https://unsplash.com/@franki?utm_source=medium&amp;utm_medium=referral">Franki Chamaki</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
-<p>With two simple tweaks, we managed to increase the accuracy around 6.5%, breaking into the state-of-the-art range of results. Major&nbsp;takeaways:</p>
+<p><img alt="Google search results for Lishu style" src="https://cdn-images-1.medium.com/max/2000/1*uQPNDb-qXO3mYQIHuxitMQ.png"><em>Google search results for Lishu&nbsp;style</em></p>
+<ol>
+<li>Now is where the magic happens. Press Ctrl+Shift+J in Windows/Linux and Cmd+Opt+J in Mac to bring up the JavaScript ‘Console’ window of the browser. The following JavaScript snippet will get the URLs of each of the&nbsp;images.</li>
+</ol>
+<p>4) If successfully run, a text file will be downloaded with all the URLs for the images in your search results. You can then set up a folder and use fast.ai’s ‘download_images’ function to download these&nbsp;images.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*19mOhygnBZfGmX4S2fD4ww.png"></p>
 <ol>
 <li>
-<p>When doing image pre-processing, make sure the processed images still properly represent what real-life data will look&nbsp;like.</p>
+<p>Rinse and repeat for other styles. You might want to put them into different folders like kaishu, xiaozhuan and put them all under a folder called train so later on, fast.ai can easily import them into the&nbsp;model.</p>
 </li>
 <li>
-<p>The reason gradually increase training image size works is: by giving the trained model a data-set that’s 4 times bigger, actually means giving the model a brand new data to train, avoiding&nbsp;overfitting.</p>
-</li>
-<li>
-<p>Starting from smaller sized images for training will also have the benefit of faster training and quicker experimenting. This usually leads to better&nbsp;results.</p>
+<p>Alternatively, you can also go to Baidu.com for images search, using this <a href="https://gist.github.com/wayofnumbers/39842bb909c04070de49e53c418d512f">snippet</a> to automatically download the images you searched for. (Code too long to be put into this post, so I link it&nbsp;here).</p>
 </li>
 </ol>
-<p>That’s it for Chinese Calligraphy Classifier. I hope you learned a thing or two after reading these two articles. We’re trying to get some specific calligrapher’s ‘true’ and ‘fake’ artworks and see if we can build a ‘true or false’ classifier. This will be a very interesting and much valuable next step. Will report back and write more articles if we made real progress. But until then, we’ll move on to put this well-trained model into production and build a web-app around it. Stay&nbsp;tuned.</p>
-<p>If you haven’t read my first post on this topic, here’s the link:
-<a href="https://medium.com/datadriveninvestor/deep-learning-models-by-fast-ai-library-c1cccc13e2b3"><strong>How I Trained Computer to Learn Calligraphy Styles: Part1</strong>
-<em>Build a Deep Learning Model with fast.ai Library</em>medium.com</a></p>
+<h3>Let’s Have a Look at the&nbsp;Data</h3>
+<p>If you organize the downloaded images into train/lishu, train/kaishu, train/xiaozhuan, then you can run the following code to import them into and transformed accordingly, ready to fit a model.fast.ai’s powerfulImageDataBunch object, where all data is organized, splitted and transformed accordingly, ready to fit a&nbsp;model.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*hsF08GhTX9tjyov8hHzbFw.png"></p>
+<p>Note that we split the train/validation set with an 80/20 ratio, image resized to 224 which is a good default for any image recognition&nbsp;task.</p>
+<p>Now that data is imported properly, let’s look at our&nbsp;images:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*F378nVvqW7o6lz6QxAB2gA.png"></p>
+<p>As we can see from the few examples above, the data-set is rather ‘dirty’. The images are not properly cropped, with some side notes with different calligraphy style and some images only have one or two characters. But it’s <span class="caps">OK</span>. Let’s quickly train the model and see how it performs so we can gain some insights into our&nbsp;data.</p>
+<h3>Quick and Dirty&nbsp;Training</h3>
+<p>Let’s first create a model. We’ll be using transfer learning and use ResNet50 as our model. Pre-trained weights will be&nbsp;downloaded.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2134/1*Zzy9-o-Q3K3BID_vZyRCoA.png"></p>
+<p>With 3 epoches of fit_one_cycle, we managed to reach a 90% accuracy rate on our validation set. Not&nbsp;bad!</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*44IMsadGzm0-mF2SdrvUKA.png"></p>
+<h3>Unfreeze and Fine-Tune Our&nbsp;Training</h3>
+<p>Since the fit_one_cycle function will freeze the initial layers and only training the last couple of layers to speed up the training speed(this approach works because usually for transfer learning, initial layers will capture basic features of the images that are not likely to change a lot), we can hopefully further improve our accuracy by unfreezing all the layers and train&nbsp;again.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*IxzL6yxuHV2nqmoXure_fg.png"></p>
+<p>We used the above lr_find function to find a good learning rate range. The key is to find the steepest slope (as indicated in the orange circle above) in the learning curve and slice it for further training. For example, in the above figure, the bottom of the curve is at 1e-03, then we can pick one point at 1/10 of that, which is 1e-04, and the other one at 1e-06 or 1e-05 (This is inspired from an experimental concept of ‘Super-convergence’, described in details in <a href="https://course.fast.ai">fast.ai course</a>. Sometime you need to do a bit of experiment to find the best learning rate combination but then again, fast.ai is always preaching iterative and interactive approach.) The idea is still to train the first couple of layers slower and last couple layers&nbsp;faster.</p>
+<p>Let’s train another two&nbsp;epoch:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*noUlINi_AE8NZyZfJ7koBQ.png"></p>
+<p>Slightly better and the validation_loss starts to surpass train_loss, a sign of overfitting. Let’s stop here and wrap things&nbsp;up.</p>
+<h3>Results&nbsp;Interpretation</h3>
+<p>We reached 90% accuracy. Not state-of-the-art but already pretty impressive considering we only have a roughly 700 images per class data-set. More data will definitely lead to better results. Let’s look at our results and see if we can find some&nbsp;insights.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*tyskbmlwBIE0roKxHHbseA.png"></p>
+<p>Using the ClassificationIntepretation object from fast.ai, we can easily calculate the top_losses and see what they&nbsp;are:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*3bL7M8zSjT-PLGVTqp3hEg.png"></p>
+<p>Look at the confusion matrix, the model does really well in recognize ‘xiaozhuan’, probably due to its unique stroke&nbsp;arrangements.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*qtb-Te_AElPaO3mym-9RVw.png"></p>
+<p><strong>A couple of&nbsp;insights:</strong></p>
+<blockquote>
+<p>We still have totally wrong images like the grid one (2nd one on 1st row)
+If there are too few (1st row, 1st column) or too many (2nd row, 2nd column) characters, the model will struggle.
+Some image shows ‘in-between’ kind of styles which the model also had a hard time classify. Which is totally normal, since even human will have a hard time telling which style it belongs&nbsp;to.</p>
+</blockquote>
+<h3>Final&nbsp;Thoughts</h3>
+<p>This experimental project actually works exceedingly well with fast.ai library. <a href="undefined">Jeremy Howard</a> said on the course and I quote here (not exactly word by word, but I hope I captured the gist of it.&nbsp;🙏):</p>
+<blockquote>
+<h1>fast.ai is a very opinionated library. Wherever we know a best default, we’ll choose it for you. Whatever best practice we know works well, we’ll do it for&nbsp;you.</h1>
+</blockquote>
+<p>This is at least proven in this project. With only very few lines of code and very minimum efforts for data collection, we managed a 90% accurate model. I believe with more and better quality data. The state-of-the-art results could be achieved and our calligrapher classifier vision is not beyond&nbsp;reach.</p>
+<p><img alt="fast.ai’s tagline: Making neural nets uncool again." src="https://cdn-images-1.medium.com/max/2400/0*Yo5w5gd2_CRC1MFl.jpg"><em>fast.ai’s tagline: Making neural nets uncool&nbsp;again.</em></p>
+<p>Finally, allow me to paraphrase above tagline with a Chinese&nbsp;poet:</p>
+<p><img alt="“Where once the swallows knew the mansions of the great, They now to humbler homes would fly to nest and mate.“" src="https://cdn-images-1.medium.com/max/2000/1*g6k1Z7hyyeW_Y8Ge3GWmWQ.png"><em>“Where once the swallows knew the mansions of the great, They now to humbler homes would fly to nest and&nbsp;mate.“</em></p>
+<p>You could find out how I fine-tuned the model and achieved better accuracy at the link below:
+<a href="https://medium.com/datadriveninvestor/chinese-calligraphy-classifier-fine-tuning-cbfbf0e304d8"><strong>How I Trained Computer to Learn Calligraphy Styles: Part 2</strong>
+<em>Build a Deep Learning Models with fast.ai Library</em>medium.com</a></p>
 
 
             <div>
@@ -169,7 +203,7 @@
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="https://wayofnumbers.github.io/chinese-calligraphy-classifier-2.html#disqus_thread",
+                href="https://wayofnumbers.github.io/chinese-calligraphy-classifier-1.html#disqus_thread",
                 id="disqus-accordion-toggle">
                 Comments
             </a>
@@ -180,8 +214,8 @@
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'way-of-numbers';
-        var disqus_identifier = 'https://wayofnumbers.github.io/chinese-calligraphy-classifier-2.html';
-    var disqus_url = 'https://wayofnumbers.github.io/chinese-calligraphy-classifier-2.html';
+        var disqus_identifier = 'https://wayofnumbers.github.io/chinese-calligraphy-classifier-1.html';
+    var disqus_url = 'https://wayofnumbers.github.io/chinese-calligraphy-classifier-1.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -203,7 +237,8 @@
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.github.io/chinese-calligraphy-classifier-1.html" title="Previous: How I Trained Computer to Learn Calligraphy Styles: Part 1">How I Trained Computer to Learn Calligraphy Styles: Part 1</a></li>
+                <li class="previous-article">« <a href="https://wayofnumbers.github.io/Typtes-of-optimization-algorithms.html" title="Previous: Types of Optimization Algorithms used in Neural Networks and Ways to Optimize Gradient Descent">Types of Optimization Algorithms used in Neural Networks and Ways to Optimize Gradient Descent</a></li>
+                <li class="next-article"><a href="https://wayofnumbers.github.io/chinese-calligraphy-classifier-2.html" title="Next: How I Trained Computer to Learn Calligraphy Styles: Part 2">How I Trained Computer to Learn Calligraphy Styles: Part 2</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -211,7 +246,7 @@
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2019-09-16T20:00:00-05:00">Sep 16, 2019</time>
+            <time itemprop="dateCreated" datetime="2019-09-15T20:00:00-05:00">Sep 15, 2019</time>
             <h4>Category</h4>
             <a class="category-link" href="https://wayofnumbers.github.io/categories.html#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
