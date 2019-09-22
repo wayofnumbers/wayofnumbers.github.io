@@ -1,5 +1,10 @@
-
-# Thoughts on Andrew Ng’s Machine Learning Course
+Title: I finished Andrew Ng's Machine Learning Course and I Felt Great!
+Slug: andrewng-ml-course-review
+Date: 2019-09-6 20:00
+Category: Machine Learning
+Tags: Machine Learning, AI, Deep Learning, AndrewNg, Coursera
+author: Michael Li
+Summary: Thoughts and feelings for completing Andrew Ng's Machine Learning course
 
 The good, the bad, and the beautiful
 
