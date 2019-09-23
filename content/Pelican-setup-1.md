@@ -8,7 +8,7 @@ Summary: My notes on how to setup Data Science blog using Pelican static site ge
 
 [TOC]
 
-![Coding Background]({filename}/images/coding.png)
+![Coding Background]({static}/images/coding.png)
 
 First of all, this is by no means a thorough tutorial. I've followed Dataquest's blog post: [Building a data science portfolio: Making a data science blog](https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/) to get this one setup. Here are some insights and hiccups that may be helpful to others who want to do the same thing.
 

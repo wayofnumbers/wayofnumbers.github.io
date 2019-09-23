@@ -8,7 +8,7 @@ Summary: My notes on how to tweak a Pelican theme, in this article, Elegant.
 
 [TOC]
 
-![Elegant]({filename}/images/Elegant.png)
+![Elegant]({static}/images/Elegant.png)
 
 Pelican has a lot of themes, developed by the community and shared on its official GitHub repo [here](https://github.com/getpelican/pelican-themes). [Pelican Themes](http://www.pelicanthemes.com/) also offer some previews of them so you can have a good idea of what to expect. 
 Some themes are really easy to setup and configure, others need some efforts. The [Elegant](http://oncrashreboot.com/elegant-best-pelican-theme-features) them is the latter. For most of the themes, to make it work, you just need to add define the 'THEME' variable, like so:
