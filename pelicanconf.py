@@ -185,11 +185,6 @@ EXTRA_PATH_METADATA = {
 # elegant
 THEME = "/home/lisper/pelican-themes/elegant"
 # MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(anchorlink=true)']
-MARKDOWN = {
-    'extension_configs': {
-        'markdown.extensions.toc': {}
-    }
-}
 DIRECT_TEMPLATES = (('index', 'tags', 'categories',
                      'archives', 'search', '404'))
 STATIC_PATHS = ['theme/images', 'images']
