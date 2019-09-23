@@ -35,9 +35,9 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 
 # Social widget
 SOCIAL = (('Twitter', 'https://twitter.com/lymenlee'),
-	  ('GitHub', 'https://github.com/wayofnumbers'),
-	  ('LinkedIn', 'www.linkedin.com/in/michael-li-dfw'),
-)
+          ('GitHub', 'https://github.com/wayofnumbers'),
+          ('LinkedIn', 'www.linkedin.com/in/michael-li-dfw'),
+          )
 
 TWITTER_USERNAME = 'lymenlee'
 
@@ -50,9 +50,11 @@ RELATIVE_URLS = False
 
 MARKUP = ('md', 'ipynb')
 # STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'extra/logo.svg']
-MENUITEMS = [('Homepage', '/'),('Categories','/categories.html'), ('About', './pages/about.html')]
-PLUGIN_PATHS= ['./plugins']
-PLUGINS = ['ipynb.markup','sitemap', 'extract_toc', 'neighbors', 'tipue_search', 'readtime-master']
+MENUITEMS = [('Homepage', '/'), ('Categories', '/categories.html'),
+             ('About', './pages/about.html')]
+PLUGIN_PATHS = ['./plugins']
+PLUGINS = ['ipynb.markup', 'sitemap', 'extract_toc',
+           'neighbors', 'tipue_search', 'readtime-master']
 
 TYPOGRIFY = True
 
@@ -178,22 +180,28 @@ EXTRA_PATH_METADATA = {
 #	'extra/favicon.ico': {'path': 'favicon.ico'},
 	'extra/logo.svg': {'path': 'logo.svg'}
 }
-''' # end of nest
+'''  # end of nest
 
-#elegant
+# elegant
 THEME = "/home/lisper/pelican-themes/elegant"
-MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(anchorlink=true)']
-DIRECT_TEMPLATES = (('index', 'tags', 'categories','archives', 'search', '404'))
+# MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(anchorlink=true)']
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.toc': {}
+    }
+}
+DIRECT_TEMPLATES = (('index', 'tags', 'categories',
+                     'archives', 'search', '404'))
 STATIC_PATHS = ['theme/images', 'images']
 TAG_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
-#added only for elegent theme, which does not process the favicon with this.
-USE_SHORTCUT_ICONS=True
-LANDING_PAGE_ABOUT = {'title': "Data science for the rest of us.", 
-		      'details' : "We are a small team of researchers, designers, developers that likes to explore. Data science don't have to be boring, and we are here to help."}
+# added only for elegent theme, which does not process the favicon with this.
+USE_SHORTCUT_ICONS = True
+LANDING_PAGE_ABOUT = {'title': "Data science for the rest of us.",
+                      'details': "We are a small team of researchers, designers, developers that likes to explore. Data science don't have to be boring, and we are here to help."}
 SITESUBTITLE = "Data science for the rest of us."
-			
+
 PROJECTS = [{
     'name': 'Mucraft.net',
     'url': 'http://mucraft.net',
@@ -202,14 +210,14 @@ PROJECTS = [{
     'name': 'Pelican Read Time Plugin',
     'url': 'https://github.com/wayofnumbers/pelican-readtime',
     'description': 'A Pelican plugin that can display estimated read time on the website'},
-    ]
+]
 
-#Mail Chimp
+# Mail Chimp
 MAILCHIMP_FORM_ACTION = "https://github.us17.list-manage.com/subscribe/post?u=c212184cc0965bdf1658f69f0&amp;id=5677a7b75e"
 EMAIL_SUBSCRIPTION_LABEL = "Get Monthly Updates"
-SUBSCRIBE_BUTTON_TITLE = "Send me Free Updates"	
+SUBSCRIBE_BUTTON_TITLE = "Send me Free Updates"
 
-#comments
+# comments
 COMMENTS_INTRO = "So what do you think? Did I miss anything? Is any part unclear? Leave your comments below."
 
 MARKDOWN = {
@@ -217,7 +225,7 @@ MARKDOWN = {
         'markdown.extensions.codehilite': {'css_class': 'highlight'},
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
-        'markdown.extensions.toc' :{'permalink' : 'true'},
+        'markdown.extensions.toc': {'permalink': 'true'},
 
     },
     'output_format': 'html5',
@@ -232,7 +240,3 @@ MARKDOWN = {
 # BS3_JS  = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'
 # JQUERY_JS = '/home/lisper/Downloads/jupyter-blog/3rdparty/jquery/jquery-1.10.1.min.js'
 # JQUERY_MIGRATE_JS = '/home/lisper/Downloads/jupyter-blog/3rdparty/jquery/jquery-migrate-1.2.1.min.js'
-
-
-
-

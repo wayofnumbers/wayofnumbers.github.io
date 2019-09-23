@@ -98,12 +98,12 @@
 <p><img alt="Photo by Kon Karampelas on Unsplash" src="https://cdn-images-1.medium.com/max/12000/0*gzpUfcpouuU10xO1"><em>Photo by <a href="https://unsplash.com/@konkarampelas?utm_source=medium&amp;utm_medium=referral">Kon Karampelas</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
 <p>I wanted to start a series of posts for the projects I finished/polished for my <a href="https://course.fast.ai/">Practical Deep Learning for Coders</a> fast.ai course. Since I’m pretty green on <span class="caps">ML</span>/<span class="caps">DL</span> field, I hope the challenges I faced and overcome could be of value for other people experiencing the same&nbsp;journey.</p>
 <p>Model <a href="https://medium.com/@lymenlee/deep-learning-models-by-fast-ai-library-c1cccc13e2b3">1</a> ・<a href="https://medium.com/datadriveninvestor/chinese-calligraphy-classifier-fine-tuning-cbfbf0e304d8">1a</a></p>
-<h3>Making It Even&nbsp;Better</h3>
+<h3 id="making-it-even-better">Making It Even Better<a class="headerlink" href="#making-it-even-better" title="Permanent link">&para;</a></h3>
 <p>In my <a href="https://medium.com/datadriveninvestor/deep-learning-models-by-fast-ai-library-c1cccc13e2b3">last post</a>, I explained the approach I take for this image recognition problem using fast.ai library. As you can see, once we get the data down to a fast.ai ImageDataBunch, the code is rather simple and we achieve a 90% accuracy rate, which is quite impressive considering the quality of our data(randomly downloaded from Google/Baidu search without much data cleaning). Now, can we do better?
 <a href="https://www.datadriveninvestor.com/2019/03/03/editors-pick-5-machine-learning-books/"><strong><span class="caps">DDI</span> Editor&#8217;s Pick: 5 Machine Learning Books That Turn You from Novice to Expert | Data Driven…</strong>
 <em>The booming growth in the Machine Learning industry has brought renewed interest in people about Artificial…</em>www.datadriveninvestor.com</a></p>
 <blockquote>
-<h1>Turns out, we&nbsp;can!</h1>
+<h1 id="turns-out-we-can">Turns out, we can!<a class="headerlink" href="#turns-out-we-can" title="Permanent link">&para;</a></h1>
 </blockquote>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*sz46EDt2HU_N2YecCXJ9ng.jpeg"></p>
 <p>How? Well, there are two things in our prior pipeline that could&nbsp;improve:</p>
@@ -116,7 +116,7 @@
 </li>
 </ol>
 <p>Let’s dive&nbsp;deeper.</p>
-<h3>Image Pre-Processing&nbsp;Tweak</h3>
+<h3 id="image-pre-processing-tweak">Image Pre-Processing Tweak<a class="headerlink" href="#image-pre-processing-tweak" title="Permanent link">&para;</a></h3>
 <p>Remember when we import our data into fast.ai ImageDataBunch, we used the following&nbsp;code:</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/0*Prt5fbhL-qj1OoQE.png"></p>
 <p>Notice that on our image pre-processing, i.e. get_transforms function, we didn’t give it any parameter and just used the default. The default will try to apply a variety of image augmentation techniques to make the image data-set generalize better, like flipping, warping, rotating, cropping, etc. This is good, fast.ai library helped us do the ‘best practice’ for the majority of the cases. But in our case here, some default might not work that&nbsp;well.</p>
@@ -124,7 +124,7 @@
 <p>To fix this, we tweaked our code as&nbsp;below:</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*9Gv0vDlF12MPKznehyU1LA.png"></p>
 <p>Notice we pass do_flip=False into the get_transforms function, thus telling the module to not randomly flipping our images during&nbsp;importing.</p>
-<h3>Model Training Fine&nbsp;Tune</h3>
+<h3 id="model-training-fine-tune">Model Training Fine Tune<a class="headerlink" href="#model-training-fine-tune" title="Permanent link">&para;</a></h3>
 <p>Now that the image pre-processing is done. We can re-structure out model training to avoid overfitting and achieve better accuracy. This approach is introduced in the fast.ai <a href="https://course.fast.ai/">Practical Deep Learning for Coders</a> course <a href="https://course.fast.ai/videos/?lesson=3">lesson 3</a>.</p>
 <blockquote>
 <p>Instead of training the model directly from a 256x256 image size, we’ll gradually scaling up the image size. More concretely, we will first train a <span class="caps">CNN</span> to classify the images of 128x128 size, once we achieved best accuracy, we’ll then use transfer learning and keep training the model on the same data-set, except with 256x256 image size. We’ll call the 128x128 image size training ‘stage 1’ and 256x256 image size training ‘stage&nbsp;2’</p>
@@ -137,7 +137,7 @@
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*CAwRb2bFZFpgTe8u5UA9JQ.png"></p>
 <p>After unfreeze, we trained the model with another 4 epochs, the accuracy broke into <strong>96.5%</strong>. Observed that valudation_losshas already surpassed training_loss, suggesting a sign of overfitting. We’ll stop our training&nbsp;here.</p>
 <p>This simple technique is also called ‘<strong>Progressive resizing</strong>’ by <a href="undefined">Jeremy Howard</a> from <a href="https://www.fast.ai/2018/08/10/fastai-diu-imagenet/">fast.ai</a> and helped his team <a href="https://www.theverge.com/2018/5/7/17316010/fast-ai-speed-test-stanford-dawnbench-google-intel">beat Google in a competition of speed training <span class="caps">IMAGENET</span> in *DAWNBench</a> by training the <span class="caps">IMAGGNET</span> in a whopping<strong>18</strong> minutes and <strong>\$40</strong> Amazon <span class="caps">AWS</span>&nbsp;cost.*</p>
-<h3>To Wrap It&nbsp;Up</h3>
+<h3 id="to-wrap-it-up">To Wrap It Up<a class="headerlink" href="#to-wrap-it-up" title="Permanent link">&para;</a></h3>
 <p><img alt="Photo by Franki Chamaki on Unsplash" src="https://cdn-images-1.medium.com/max/8064/0*ccqj05oUPQjsG_Jk"><em>Photo by <a href="https://unsplash.com/@franki?utm_source=medium&amp;utm_medium=referral">Franki Chamaki</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
 <p>With two simple tweaks, we managed to increase the accuracy around 6.5%, breaking into the state-of-the-art range of results. Major&nbsp;takeaways:</p>
 <ol>
