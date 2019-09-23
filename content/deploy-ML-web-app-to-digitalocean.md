@@ -6,6 +6,8 @@ Tags: Machine Learning, AI, Deep Learning, fast.ai,  DigitalOcean, Docker, Starl
 author: Michael Li
 Summary: Guide to deploy your Machine Learning web app to DigitalOcean
 
+[TOC]
+
 Using Fast.ai, Docker, GitHub, and Starlette ASGI Framework
 
 ![](https://cdn-images-1.medium.com/max/5000/1*CIO_AZnYf8OkitOLyjXHHw.png)

@@ -6,6 +6,8 @@ Tags: Machine Learning, AI, Deep Learning, AndrewNg, Coursera
 author: Michael Li
 Summary: Thoughts and feelings for completing Andrew Ng's Machine Learning course
 
+[TOC]
+
 The good, the bad, and the beautiful
 
 ![](https://cdn-images-1.medium.com/max/2400/1*-7P4wesf7eSx46XxHV9_wg.png)

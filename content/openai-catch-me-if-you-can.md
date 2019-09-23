@@ -6,6 +6,8 @@ Tags: Machine Learning, AI, OpenAI, Gaming, Reinforcement Learning
 author: Michael Li
 Summary: OpenAI's multi-agent hide and seek experiments explained.
 
+[TOC]
+
 What OpenAI’s Multi-Agent Hide and Seek Break Through Means
 
 ![](https://cdn-images-1.medium.com/max/5074/1*zx1DVdwYOVJWdHURXr5qjw.png)

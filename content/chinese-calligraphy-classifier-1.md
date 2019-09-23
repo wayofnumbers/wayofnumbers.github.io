@@ -6,6 +6,8 @@ Tags: Machine Learning, AI, Deep Learning, fast.ai, calligraphy
 author: Michael Li
 Summary: Build a model for Chinese Calligraphy Classifier with fast.ai library
 
+[TOC]
+
 Build a Deep Learning Model with fast.ai Library
 
 ![Photo by [Raychan](https://unsplash.com/@wx1993?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)](https://cdn-images-1.medium.com/max/10944/0*1vRfrkhsQiTkkBgJ)_Photo by [Raychan](https://unsplash.com/@wx1993?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)_
