@@ -54,7 +54,7 @@ MENUITEMS = [('Homepage', '/'), ('Categories', '/categories.html'),
              ('About', './pages/about.html')]
 PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['ipynb.markup', 'sitemap', 'extract_toc',
-           'neighbors', 'tipue_search', 'readtime-master']
+           'neighbors', 'tipue_search', 'readtime']
 
 TYPOGRIFY = True
 
@@ -95,7 +95,7 @@ DISQUS_SITENAME = "way-of-numbers"
 
 
 # elegant
-THEME = "elegant"
+THEME = "./pelican-themes/elegant"
 # MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(anchorlink=true)']
 DIRECT_TEMPLATES = (('index', 'tags', 'categories',
                      'archives', 'search', '404'))
