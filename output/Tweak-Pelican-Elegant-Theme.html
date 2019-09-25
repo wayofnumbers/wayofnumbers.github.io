@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>Way of Numbers - Tweaking Pelican Elegant&nbsp;Theme</title>
+        <meta charset="utf-8" />
+        <link href="https://wayofnumbers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers Full Atom Feed" />
+        <link href="https://wayofnumbers.github.io/feeds/tools.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers Categories Atom Feed" />
+
+
+
+
+    <meta name="tags" content="Pelican" />
+    <meta name="tags" content="Blog" />
+    <meta name="tags" content="Github" />
+    <meta name="tags" content="Theme" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://wayofnumbers.github.io/">Way of Numbers <strong>Data science for the rest of us.</strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/categories.html">Categories</a></li>
+            <li><a href="./pages/about.html">About</a></li>
+            <li><a href="https://wayofnumbers.github.io/category/machine-learning.html">Machine Learning</a></li>
+            <li class="active"><a href="https://wayofnumbers.github.io/category/tools.html">Tools</a></li>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="https://wayofnumbers.github.io/Tweak-Pelican-Elegant-Theme.html" rel="bookmark"
+         title="Permalink to Tweaking Pelican Elegant Theme">Tweaking Pelican Elegant&nbsp;Theme</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2018-02-24T20:00:00-06:00">
+      Sat 24 February 2018
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="https://wayofnumbers.github.io/author/michael-li.html">Michael Li</a>
+    </address>
+    <div class="category">
+        Category: <a href="https://wayofnumbers.github.io/category/tools.html">Tools</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="https://wayofnumbers.github.io/tag/pelican.html">Pelican</a>
+            <a href="https://wayofnumbers.github.io/tag/blog.html">Blog</a>
+            <a href="https://wayofnumbers.github.io/tag/github.html">Github</a>
+            <a href="https://wayofnumbers.github.io/tag/theme.html">Theme</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    
+<p><img alt="Elegant" src="https://wayofnumbers.github.io/images/Elegant.png"/></p>
+<p>Pelican has a lot of themes, developed by the community and shared on its official GitHub repo <a href="https://github.com/getpelican/pelican-themes">here</a>. <a href="http://www.pelicanthemes.com/">Pelican Themes</a> also offer some previews of them so you can have a good idea of what to expect. 
+Some themes are really easy to setup and configure, others need some efforts. The <a href="http://oncrashreboot.com/elegant-best-pelican-theme-features">Elegant</a> them is the latter. For most of the themes, to make it work, you just need to add define the ‘<span class="caps">THEME</span>’ variable, like so:</p>
+<div class="highlight"><pre><span></span><span class="s1">'THEME'</span> <span class="o">=</span> <span class="s1">'theme/themename'</span>
+</pre></div>
+<p>For Elegant, it’s way more than that, and it’s a good thing. Elegant packed a lot of great features and thorough considerations to the reader. And that’s why I choose it as the theme for my site. Good things come with a price they say. So let’s find out. </p>
+<h2 id="search">Search<a class="headerlink" href="#search" title="Permanent link">¶</a></h2>
+<p>Search is useful when you have a lot of articles. All serious blog need to have it. To use it, add ‘tipue_search’ and ‘sitemap’ to your plugins and it will automatically be enabled. </p>
+<h2 id="about-me-and-my-project">About Me and My Project<a class="headerlink" href="#about-me-and-my-project" title="Permanent link">¶</a></h2>
+<p>Elegant’s home page layout put the blogger himself front and center with ‘About Me’ and the ‘My Project’ at the top, followed with ‘Recent Posts’. To use them, you need to set the ‘LANDING_PAGE_ABOUT’ and ‘<span class="caps">PROJECTS</span>’ variables in the <code>pelicanconf.py</code>. </p>
+<h2 id="jquery-issue">jQuery Issue<a class="headerlink" href="#jquery-issue" title="Permanent link">¶</a></h2>
+<p>I’ve enabled all the nice features, like search, collasible comments, collasible comments. But they all won’t work on Chrome because it’s considered ‘unsafe scripts’. After some digging, it turns out the site is using <span class="caps">HTTPS</span>, while the original theme’s template uses <span class="caps">HTTP</span> to load the jQuery that did all these nice features. Once I replaced the <span class="caps">HTTP</span> with its <span class="caps">HTTPS</span> counterpart, everything works like a charm. </p>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">¶</a></h2>
+<p>Took me some time to get table of contents to work. Firstly ‘extract_toc’ plugin needs to be added into the ‘<span class="caps">PLUGINS</span>’ variable. Then ‘markdown’ Python module needs to be installed and configured for it to work as the Elegant website instructions. But after all this, it still didn’t work. Turns out, you need to add <code>[TOC]</code> in the Markdown file, after all the meta data, to actually add the table of contents into your post. After I did that, everything works. </p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>Install and tweaking a Pelican theme isn’t that hard. Look into the static folder for <span class="caps">CSS</span>, tweak them if you want, or add custom <span class="caps">CSS</span> of your own and load them in the template. Then go into the template folder to check the html files. With basic <span class="caps">HTML</span>/<span class="caps">CSS</span>/Javascripts knowledge, you already can achieve a lot on tweaking any theme of your liking. </p>
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</html>

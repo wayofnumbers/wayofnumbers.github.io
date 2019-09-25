@@ -109,8 +109,8 @@ vision2htt=ddp
 
 # Pelican themes and plugins
 pelican-themes/*
-!pelican-themes/pelican-bootstrap3/
+!pelican-themes/elegant/
 
 pelican-plugins/*
-!pelican-plugins/render_math/
-!pelican-plugins/i18n_subsites/
+!pelican-plugins/pelican-ipynb/
+!pelican-plugins/readtime/
