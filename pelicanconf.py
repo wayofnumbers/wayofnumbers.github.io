@@ -1,10 +1,9 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 IGNORE_FILES = ['.ipynb_checkpoints']
 
 
-# AUTHOR = u'Michael Li'
+# AUTHOR = 'Michael Li'
 SITENAME = 'Way of Numbers'
 SITEURL = 'https://wayofnumbers.github.io'
 
@@ -96,7 +95,7 @@ DISQUS_SITENAME = "way-of-numbers"
 
 
 # elegant
-THEME = "./pelican-themes/elegant"
+THEME = "elegant"
 # MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(anchorlink=true)']
 DIRECT_TEMPLATES = (('index', 'tags', 'categories',
                      'archives', 'search', '404'))
