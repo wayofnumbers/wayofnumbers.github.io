@@ -8,8 +8,8 @@ defusedxml==0.6.0
 docutils==0.15.2
 entrypoints==0.3
 feedgenerator==1.9
-ipython==7.8.0
-ipython-genutils==0.2.0
+ipython
+ipython-genutils
 jedi==0.15.1
 Jinja2==2.10.1
 jsonschema==3.0.2
