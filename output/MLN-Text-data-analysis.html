@@ -13,7 +13,7 @@
 <meta name="keywords" content="machinelearning, sklearn, pandas, nltk, text analysis, Machine Learning, " />
 
 <meta property="og:title" content="Machine Learning Notes : Text Data Analysis "/>
-<meta property="og:url" content="https://wayofnumbers.github.io/MLN-Text-data-analysis.html" />
+<meta property="og:url" content="https://wayofnumbers.com/MLN-Text-data-analysis.html" />
 <meta property="og:description" content="Jupyter notebook notes for machine learning: Text Data Analysis" />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="" />
@@ -25,23 +25,23 @@
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/pygments.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/elegant.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/admonition.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.github.io/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/custom.css" media="screen">
 
-        <link rel="shortcut icon" href="https://wayofnumbers.github.io/theme/images/favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon-152x152.png" type="image/png" />
-        <link rel="apple-touch-icon" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon.png"  type="image/png" />
-        <link rel="apple-touch-icon" sizes="57x57" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon-57x57.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon-72x72.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon-76x76.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon-114x114.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon-120x120.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon-144x144.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="https://wayofnumbers.github.io/theme/images/apple-touch-icon-152x152.png" type="image/png" />
-        <link href="https://wayofnumbers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers - Full Atom Feed" />
+        <link rel="shortcut icon" href="https://wayofnumbers.com/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://wayofnumbers.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://wayofnumbers.com/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://wayofnumbers.com/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://wayofnumbers.com/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://wayofnumbers.com/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://wayofnumbers.com/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://wayofnumbers.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://wayofnumbers.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://wayofnumbers.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link href="https://wayofnumbers.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers - Full Atom Feed" />
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -63,18 +63,18 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="https://wayofnumbers.github.io/"><span class=site-name>Way of Numbers</span></a>
+                        <a class="brand" href="https://wayofnumbers.com/"><span class=site-name>Way of Numbers</span></a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li >
                                     <a href=
-                                       https://wayofnumbers.github.io
+                                       https://wayofnumbers.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wayofnumbers.github.io/categories">Categories</a></li>
-                                <li ><a href="https://wayofnumbers.github.io/tags">Tags</a></li>
-                                <li ><a href="https://wayofnumbers.github.io/archives">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wayofnumbers.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="https://wayofnumbers.github.io/MLN-Text-data-analysis.html"> Machine Learning Notes : Text Data&nbsp;Analysis  </a></h1>
+    <h1><a href="https://wayofnumbers.com/MLN-Text-data-analysis.html"> Machine Learning Notes : Text Data&nbsp;Analysis  </a></h1>
     </header>
 </div>
 
@@ -2909,7 +2909,7 @@ There are 1232 articles by Romain Dillet.
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="https://wayofnumbers.github.io/MLN-Text-data-analysis.html#disqus_thread",
+                href="https://wayofnumbers.com/MLN-Text-data-analysis.html#disqus_thread",
                 id="disqus-accordion-toggle">
                 Comments
             </a>
@@ -2920,8 +2920,8 @@ There are 1232 articles by Romain Dillet.
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'way-of-numbers';
-        var disqus_identifier = 'https://wayofnumbers.github.io/MLN-Text-data-analysis.html';
-    var disqus_url = 'https://wayofnumbers.github.io/MLN-Text-data-analysis.html';
+        var disqus_identifier = 'https://wayofnumbers.com/MLN-Text-data-analysis.html';
+    var disqus_url = 'https://wayofnumbers.com/MLN-Text-data-analysis.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -2943,8 +2943,8 @@ There are 1232 articles by Romain Dillet.
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.github.io/Setup-Pelican-1.html" title="Previous: Setup Data Science Blog with Pelican + GitHub Pages">Setup Data Science Blog with Pelican + GitHub Pages</a></li>
-                <li class="next-article"><a href="https://wayofnumbers.github.io/The-AI-Shortage.html" title="Next: The AI Shortage">The AI Shortage</a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/Setup-Pelican-1.html" title="Previous: Setup Data Science Blog with Pelican + GitHub Pages">Setup Data Science Blog with Pelican + GitHub Pages</a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/The-AI-Shortage.html" title="Next: The AI Shortage">The AI Shortage</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -2954,22 +2954,22 @@ There are 1232 articles by Romain Dillet.
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2018-02-19T17:00:00-06:00">Feb 19, 2018</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://wayofnumbers.github.io/categories.html#machine-learning-ref">Machine Learning</a>
+            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.github.io/tags#machinelearning-ref">machinelearning
+                <li><a href="https://wayofnumbers.com/tags#machinelearning-ref">machinelearning
                     <span>4</span>
 </a></li>
-                <li><a href="https://wayofnumbers.github.io/tags#nltk-ref">nltk
+                <li><a href="https://wayofnumbers.com/tags#nltk-ref">nltk
                     <span>1</span>
 </a></li>
-                <li><a href="https://wayofnumbers.github.io/tags#pandas-ref">pandas
+                <li><a href="https://wayofnumbers.com/tags#pandas-ref">pandas
                     <span>2</span>
 </a></li>
-                <li><a href="https://wayofnumbers.github.io/tags#sklearn-ref">sklearn
+                <li><a href="https://wayofnumbers.com/tags#sklearn-ref">sklearn
                     <span>1</span>
 </a></li>
-                <li><a href="https://wayofnumbers.github.io/tags#text-analysis-ref">text analysis
+                <li><a href="https://wayofnumbers.com/tags#text-analysis-ref">text analysis
                     <span>1</span>
 </a></li>
             </ul>

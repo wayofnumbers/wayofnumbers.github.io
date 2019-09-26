@@ -4,112 +4,126 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://wayofnumbers.github.io/</loc>
-<lastmod>2019-09-25T15:41:12-00:00</lastmod>
+<loc>https://wayofnumbers.com/</loc>
+<lastmod>2019-09-25T23:21:05-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/archives.html</loc>
-<lastmod>2019-09-25T15:41:12-00:00</lastmod>
+<loc>https://wayofnumbers.com/archives.html</loc>
+<lastmod>2019-09-25T23:21:05-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/tags.html</loc>
-<lastmod>2019-09-25T15:41:12-00:00</lastmod>
+<loc>https://wayofnumbers.com/tags.html</loc>
+<lastmod>2019-09-25T23:21:05-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/categories.html</loc>
-<lastmod>2019-09-25T15:41:12-00:00</lastmod>
+<loc>https://wayofnumbers.com/categories.html</loc>
+<lastmod>2019-09-25T23:21:05-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/pages/about.html</loc>
+<loc>https://wayofnumbers.com/pages/about.html</loc>
 <lastmod>2018-02-15T17:00:00-06:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/how-to-deploy-ML-web-app-to-DO.html</loc>
+<loc>https://wayofnumbers.com/how-long-until-boston-dynamics-robot-can-be-a-kungfu-master.html</loc>
+<lastmod>2019-09-24T20:00:00-05:00</lastmod>
+<changefreq>always</changefreq>
+<priority>1</priority>
+</url>
+
+<url>
+<loc>https://wayofnumbers.com/two-sides-of-the-same-coin.html</loc>
+<lastmod>2019-09-24T20:00:00-05:00</lastmod>
+<changefreq>always</changefreq>
+<priority>1</priority>
+</url>
+
+<url>
+<loc>https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO.html</loc>
 <lastmod>2019-09-21T20:00:00-05:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/openai-catch-me-if-you-can.html</loc>
+<loc>https://wayofnumbers.com/openai-catch-me-if-you-can.html</loc>
 <lastmod>2019-09-19T20:00:00-05:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/chinese-calligraphy-classifier-2.html</loc>
+<loc>https://wayofnumbers.com/chinese-calligraphy-classifier-2.html</loc>
 <lastmod>2019-09-16T20:00:00-05:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/chinese-calligraphy-classifier-1.html</loc>
+<loc>https://wayofnumbers.com/chinese-calligraphy-classifier-1.html</loc>
 <lastmod>2019-09-15T20:00:00-05:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/andrewng-ml-course-review.html</loc>
+<loc>https://wayofnumbers.com/andrewng-ml-course-review.html</loc>
 <lastmod>2019-09-06T20:00:00-05:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/Typtes-of-optimization-algorithms.html</loc>
+<loc>https://wayofnumbers.com/Typtes-of-optimization-algorithms.html</loc>
 <lastmod>2018-02-26T17:00:00-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/Tweak-Pelican-Elegant-Theme.html</loc>
+<loc>https://wayofnumbers.com/Tweak-Pelican-Elegant-Theme.html</loc>
 <lastmod>2018-02-24T20:00:00-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/The-AI-Shortage.html</loc>
+<loc>https://wayofnumbers.com/The-AI-Shortage.html</loc>
 <lastmod>2018-02-23T17:00:00-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/MLN-Text-data-analysis.html</loc>
+<loc>https://wayofnumbers.com/MLN-Text-data-analysis.html</loc>
 <lastmod>2018-02-19T17:00:00-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/Setup-Pelican-1.html</loc>
+<loc>https://wayofnumbers.com/Setup-Pelican-1.html</loc>
 <lastmod>2018-02-14T20:00:00-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.github.io/MLN-Numpyandpandas.html</loc>
+<loc>https://wayofnumbers.com/MLN-Numpyandpandas.html</loc>
 <lastmod>2018-02-14T17:00:00-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
