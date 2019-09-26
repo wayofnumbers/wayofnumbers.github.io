@@ -21,4 +21,4 @@ DELETE_OUTPUT_DIRECTORY = True
 # Following items are often useful when publishing
 
 # DISQUS_SITENAME = "way-of-numbers"
-GOOGLE_ANALYTICS = "UA-114137939-1"
+GOOGLE_ANALYTICS = "UA-148798026-1"
