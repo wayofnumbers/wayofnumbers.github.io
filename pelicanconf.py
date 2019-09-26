@@ -5,7 +5,7 @@ IGNORE_FILES = ['.ipynb_checkpoints']
 
 # AUTHOR = 'Michael Li'
 SITENAME = 'Way of Numbers'
-SITEURL = 'https://wayofnumbers.github.io'
+SITEURL = 'https://wayofnumbers.com'
 
 PATH = 'content'
 
@@ -58,23 +58,6 @@ PLUGINS = ['ipynb.markup', 'sitemap', 'extract_toc',
 
 TYPOGRIFY = True
 
-'''
-MENUITEMS = [
-    ('Home', '/'),
-    ('Archives', [
-        ('Tags', '/tags.html'),
-        ('Categories', '/categories.html'),
-        ('Chronological', '/archives.html'),
-        ]),
-    ('Find Us', [
-        ('Email', 'mailto: lemuel.li@gmail.com'),
-        ('Github', 'https://github.com/wayofnumbers/wayofnumbers.github.io'),
-        ('Twitter', 'https://twitter.com/lymenlee'),
-        ]),
-    ('About', './pages/about.html'),
-    ]
-'''
-
 
 # Configuration for the "sitemap" plugin
 SITEMAP = {
@@ -99,7 +82,9 @@ THEME = "./pelican-themes/elegant"
 # MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(anchorlink=true)']
 DIRECT_TEMPLATES = (('index', 'tags', 'categories',
                      'archives', 'search', '404'))
-STATIC_PATHS = ['theme/images', 'images']
+STATIC_PATHS = ['theme/images', 'images', '../CNAME']
+EXTRA_PATH_METADATA = {'../CNAME': {'path': 'CNAME'}}
+
 TAG_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
