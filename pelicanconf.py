@@ -58,7 +58,7 @@ PLUGINS = ['ipynb.markup', 'sitemap', 'extract_toc',
 
 TYPOGRIFY = True
 
-/
+
 # Configuration for the "sitemap" plugin
 SITEMAP = {
     'format': 'xml',
