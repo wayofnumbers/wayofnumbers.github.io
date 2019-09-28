@@ -66,7 +66,7 @@ SITEMAP = {
         'articles': 1,
         'indexes': 0.5,
         'pages': 0.5,
-    },
+    }, 
     'changefreqs': {
         'articles': 'always',
         'indexes': 'hourly',
