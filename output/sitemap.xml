@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://wayofnumbers.com/</loc>
-<lastmod>2019-10-02T10:43:47-00:00</lastmod>
+<lastmod>2019-10-04T09:46:00-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/archives.html</loc>
-<lastmod>2019-10-02T10:43:47-00:00</lastmod>
+<lastmod>2019-10-04T09:46:00-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/tags.html</loc>
-<lastmod>2019-10-02T10:43:47-00:00</lastmod>
+<lastmod>2019-10-04T09:46:00-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/categories.html</loc>
-<lastmod>2019-10-02T10:43:47-00:00</lastmod>
+<lastmod>2019-10-04T09:46:00-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -36,6 +36,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2018-02-15T17:00:00-06:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://wayofnumbers.com/9-things-i-learned-from-blogging-on-medium-for-the-first-month.html</loc>
+<lastmod>2019-10-04T20:00:00-05:00</lastmod>
+<changefreq>always</changefreq>
+<priority>1</priority>
 </url>
 
 <url>
