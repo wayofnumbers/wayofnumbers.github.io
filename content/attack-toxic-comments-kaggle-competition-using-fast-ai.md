@@ -1,10 +1,10 @@
 Title: Attack Toxic Comments Kaggle Competition using Fast.ai
-Slug: 9-things-i-learned-from-blogging-on-medium-for-the-first-month
-Date: 2019-10-4 20:00
+Slug: attack-toxic-comments-kaggle-competition-using-fast-ai 
+Date: 2019-10-8 20:00
 Category: Machine Learning
-Tags: Writing, Blogging, Medium
+Tags: Machine Learning, AI, NLP, fast.ai, Deep Learning
 author: Michael Li
-Summary: My experiences and thoughts on blogging in Medium for the first month
+Summary: Described how to build a multi-label toxic comments classifier from scratch using fast.ai
 
 [TOC]
 

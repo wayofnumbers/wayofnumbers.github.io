@@ -10,18 +10,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Writing, Blogging, Medium, Machine Learning, " />
+<meta name="keywords" content="Machine Learning, Blogging, Medium, Machine Learning, " />
 
-<meta property="og:title" content="Attack Toxic Comments Kaggle Competition using Fast.ai "/>
+<meta property="og:title" content="9 Things I Learned from Blogging on Medium for the First Month "/>
 <meta property="og:url" content="https://wayofnumbers.com/9-things-i-learned-from-blogging-on-medium-for-the-first-month.html" />
-<meta property="og:description" content="My experiences and thoughts on blogging in Medium for the first month" />
+<meta property="og:description" content="9 Things I learned from blogging on Medium for the first month" />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
-<meta property="og:article:published_time" content="2019-10-04T20:00:00-05:00" />
-<meta name="twitter:title" content="Attack Toxic Comments Kaggle Competition using Fast.ai ">
-<meta name="twitter:description" content="My experiences and thoughts on blogging in Medium for the first month">
+<meta property="og:article:published_time" content="2019-10-04T10:00:00-05:00" />
+<meta name="twitter:title" content="9 Things I Learned from Blogging on Medium for the First Month ">
+<meta name="twitter:description" content="9 Things I learned from blogging on Medium for the first month">
 
-        <title>Attack Toxic Comments Kaggle Competition using Fast.ai  · Way of Numbers
+        <title>9 Things I Learned from Blogging on Medium for the First Month  · Way of Numbers
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
@@ -87,7 +87,7 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="https://wayofnumbers.com/9-things-i-learned-from-blogging-on-medium-for-the-first-month.html"> Attack Toxic Comments Kaggle Competition using&nbsp;Fast.ai  </a></h1>
+    <h1><a href="https://wayofnumbers.com/9-things-i-learned-from-blogging-on-medium-for-the-first-month.html"> 9 Things I Learned from Blogging on Medium for the First&nbsp;Month  </a></h1>
     </header>
 </div>
 
@@ -97,10 +97,15 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#the-data-set">The Data Set</a></li>
-<li><a href="#look-at-the-data">Look at the Data</a></li>
-<li><a href="#transfer-learning-fine-tune-our-language-model">Transfer Learning: Fine-Tune Our Language Model</a></li>
-<li><a href="#transfer-learning-training-the-classifier">Transfer Learning: Training the Classifier</a></li>
+<li><a href="#quality-quality-quality">Quality! Quality! Quality!</a></li>
+<li><a href="#make-good-use-of-mediums-editor">Make Good Use of Medium’s Editor</a></li>
+<li><a href="#numbers-wont-lie">Numbers Won’t Lie</a></li>
+<li><a href="#paywall-or-not-paywall-that-is-the-question">Paywall, or Not Paywall, That Is the Question</a></li>
+<li><a href="#top-writer-top-writer">Top Writer? Top Writer!</a></li>
+<li><a href="#publications-matters">Publications Matters</a></li>
+<li><a href="#responses-not-comments">Responses, not Comments</a></li>
+<li><a href="#membership-count-me-in">Membership? Count Me In!</a></li>
+<li><a href="#how-to-make-money-on-medium">How to Make Money On Medium</a></li>
 <li><a href="#conclusion">Conclusion</a></li>
 </ul>
 </div>
@@ -109,126 +114,52 @@
     <div class="span8 article-content">
             
             
-<p>How to build a multi-label <span class="caps">NLP</span> classifier from scratch</p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/0*SxwidHTBf5ZSysg9.jpg"/></p>
-<p><a href="http://www.kaggle.com">Kaggle</a> is a good place to learn and practice your Machine Learning skills. It’s also a great place to find the proper dataset for your learning projects. I need a good classification <span class="caps">NLP</span> dataset to practice my recently learned fast.ai lesson, and I came across the <a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge">Toxic Comment Classification Challenge</a>. The competition is held two years ago and has long concluded, but it doesn’t hurt to submit my scores and see how well I did. This is one of the things Kaggle is great for since in the real world, it will usually be much harder to know how good or bad your model is, whereas, in Kaggle, you’ll see clearly where your performance is in the Leaderboard.</p>
-<h2 id="the-data-set">The Data Set<a class="headerlink" href="#the-data-set" title="Permanent link">¶</a></h2>
-<p>This competition is held by The <a href="https://conversationai.github.io/">Conversation <span class="caps">AI</span></a> team, a research initiative founded by <a href="https://jigsaw.google.com/">Jigsaw</a> and Google (both a part of Alphabet). Its goal is to find out the best model that can classify multiple toxicity types in comments. The toxicity types are:</p>
+<p>Why Medium is a good platform to exchange ideas</p>
+<p><img alt="Photo by Glenn Carstens-Peters on Unsplash" src="https://cdn-images-1.medium.com/max/8152/0*E24eaavsJb6xN9-_"/><em>Photo by <a href="https://unsplash.com/@glenncarstenspeters?utm_source=medium&amp;utm_medium=referral">Glenn Carstens-Peters</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
+<p>I formally wrote my first story on Medium on Sept 5, 2019, and today is almost the end of my first month on Medium. During the month, I published <strong>10</strong> stories, gained<strong> 24K</strong> views, my articles got read <strong>11K</strong> times, and gained <strong>167</strong> fans, <strong>100</strong> followers. Since I put all my stories into the <a href="https://medium.com/creators">Medium Partner Program</a>, the member engagement for my stories gave me <strong>$134</strong> in payment. I also became the <strong>Top Writer </strong>for both <a href="https://medium.com/tag/artificial-intelligence/top-writers">Artificial Intelligence</a> and <a href="https://medium.com/tag/education?source=email-72c98619a048-1569804879522-top_writer">Education</a>. It ain’t much, but to me, it is very encouraging.</p>
+<p><img alt="It ain’t much …" src="https://cdn-images-1.medium.com/max/2000/0*e5CJeyB0_LVFRe4a.jpg"/><em>It ain’t much …</em></p>
+<p>Now that the numbers are out of the way, I want to say that overall I felt quite positive for the first month. This is not my first time blogging, sure, but it’s the first time my stories have such reach, and for that, I appreciate Medium and its team for the opportunity. And I want to share with you a couple of things I learned along the way. I hope this could help others who also want to start writing on Medium to start quicker and smoother.</p>
+<h2 id="quality-quality-quality">Quality! Quality! Quality!<a class="headerlink" href="#quality-quality-quality" title="Permanent link">¶</a></h2>
+<p>Before I start writing on Medium, I’ve been reading Medium for quite some time. I always appreciated the high-quality content it offers. The content relevance, organization, layout, editorial standard, beautiful imagery, and the app <span class="caps">UI</span>, all spells <strong>quality</strong> and makes content consuming on Medium a pleasure. Now that I’m on the content-creating side of it, the high standard here also encourages me to keep the quality as good as possible to my readers. This includes, but not limited to:</p>
 <blockquote>
-<p>toxic
-severe_toxic
-obscene
-threat
-insult indentity_hate</p>
+<p>Proofreading my articles (I use Grammarly plus manual proofreading)
+Carefully pick photos that are beautiful, relevant and license-free ( Unsplash images are a great source and built into Medium’s editor <span class="caps">UI</span>)
+Contemplate a good title/subtitle that’s catchy yet not cliche
+Creating my own <span class="caps">GIF</span> animation wherever I can to inject more ‘energy’ into my page.
+Cross-reference sources and embed videos wherever relevant to offer richer background knowledge. (Also to my own articles too, of course 😉)
+Make full use of Medium’s rich editing and layout tools, like emoji, ‘@’, blockquote, etc. to make the story less boring and more vibrant to the eyes.
+Contemplating good tags that are diversified and also relevant to increase reach.</p>
 </blockquote>
-<p>Comments are given in a training file train.cvs and a testing file test.csv. And you’ll need to predict a probability of each type of toxicity for each comment in test.csv. It is a multi-label <span class="caps">NLP</span> classification problem.</p>
-<h2 id="look-at-the-data">Look at the Data<a class="headerlink" href="#look-at-the-data" title="Permanent link">¶</a></h2>
-<p>Let’s first take a look at the data. We need to import the necessary modules and do some logistics to set up the paths for our files.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> <span class="o">*</span><span class="c1"># linear algebra*</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span> <span class="o">*</span><span class="c1"># data processing, CSV file I/O (e.g. pd.read_csv)</span>
-<span class="o">*</span><span class="kn">from</span> <span class="nn">fastai.text</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">fastai</span> <span class="kn">import</span> <span class="o">*</span>
-</pre></div>
-<p>Notice here we imported everything from fastai.text and fastai modules. Are we against the software engineering best practice here? Actually, not quite. It’s rather a deliberate move in a more iterative and interactive data science kind of way. With all the library available, I can easily test and try different functions/modules without having to go back and import them every time. It will make the explore/experiment flow much more smoothly. But I digressed, let’s load the data and look at it:</p>
-<div class="highlight"><pre><span></span><span class="o">#</span> <span class="n">Kaggle</span> <span class="n">store</span> <span class="n">dataset</span> <span class="k">in</span> <span class="n">the</span> <span class="o">/</span><span class="n">kaggle</span><span class="o">/</span><span class="k">input</span><span class="o">/</span> <span class="n">folder</span><span class="p">,</span>
-<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'/kaggle/input/jigsaw-toxic-comment-classification-challenge/'</span><span class="p">)</span>
-<span class="n">path</span><span class="p">.</span><span class="n">ls</span><span class="p">()</span>
-
-<span class="o">#</span> <span class="n">the</span> <span class="o">/</span><span class="n">kaggle</span><span class="o">/</span><span class="k">input</span><span class="o">/</span> <span class="n">folder</span> <span class="k">is</span> <span class="k">read</span><span class="o">-</span><span class="k">only</span><span class="p">,</span> <span class="k">copy</span> <span class="n">away</span> <span class="n">so</span> <span class="n">I</span> <span class="n">can</span> <span class="n">also</span> <span class="k">write</span> <span class="k">to</span> <span class="n">the</span> <span class="n">folder</span><span class="p">.</span> 
-<span class="o">!</span><span class="n">mkdir</span> <span class="k">data</span>
-<span class="o">!</span><span class="n">cp</span> <span class="o">-</span><span class="n">a</span> <span class="err">{</span><span class="n">path</span><span class="err">}</span><span class="cm">/*.* ./data/</span>
-<span class="cm">!ls data</span>
-
-<span class="cm"># make sure everything is correctly copied over</span>
-<span class="cm">path = Path('/kaggle/working/data/')</span>
-<span class="cm">path.ls()</span>
-
-<span class="cm"># read in the data and have a peak</span>
-<span class="cm">df = pd.read_csv(path/'train.csv')</span>
-<span class="cm">df.head()</span>
-</pre></div>
-<p><img alt="The toxicity types are one-hot encoded" src="https://cdn-images-1.medium.com/max/2000/1*XhZcKKIvj9-r0RmksgoYXQ.png"/><em>The toxicity types are one-hot encoded</em></p>
-<p>The comments are in comment_text column and all toxicity types are ‘one-hot’ encoded, we’ll have to do something about it to make it fit into our model later.</p>
-<p><img alt="Have a look at one comment" src="https://cdn-images-1.medium.com/max/2000/1*9hNkR1Z0Y279_xNxfZ-bMw.png"/><em>Have a look at one comment</em></p>
-<h2 id="transfer-learning-fine-tune-our-language-model">Transfer Learning: Fine-Tune Our Language Model<a class="headerlink" href="#transfer-learning-fine-tune-our-language-model" title="Permanent link">¶</a></h2>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/0*ZItmfFjXqRgyJIbw.jpg"/></p>
-<p>We’ll use transfer learning for this task, to do that, we’ll use a pre-trained model based on Wikipedia called <a href="https://einstein.ai/research/blog/the-wikitext-long-term-dependency-language-modeling-dataset">wikitext-103</a>. It is a model that’s already trained from the Wikipedia dataset(or ‘corpus’ in <span class="caps">NLP</span> terms) to predict the next words from a giving unfinished sentence. We’ll leverage the ‘language knowledge’ the model already learned from the Wikipedia dataset and build on top of that. To achieve the best results, we’ll need to ‘fine-tune’ the model to make it learn a bit from our ‘comments’ dataset since what people say in the comments are not necessarily the same with the more formal Wiki. Once the language model is fine-tuned, we can then use it to further do our classification task.</p>
-<p>Now let’s load the training data into the fast.ai databunch so we can start training the language model first.</p>
-<div class="highlight"><pre><span></span><span class="nv">bs</span> <span class="o">=</span> <span class="mi">64</span>   # <span class="nv">set</span> <span class="nv">batch</span> <span class="nv">size</span> <span class="nv">to</span> <span class="mi">64</span>, <span class="nv">works</span> <span class="k">for</span> <span class="nv">Kaggle</span> <span class="nv">Kernels</span>
-<span class="nv">data_lm</span> <span class="o">=</span> <span class="ss">(</span><span class="nv">TextList</span>.<span class="nv">from_df</span><span class="ss">(</span><span class="nv">df</span>, <span class="nv">path</span>, <span class="nv">cols</span><span class="o">=</span><span class="s1">'</span><span class="s">comment_text</span><span class="s1">'</span><span class="ss">)</span>
-                .<span class="nv">split_by_rand_pct</span><span class="ss">(</span><span class="mi">0</span>.<span class="mi">1</span><span class="ss">)</span>
-                .<span class="nv">label_for_lm</span><span class="ss">()</span>
-                .<span class="nv">databunch</span><span class="ss">(</span><span class="nv">bs</span><span class="o">=</span><span class="nv">bs</span><span class="ss">))</span>
-</pre></div>
-<p>We use fast.ai’s Data Block <span class="caps">API</span> for this task. It is a very flexible and powerful way to address the challenging task of building a pipeline: loading your data into the model. It isolates the entire process into different parts/steps, each step with multiple methods/functions to adapt to different types of data and the ways data is stored. This concept is a lot like the Linux philosophy, highly modulized and with each module only do one thing but really really well. You are free to explore the wonderful <span class="caps">API</span> <a href="https://docs.fast.ai/data_block.html">here</a>, for the above code though, it does the following things:</p>
-<ol>
-<li>
-<p>Import data from Pandas DataFrame named df, tell the model to use comment_text as input (TextList.from_df(df, path, cols=’comment_text’))</p>
-</li>
-<li>
-<p>Split the training dataset into train/validation set by random 10/90 percent. (.split_by_rand_pct(0.1))</p>
-</li>
-<li>
-<p>Ignore the given labels( since we are only fine-tuning the language model, not training the classifier yet) and use the language model’s ‘predict next word’ as labels. (.label_for_lm())</p>
-</li>
-<li>
-<p>Build the data into a databunch, with batch size bs. (.databunch(bs=bs))</p>
-</li>
-</ol>
-<p>Now let’s look at the databunch we just built:</p>
-<p><img alt="Notice we lost all the toxicity types" src="https://cdn-images-1.medium.com/max/2000/1*tZb2mpF3ybJizigXjZD7Vw.png"/><em>Notice we lost all the toxicity types</em></p>
-<p>Notice that the databunch doesn’t have all the toxicity type labels since we are only fine-tuning the language model.</p>
-<p><span class="caps">OK</span>, time for some typical fast.ai learning rate adjustments and training:</p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*vKptpwNJ5yj-ufCweNY5cQ.png"/></p>
-<p>We put our databunch into a language_model_learner, tell it the language model base we want to use (AWD_LSTM) and assign a default dropout rate of <strong>0.3</strong>. From the <span class="caps">LR</span> Finder graph, find the biggest downward slope and pick the middle point as our learning rate. (For a more detailed explanation of how this ‘fit_one_cycle’ magic is done, please refer to this <a href="https://docs.fast.ai/callbacks.one_cycle.html#What-is-1cycle?">article</a>. It is a <span class="caps">SOTA</span> technique of fast.ai that combines learning rate and momentum annealing). Now we can ‘unfreeze’ the model and train the entire model couple of epochs:</p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*pQRrm9fcMkRua9k9LbBbzA.png"/></p>
-<p>We can look at one example of how well the model did:</p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*UCNNMwGBhh7oxbRIMxg7Pg.png"/></p>
-<p>The result is hardly optimal. Ideally, we need to train a bit more epochs but for this Kaggle Kernel, I was running out of <span class="caps">GPU</span> quota so I stopped at 4. The result definitely has room to improve and you can try it yourself. Anyway, what we want from the language model is the encoder part, so we save it.</p>
-<div class="highlight"><pre><span></span><span class="o">*</span># <span class="nv">save</span> <span class="nv">the</span> <span class="nv">encoder</span> <span class="k">for</span> <span class="k">next</span> <span class="nv">step</span> <span class="nv">use</span><span class="o">*</span>
-<span class="nv">learn</span>.<span class="nv">save_encoder</span><span class="ss">(</span><span class="s1">'</span><span class="s">fine_tuned_enc</span><span class="s1">'</span><span class="ss">)</span>
-</pre></div>
-<h2 id="transfer-learning-training-the-classifier">Transfer Learning: Training the Classifier<a class="headerlink" href="#transfer-learning-training-the-classifier" title="Permanent link">¶</a></h2>
-<p>Let’s read in the test dataset:</p>
-<div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="ss">"test.csv"</span><span class="p">)</span>
-<span class="n">test_datalist</span> <span class="o">=</span> <span class="n">TextList</span><span class="p">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="s1">'comment_text'</span><span class="p">)</span>
-</pre></div>
-<p>Again, build our databunch:</p>
-<div class="highlight"><pre><span></span><span class="n">data_cls</span> <span class="o">=</span> <span class="p">(</span><span class="n">TextList</span><span class="p">.</span><span class="n">from_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'train.csv'</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="s1">'comment_text'</span><span class="p">)</span>
-                <span class="p">.</span><span class="n">split_by_rand_pct</span><span class="p">(</span><span class="n">valid_pct</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">)</span>
-                <span class="p">.</span><span class="n">label_from_df</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s1">'toxic'</span><span class="p">,</span> <span class="s1">'severe_toxic'</span><span class="p">,</span><span class="s1">'obscene'</span><span class="p">,</span> <span class="s1">'threat'</span><span class="p">,</span> <span class="s1">'insult'</span><span class="p">,</span> <span class="s1">'identity_hate'</span><span class="p">],</span> <span class="n">label_cls</span><span class="o">=</span><span class="n">MultiCategoryList</span><span class="p">,</span> <span class="n">one_hot</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
-                <span class="p">.</span><span class="n">add_test</span><span class="p">(</span><span class="n">test_datalist</span><span class="p">)</span>
-                <span class="p">.</span><span class="n">databunch</span><span class="p">())</span>
-<span class="n">data_cls</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'data_clas.pkl'</span><span class="p">)</span>
-</pre></div>
-<p>Please note the difference this time:</p>
-<ol>
-<li>
-<p>We now use all our toxicity styles labels (.label_from_df(cols=[‘toxic’, ‘severe_toxic’,’obscene’, ‘threat’, ‘insult’, ‘identity_hate’],label_cls=MultiCategoryList, one_hot=True),)</p>
-</li>
-<li>
-<p>We added our test set here. (.add_test(test_datalist))</p>
-</li>
-</ol>
-<p>Now look at our classifier databunch :</p>
-<p><img alt="Note that now we have all the toxicity styles labels" src="https://cdn-images-1.medium.com/max/2000/1*47Wryn1f-yDMfiu3l-bXMA.png"/><em>Note that now we have all the toxicity styles labels</em></p>
-<p><strong>Finally, time to put everything together!</strong> We’ll put the databunch into the text_classifier_learner model and load the encoder we learned from the language model.</p>
-<div class="highlight"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">text_classifier_learner</span><span class="p">(</span><span class="n">data_clas</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">drop_mult</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">learn</span><span class="p">.</span><span class="n">load_encoder</span><span class="p">(</span><span class="s1">'fine_tuned_enc'</span><span class="p">)</span>
-</pre></div>
-<p>Again, find the best learning rate and train one cycle:</p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*xXpZwueb6Yec9TvVvJN7SA.png"/></p>
-<p>Train a bit more cycles and unfreeze:</p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*GcvvzZNPv9Qe1M1bwvcjEA.png"/></p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*2Ny7Ka7Ewv6b_0TH8R8RsA.png"/></p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*BWi5dpbgRmwyvr7VQdh59A.png"/></p>
-<p>See the results:</p>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*vePv-fiRXOukp3ZgteqwnA.png"/></p>
-<p>Off by one, but overall the prediction is <span class="caps">OK</span>. For the purpose of reference, I submitted the prediction to Kaggle and get a 0.96583 Public Score. The result is not optimal but like I said I didn’t train all the way due to limited <span class="caps">GPU</span>. The purpose of this article is to show you the whole process of using fast.ai to tackle multi-labels text classification problem. The real challenge here is to load the data into the model using Data Block <span class="caps">API</span>.</p>
+<p>The list could go longer, and no one story can cover every item in it, but that’s something very beneficial to always keep in mind while writing. I felt it is as important as the texts I put down. I always strive to make the quality of the story the best I can manage. This is ultimately respecting my own time and my reader’s time and I believe that’s what Medium as a unique media promotes and rewards.</p>
+<p>One more note is don’t overdo this though. After some polishment, sometimes you’ll never feel that your article is ready to be published. Don’t get caught by the analysis paralysis, hit the publish button, push your content to your reader. You can always improve them later. Writing is a journey, not a destination.</p>
+<h2 id="make-good-use-of-mediums-editor">Make Good Use of Medium’s Editor<a class="headerlink" href="#make-good-use-of-mediums-editor" title="Permanent link">¶</a></h2>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/0*-gQDAAwQvwcgILf0.png"/></p>
+<p>I guess you can always write in your favorite software/app and import them into Medium, but I found it pleasant and efficient enough to just write on Medium’s website editor <span class="caps">UI</span>. Having some years of experience in <span class="caps">UI</span>/<span class="caps">UX</span>, I can say the Medium editor is well designed in that it gets out of your way. It’s what we called ‘<a href="https://designmodo.com/invisible-design/">invisible design</a>’. It only appears when you need help and fades to the background when you are focusing on your task at hand. The interface is designed to be uncluttered yet powerful when needed. I found that getting familiar with what the editor has to offer really making my writing experience smooth and enjoyable. Take some time to read through Medium’s <a href="https://help.medium.com/hc/en-us/articles/225168768-Write-post">guideline </a>goes a long way.</p>
+<h2 id="numbers-wont-lie">Numbers Won’t Lie<a class="headerlink" href="#numbers-wont-lie" title="Permanent link">¶</a></h2>
+<p>As a guy who has worked with numbers for years, stats are always what I have the most passion. Having done a lot of data visualization and dashboard design work myself, I found Medium’s stats page clean and easy to read. The layout design is beautiful and has a good hierarchy with the most important numbers front and center, and everything else with a distance in the background. The only complain will be to fold more details in the background. This way, the more data-savvy people could dig deeper and the normal writers can enjoy the minimalism. Maybe that’s another article at another time.</p>
+<p>I found myself visiting the stats page a bit too much, enjoyed watching the number tick up, and up (don’t judge me pls). You don’t have to do the same, but I encourage you to visit the stats page from time to time, it allows you to know how well each article do and when you are trying different writing styles, new topics or social media strategies, it provides a solid benchmark so you can adjust accordingly. For example, when I tried on promoting my articles heavily on Facebook, I did find my visit from Facebook increased a lot, but still not as much as when it gets curated by Medium. It’s great insight! This kind of insight into what works and what not is obviously very valuable.</p>
+<p>Also, for Chrome users, I recommend installing an extension called ‘<a href="https://chrome.google.com/webstore/detail/medium-enhanced-stats/jnomnfoenpdinfkpaaigokicgcfkomjo?hl=en">Medium Enhanced Stats</a>’, offer better <span class="caps">UI</span> and more information on the stats page.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*CSY5bymmfFtpQ9cds585mg.png"/></p>
+<h2 id="paywall-or-not-paywall-that-is-the-question">Paywall, or Not Paywall, That Is the Question<a class="headerlink" href="#paywall-or-not-paywall-that-is-the-question" title="Permanent link">¶</a></h2>
+<p>This is rather controversial. A lot of people don’t like a paywall. As long as it’s a paywall it is bad. I don’t hold that strong of a feeling on paywall though. Getting paid as a writer is very well justified as long as you offer valuable content. This is no less or more decent than any other business. Having a paywall may reduce your reach, but also gives you more focus on people that really values quality. As for reach, I did some experiments and found out that Medium’s 3 free paid stories actually will be enough most of the time. I put one free article and one paywalled one on Medium and promote it through Facebook. I didn’t see much difference in Facebook’s views ratio between the two. Also Medium only curates stories behind the paywall and curation is <span class="caps">HUGE</span> on increasing your reach. So I end up putting all my stories behind the paywall, and the results are not bad at all. The payment from my article doesn’t seem much, but it at least paid my Medium membership so I can freely read all the great contents.</p>
+<p>You can test it out yourself and if you prefer your content the maximum reach then, by all means, set it as free content.</p>
+<h2 id="top-writer-top-writer">Top Writer? Top Writer!<a class="headerlink" href="#top-writer-top-writer" title="Permanent link">¶</a></h2>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*OJSiLUbxtGTRj4nPWHEQEw.png"/></p>
+<p>After I wrote 3 or 4 articles, <a href="https://medium.com/datadriveninvestor/thoughts-on-andrew-ngs-machine-learning-course-7724df76320f">one of them</a> got some traction. Not viral for sure, but my views start to grow quite fast. It reaches 2k in one day and two days later, I got an email from Medium saying I am now one of the Top Writers in the topic ‘Artificial Intelligence’. How honored and humbled I was! I just start to write articles on Medium for a little more than a week and with less than five articles, I already become the Top Writer for the topic I cared most!</p>
+<p>Once I calmed down a little from the excitement, I started to contemplate what happened and why. There is quite some luck to it, sure, one of my stories got some attention or get promoted by some of the social media. But also it shows Medium’s unique system values good quality, good content, not your track record or your brand name. So it is actually an edge for me and other people as green as me that sweating to produce great content:<strong> You will be recognized and rewarded for your quality work.</strong> The title is not permanent though, I think if I stop producing hit content it will go away, but it’s perfectly fine. It’s a good pressure to push me to write even better stories.</p>
+<h2 id="publications-matters">Publications Matters<a class="headerlink" href="#publications-matters" title="Permanent link">¶</a></h2>
+<p>Well, this is the first time I got to work with publications. After my first quality stories, one of the publications in Data Science approached me and ask whether I want to publish through them. After some research online, I found that publication is good for new writers like me, it can increase my reach and also provide some advice on my writing, etc. So I gladly agreed to publish some of my stories with them. After some stories, I felt that the publication did help me a bit in getting noticed. I did some research on other bigger publishers on Data Science and start to also submit my work with them.</p>
+<p>It’s actually <span class="caps">OK</span> to publish with different publishers, what I did is for the more serious and heavyweight articles, I’ll go with the big publishers. For the more entertaining and relaxed pieces, I’ll submit to other publishers and see how the reaction is. I’m still in a ‘trial and error’ process. I’m still exploring working with different publishers and will share more experience once I get deeper.</p>
+<h2 id="responses-not-comments">Responses, not Comments<a class="headerlink" href="#responses-not-comments" title="Permanent link">¶</a></h2>
+<p>One thing I found quite unique for Medium is the response system. Responses are treated as <strong>‘first-world citizens’</strong> in Medium, which means it is treated the same way as a story. It will have its own stats, people can clap on it, etc. And because of that, I noticed that people really put more efforts into the responses they leave, resulting in very high-quality responses that often inspired me or pointed out things I missed or were wrong. I just love the response system. It really fosters quality communication and a clash of thoughts and ideas!</p>
+<h2 id="membership-count-me-in">Membership? Count Me In!<a class="headerlink" href="#membership-count-me-in" title="Permanent link">¶</a></h2>
+<p>The membership fee for Medium is a flat <strong>$5</strong>. It opens up the entire Medium contents to you, you can freely read anything and everything it has to offer. To me, it is totally worth it. Not only it improved my ability to do research before putting down the first word of my article(did I say Medium has high quality and relevant content?), it also enables me to interact with other members and fit in deeper with the community.</p>
+<h2 id="how-to-make-money-on-medium">How to Make Money On Medium<a class="headerlink" href="#how-to-make-money-on-medium" title="Permanent link">¶</a></h2>
+<p>Well, I might not be qualified to talk about this, I just joined Medium a month ago after all. Yet I still want to share some of my thoughts on this. It does feel great to get rewarded for what you already love to do. The payment system, I believe, is built on ‘member engagement’. The more members engage with your content, the more of their monthly membership fee will be distributed to you. I think it is quite fair, right? So this means you get rewarded by how deep and broad you <strong>‘touched</strong>’ people. Otherwise, people won’t engage with you, they won’t bother to clap, response, highlight, etc. This further encourages writers to come up with genuine content, people can only feel you when you really mean what you wrote.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
-<p>I hope you learned a thing or two from this article. Fast.ai is really a lean, flexible and powerful library. For the things it can do (like image/text classification, tabular data, collaborative filtering, etc.), it does it very well. It is not as extensive as Keras, but it’s very sharp and focused. Kind of like Vim and Emacs if you are familiar with the command line text editor war. 😜</p>
+<p>Overall, I think Medium’s member-based, quality-centric to online publishing really pulled some correct strings. And it is full of intelligent and diligent writes and curious, serious readers.</p>
 <blockquote>
-<p>You can find the Kaggle Kernel <a href="https://www.kaggle.com/lymenlee/toxic-comments-classification-fast-ai">here</a>.</p>
+<p>It’s a <strong>medium</strong> that connects us all with quality content, beautiful interfaces, and a well-designed system.</p>
 </blockquote>
 <p>Any feedback or constructive criticism is welcomed. You can either find me on Twitter <a href="https://twitter.com/lymenlee">@lymenlee</a> or my blog site <a href="https://wayofnumbers.com/">wayofnumbers.com</a>.</p>
 
@@ -280,7 +211,7 @@ insult indentity_hate</p>
             <nav>
             <ul class="articles-timeline">
                 <li class="previous-article">« <a href="https://wayofnumbers.com/On-the-Internet-Nobody-Knows-You-Are-a-Dog-or-AI.html" title="Previous: On the Internet, Nobody Knows You Are a Dog, or AI">On the Internet, Nobody Knows You Are a Dog, or AI</a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/attack-toxic-comments-kaggle-competition-using-fast-ai.html" title="Next: Attack Toxic Comments Kaggle Competition Using Fast.ai">Attack Toxic Comments Kaggle Competition Using Fast.ai</a> »</li>
+                <li class="next-article"><a href="https://wayofnumbers.com/attack-toxic-comments-kaggle-competition-using-fast-ai.html" title="Next: Attack Toxic Comments Kaggle Competition using Fast.ai">Attack Toxic Comments Kaggle Competition using Fast.ai</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -288,7 +219,7 @@ insult indentity_hate</p>
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2019-10-04T20:00:00-05:00">Oct 4, 2019</time>
+            <time itemprop="dateCreated" datetime="2019-10-04T10:00:00-05:00">Oct 4, 2019</time>
             <h4>Category</h4>
             <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
@@ -296,10 +227,10 @@ insult indentity_hate</p>
                 <li><a href="https://wayofnumbers.com/tags#blogging-ref">Blogging
                     <span>2</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags#medium-ref">Medium
-                    <span>1</span>
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
+                    <span>10</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags#writing-ref">Writing
+                <li><a href="https://wayofnumbers.com/tags#medium-ref">Medium
                     <span>1</span>
 </a></li>
             </ul>
