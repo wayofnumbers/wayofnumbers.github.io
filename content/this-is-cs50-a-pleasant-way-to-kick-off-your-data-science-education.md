@@ -1,10 +1,10 @@
-Title: This is CS50”: A Pleasant Way to Kick Off Your Data Science Education
+Title:“This is CS50”: A Pleasant Way to Kick Off Your Data Science Education
 Slug: this-is-cs50-a-pleasant-way-to-kick-off-your-data-science-education
 Date: 2019-10-13 10:00
 Category: Machine Learning
-Tags: Machine Learning, Data Science, CS50, Software Engineering, Computer Science, Havard
+Tags: Machine Learning, Data Science, Computer Science, Software Engieering, CS50, Havard
 author: Michael Li
-Summary: Review of Havard's CS50 course as a good entry into Data Science education
+Summary: Introduce CS50 courses as a good entry point for data science education
 
 [TOC]
 
@@ -25,6 +25,8 @@ But getting into Data Science is not easy. Far from it. The learning curve is br
 Some people may have some background in math or statistics, which will definitely help. Yet you still need a solid foundation for software engineering to be efficient and be successful in your career. But this is not a problem, you say. After all, we live in an era of booming online education. There are plenty of courses paid and free we can choose.** True, but this is precisely where the problem is**. The biggest challenge for self-education these days is not lack of education resources, but hard to find the best or most relevant ones.
 
 ## Enter CS50. If You are Only Allowed to Take One CS Course, Take CS50.
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/LahWdP8Mizw" frameborder="0" allowfullscreen></iframe></center>
 
 What is CS50? It is the introductory course on [computer science](https://en.wikipedia.org/wiki/Computer_science) taught at [Harvard University](https://en.wikipedia.org/wiki/Harvard_University) by [Professor David J. Malan](https://en.wikipedia.org/wiki/David_J._Malan). It is the largest class at Harvard with 800 students, 102 staff, and a professional production team. It offers both an on-campus and an online course. I’ve taken the online one, but it’s already **THE **best computer science course I came across, period. Let me tell you why:
 
@@ -47,6 +49,8 @@ CS50 has many ways to teach and keep you engaged. You’ll play a game to unders
 The learning experience is so fun you’ll feel the time fly by without noticing it. Some of the problem set it gives are quite challenging, yet not impossible. And you’ll feel so proud of yourself once you cracked it. You’ll probably fall in love with the joy of problem-solving. If you are stuck, there is an online community on almost every social network platform (Twitter, Reddit, Stack Exchange, Facebook, etc.) where you can get help.
 
 - **Out-of-class activities get you familiar with the ‘developer culture,’ which is essential for your future career.**
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/FaO9yVKKeTc" frameborder="0" allowfullscreen></iframe></center>
 
 Puzzle days, office hours, CS 50 Fairs, the final project ‘All-nighter’ hackathon (free breakfast at IHOP if you stay up all night), lots of activities designed to get you familiar with the ‘developer culture’ and better prepare you for the software engineering world.
 
