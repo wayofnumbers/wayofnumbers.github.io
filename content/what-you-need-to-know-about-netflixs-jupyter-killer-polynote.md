@@ -65,9 +65,12 @@ It seems to be more like you are writing a script instead of a notebook. You tak
 We’ll see how well the industry will adopt Polynote but definitely it shows potential and making some sound decisions. One question is whether the big cloud platforms like GCP, AWS or Azure will adopt it. This is quite important because, without the support of these cloud platforms, people rely on them to do research/experiment won’t have access to Polynote and thus won’t use it.
 
 Found this article useful? Follow me ([Michael Li](undefined)) on Medium or you can find me on Twitter [@lymenlee](https://twitter.com/lymenlee) or my blog site [wayofnumbers.com](https://wayofnumbers.com). You could also check out my most popular articles below!
+
 [**“This is CS50”: A Pleasant Way to Kick Off Your Data Science Education**
 *Why CS50 is especially good to solidify your software engineering foundation*towardsdatascience.com](https://towardsdatascience.com/this-is-cs50-a-pleasant-way-to-kick-off-your-data-science-education-d6075a6e761a)
+
 [**Two Sides of the Same Coin: Jeremy Howard’s fast.ai vs Andrew Ng’s deeplearning.ai**
 *How Not to ‘Overfit’ Your AI Learning by Taking Both fast.ai and deeplearning.ai courses*towardsdatascience.com](https://towardsdatascience.com/two-sides-of-the-same-coin-fast-ai-vs-deeplearning-ai-b67e9ec32133)
+
 [**I finished Andrew Ng’s Machine Learning Course and I Felt Great!**
 *The good, the bad, and the beautiful*medium.com](https://medium.com/datadriveninvestor/thoughts-on-andrew-ngs-machine-learning-course-7724df76320f)
