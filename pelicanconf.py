@@ -23,7 +23,6 @@ AUTHOR_FEED_RSS = None
 
 AUTHORS = {
     'Michael Li': '/author.html',
-    'Xiao Xu': 'http://mary.info',
 }
 
 # Blogroll
