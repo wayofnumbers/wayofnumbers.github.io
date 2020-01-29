@@ -1,6 +1,6 @@
 Title: How to Build Your Own PyTorch Neural Network Layer from Scratch
 Slug: how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6
-Date: Wed Jan 29 15:21:13 CST 2020
+Date: Wed Jan 29 15:40:11 CST 2020
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
 author: Michael Li
@@ -148,11 +148,3 @@ I hope this helps you clear the cloud on these PyTorchnn.modules a bit. It might
 > # Underneath PyTorch, there’s no trick, no myth, no catch, just rock-solid Python code.
 
 Also by writing your own code, then compare it with official source code, you’ll be able to see where the difference is and learn from the best in the industry. How cool is that?
-
-Found this article useful? Follow me ([Michael Li](https://medium.com/u/72c98619a048?source=post_page-----dbe7106145f5----------------------)) on Medium or you can find me on Twitter [@lymenlee](https://twitter.com/lymenlee) or my blog site [wayofnumbers.com](https://wayofnumbers.com/). You could also check out my most popular articles below!
-[**“This is CS50”: A Pleasant Way to Kick Off Your Data Science Education**
-*Why CS50 is especially good to solidify your software engineering foundation*towardsdatascience.com](https://towardsdatascience.com/this-is-cs50-a-pleasant-way-to-kick-off-your-data-science-education-d6075a6e761a)
-[**Two Sides of the Same Coin: Jeremy Howard’s fast.ai vs Andrew Ng’s deeplearning.ai**
-*How Not to ‘Overfit’ Your AI Learning by Taking Both fast.ai and deeplearning.ai courses*towardsdatascience.com](https://towardsdatascience.com/two-sides-of-the-same-coin-fast-ai-vs-deeplearning-ai-b67e9ec32133)
-[**What You Need to Know About Netflix’s ‘Jupyter Killer’: Polynote 📖**
-*It’s about time Jupyter Notebook has its worthy competitor*towardsdatascience.com](https://towardsdatascience.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote-dbe7106145f5)

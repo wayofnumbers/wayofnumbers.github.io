@@ -1,6 +1,6 @@
 Title: 5 Things I Learned from Google’s New ML-Powered Recorder App
 Slug: 5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78
-Date: Wed Jan 29 15:21:08 CST 2020
+Date: Wed Jan 29 15:40:06 CST 2020
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
 author: Michael Li
@@ -72,11 +72,3 @@ In the mobile world, companies strive to offer more responsiveness. Consumers no
 
 People have this fantasy of scary AI taking over humanity for many years. Movies, novels, TV Shows all painted a very dramatic future of AI for mankind. To counter this public (biased?) impression on AI, special cautions need to be taken. It’s beneficial to adopt an ‘AI exist as a tool to help human’ mentality instead of an ‘AI vs Mankind’ one. AI can do a lot of things, but rather than develop AI apps that can ‘replace’ humans, it’s better to have AI that exists to help humans perform their tasks easier and faster. Like the Recorder app to help taking notes, image recognition systems to help the doctor diagnose better, augment reality app to help people better navigate the neighborhood, etc.
 > # *A quiet, friendly, yet powerful AI diligently working behind the scenes to help people do whatever they do better is so much more comfortable and approachable for people, compare to a robotic killing machine in a SciFi movie.*
-
-Found this article useful? Follow me ([Michael Li](https://medium.com/u/72c98619a048?source=post_page-----dbe7106145f5----------------------)) on Medium or you can find me on Twitter [@lymenlee](https://twitter.com/lymenlee) or my blog site [wayofnumbers.com](https://wayofnumbers.com/). You could also check out my most popular articles below!
-[**“This is CS50”: A Pleasant Way to Kick Off Your Data Science Education**
-*Why CS50 is especially good to solidify your software engineering foundation*towardsdatascience.com](https://towardsdatascience.com/this-is-cs50-a-pleasant-way-to-kick-off-your-data-science-education-d6075a6e761a)
-[**Two Sides of the Same Coin: Jeremy Howard’s fast.ai vs Andrew Ng’s deeplearning.ai**
-*How Not to ‘Overfit’ Your AI Learning by Taking Both fast.ai and deeplearning.ai courses*towardsdatascience.com](https://towardsdatascience.com/two-sides-of-the-same-coin-fast-ai-vs-deeplearning-ai-b67e9ec32133)
-[**What You Need to Know About Netflix’s ‘Jupyter Killer’: Polynote 📖**
-*It’s about time Jupyter Notebook has its worthy competitor*towardsdatascience.com](https://towardsdatascience.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote-dbe7106145f5)

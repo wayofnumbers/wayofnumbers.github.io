@@ -1,6 +1,6 @@
 Title: NEON.LIFE: Your REAL Virtual Assistant, For Real This Time?
 Slug: neon-life-your-real-virtual-assistant-for-real-this-time-6de4a52e66c4
-Date: Wed Jan 29 15:21:07 CST 2020
+Date: Wed Jan 29 15:40:04 CST 2020
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
 author: Michael Li
@@ -123,11 +123,3 @@ Usually, CES is about engineering innovations rather than science breakthrough, 
 For more details on what’s shown on the stage of CES, you can check out this detailed video:
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lXZBmMGD7pI" frameborder="0" allowfullscreen></iframe></center>
-
-Found this article useful? Follow me ([Michael Li](https://medium.com/u/72c98619a048?source=post_page-----dbe7106145f5----------------------)) on Medium or you can find me on Twitter [@lymenlee](https://twitter.com/lymenlee) or my blog site [wayofnumbers.com](https://wayofnumbers.com/). You could also check out my most popular articles below!
-[**“This is CS50”: A Pleasant Way to Kick Off Your Data Science Education**
-*Why CS50 is especially good to solidify your software engineering foundation*towardsdatascience.com](https://towardsdatascience.com/this-is-cs50-a-pleasant-way-to-kick-off-your-data-science-education-d6075a6e761a)
-[**Two Sides of the Same Coin: Jeremy Howard’s fast.ai vs Andrew Ng’s deeplearning.ai**
-*How Not to ‘Overfit’ Your AI Learning by Taking Both fast.ai and deeplearning.ai courses*towardsdatascience.com](https://towardsdatascience.com/two-sides-of-the-same-coin-fast-ai-vs-deeplearning-ai-b67e9ec32133)
-[**What You Need to Know About Netflix’s ‘Jupyter Killer’: Polynote 📖**
-*It’s about time Jupyter Notebook has its worthy competitor*towardsdatascience.com](https://towardsdatascience.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote-dbe7106145f5)

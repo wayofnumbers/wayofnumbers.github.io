@@ -1,6 +1,6 @@
 Title: Another Self-Driving Car Accident, Another AI Development Lesson
 Slug: another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444
-Date: Wed Jan 29 15:21:12 CST 2020
+Date: Wed Jan 29 15:40:09 CST 2020
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
 author: Michael Li
@@ -82,11 +82,3 @@ One thing that is very essential for all machine learning models is the *validat
 No matter how much progress has been made on self-driving cars, sometimes it felts like just scratching the surface and the size of the iceberg lurks beneath the water remains unknown. Also, the self-driving car accident usually gets high media attention. According to Wired, nearly 40,000 people died in road incidents last year in the US alone, but very few (if any) made headlines the way the Uber incident did. Unfair? No really. This is actually a good thing. Strict and close scrutiny is a good thing to push the limits of how safe the self-driving car can be. Because it’s human lives that are on the line.
 
 Update: The final result of the investigation is out on Nov 20, 2019. You can refer to [this article by The Verge](https://www.theverge.com/2019/11/20/20973971/uber-self-driving-car-crash-investigation-human-error-results).
-
-Found this article useful? Follow me ([Michael Li](https://medium.com/u/72c98619a048?source=post_page-----dbe7106145f5----------------------)) on Medium or you can find me on Twitter [@lymenlee](https://twitter.com/lymenlee) or my blog site [wayofnumbers.com](https://wayofnumbers.com/). You could also check out my most popular articles below!
-[**“This is CS50”: A Pleasant Way to Kick Off Your Data Science Education**
-*Why CS50 is especially good to solidify your software engineering foundation*towardsdatascience.com](https://towardsdatascience.com/this-is-cs50-a-pleasant-way-to-kick-off-your-data-science-education-d6075a6e761a)
-[**Two Sides of the Same Coin: Jeremy Howard’s fast.ai vs Andrew Ng’s deeplearning.ai**
-*How Not to ‘Overfit’ Your AI Learning by Taking Both fast.ai and deeplearning.ai courses*towardsdatascience.com](https://towardsdatascience.com/two-sides-of-the-same-coin-fast-ai-vs-deeplearning-ai-b67e9ec32133)
-[**What You Need to Know About Netflix’s ‘Jupyter Killer’: Polynote 📖**
-*It’s about time Jupyter Notebook has its worthy competitor*towardsdatascience.com](https://towardsdatascience.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote-dbe7106145f5)
