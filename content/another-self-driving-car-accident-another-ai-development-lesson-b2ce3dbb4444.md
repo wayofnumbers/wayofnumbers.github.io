@@ -1,6 +1,6 @@
 Title: Another Self-Driving Car Accident, Another AI Development Lesson
 Slug: another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444
-Date: Wed Jan 29 15:40:09 CST 2020
+Date: Thu Jan 30 11:13:54 CST 2020
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
 author: Michael Li

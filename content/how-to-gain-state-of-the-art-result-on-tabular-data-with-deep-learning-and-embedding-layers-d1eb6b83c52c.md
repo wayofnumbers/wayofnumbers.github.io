@@ -1,6 +1,6 @@
 Title: How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers
 Slug: how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c
-Date: Wed Jan 29 15:40:08 CST 2020
+Date: Thu Jan 30 11:13:53 CST 2020
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
 author: Michael Li

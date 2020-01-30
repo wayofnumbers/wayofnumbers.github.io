@@ -17,7 +17,7 @@
 <meta property="og:description" content="How to Build Your Own PyTorch Neural Network Layer from Scratch" />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
-<meta property="og:article:published_time" content="2020-01-29T15:40:11-06:00" />
+<meta property="og:article:published_time" content="2020-01-30T11:13:56-06:00" />
 <meta name="twitter:title" content="How to Build Your Own PyTorch Neural Network Layer from Scratch ">
 <meta name="twitter:description" content="How to Build Your Own PyTorch Neural Network Layer from Scratch">
 
@@ -119,7 +119,70 @@
 <p><span class="caps">OK</span>, enough of the motivation, let’s get to it.</p>
 <h3 id="simple-mnist-one-layer-nn-as-the-backdrop">Simple <span class="caps">MNIST</span> one layer <span class="caps">NN</span> as the backdrop<a class="headerlink" href="#simple-mnist-one-layer-nn-as-the-backdrop" title="Permanent link">¶</a></h3>
 <p>First of all, we need some ‘backdrop’ codes to test whether and how well our module performs. Let’s build a very simple one-layer neural network to solve the good-old <span class="caps">MNIST</span> dataset. The code (running in Jupyter Notebook) snippet below:</p>
-<iframe frameborder="0" src="https://medium.com/media/ebfff9b2780b077023072e413883bade"></iframe>
+<div class="highlight"><pre><span></span><span class="c1"># We'll use fast.ai to showcase how to build your own 'nn.Linear' module</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">from</span> <span class="nn">fastai.basics</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># create and download/prepare our MNIST dataset</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span><span class="o">/</span><span class="s1">'mnist'</span>
+<span class="n">path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="err">!</span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">deeplearning</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">mnist</span><span class="o">/</span><span class="n">mnist</span><span class="o">.</span><span class="n">pkl</span><span class="o">.</span><span class="n">gz</span> <span class="o">-</span><span class="n">P</span> <span class="p">{</span><span class="n">path</span><span class="p">}</span>
+
+<span class="c1"># Get the images downloaded into data set</span>
+<span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">'mnist.pkl.gz'</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="p">((</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">),</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'latin-1'</span><span class="p">)</span>
+
+<span class="c1"># Have a look at the images and shape</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x_train</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">28</span><span class="p">,</span><span class="mi">28</span><span class="p">)),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+<span class="n">x_train</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="c1"># convert numpy into PyTorch tensor</span>
+<span class="n">x_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">x_valid</span><span class="p">,</span><span class="n">y_valid</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">,</span> <span class="p">(</span><span class="n">x_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">x_valid</span><span class="p">,</span><span class="n">y_valid</span><span class="p">))</span>
+<span class="n">n</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">y_train</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># prepare dataset and create fast.ai DataBunch for training</span>
+<span class="n">bs</span><span class="o">=</span><span class="mi">64</span>
+<span class="n">train_ds</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">valid_ds</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">x_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">DataBunch</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">train_ds</span><span class="p">,</span> <span class="n">valid_ds</span><span class="p">,</span> <span class="n">bs</span><span class="o">=</span><span class="n">bs</span><span class="p">)</span>
+
+<span class="c1"># create a simple MNIST logistic model with only one Linear layer</span>
+<span class="k">class</span> <span class="nc">Mnist_Logistic</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lin</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xb</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lin</span><span class="p">(</span><span class="n">xb</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span><span class="n">Mnist_Logistic</span><span class="p">()</span>
+
+<span class="n">lr</span><span class="o">=</span><span class="mf">2e-2</span>
+<span class="n">loss_func</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+
+<span class="c1"># define update function with weight decay</span>
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">lr</span><span class="p">):</span>
+    <span class="n">wd</span> <span class="o">=</span> <span class="mf">1e-5</span>
+    <span class="n">y_hat</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="c1"># weight decay</span>
+    <span class="n">w2</span> <span class="o">=</span> <span class="mf">0.</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span> <span class="n">w2</span> <span class="o">+=</span> <span class="p">(</span><span class="n">p</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="c1"># add to regular loss</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">y_hat</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">w2</span><span class="o">*</span><span class="n">wd</span>
+    <span class="n">loss</span><span class="o">.</span><span class="n">requres_grad</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">sub_</span><span class="p">(</span><span class="n">lr</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">zero_</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+<span class="c1"># iterate through one epoch and plot losses</span>
+<span class="n">losses</span> <span class="o">=</span> <span class="p">[</span><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">lr</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">train_dl</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">losses</span><span class="p">);</span>
+</pre></div>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*p2sKZABskEsunz6WcZdf7A.png"/></p>
 <p>These codes are quite self-explanatory. We used the <a href="https://github.com/fastai">fast.ai</a> library for this project. Download the <span class="caps">MNIST</span> pickle file and unzip it, transfer it into a PyTorch tensor, then stuff it into a fast.ai DataBunch object for further training. Then we created a simple neural network with only one Linear layer. We also write our own update function instead of using the torch.optim optimizers since we could be writing our own optimizers from scratch as the next step of our PyTorch learning journey. Finally, we iterate through the dataset and plot the losses to see whether and how well it works.</p>
 <h3 id="first-iteration-just-make-it-work">First Iteration: Just make it work<a class="headerlink" href="#first-iteration-just-make-it-work" title="Permanent link">¶</a></h3>
@@ -161,7 +224,23 @@ my(a)
 <p><span class="caps">OK</span>, now go back to our neural network codes and find the Mnist_Logistic class, change self.lin = nn.Linear(784,10, bias=True) to self.lin = myLinear(784, 10, bias=True). Run the code, you should see something like this plot:</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*IdvjAdDwEwhgLw0hRi2zwg.png"/></p>
 <p>As you can see it doesn’t converge quite well (around 2.5 loss with one epoch). That’s probably because of our poor initialization. Also, we didn’t take care of the bias part. Let’s fix that in the next iteration. The final code for <strong>iteration 1</strong> looks like this:</p>
-<iframe frameborder="0" src="https://medium.com/media/b7f8cb6179f2fbcf782d4557998676e8"></iframe>
+<div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">myLinear</span><span class="p">(</span><span class="nx">nn</span><span class="p">.</span><span class="nx">Module</span><span class="p">)</span><span class="o">:</span>
+    <span class="nx">def</span> <span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">in_features</span><span class="p">,</span> <span class="nx">out_features</span><span class="p">,</span> <span class="nx">bias</span><span class="o">=</span><span class="nx">True</span><span class="p">)</span><span class="o">:</span>
+        <span class="kr">super</span><span class="p">().</span><span class="nx">__init__</span><span class="p">()</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">in_features</span> <span class="o">=</span> <span class="nx">in_features</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">out_features</span> <span class="o">=</span> <span class="nx">out_features</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">bias</span> <span class="o">=</span> <span class="nx">bias</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">weight</span> <span class="o">=</span> <span class="nx">torch</span><span class="p">.</span><span class="nx">nn</span><span class="p">.</span><span class="nx">Parameter</span><span class="p">(</span><span class="nx">torch</span><span class="p">.</span><span class="nx">randn</span><span class="p">(</span><span class="nx">out_features</span><span class="p">,</span> <span class="nx">in_features</span><span class="p">))</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">bias</span> <span class="o">=</span> <span class="nx">torch</span><span class="p">.</span><span class="nx">nn</span><span class="p">.</span><span class="nx">Parameter</span><span class="p">(</span><span class="nx">torch</span><span class="p">.</span><span class="nx">randn</span><span class="p">(</span><span class="nx">out_features</span><span class="p">))</span>
+
+
+    <span class="nx">def</span> <span class="nx">forward</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">input</span><span class="p">)</span><span class="o">:</span>
+        <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">shape</span>
+        <span class="k">if</span> <span class="nx">y</span> <span class="o">!=</span> <span class="nx">self.in_features</span>:
+            <span class="kt">sys.exit</span><span class="p">(</span><span class="nx">f</span><span class="s1">'Wrong Input Features. Please use tensor with {self.in_features} Input Features'</span><span class="p">)</span>
+        <span class="nx">output</span> <span class="o">=</span> <span class="nx">input</span> <span class="err">@</span> <span class="nx">self</span><span class="p">.</span><span class="nx">weight</span><span class="p">.</span><span class="nx">t</span><span class="p">()</span> <span class="o">+</span> <span class="nx">self</span><span class="p">.</span><span class="nx">bias</span>
+        <span class="k">return</span> <span class="nx">output</span>
+</pre></div>
 <h3 id="second-iteration-proper-weight-initialization-and-bias-handling">Second iteration: Proper weight initialization and bias handling<a class="headerlink" href="#second-iteration-proper-weight-initialization-and-bias-handling" title="Permanent link">¶</a></h3>
 <p>We’ve handled <strong>init</strong> and forward, but remember we also have a bias attribute that if False, will not learn additive bias. We have not implemented that yet. Also, we used torch.nn.randn to initialize the weight and bias, which is not optimum. Let’s fix this. The updated <strong>init</strong> function looks like this:</p>
 <div class="highlight"><pre><span></span>def __init__(self, in_features, out_features, bias=True):
@@ -197,7 +276,42 @@ my(a)
         )
 </pre></div>
 <p>The final model looks like this:</p>
-<iframe frameborder="0" src="https://medium.com/media/014b75ca4e4dd27b1212b432a0397871"></iframe>
+<div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">myLinear</span><span class="p">(</span><span class="nx">nn</span><span class="p">.</span><span class="nx">Module</span><span class="p">)</span><span class="o">:</span>
+    <span class="nx">def</span> <span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">in_features</span><span class="p">,</span> <span class="nx">out_features</span><span class="p">,</span> <span class="nx">bias</span><span class="o">=</span><span class="nx">True</span><span class="p">)</span><span class="o">:</span>
+        <span class="kr">super</span><span class="p">().</span><span class="nx">__init__</span><span class="p">()</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">in_features</span> <span class="o">=</span> <span class="nx">in_features</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">out_features</span> <span class="o">=</span> <span class="nx">out_features</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">bias</span> <span class="o">=</span> <span class="nx">bias</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">weight</span> <span class="o">=</span> <span class="nx">torch</span><span class="p">.</span><span class="nx">nn</span><span class="p">.</span><span class="nx">Parameter</span><span class="p">(</span><span class="nx">torch</span><span class="p">.</span><span class="nx">Tensor</span><span class="p">(</span><span class="nx">out_features</span><span class="p">,</span> <span class="nx">in_features</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nx">bias</span>:
+            <span class="kt">self.bias</span> <span class="o">=</span> <span class="nx">torch</span><span class="p">.</span><span class="nx">nn</span><span class="p">.</span><span class="nx">Parameter</span><span class="p">(</span><span class="nx">torch</span><span class="p">.</span><span class="nx">Tensor</span><span class="p">(</span><span class="nx">out_features</span><span class="p">))</span>
+        <span class="k">else</span><span class="o">:</span>
+            <span class="nx">self</span><span class="p">.</span><span class="nx">register_parameter</span><span class="p">(</span><span class="s1">'bias'</span><span class="p">,</span> <span class="nx">None</span><span class="p">)</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">reset_parameters</span><span class="p">()</span>
+
+    <span class="nx">def</span> <span class="nx">reset_parameters</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>
+        <span class="nx">torch</span><span class="p">.</span><span class="nx">nn</span><span class="p">.</span><span class="nx">init</span><span class="p">.</span><span class="nx">kaiming_uniform_</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">weight</span><span class="p">,</span> <span class="nx">a</span><span class="o">=</span><span class="nx">math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nx">self</span><span class="p">.</span><span class="nx">bias</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">None</span>:
+            <span class="kt">fan_in</span><span class="p">,</span> <span class="nx">_</span> <span class="o">=</span> <span class="nx">torch</span><span class="p">.</span><span class="nx">nn</span><span class="p">.</span><span class="nx">init</span><span class="p">.</span><span class="nx">_calculate_fan_in_and_fan_out</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">weight</span><span class="p">)</span>
+            <span class="nx">bound</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nx">math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">fan_in</span><span class="p">)</span>
+            <span class="nx">torch</span><span class="p">.</span><span class="nx">nn</span><span class="p">.</span><span class="nx">init</span><span class="p">.</span><span class="nx">uniform_</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">bias</span><span class="p">,</span> <span class="o">-</span><span class="nx">bound</span><span class="p">,</span> <span class="nx">bound</span><span class="p">)</span>
+
+    <span class="nx">def</span> <span class="nx">forward</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">input</span><span class="p">)</span><span class="o">:</span>
+        <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">shape</span>
+        <span class="k">if</span> <span class="nx">y</span> <span class="o">!=</span> <span class="nx">self.in_features</span>:
+            <span class="kt">print</span><span class="p">(</span><span class="nx">f</span><span class="s1">'Wrong Input Features. Please use tensor with {self.in_features} Input Features'</span><span class="p">)</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="nx">output</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">matmul</span><span class="p">(</span><span class="nx">weight</span><span class="p">.</span><span class="nx">t</span><span class="p">())</span>
+        <span class="k">if</span> <span class="nx">bias</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">None</span>:
+            <span class="kt">output</span> <span class="o">+=</span> <span class="nx">bias</span>
+        <span class="nx">ret</span> <span class="o">=</span> <span class="nx">output</span>
+        <span class="k">return</span> <span class="nx">ret</span>
+
+    <span class="nx">def</span> <span class="nx">extra_repr</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>
+        <span class="k">return</span> <span class="s1">'in_features={}, out_features={}, bias={}'</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span>
+            <span class="nx">self</span><span class="p">.</span><span class="nx">in_features</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">out_features</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">bias</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">None</span>
+        <span class="p">)</span>
+</pre></div>
 <p>Rerun the code, you should be able to see this plot:</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*6nUlBO7nIt9t2E0xrfgP-w.png"/></p>
 <p>We can see it converges much faster to a 0.5 loss in one epoch.</p>
@@ -256,6 +370,7 @@ my(a)
             <nav>
             <ul class="articles-timeline">
                 <li class="previous-article">« <a href="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html" title="Previous: Another Self-Driving Car Accident, Another AI Development Lesson">Another Self-Driving Car Accident, Another AI Development Lesson</a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style-efb297e22582.html" title="Next: Let’s Build a Fashion-MNIST CNN, PyTorch Style">Let’s Build a Fashion-MNIST CNN, PyTorch Style</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -263,16 +378,16 @@ my(a)
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2020-01-29T15:40:11-06:00">Jan 29, 2020</time>
+            <time itemprop="dateCreated" datetime="2020-01-30T11:13:56-06:00">Jan 30, 2020</time>
             <h4>Category</h4>
             <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://wayofnumbers.com/tags#artificial-intelligence-ref">Artificial Intelligence
-                    <span>6</span>
+                    <span>7</span>
 </a></li>
                 <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
-                    <span>20</span>
+                    <span>21</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

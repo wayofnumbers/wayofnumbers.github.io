@@ -1,6 +1,6 @@
 Title: No Human Can Beat AlphaGo, and It’s a Good Thing
 Slug: no-human-can-beat-alphago-so-what-3401b40fa0f0
-Date: Wed Jan 29 15:40:07 CST 2020
+Date: Thu Jan 30 11:13:52 CST 2020
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
 author: Michael Li

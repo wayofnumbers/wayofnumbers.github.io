@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://wayofnumbers.com/</loc>
-<lastmod>2020-01-30T07:54:24-00:00</lastmod>
+<lastmod>2020-01-30T11:13:59-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/archives.html</loc>
-<lastmod>2020-01-30T07:54:24-00:00</lastmod>
+<lastmod>2020-01-30T11:13:59-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/tags.html</loc>
-<lastmod>2020-01-30T07:54:24-00:00</lastmod>
+<lastmod>2020-01-30T11:13:59-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/categories.html</loc>
-<lastmod>2020-01-30T07:54:24-00:00</lastmod>
+<lastmod>2020-01-30T11:13:59-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -39,43 +39,50 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style-efb297e22582.html</loc>
+<lastmod>2020-01-30T11:13:57-06:00</lastmod>
+<changefreq>always</changefreq>
+<priority>1</priority>
+</url>
+
+<url>
 <loc>https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html</loc>
-<lastmod>2020-01-29T15:40:11-06:00</lastmod>
+<lastmod>2020-01-30T11:13:56-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html</loc>
-<lastmod>2020-01-29T15:40:09-06:00</lastmod>
+<lastmod>2020-01-30T11:13:54-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html</loc>
-<lastmod>2020-01-29T15:40:08-06:00</lastmod>
+<lastmod>2020-01-30T11:13:53-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/no-human-can-beat-alphago-so-what-3401b40fa0f0.html</loc>
-<lastmod>2020-01-29T15:40:07-06:00</lastmod>
+<lastmod>2020-01-30T11:13:52-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78.html</loc>
-<lastmod>2020-01-29T15:40:06-06:00</lastmod>
+<lastmod>2020-01-30T11:13:51-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/neon-life-your-real-virtual-assistant-for-real-this-time-6de4a52e66c4.html</loc>
-<lastmod>2020-01-29T15:40:04-06:00</lastmod>
+<lastmod>2020-01-30T11:13:50-06:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>

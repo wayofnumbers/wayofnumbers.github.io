@@ -1,6 +1,6 @@
 Title: How to Build Your Own PyTorch Neural Network Layer from Scratch
 Slug: how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6
-Date: Wed Jan 29 15:40:11 CST 2020
+Date: Thu Jan 30 11:13:56 CST 2020
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
 author: Michael Li
@@ -25,7 +25,69 @@ OK, enough of the motivation, let’s get to it.
 
 First of all, we need some ‘backdrop’ codes to test whether and how well our module performs. Let’s build a very simple one-layer neural network to solve the good-old MNIST dataset. The code (running in Jupyter Notebook) snippet below:
 
-<iframe src="https://medium.com/media/ebfff9b2780b077023072e413883bade" frameborder=0></iframe>
+    # We'll use fast.ai to showcase how to build your own 'nn.Linear' module
+    %matplotlib inline
+    from fastai.basics import *
+    import sys
+    
+    # create and download/prepare our MNIST dataset
+    path = Config().data_path()/'mnist'
+    path.mkdir(parents=True)
+    !wget http://deeplearning.net/data/mnist/mnist.pkl.gz -P {path}
+      
+    # Get the images downloaded into data set
+    with gzip.open(path/'mnist.pkl.gz', 'rb') as f:
+        ((x_train, y_train), (x_valid, y_valid), _) = pickle.load(f, encoding='latin-1')
+    
+    # Have a look at the images and shape
+    plt.imshow(x_train[0].reshape((28,28)), cmap="gray")
+    x_train.shape
+    
+    # convert numpy into PyTorch tensor
+    x_train,y_train,x_valid,y_valid = map(torch.tensor, (x_train,y_train,x_valid,y_valid))
+    n,c = x_train.shape
+    x_train.shape, y_train.min(), y_train.max()
+    
+    # prepare dataset and create fast.ai DataBunch for training
+    bs=64
+    train_ds = TensorDataset(x_train, y_train)
+    valid_ds = TensorDataset(x_valid, y_valid)
+    data = DataBunch.create(train_ds, valid_ds, bs=bs)
+    
+    # create a simple MNIST logistic model with only one Linear layer
+    class Mnist_Logistic(nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.lin = nn.Linear(784, 10, bias=True)
+    
+        def forward(self, xb): return self.lin(xb)
+    
+    model =Mnist_Logistic()
+    
+    lr=2e-2
+    loss_func = nn.CrossEntropyLoss()
+    
+    # define update function with weight decay
+    def update(x,y,lr):
+        wd = 1e-5
+        y_hat = model(x)
+        # weight decay
+        w2 = 0.
+        for p in model.parameters(): w2 += (p**2).sum()
+        # add to regular loss
+        loss = loss_func(y_hat, y) + w2*wd
+        loss.requres_grad = True
+       
+        loss.backward()
+        with torch.no_grad():
+            for p in model.parameters():
+                p.sub_(lr * p.grad)
+                p.grad.zero_()
+        return loss.item()
+    
+    # iterate through one epoch and plot losses
+    losses = [update(x,y,lr) for x,y in data.train_dl]
+    plt.plot(losses);
 
 ![](https://cdn-images-1.medium.com/max/2000/1*p2sKZABskEsunz6WcZdf7A.png)
 
@@ -87,7 +149,22 @@ OK, now go back to our neural network codes and find the Mnist_Logistic class, c
 
 As you can see it doesn’t converge quite well (around 2.5 loss with one epoch). That’s probably because of our poor initialization. Also, we didn’t take care of the bias part. Let’s fix that in the next iteration. The final code for **iteration 1** looks like this:
 
-<iframe src="https://medium.com/media/b7f8cb6179f2fbcf782d4557998676e8" frameborder=0></iframe>
+    class myLinear(nn.Module):
+        def __init__(self, in_features, out_features, bias=True):
+            super().__init__()
+            self.in_features = in_features
+            self.out_features = out_features
+            self.bias = bias
+            self.weight = torch.nn.Parameter(torch.randn(out_features, in_features))
+            self.bias = torch.nn.Parameter(torch.randn(out_features))
+           
+            
+        def forward(self, input):
+            x, y = input.shape
+            if y != self.in_features:
+                sys.exit(f'Wrong Input Features. Please use tensor with {self.in_features} Input Features')
+            output = input @ self.weight.t() + self.bias
+            return output
 
 ### Second iteration: Proper weight initialization and bias handling
 
@@ -134,7 +211,41 @@ Also, we can add some extra_repr string to the model:
 
 The final model looks like this:
 
-<iframe src="https://medium.com/media/014b75ca4e4dd27b1212b432a0397871" frameborder=0></iframe>
+    class myLinear(nn.Module):
+        def __init__(self, in_features, out_features, bias=True):
+            super().__init__()
+            self.in_features = in_features
+            self.out_features = out_features
+            self.bias = bias
+            self.weight = torch.nn.Parameter(torch.Tensor(out_features, in_features))
+            if bias:
+                self.bias = torch.nn.Parameter(torch.Tensor(out_features))
+            else:
+                self.register_parameter('bias', None)
+            self.reset_parameters()
+            
+        def reset_parameters(self):
+            torch.nn.init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+            if self.bias is not None:
+                fan_in, _ = torch.nn.init._calculate_fan_in_and_fan_out(self.weight)
+                bound = 1 / math.sqrt(fan_in)
+                torch.nn.init.uniform_(self.bias, -bound, bound)
+            
+        def forward(self, input):
+            x, y = input.shape
+            if y != self.in_features:
+                print(f'Wrong Input Features. Please use tensor with {self.in_features} Input Features')
+                return 0
+            output = input.matmul(weight.t())
+            if bias is not None:
+                output += bias
+            ret = output
+            return ret
+        
+        def extra_repr(self):
+            return 'in_features={}, out_features={}, bias={}'.format(
+                self.in_features, self.out_features, self.bias is not None
+            )
 
 Rerun the code, you should be able to see this plot:
 

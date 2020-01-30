@@ -1,6 +1,6 @@
 Title: NEON.LIFE: Your REAL Virtual Assistant, For Real This Time?
 Slug: neon-life-your-real-virtual-assistant-for-real-this-time-6de4a52e66c4
-Date: Wed Jan 29 15:40:04 CST 2020
+Date: Thu Jan 30 11:13:50 CST 2020
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
 author: Michael Li
