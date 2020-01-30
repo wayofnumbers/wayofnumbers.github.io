@@ -89,8 +89,8 @@ CATEGORY_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
 # added only for elegent theme, which does not process the favicon with this.
 USE_SHORTCUT_ICONS = True
-LANDING_PAGE_ABOUT = {'title': "Data science for the rest of us.",
-                      'details': "We are a small team of researchers, designers, developers that likes to explore. Data science don't have to be boring, and we are here to help."}
+# LANDING_PAGE_ABOUT = {'title': "Data science for the rest of us.",
+#                      'details': "We are a small team of researchers, designers, developers that likes to explore. Data science don't have to be boring, and we are here to help."}
 SITESUBTITLE = "Data science for the rest of us."
 
 PROJECTS = [{
