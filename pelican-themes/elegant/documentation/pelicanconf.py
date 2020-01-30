@@ -13,7 +13,6 @@ PATH = "content"
 # Regional Settings
 TIMEZONE = "Asia/Karachi"
 DATE_FORMATS = {"en": "%b %d, %Y"}
-DEFAULT_LANG = "en"
 
 # Plugins and extensions
 MARKDOWN = {
@@ -22,22 +21,20 @@ MARKDOWN = {
         "markdown.extensions.codehilite": {"css_class": "highlight"},
         "markdown.extensions.extra": {},
         "markdown.extensions.meta": {},
-        "markdown.extensions.toc": {"permalink": "true"},
+        "markdown.extensions.toc": {"permalink": " "},
     }
 }
 
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = [
-    "sitemap",
     "extract_toc",
-    "tipue_search",
     "liquid_tags.img",
     "neighbors",
-    "render_math",
     "related_posts",
-    "assets",
-    "share_post",
+    "render_math",
     "series",
+    "share_post",
+    "tipue_search",
 ]
 SITEMAP = {
     "format": "xml",
@@ -56,6 +53,10 @@ USE_FOLDER_AS_CATEGORY = False
 ARTICLE_URL = "{slug}"
 PAGE_URL = "{slug}"
 PAGE_SAVE_AS = "{slug}.html"
+TAGS_URL = "tags"
+CATEGORIES_URL = "categories"
+ARCHIVES_URL = "archives"
+SEARCH_URL = "search"
 
 # Feeds
 AUTHOR_FEED_ATOM = None
@@ -65,11 +66,14 @@ CATEGORY_FEED_RSS = None
 
 # Social
 SOCIAL = (
-    ("Github", "https://github.com/Pelican-Elegant/"),
+    ("Github", "https://github.com/Pelican-Elegant/", "Elegant Github Repository"),
     ("RSS", SITEURL + "/feeds/all.atom.xml"),
+    (
+        "Calendar",
+        "https://github.com/Pelican-Elegant/elegant/milestones",
+        "Elegant Project Roadmap",
+    ),
 )
-
-CLAIM_BING = "BC16AEBED17872F083B3E1E7A67454BD"
 
 # Elegant theme
 STATIC_PATHS = ["theme/images", "images", "extra/_redirects"]
@@ -82,7 +86,7 @@ else:
     STATIC_PATHS.append("extra/robots_deny.txt")
     EXTRA_PATH_METADATA["extra/robots_deny.txt"] = {"path": "robots.txt"}
 
-DIRECT_TEMPLATES = ("index", "tags", "categories", "archives", "search", "404")
+DIRECT_TEMPLATES = ["index", "tags", "categories", "archives", "search", "404"]
 TAG_SAVE_AS = ""
 AUTHOR_SAVE_AS = ""
 CATEGORY_SAVE_AS = ""
@@ -94,18 +98,20 @@ RELATED_POSTS_LABEL = "Keep Reading"
 SHARE_POST_INTRO = "Like this post? Share on:"
 COMMENTS_INTRO = "So what do you think? Did I miss something? Is any part unclear? Leave your comments below."
 
-# Mailchimp
-EMAIL_SUBSCRIPTION_LABEL = "Get Monthly Updates"
+# Email Subscriptions
+EMAIL_SUBSCRIPTION_LABEL = "Get New Release Alert"
 EMAIL_FIELD_PLACEHOLDER = "Enter your email..."
-SUBSCRIBE_BUTTON_TITLE = "Send me Free updates"
-MAILCHIMP_FORM_ACTION = "empty"
+SUBSCRIBE_BUTTON_TITLE = "Notify me"
+
+FREELISTS_NAME = "oracle-l"
+FREELISTS_FILTER = True
 
 # SMO
 TWITTER_USERNAME = ""
 FEATURED_IMAGE = SITEURL + "/theme/images/apple-touch-icon-152x152.png"
 
 # Legal
-SITE_LICENSE = """Content licensed under <a rel="license"
+SITE_LICENSE = """Content licensed under <a rel="license nofollow noopener noreferrer"
     href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
     Creative Commons Attribution 4.0 International License</a>."""
 HOSTED_ON = {"name": "Netlify", "url": "https://www.netlify.com/"}
@@ -134,6 +140,11 @@ PROJECTS = [
         "description": "See planned features and estimated release dates",
     },
     {
+        "name": "Press Kit",
+        "url": "https://github.com/Pelican-Elegant/elegant/tree/master/elegant-logo",
+        "description": "Writing an article on Elegant? Get Elegant logo from here",
+    },
+    {
         "name": "onCrashReboot",
         "url": "https://www.oncrashreboot.com/",
         "description": "Home page of Elegant creator and lead developer",
@@ -156,9 +167,21 @@ AUTHORS = {
     "Talha Mansoor": {
         "url": "https://www.oncrashreboot.com/",
         "blurb": "is the creator and lead developer of Elegant theme.",
+        "avatar": "/images/avatars/talha131.png",
     },
     "Pablo Iranzo Gómez": {
         "url": "http://iranzo.github.io",
-        "blurb": "has been involved with open source projects for more than a decade.",
+        "blurb": " opensource enthusiast and Lego fan doing some python simple programs like @redken_bot in telegram, etc",
+        "avatar": "https://avatars.githubusercontent.com/u/312463",
+    },
+    "Jack De Winter": {
+        "url": "http://jackdewinter.github.io",
+        "blurb": "ever evolving, ever learning",
+    },
+    "Matija Šuklje": {
+        "url": "https://matija.suklje.name",
+        "blurb": "FOSS lawyer by trade, hacker by heart.",
     },
 }
+DISQUS_FILTER = True
+UTTERANCES_FILTER = True

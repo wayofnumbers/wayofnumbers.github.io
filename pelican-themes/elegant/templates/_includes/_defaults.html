@@ -61,6 +61,30 @@
 {% set COMMENTS_INTRO = COMMENTS_INTRO %}
 {% endif %}
 
+{% if not DISQUS_FILTER %}
+{% set DISQUS_FILTER = False %}
+{% else %}
+{% set DISQUS_FILTER = DISQUS_FILTER %}
+{% endif %}
+
+{% if not UTTERANCES_FILTER %}
+{% set UTTERANCES_FILTER = False %}
+{% else %}
+{% set UTTERANCES_FILTER = UTTERANCES_FILTER %}
+{% endif %}
+
+{% if not UTTERANCES_THEME %}
+{% set UTTERANCES_THEME = 'github-light' %}
+{% else %}
+{% set UTTERANCES_THEME = UTTERANCES_THEME %}
+{% endif %}
+
+{% if not UTTERANCES_LABEL %}
+{% set UTTERANCES_LABEL = '' %}
+{% else %}
+{% set UTTERANCES_LABEL = UTTERANCES_LABEL %}
+{% endif %}
+
 {# Author's twitter handle. Used in Twitter card meta data #}
 {% if not TWITTER_USERNAME %}
 {% set TWITTER_USERNAME = '' %}
@@ -98,9 +122,21 @@ search results and social media #}
 {% set MAILCHIMP_FORM_ACTION = MAILCHIMP_FORM_ACTION %}
 {% endif %}
 
+{% if not MAILCHIMP_FILTER %}
+{% set MAILCHIMP_FILTER = False %}
+{% else %}
+{% set MAILCHIMP_FILTER = MAILCHIMP_FILTER %}
+{% endif %}
+
 {% if not FREELISTS_NAME %} {% set FREELISTS_NAME = '' %}
 {% else %}
 {% set FREELISTS_NAME = FREELISTS_NAME %}
+{% endif %}
+
+{% if not FREELISTS_FILTER %}
+{% set FREELISTS_FILTER = False %}
+{% else %}
+{% set FREELISTS_FILTER = FREELISTS_FILTER %}
 {% endif %}
 
 {# It is displayed along with the SITENAME in the footer of every page #}
@@ -157,4 +193,34 @@ PROJECTS = [{
 {% set PHOTOS_LIGHTBOX = 'True' %}
 {% else %}
 {% set PHOTOS_LIGHTBOX = PHOTOS_LIGHTBOX %}
+{% endif %}
+
+{%if not TAGS_URL %}
+{% set TAGS_URL = 'tags.html' %}
+{% else %}
+{% set TAGS_URL = TAGS_URL %}
+{% endif %}
+
+{%if not CATEGORIES_URL %}
+{% set CATEGORIES_URL = 'categories.html' %}
+{% else %}
+{% set CATEGORIES_URL = CATEGORIES_URL %}
+{% endif %}
+
+{%if not ARCHIVES_URL %}
+{% set ARCHIVES_URL = 'archives.html' %}
+{% else %}
+{% set ARCHIVES_URL = ARCHIVES_URL %}
+{% endif %}
+
+{%if not SEARCH_URL %}
+{% set SEARCH_URL = 'search.html' %}
+{% else %}
+{% set SEARCH_URL = SEARCH_URL %}
+{% endif %}
+
+{% if not APPLAUSE_BUTTON %}
+{% set APPLAUSE_BUTTON = False %}
+{% else %}
+{% set APPLAUSE_BUTTON = APPLAUSE_BUTTON %}
 {% endif %}

@@ -32,7 +32,16 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="{{ SITEURL }}/{{ article.url }}"> {{ article.title }} {%if article.subtitle %} <small> {{ article.subtitle }} </small> {% endif %} </a></h1>
+        <h1>
+            <a href="{{ SITEURL }}/{{ article.url }}">
+                {{ article.title }}
+                {%if article.subtitle %}
+                <small class="subtitle">
+                    {{ article.subtitle }}
+                </small>
+                {% endif %}
+            </a>
+        </h1>
     </header>
 </div>
 
@@ -64,12 +73,14 @@
             </div>
             {% endif %}
 
-            {% from '_includes/article_author.html' import article_author with context %}
-            {{ article_author(article) }}
+            {% from '_includes/applause_button.html' import applause_button with context %}
+            {{ applause_button(article) }}
             {% from '_includes/share_links.html' import share_links with context %}
             {{ share_links(article) }}
-            {% from '_includes/comments.html' import comments with context %}
-            {{ comments(article) }}
+            {% from '_includes/article_author.html' import article_author with context %}
+            {{ article_author(article) }}
+            {% from '_includes/comments.html' import comments_section with context %}
+            {{ comments_section(article) }}
             <hr/>
             {% include '_includes/related_posts.html' with context %}
             {% if article.prev_article or article.next_article %}
@@ -80,7 +91,7 @@
                     {% set ptitle = article.prev_article.title|striptags|e %}
                     {% set pv_title = article.prev_article.title|striptags %}
                     {%if article.prev_article.subtitle %}
-                        {% set pv_title = pv_title + ' ' +  '<small>' + article.prev_article.subtitle|striptags + '</small>' %}
+                    {% set pv_title = pv_title + ' ' +  '<small class="subtitle">' + article.prev_article.subtitle|striptags + '</small>' %}
                         {% set ptitle = ptitle + ' - ' + article.prev_article.subtitle|e %}
                     {% endif %}
                 <li class="previous-article">« <a href="{{ SITEURL }}/{{ article.prev_article.url }}" title="Previous: {{ ptitle }}">{{ pv_title }}</a></li>
@@ -89,7 +100,7 @@
                     {% set ntitle = article.next_article.title|striptags|e %}
                     {% set nv_title = article.next_article.title|striptags %}
                     {%if article.next_article.subtitle %}
-                        {% set nv_title = nv_title + ' ' +  '<small>' + article.next_article.subtitle|striptags + '</small>' %}
+                    {% set nv_title = nv_title + ' ' +  '<small class="subtitle">' + article.next_article.subtitle|striptags + '</small>' %}
                         {% set ntitle = ntitle + ' - ' + article.next_article.subtitle|e %}
                     {% endif %}
                 <li class="next-article"><a href="{{ SITEURL }}/{{ article.next_article.url }}" title="Next: {{ ntitle }}">{{ nv_title }}</a> »</li>
@@ -99,8 +110,7 @@
             </aside>
             {% endif %}
         </div>
-        <section>
-        <div class="span2" style="float:right;font-size:0.9em;">
+        <section id="article-sidebar" class="span2">
             {% include '_includes/post_stats.html' %}
             {% if article.date %}
             <h4>Published</h4>
@@ -111,13 +121,15 @@
             {% include '_includes/series.html' %}
             {% if article.category|trim|count > 0 %}
             <h4>Category</h4>
-            <a class="category-link" href="{{ SITEURL }}/categories.html#{{ category.slug }}-ref">{{ article.category }}</a>
+            {% from '_includes/_defaults.html' import CATEGORIES_URL with context %}
+            <a class="category-link" href="{{ SITEURL }}/{{ CATEGORIES_URL }}#{{ category.slug }}-ref">{{ article.category }}</a>
             {% endif %}
             {% if article.tags and article.tags[0]|trim|count > 0 %}
+            {% from '_includes/_defaults.html' import TAGS_URL with context %}
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 {% for tag in article.tags|sort %}
-                <li><a href="{{ SITEURL }}/{{ TAGS_URL|default('tags') }}#{{ tag.slug }}-ref">{{ tag }}
+                <li><a href="{{ SITEURL }}/{{ TAGS_URL }}#{{ tag.slug }}-ref">{{ tag }}
                     {% for aTag, tagged_articles in tags if aTag == tag %}
                     <span>{{ tagged_articles|count }}</span>
                     {% endfor %}</a></li>
@@ -125,9 +137,10 @@
             </ul>
             {% endif %}
             {% include '_includes/social_links.html' %}
-            {% include '_includes/mailchimp.html' %}
-            {% include '_includes/freelists.html' %}
-        </div>
+            {% from '_includes/mailchimp.html' import mailchimp with context %}
+            {{ mailchimp(article) }}
+            {% from '_includes/freelists.html' import freelists with context %}
+            {{ freelists(article) }}
         </section>
 </div>
 </article>
@@ -136,6 +149,6 @@
 {% block script %}
     {{ super() }}
     {% from '_includes/comments.html' import comments_script with context %}
-    {{ comments_script(article) }}
+    {{ comments_script() }}
     {% include '_includes/photos_footer.html' %}
 {% endblock script %}
