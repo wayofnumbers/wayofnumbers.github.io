@@ -4,4 +4,4 @@ slug: about-me
 date: 2018-02-15 17:00
 author: Michael Li
 
-This is the homepage and blog of Michael Li. For more about me, see here.
+I am a Machine Learning practitioner, Product Manager, UI/UX Designer, Web Developer and I also write my own website and web app. I love to read and share my thoughts on technology, data science and design. Currently writing a lot on [Medium.com](https://medium.com/@lymenlee). 
