@@ -31,7 +31,9 @@ PLUGINS = ['ipynb.markup',
 	'extract_toc',
 	'neighbors', 
 	'tipue_search', 
-	'readtime']
+	'readtime',
+        u"disqus_static",
+        ]
 SITEMAP = {
     "format": "xml",
     "priorities": {"articles": 0.5, "indexes": 0.5, "pages": 0.5},
@@ -151,3 +153,5 @@ RELATIVE_URLS = False
 MARKUP = ('md', 'ipynb')
 
 DISQUS_SITENAME = "way-of-numbers"
+DISQUS_SECRET_KEY = u'emdNyAftwShoAixVUdjO9C0buzpX2myI4UwvfytW1d5Yg0Jb5WzaAEimNhpZTvsR'
+DISQUS_PUBLIC_KEY = u'7phihyH3j4px5cCgD5epLyzPsNyC11T3e0hwy9QwB1EjhFbfH4rCBf3AVPGaUzgV'
