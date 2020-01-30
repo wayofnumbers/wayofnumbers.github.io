@@ -27,12 +27,13 @@ MARKDOWN = {
 
 PLUGIN_PATHS = ['./pelican-plugins', './plugins']
 PLUGINS = ['ipynb.markup', 
-	'sitemap', 
-	'extract_toc',
-	'neighbors', 
-	'tipue_search', 
-        "disqus_static",
-        'pelican-readtime',
+	    'sitemap', 
+	    'extract_toc',
+	    'neighbors', 
+            'tipue_search', 
+            'readtime',
+            'disqus_static',
+            'pelican-readtime',
         ]
 SITEMAP = {
     "format": "xml",
