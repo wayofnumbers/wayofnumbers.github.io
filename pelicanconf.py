@@ -33,6 +33,7 @@ PLUGINS = ['ipynb.markup',
 	'tipue_search', 
 	'readtime',
         u"disqus_static",
+        'pelican-readtime,
         ]
 SITEMAP = {
     "format": "xml",
