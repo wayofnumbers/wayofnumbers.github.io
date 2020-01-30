@@ -1,4 +1,5 @@
 Title: No Human Can Beat AlphaGo, and It’s a Good Thing
+Subtitle: Why Go master Lee Se-Dol should not feel sorry for losing to AlphaGo
 Slug: no-human-can-beat-alphago-so-what-3401b40fa0f0
 Date: Thu Jan 30 11:13:52 CST 2020
 Category: Machine Learning
@@ -7,7 +8,6 @@ author: Michael Li
 Summary: No Human Can Beat AlphaGo, and It’s a Good Thing
 [TOC]
 
-Why Go master Lee Se-Dol should not feel sorry for losing to AlphaGo
 
 ![Photo from Netflix](https://cdn-images-1.medium.com/max/2400/0*I3e_Y1ewLVn0MMxV.jpeg)*Photo from Netflix*
 

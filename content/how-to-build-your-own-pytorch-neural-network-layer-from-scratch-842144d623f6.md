@@ -1,4 +1,5 @@
 Title: How to Build Your Own PyTorch Neural Network Layer from Scratch
+Subtitle: And learn a thing or two about weight initialization
 Slug: how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6
 Date: Thu Jan 30 11:13:56 CST 2020
 Category: Machine Learning
@@ -7,7 +8,6 @@ author: Michael Li
 Summary: How to Build Your Own PyTorch Neural Network Layer from Scratch
 [TOC]
 
-And learn a thing or two about weight initialization
 
 ![](https://cdn-images-1.medium.com/max/4000/1*oLcN6Vlpa-PrxnRYJGnXDQ.png)
 

@@ -1,4 +1,5 @@
 Title: I finished Andrew Ng's Machine Learning Course and I Felt Great!
+Subtitle: The good, the bad, and the beautiful
 Slug: andrewng-ml-course-review
 Date: 2019-09-6 20:00
 Category: Machine Learning
@@ -8,7 +9,6 @@ Summary: Thoughts and feelings for completing Andrew Ng's Machine Learning cours
 
 [TOC]
 
-The good, the bad, and the beautiful
 
 ![](https://cdn-images-1.medium.com/max/2400/1*-7P4wesf7eSx46XxHV9_wg.png)
 

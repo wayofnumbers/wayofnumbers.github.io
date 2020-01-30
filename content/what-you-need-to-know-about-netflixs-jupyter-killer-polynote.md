@@ -1,4 +1,5 @@
 Title: What You Need to Know About Netflix’s ‘Jupyter Killer’: Polynote 📖
+Subtitle: It’s about time Jupyter Notebook has its worthy competitor
 Slug: what-you-need-to-know-about-netflixs-jupyter-killer-polynote
 Date: 2019-10-25 20:00
 Category: Machine Learning
@@ -8,7 +9,6 @@ Summary: Introduced Polynote, Netflix's new open source notebook for data scienc
 
 [TOC]
 
-It’s about time Jupyter Notebook has its worthy competitor
 
 ![](https://cdn-images-1.medium.com/max/2490/0*MCKD9v7ezPD7yXrX)
 

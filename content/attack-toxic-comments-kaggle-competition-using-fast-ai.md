@@ -1,6 +1,7 @@
 Title: Attack Toxic Comments Kaggle Competition using Fast.ai
 Slug: attack-toxic-comments-kaggle-competition-using-fast-ai 
 Date: 2019-10-8 20:00
+Subtitle: How to build a multi-label NLP classifier from scratch
 Category: Machine Learning
 Tags: Machine Learning, AI, NLP, fast.ai, Deep Learning
 author: Michael Li
@@ -8,7 +9,6 @@ Summary: Described how to build a multi-label toxic comments classifier from scr
 
 [TOC]
 
-How to build a multi-label NLP classifier from scratch
 
 ![](https://cdn-images-1.medium.com/max/2000/0*SxwidHTBf5ZSysg9.jpg)
 

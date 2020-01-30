@@ -1,4 +1,5 @@
 Title: How Long Until Boston Dynamics Robot Can Be a KungFu Master?
+Subtitle: React to Boston Dynamics new ‘More Parkour Atlas’ Video
 Slug: how-long-until-boston-dynamics-robot-can-be-a-kungfu-master
 Date: 2019-09-24 20:00
 Category: Machine Learning
@@ -8,7 +9,6 @@ Summary: Thoughts on Boston Dynamics robot's new moves
 
 [TOC]
 
-React to Boston Dynamics new ‘More Parkour Atlas’ Video
 
 ![Image Credit: Boston Dynamics](https://cdn-images-1.medium.com/max/2480/0*9Qj8BmktvlXMi4u_)*Image Credit: Boston Dynamics*
 

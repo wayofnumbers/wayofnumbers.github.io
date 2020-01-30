@@ -1,5 +1,6 @@
 Title: Let’s Build a Fashion-MNIST CNN, PyTorch Style
 Slug: build-a-fashion-mnist-cnn-pytorch-style-efb297e22582
+Subtitle: A Line-by-line guide on how to structure a PyTorch ML project from scratch using Google Colab and TensorBoard
 Date: Thu Jan 30 11:13:57 CST 2020
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
@@ -7,7 +8,6 @@ author: Michael Li
 Summary: Let’s Build a Fashion-MNIST CNN, PyTorch Style
 [TOC]
 
-A Line-by-line guide on how to structure a PyTorch ML project from scratch using Google Colab and TensorBoard
 
 ![](https://cdn-images-1.medium.com/max/4000/1*cz0q6YuI0H8dSd5N9Km5_A.png)
 

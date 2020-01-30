@@ -1,4 +1,5 @@
 Title: 9 Things I Learned from Blogging on Medium for the First Month 
+Subtitle: Why Medium is a good platform to exchange ideas
 Slug: 9-things-i-learned-from-blogging-on-medium-for-the-first-month
 Date: 2019-10-4 10:00
 Category: Machine Learning
@@ -7,7 +8,6 @@ author: Michael Li
 Summary: 9 Things I learned from blogging on Medium for the first month
 [TOC]
 
-Why Medium is a good platform to exchange ideas
 
 ![Photo by [Glenn Carstens-Peters](https://unsplash.com/@glenncarstenspeters?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)](https://cdn-images-1.medium.com/max/8152/0*E24eaavsJb6xN9-_)*Photo by [Glenn Carstens-Peters](https://unsplash.com/@glenncarstenspeters?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)*
 

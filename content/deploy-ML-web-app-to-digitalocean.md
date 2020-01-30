@@ -1,4 +1,5 @@
 Title: How to Deploy Your Machine Learning Web App to Digital Ocean
+Subtitle: Using Fast.ai, Docker, GitHub, and Starlette ASGI Framework
 Slug: how-to-deploy-ML-web-app-to-DO
 Date: 2019-09-21 20:00
 Category: Machine Learning
@@ -8,7 +9,6 @@ Summary: Guide to deploy your Machine Learning web app to DigitalOcean
 
 [TOC]
 
-Using Fast.ai, Docker, GitHub, and Starlette ASGI Framework
 
 ![](https://cdn-images-1.medium.com/max/5000/1*CIO_AZnYf8OkitOLyjXHHw.png)
 

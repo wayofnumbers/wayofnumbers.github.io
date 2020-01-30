@@ -1,4 +1,5 @@
 Title:“This is CS50”: A Pleasant Way to Kick Off Your Data Science Education
+Subtitle: Why CS50 is especially useful to solidify your software engineering foundation
 Slug: this-is-cs50-a-pleasant-way-to-kick-off-your-data-science-education
 Date: 2019-10-13 10:00
 Category: Machine Learning
@@ -8,7 +9,6 @@ Summary: Introduce CS50 courses as a good entry point for data science education
 
 [TOC]
 
-Why CS50 is especially useful to solidify your software engineering foundation
 
 ![CS50 professor David Malan teaches over 800 students on CS5 — from Youtube](https://cdn-images-1.medium.com/max/2880/1*f5zbeedqmaZidMfA_3EGBA.png)_CS50 professor David Malan teaches over 800 students on CS5 — from Youtube_
 

@@ -1,4 +1,5 @@
 Title: On the Internet, Nobody Knows You Are a Dog, or AI
+Subtitle: An inevitable slide into online community anarchy
 Slug: On-the-Internet-Nobody-Knows-You-Are-a-Dog-or-AI
 Date: 2019-10-1 20:00
 Category: Machine Learning
@@ -8,7 +9,6 @@ Summary: Explored the impact and potential solutions for deep fake comments.
 
 [TOC]
 
-An inevitable slide into online community anarchy
 
 ![Photo by [Andy Kelly](https://unsplash.com/@askkell?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)](https://cdn-images-1.medium.com/max/10944/0*-Gl0VJUpNJfYzaoq)*Photo by [Andy Kelly](https://unsplash.com/@askkell?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)*
 

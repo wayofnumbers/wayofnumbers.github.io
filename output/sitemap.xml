@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://wayofnumbers.com/</loc>
-<lastmod>2020-01-30T11:30:42-00:00</lastmod>
+<lastmod>2020-01-30T11:45:28-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/archives.html</loc>
-<lastmod>2020-01-30T11:30:42-00:00</lastmod>
+<lastmod>2020-01-30T11:45:28-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/tags.html</loc>
-<lastmod>2020-01-30T11:30:42-00:00</lastmod>
+<lastmod>2020-01-30T11:45:28-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/categories.html</loc>
-<lastmod>2020-01-30T11:30:42-00:00</lastmod>
+<lastmod>2020-01-30T11:45:28-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -90,13 +90,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote.html</loc>
 <lastmod>2019-10-25T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
-</url>
-
-<url>
-<loc>https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style.html</loc>
-<lastmod>2019-10-23T20:00:00-05:00</lastmod>
 <changefreq>always</changefreq>
 <priority>1</priority>
 </url>

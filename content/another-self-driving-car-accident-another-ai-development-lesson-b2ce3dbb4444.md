@@ -1,13 +1,13 @@
 Title: Another Self-Driving Car Accident, Another AI Development Lesson
 Slug: another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444
 Date: Thu Jan 30 11:13:54 CST 2020
+Subtitle: What could be learned from Uber’s Self-Driving Car accident as a Data Scientist
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
 author: Michael Li
 Summary: Another Self-Driving Car Accident, Another AI Development Lesson
 [TOC]
 
-What could be learned from Uber’s Self-Driving Car accident as a Data Scientist
 
 ![Photo from [https://blogs.nvidia.com](https://blogs.nvidia.com/blog/2019/04/15/how-does-a-self-driving-car-see/)](https://cdn-images-1.medium.com/max/2560/1*WezTd0liYtjmtBINBvenTQ.png)*Photo from [https://blogs.nvidia.com](https://blogs.nvidia.com/blog/2019/04/15/how-does-a-self-driving-car-see/)*
 

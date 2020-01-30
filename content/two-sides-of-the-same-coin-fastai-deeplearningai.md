@@ -1,4 +1,5 @@
 Title: Two Sides of the Same Coin: Jeremy Howard's fast.ai vs Andrew Ng's deeplearning.ai
+Subtitle: How Not to ‘Overfit’ Your AI Learning by Taking Both fast.ai and deeplearning.ai courses
 Slug: two-sides-of-the-same-coin
 Date: 2019-09-24 20:00
 Category: Machine Learning
@@ -8,7 +9,6 @@ Summary: Thoughts on fast.ai vs deeplearning.ai and an efficient way of learning
 
 [TOC]
 
-How Not to ‘Overfit’ Your AI Learning by Taking Both fast.ai and deeplearning.ai courses
 
 ![Which One to Take? WHY NOT BOTH!](https://cdn-images-1.medium.com/max/2000/1*exk4TRN--2VW9fQT64MhdA.png)*Which One to Take? WHY NOT BOTH!*
 

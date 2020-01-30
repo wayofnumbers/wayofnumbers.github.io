@@ -1,4 +1,5 @@
 Title: When 'Growth Hacks' Meets 'Growing Pain'
+Subtitle: What I think about Siraj Raval’ s recent controversial ‘ML course’
 Slug: when-growth-hack-meets-growing-pain
 Date: 2019-09-27 20:00
 Category: Machine Learning
@@ -8,7 +9,6 @@ Summary: Explained my view on the recent Siraj Raval ML course controversy
 
 [TOC]
 
-What I think about Siraj Raval’ s recent controversial ‘ML course’
 
 ### **What Happened**
 

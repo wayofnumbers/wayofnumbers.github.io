@@ -1,4 +1,5 @@
 Title: How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers
+Subtitle: A different approach to Kaggle Blue Book Bulldozers Competition
 Slug: how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c
 Date: Thu Jan 30 11:13:53 CST 2020
 Category: Machine Learning
@@ -7,7 +8,6 @@ author: Michael Li
 Summary: How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers
 [TOC]
 
-A different approach to Kaggle Blue Book Bulldozers Competition
 
 ![Embeddings can be use other than word representations](https://cdn-images-1.medium.com/max/3010/0*iYOn4JtwX9d4pj-U.png)*Embeddings can be use other than word representations*
 

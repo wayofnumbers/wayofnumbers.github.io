@@ -1,4 +1,5 @@
 Title: OpenAI: Catch Me If You Can
+Subtitle: What OpenAI’s Multi-Agent Hide and Seek Break Through Means
 Slug: openai-catch-me-if-you-can
 Date: 2019-09-19 20:00
 Category: Machine Learning
@@ -8,7 +9,6 @@ Summary: OpenAI's multi-agent hide and seek experiments explained.
 
 [TOC]
 
-What OpenAI’s Multi-Agent Hide and Seek Break Through Means
 
 ![](https://cdn-images-1.medium.com/max/5074/1*zx1DVdwYOVJWdHURXr5qjw.png)
 

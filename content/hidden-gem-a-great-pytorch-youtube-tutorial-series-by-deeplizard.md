@@ -1,4 +1,5 @@
 Title: 💎Hidden Gem: A Great PyTorch YouTube Tutorial Series by deeplizard
+Subtitle: A must watch before you delve down deeper into fast.ai source code
 Slug: hidden-gem-a-great-pytorch-youtube-tutorial-series-by-deeplizard
 Date: 2019-10-17 10:00
 Category: Machine Learning
@@ -8,7 +9,6 @@ Summary: Introduce deeplizard's PyTorch tutorial series.
 
 [TOC]
 
-A must watch before you delve down deeper into fast.ai source code
 
 ![](https://cdn-images-1.medium.com/max/2560/1*nY1S0zlngddb1iJthB38Zw.jpeg)
 

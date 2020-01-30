@@ -1,4 +1,5 @@
 Title: How I Migrated My Blog from GitHub Pages to Netlify
+Subtitle: Things to consider when blogging as a data scientist
 Slug: how-I-migrated-my-blog-from-github-pages-to-netlify
 Date: 2019-09-26 20:00
 Category: Machine Learning
@@ -8,7 +9,6 @@ Summary: Explained how I migrate my Pelican-based blog from GitHub Pages to Netl
 
 [TOC]
 
-Things to consider when blogging as a data scientist
 
 ![Migrating Pelican site from GitHub Pages to Netlify](https://cdn-images-1.medium.com/max/4000/1*KirSA0PTL6iyG54DaSjDiw.png)*Migrating Pelican site from GitHub Pages to Netlify*
 
