@@ -1,10 +1,9 @@
-Title: About Me
-Slug: landing-page-about-hidden
-Date: 2018-02-15 17:00
-Category: about
-Tags: about
+title: About Me
+layout: page
+slug: landing-page-about-hidden
+date: 2018-02-15 17:00
 author: Michael Li
-Status: hidden
+status: hidden
 
 
 Data science blog for the rest of us.
