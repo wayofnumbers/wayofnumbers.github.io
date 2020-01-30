@@ -6,20 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael Li" />
 
-        <meta name="twitter:creator" content="@lymenlee">
+        <meta name="description" content="How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
 <meta name="keywords" content="Machine Learning, Artificial Intelligence, Machine Learning, " />
 
 <meta property="og:title" content="How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers  - A different approach to Kaggle Blue Book Bulldozers Competition "/>
-<meta property="og:url" content="https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html" />
+<meta property="og:url" content="https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c" />
 <meta property="og:description" content="How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers" />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
 <meta property="og:article:published_time" content="2020-01-30T11:13:53-06:00" />
 <meta name="twitter:title" content="How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers  - A different approach to Kaggle Blue Book Bulldozers Competition ">
 <meta name="twitter:description" content="How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers">
+<meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
 
         <title>How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers  - A different approach to Kaggle Blue Book Bulldozers Competition  · Way of Numbers
 </title>
@@ -68,11 +71,11 @@
                                        https://wayofnumbers.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wayofnumbers.com/pages/about-me.html">About&nbsp;Me</a></li>
-                                <li ><a href="https://wayofnumbers.com/categories.html">Categories</a></li>
-                                <li ><a href="https://wayofnumbers.com/tags.html">Tags</a></li>
-                                <li ><a href="https://wayofnumbers.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://wayofnumbers.com/about-me">About&nbsp;Me</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html">
+            <a href="https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c">
                 How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding&nbsp;Layers
                 <small class="subtitle">
                     A different approach to Kaggle Blue Book Bulldozers Competition
@@ -117,14 +120,14 @@
             
             
 <p><img alt="Embeddings can be use other than word representations" src="https://cdn-images-1.medium.com/max/3010/0*iYOn4JtwX9d4pj-U.png"/><em>Embeddings can be use other than word representations</em></p>
-<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">¶</a></h2>
+<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link"> </a></h2>
 <p>Tree-based models like Random Forest and XGBoost have become very popular in solving tabular(structured) data problems and gained a lot of tractions in Kaggle competitions lately. It has its very deserving reasons. However, in this article, I want to introduce a different approach from fast.ai’s <strong>Tabular</strong> module leveraging:</p>
 <blockquote>
 <p><strong>Deep Learning and Embedding Layers.</strong></p>
 </blockquote>
 <p>This is a bit against industry consensus that Deep Learning is more for unstructured data like image, audio or <span class="caps">NLP</span>, and usually not suitable for handling tabular data. Yet, the introduction of embedding layers for the categorical data changed this perspective and we’ll try to use<a href="http://fast.ai"> fast.ai</a>’s tabular module on the <a href="https://www.kaggle.com/c/bluebook-for-bulldozers/overview">Blue Book Bulldozers Competition</a> on <a href="http://kaggle.com">Kaggle</a> and see how far this approach can go.</p>
 <p><em>You can find the Kaggle Notebook 📔: <a href="https://www.kaggle.com/lymenlee/blue-book-bulldozer-fast-ai-deep-learning">here</a>.</em></p>
-<h2 id="loading-data">Loading Data<a class="headerlink" href="#loading-data" title="Permanent link">¶</a></h2>
+<h2 id="loading-data">Loading Data<a class="headerlink" href="#loading-data" title="Permanent link"> </a></h2>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2880/1*xxZSbdIS_g_6A5vydjOBdg.png"/></p>
 <p>First, let’s import the necessary modules. The core one here is <strong>fastai.tabular</strong>:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastai</span> <span class="kn">import</span> <span class="o">*</span>
@@ -136,12 +139,12 @@
 (401125, 12457)
 </pre></div>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/3006/1*-NlhS8DO3zNgsGA5TG3x8A.png"/></p>
-<h2 id="sorting-the-training-set">Sorting the Training Set<a class="headerlink" href="#sorting-the-training-set" title="Permanent link">¶</a></h2>
+<h2 id="sorting-the-training-set">Sorting the Training Set<a class="headerlink" href="#sorting-the-training-set" title="Permanent link"> </a></h2>
 <p>This is to create a good validation set. It cannot be emphasized enough how important a good validation set is in making a successful model. Since we are predicting sales price data in the future, we need to make a validation set that all of its data is collected in the ‘future’ of the training set. So we need to sort the training set first, then split the ‘future’ part as the validation set.</p>
 <div class="highlight"><pre><span></span>train_df = train_df.sort_values(by='saledate', ascending=False)
 train_df = train_df.reset_index(drop=True)
 </pre></div>
-<h2 id="data-pre-processing">Data Pre-Processing<a class="headerlink" href="#data-pre-processing" title="Permanent link">¶</a></h2>
+<h2 id="data-pre-processing">Data Pre-Processing<a class="headerlink" href="#data-pre-processing" title="Permanent link"> </a></h2>
 <p>The competition’s evaluation methods use <span class="caps">RMSLE</span> (root mean squared log error). So if we take the log of our prediction, we can just use the good old <span class="caps">RMSE</span> as our loss function. It’s just easier this way.</p>
 <div class="highlight"><pre><span></span>train_df.SalePrice = np.log(train_df.SalePrice)
 </pre></div>
@@ -165,7 +168,7 @@ display_all(train_df.tail(10).T)
 procs=[FillMissing, Categorify, Normalize]
 </pre></div>
 <p>This variable procs will later be used to create the fast.ai DataBunch for training.</p>
-<h2 id="building-the-model">Building the Model<a class="headerlink" href="#building-the-model" title="Permanent link">¶</a></h2>
+<h2 id="building-the-model">Building the Model<a class="headerlink" href="#building-the-model" title="Permanent link"> </a></h2>
 <p>Let’s look at the data types of each column to decide which ones are categorical and which ones are continuous:</p>
 <div class="highlight"><pre><span></span>train_df.dtypes
 g = train_df.columns.to_series().groupby(train_df.dtypes).groups
@@ -211,7 +214,7 @@ data = (TabularList.from_df(df, path=path, cat_names=cat_vars, cont_names=cont_v
                    .label_from_df(cols=dep_var, label_cls=FloatList)
                    .databunch())
 </pre></div>
-<h2 id="building-the-model_1">Building the Model<a class="headerlink" href="#building-the-model_1" title="Permanent link">¶</a></h2>
+<h2 id="building-the-model_1">Building the Model<a class="headerlink" href="#building-the-model_1" title="Permanent link"> </a></h2>
 <p>We will fire up a fast.ai tabular.learner from the DataBunch we just created. We want to limit the price range for our prediction to be within the history sale price range, so we need to calculate the y_range. Note that we multiplied the maximum of SalePrice by 1.2 so when we apply sigmoid, the upper limit will also be covered. This is a small trick to squeeze a bit more performance out of the model.</p>
 <div class="highlight"><pre><span></span>max_y = np.max(train_df['SalePrice'])*1.2
 y_range = torch.tensor([0, max_y], device=defaults.device)
@@ -268,7 +271,7 @@ learn.recorder.plot()
 <p>We’ve reached a score of <strong>0.223</strong> on our validation set. Since the competition is not accepting submissions, we can only look at the leaderboard to get a rough idea of how well this model performs:</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2854/1*IuacQ30L1265EdtwImuMtw.png"/></p>
 <p>The top place is <strong>0.229</strong>. Compare to this model’s <strong>0.223</strong>. We don’t know how well it works on the test set but overall I think the result we got isn’t bad at all.</p>
-<h2 id="a-couple-of-more-words-on-embedding-layers">A Couple of More Words on Embedding Layers<a class="headerlink" href="#a-couple-of-more-words-on-embedding-layers" title="Permanent link">¶</a></h2>
+<h2 id="a-couple-of-more-words-on-embedding-layers">A Couple of More Words on Embedding Layers<a class="headerlink" href="#a-couple-of-more-words-on-embedding-layers" title="Permanent link"> </a></h2>
 <p>What makes everything click here is the embedding layers. Embedding is just a fancy word of saying mapping something to a vector. Like the word embedding that is getting more popular in <span class="caps">NLP</span>, it means using a vector (the size is arbitrary though, depending on tasks) to represent words, and those vectors are weights and can be trained via back-prop.</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/3104/0*9dWEOVdmzHOgrFj5"/></p>
 <p>Similarly, for our case, we used embeddings on our categorical variables. Each column gets an embedding matrix that can be trained. And each unique column value gets a specific vector mapped to it. The beautiful thing about this is: <strong>with embedding, we can now develop ‘semantics’ to the variable</strong>, ‘semantics’ in the form of weights that matters to our sale price and can be extracted and trained via our deep neural network. The model will have the ‘<strong>depth</strong>’ it needs to fit a big data set well.</p>
@@ -284,10 +287,11 @@ learn.recorder.plot()
             
                 <hr />
     <div class="author_blurb">
-        <a href="" target="_blank" rel="nofollow noopener noreferrer">
+        <a href="https://medium.com/@lymenlee" target="_blank" rel="nofollow noopener noreferrer">
+            <img src=/images/avatars/miachel.png alt="Michael Li Avatar" title="Michael Li">
             <span class="author_name">Michael Li</span>
         </a>
-        
+        is the creator and lead developer of this site.
     </div>
 
             
@@ -297,62 +301,12 @@ learn.recorder.plot()
 
 
 
-<section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   data-disqus-identifier="https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html"
-                   href="https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html#comment_thread"
-                   id="comment-accordion-toggle">
-                    Comments
-                </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-    var disqus_shortname = 'way-of-numbers';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    var disqus_identifier = 'https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html';
-    var disqus_url = 'https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-
-<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
             <hr/>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.com/no-human-can-beat-alphago-so-what-3401b40fa0f0.html" title="Previous: No Human Can Beat AlphaGo, and It’s a Good Thing - Why Go master Lee Se-Dol should not feel sorry for losing to AlphaGo">No Human Can Beat AlphaGo, and It’s a Good Thing <small class="subtitle">Why Go master Lee Se-Dol should not feel sorry for losing to AlphaGo</small></a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html" title="Next: Another Self-Driving Car Accident, Another AI Development Lesson - What could be learned from Uber’s Self-Driving Car accident as a Data Scientist">Another Self-Driving Car Accident, Another AI Development Lesson <small class="subtitle">What could be learned from Uber’s Self-Driving Car accident as a Data Scientist</small></a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/no-human-can-beat-alphago-so-what-3401b40fa0f0" title="Previous: No Human Can Beat AlphaGo, and It’s a Good Thing - Why Go master Lee Se-Dol should not feel sorry for losing to AlphaGo">No Human Can Beat AlphaGo, and It’s a Good Thing <small class="subtitle">Why Go master Lee Se-Dol should not feel sorry for losing to AlphaGo</small></a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444" title="Next: Another Self-Driving Car Accident, Another AI Development Lesson - What could be learned from Uber’s Self-Driving Car accident as a Data Scientist">Another Self-Driving Car Accident, Another AI Development Lesson <small class="subtitle">What could be learned from Uber’s Self-Driving Car accident as a Data Scientist</small></a> »</li>
             </ul>
             </nav>
             </aside>
@@ -361,25 +315,25 @@ learn.recorder.plot()
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-01-30T11:13:53-06:00">Jan 30, 2020</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
+            <a class="category-link" href="https://wayofnumbers.com/categories#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.com/tags.html#artificial-intelligence-ref">Artificial Intelligence
+                <li><a href="https://wayofnumbers.com/tags#artificial-intelligence-ref">Artificial Intelligence
                     <span>7</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#machine-learning-ref">Machine Learning
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
                     <span>20</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
+<h4>Stay in Touch</h4>
 <div id="sidebar-social-link">
-    <a href="https://twitter.com/lymenlee" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://twitter.com/lymenlee" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
     </a>
-    <a href="https://github.com/wayofnumbers" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://github.com/wayofnumbers" title="GitHub" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
     </a>
-    <a href="www.linkedin.com/in/michael-li-dfw" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="www.linkedin.com/in/michael-li-dfw" title="LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
     </a>
 </div>
@@ -404,8 +358,6 @@ learn.recorder.plot()
 
 
 
-
-
         </section>
 </div>
 </article>
@@ -418,7 +370,7 @@ learn.recorder.plot()
     <div>
         Content licensed under <a rel="license nofollow noopener noreferrer"
     href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        Creative Commons Attribution 4.0 International License</a>.
+    Creative Commons Attribution 4.0 International License</a>.
     </div>
 
     <div>

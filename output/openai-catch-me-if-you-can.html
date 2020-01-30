@@ -6,20 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael Li" />
 
-        <meta name="twitter:creator" content="@lymenlee">
+        <meta name="description" content="OpenAI’s multi-agent hide and seek experiments explained.
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
 <meta name="keywords" content="Machine Learning, AI, OpenAI, Gaming, Reinforcement Learning, Machine Learning, " />
 
 <meta property="og:title" content="OpenAI: Catch Me If You Can  - What OpenAI’s Multi-Agent Hide and Seek Break Through Means "/>
-<meta property="og:url" content="https://wayofnumbers.com/openai-catch-me-if-you-can.html" />
+<meta property="og:url" content="https://wayofnumbers.com/openai-catch-me-if-you-can" />
 <meta property="og:description" content="OpenAI’s multi-agent hide and seek experiments explained." />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
 <meta property="og:article:published_time" content="2019-09-19T20:00:00-05:00" />
 <meta name="twitter:title" content="OpenAI: Catch Me If You Can  - What OpenAI’s Multi-Agent Hide and Seek Break Through Means ">
 <meta name="twitter:description" content="OpenAI’s multi-agent hide and seek experiments explained.">
+<meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
 
         <title>OpenAI: Catch Me If You Can  - What OpenAI’s Multi-Agent Hide and Seek Break Through Means  · Way of Numbers
 </title>
@@ -68,11 +71,11 @@
                                        https://wayofnumbers.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wayofnumbers.com/pages/about-me.html">About&nbsp;Me</a></li>
-                                <li ><a href="https://wayofnumbers.com/categories.html">Categories</a></li>
-                                <li ><a href="https://wayofnumbers.com/tags.html">Tags</a></li>
-                                <li ><a href="https://wayofnumbers.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://wayofnumbers.com/about-me">About&nbsp;Me</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wayofnumbers.com/openai-catch-me-if-you-can.html">
+            <a href="https://wayofnumbers.com/openai-catch-me-if-you-can">
                 OpenAI: Catch Me If You&nbsp;Can
                 <small class="subtitle">
                     What OpenAI’s Multi-Agent Hide and Seek Break Through Means
@@ -115,15 +118,15 @@
             
             
 <p><img alt="" src="https://cdn-images-1.medium.com/max/5074/1*zx1DVdwYOVJWdHURXr5qjw.png"/></p>
-<h3 id="who-is-openai">Who is OpenAI?<a class="headerlink" href="#who-is-openai" title="Permanent link">¶</a></h3>
+<h3 id="who-is-openai">Who is OpenAI?<a class="headerlink" href="#who-is-openai" title="Permanent link"> </a></h3>
 <p>When it comes to reinforcement learning, OpenAI is a big name. The <a href="https://gym.openai.com/">OpenAI Gym toolkit</a> provides a solid foundation for a lot of <span class="caps">ML</span> researchers to explore and study reinforcement learning techniques. They also are known to have developed ‘<a href="https://openai.com/blog/better-language-models/"><span class="caps">GPT</span>-2</a>’ language model. The ‘deep fake’ news the model generated is so scarily good that OpenAI refused to release the trained model, just the <a href="https://github.com/openai/gpt-2">code </a>and <a href="https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">paper</a>.</p>
 <p><img alt="From OpenAI.com" src="https://cdn-images-1.medium.com/max/2406/1*p3ZS8EKITYRCTu1_JqtwiA.png"/><em>From OpenAI.com</em></p>
-<h3 id="hide-and-seek-only-this-time-the-computer-is-playing-it">Hide and Seek, Only This Time the Computer is Playing It<a class="headerlink" href="#hide-and-seek-only-this-time-the-computer-is-playing-it" title="Permanent link">¶</a></h3>
+<h3 id="hide-and-seek-only-this-time-the-computer-is-playing-it">Hide and Seek, Only This Time the Computer is Playing It<a class="headerlink" href="#hide-and-seek-only-this-time-the-computer-is-playing-it" title="Permanent link"> </a></h3>
 <p>Today they release something new and equally groundbreaking: <a href="https://openai.com/blog/emergent-tool-use/">The Multi-agent Hide and Seek</a>. You can have a look at the short video below from their website:</p>
 <p><center><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kopoLzvh5jY" width="560"></iframe></center></p>
 <p>Simply put, they designed a reinforcement agent and let it play a simple ‘Hide and Seek’ game that we all played when we were still a kid. After millions of games played with itself and the prior version of itself. Both the seeking and hiding agent developed several very effective strategies to counter each other and win.</p>
 <p><img alt="Basic abilities agent has to play and win the game" src="https://cdn-images-1.medium.com/max/2000/1*ldh0SVwH9-Z8iZWY_MGhTw.gif"/><em>Basic abilities agent has to play and win the game</em></p>
-<h3 id="how-to-train-your-dragon-urr-agent">How to Train Your Dragon, urr… Agent<a class="headerlink" href="#how-to-train-your-dragon-urr-agent" title="Permanent link">¶</a></h3>
+<h3 id="how-to-train-your-dragon-urr-agent">How to Train Your Dragon, urr… Agent<a class="headerlink" href="#how-to-train-your-dragon-urr-agent" title="Permanent link"> </a></h3>
 <p>The agents develop their tactics in an adversarial way.</p>
 <ol>
 <li>
@@ -151,10 +154,10 @@
 <p>The seeking agent and hiding agent counter each other and at the same time grow with each other. This is a concept (相生相克 mutually reinforce and neutralize each other) very familiar to Chinese people, and can be illustrated in a simple way:</p>
 <p><img alt="Taichi 太极" src="https://cdn-images-1.medium.com/max/2000/1*w3rxOO7r5d96JdDDAYskpQ.gif"/><em>Taichi 太极</em></p>
 <p>Philosophy aside, we did see this kind of concept appear on recent <span class="caps">AI</span> field quite often. Another example is the rise of <a href="https://towardsdatascience.com/must-read-papers-on-gans-b665bbae3317"><span class="caps">GAN</span> (General Adversarial Network)</a> where a ‘generator’ and ‘discriminator’ are trained at the same time to achieve state-of-the-art results.</p>
-<h3 id="the-agents-looks-cute-but-why-i-still-feels-a-bit-chilly-on-my-spine">The Agents Looks Cute! But Why I Still Feels a Bit Chilly on My Spine?<a class="headerlink" href="#the-agents-looks-cute-but-why-i-still-feels-a-bit-chilly-on-my-spine" title="Permanent link">¶</a></h3>
+<h3 id="the-agents-looks-cute-but-why-i-still-feels-a-bit-chilly-on-my-spine">The Agents Looks Cute! But Why I Still Feels a Bit Chilly on My Spine?<a class="headerlink" href="#the-agents-looks-cute-but-why-i-still-feels-a-bit-chilly-on-my-spine" title="Permanent link"> </a></h3>
 <p>Agents in the game are quite cute with cartoony big heads and smiley eyes. But underneath the cuteness, what does the great results suggest? Well, just imagine, if they are not playing this cute little hide and seek game where agents giggles when get caught, rather, they are playing Doom or Quake, where blood and gores fly around when the agent gets caught. Will the bloody scene lead you to start worrying about the possible application of this model and the potential it has if weaponized? If this still seems too far away from reality, let me bring this uncomfortable imagination one step further, allow me to use three words:</p>
 <blockquote>
-<h1 id="boston-dynamic-drones-skynet">Boston Dynamic, Drones, Skynet.<a class="headerlink" href="#boston-dynamic-drones-skynet" title="Permanent link">¶</a></h1>
+<h1 id="boston-dynamic-drones-skynet">Boston Dynamic, Drones, Skynet.<a class="headerlink" href="#boston-dynamic-drones-skynet" title="Permanent link"> </a></h1>
 </blockquote>
 <p><center><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/dKjCWfuvYxQ" width="560"></iframe></center></p>
 <p>The tasks and tactics agent learned from millions of games might still seem easy. Hide, use blocks, use ramps, etc. But don’t forget that complicated and sophisticated strategy is formed with all these small pieces. One big advancement of <span class="caps">AI</span> recently is <a href="https://en.wikipedia.org/wiki/Transfer_learning">transfer learning</a>, build new <span class="caps">AI</span> models on top of already trained/learned models. (Using transfer learning based on already trained <a href="http://www.image-net.org/"><span class="caps">IMAGENET</span></a> model, people can quickly train a fine-grained cat/dog classifier with only 100 images and 1 <span class="caps">GPU</span> in minutes. I explained the approach of <a href="https://course.fast.ai/videos/?lesson=1">fast.ai</a> at <a href="https://medium.com/datadriveninvestor/deep-learning-models-by-fast-ai-library-c1cccc13e2b3">here</a>). These basic game tactic model can be utilized in the future to build more realistic and dangerous military strategy models that can totally be applied in war.<strong> This is not beyond our reach now. </strong>If we put all our current <span class="caps">AI</span> and robotic achievements together, great/scary things can be achieved.</p>
@@ -168,10 +171,11 @@
             
                 <hr />
     <div class="author_blurb">
-        <a href="" target="_blank" rel="nofollow noopener noreferrer">
+        <a href="https://medium.com/@lymenlee" target="_blank" rel="nofollow noopener noreferrer">
+            <img src=/images/avatars/miachel.png alt="Michael Li Avatar" title="Michael Li">
             <span class="author_name">Michael Li</span>
         </a>
-        
+        is the creator and lead developer of this site.
     </div>
 
             
@@ -181,62 +185,12 @@
 
 
 
-<section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   data-disqus-identifier="https://wayofnumbers.com/openai-catch-me-if-you-can.html"
-                   href="https://wayofnumbers.com/openai-catch-me-if-you-can.html#comment_thread"
-                   id="comment-accordion-toggle">
-                    Comments
-                </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-    var disqus_shortname = 'way-of-numbers';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    var disqus_identifier = 'https://wayofnumbers.com/openai-catch-me-if-you-can.html';
-    var disqus_url = 'https://wayofnumbers.com/openai-catch-me-if-you-can.html';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-
-<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
             <hr/>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.com/chinese-calligraphy-classifier-2.html" title="Previous: How I Trained Computer to Learn Calligraphy Styles: Part 2 - Build a Deep Learning Model with fast.ai Library">How I Trained Computer to Learn Calligraphy Styles: Part 2 <small class="subtitle">Build a Deep Learning Model with fast.ai Library</small></a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO.html" title="Next: How to Deploy Your Machine Learning Web App to Digital Ocean - Using Fast.ai, Docker, GitHub, and Starlette ASGI Framework">How to Deploy Your Machine Learning Web App to Digital Ocean <small class="subtitle">Using Fast.ai, Docker, GitHub, and Starlette ASGI Framework</small></a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/chinese-calligraphy-classifier-2" title="Previous: How I Trained Computer to Learn Calligraphy Styles: Part 2 - Build a Deep Learning Model with fast.ai Library">How I Trained Computer to Learn Calligraphy Styles: Part 2 <small class="subtitle">Build a Deep Learning Model with fast.ai Library</small></a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO" title="Next: How to Deploy Your Machine Learning Web App to Digital Ocean - Using Fast.ai, Docker, GitHub, and Starlette ASGI Framework">How to Deploy Your Machine Learning Web App to Digital Ocean <small class="subtitle">Using Fast.ai, Docker, GitHub, and Starlette ASGI Framework</small></a> »</li>
             </ul>
             </nav>
             </aside>
@@ -245,34 +199,34 @@
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2019-09-19T20:00:00-05:00">Sep 19, 2019</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
+            <a class="category-link" href="https://wayofnumbers.com/categories#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.com/tags.html#ai-ref">AI
+                <li><a href="https://wayofnumbers.com/tags#ai-ref">AI
                     <span>11</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#gaming-ref">Gaming
+                <li><a href="https://wayofnumbers.com/tags#gaming-ref">Gaming
                     <span>1</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#machine-learning-ref">Machine Learning
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
                     <span>20</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#openai-ref">OpenAI
+                <li><a href="https://wayofnumbers.com/tags#openai-ref">OpenAI
                     <span>1</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#reinforcement-learning-ref">Reinforcement Learning
+                <li><a href="https://wayofnumbers.com/tags#reinforcement-learning-ref">Reinforcement Learning
                     <span>1</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
+<h4>Stay in Touch</h4>
 <div id="sidebar-social-link">
-    <a href="https://twitter.com/lymenlee" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://twitter.com/lymenlee" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
     </a>
-    <a href="https://github.com/wayofnumbers" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://github.com/wayofnumbers" title="GitHub" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
     </a>
-    <a href="www.linkedin.com/in/michael-li-dfw" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="www.linkedin.com/in/michael-li-dfw" title="LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
     </a>
 </div>
@@ -297,8 +251,6 @@
 
 
 
-
-
         </section>
 </div>
 </article>
@@ -311,7 +263,7 @@
     <div>
         Content licensed under <a rel="license nofollow noopener noreferrer"
     href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        Creative Commons Attribution 4.0 International License</a>.
+    Creative Commons Attribution 4.0 International License</a>.
     </div>
 
     <div>

@@ -6,20 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael Li" />
 
-        <meta name="twitter:creator" content="@lymenlee">
+        <meta name="description" content="Another Self-Driving Car Accident, Another AI Development Lesson
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
 <meta name="keywords" content="Machine Learning, Artificial Intelligence, Machine Learning, " />
 
 <meta property="og:title" content="Another Self-Driving Car Accident, Another AI Development Lesson  - What could be learned from Uber’s Self-Driving Car accident as a Data Scientist "/>
-<meta property="og:url" content="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html" />
+<meta property="og:url" content="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444" />
 <meta property="og:description" content="Another Self-Driving Car Accident, Another AI Development Lesson" />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
 <meta property="og:article:published_time" content="2020-01-30T11:13:54-06:00" />
 <meta name="twitter:title" content="Another Self-Driving Car Accident, Another AI Development Lesson  - What could be learned from Uber’s Self-Driving Car accident as a Data Scientist ">
 <meta name="twitter:description" content="Another Self-Driving Car Accident, Another AI Development Lesson">
+<meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
 
         <title>Another Self-Driving Car Accident, Another AI Development Lesson  - What could be learned from Uber’s Self-Driving Car accident as a Data Scientist  · Way of Numbers
 </title>
@@ -68,11 +71,11 @@
                                        https://wayofnumbers.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wayofnumbers.com/pages/about-me.html">About&nbsp;Me</a></li>
-                                <li ><a href="https://wayofnumbers.com/categories.html">Categories</a></li>
-                                <li ><a href="https://wayofnumbers.com/tags.html">Tags</a></li>
-                                <li ><a href="https://wayofnumbers.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://wayofnumbers.com/about-me">About&nbsp;Me</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html">
+            <a href="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444">
                 Another Self-Driving Car Accident, Another <span class="caps">AI</span> Development&nbsp;Lesson
                 <small class="subtitle">
                     What could be learned from Uber’s Self-Driving Car accident as a Data Scientist
@@ -126,18 +129,18 @@
             
 <p><img alt="Photo from https://blogs.nvidia.com" src="https://cdn-images-1.medium.com/max/2560/1*WezTd0liYtjmtBINBvenTQ.png"/><em>Photo from <a href="https://blogs.nvidia.com/blog/2019/04/15/how-does-a-self-driving-car-see/">https://blogs.nvidia.com</a></em></p>
 <p>T his accident actually happened about one and a half years ago, it happened on an Uber’s self-driving car, and it took one women’s life. This is a serious reminder to the <span class="caps">AI</span> community that the work being done carry a lot of weights, sometimes other people’s life.</p>
-<h2 id="a-flash-back-of-what-happened">A Flash Back of What Happened<a class="headerlink" href="#a-flash-back-of-what-happened" title="Permanent link">¶</a></h2>
+<h2 id="a-flash-back-of-what-happened">A Flash Back of What Happened<a class="headerlink" href="#a-flash-back-of-what-happened" title="Permanent link"> </a></h2>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2400/1*YYD2V2s5ia22o7ZPA2po3A.jpeg"/></p>
 <p>This terrible accident happened on March 19, 2018, late in the night. An Uber self-driving car, running in autonomous mode with a safety driver behind its wheel, hit and killed a woman in Tempe, Arizona. You can find the detailed investigation results <a href="https://en.wikipedia.org/wiki/Death_of_Elaine_Herzberg">here</a>. From the dash-cam and internal driver-seat camera footages, the accident happened on a poorly lit road with a speed limit of 40 mph. The safety driver was watching her cellphone （possibly watching Hulu) right before the car hit the woman. According to the telemetry obtained by Uber after the crash, the algorithm classified the women as ‘ <em>unknown object</em>’, then ‘ <em>vehicle</em>’ and then ‘<em>bicycle</em>’ during the process and the indecisiveness led to very late action(order the car to stop 1.3 seconds before the crash) which eventually led to the tragedy. Neither the Lidar or Radar sensor triggered nor the paid safety driver picked up the pedestrian. Either one of the above measures, if worked, could have saved the woman’s life. This accident has passed for some time and Uber has already resumed testing their self-driving cars on the road. Yet it might be valuable to contemplate a bit more from a Data Science point of view on what went wrong and what flaws were in Uber’s self-driving system that caused this tragedy.</p>
-<h2 id="possible-flaws-of-the-self-driving-system">Possible Flaws of the Self-Driving System<a class="headerlink" href="#possible-flaws-of-the-self-driving-system" title="Permanent link">¶</a></h2>
+<h2 id="possible-flaws-of-the-self-driving-system">Possible Flaws of the Self-Driving System<a class="headerlink" href="#possible-flaws-of-the-self-driving-system" title="Permanent link"> </a></h2>
 <p>Before diving deep into the potential flaws of a self-driving system, it’s worth noting that self-driving car is actually the most-advanced application of <span class="caps">AI</span> that’s is the closest to <a href="https://en.wikipedia.org/wiki/Artificial_general_intelligence"><span class="caps">AGI</span>(Artificial General Intelligence)</a>. Driving is a very complex and potentially quite dangerous act to begin with. The environment a self-driving car has to deal with could be very complicated that require all kinds of situation awareness: other cars, pedestrians, bikes, traffic signals, signs, weather, road situations, etc. It’s true that great progress has been made on artificial intelligence these years, but is it good enough for this task? No matter the answer, all possible issues should be thoroughly addressed and tested, no stone unturned. This leads to the first and most important aspect of the system, the team developing the self-driving car.</p>
-<h3 id="applied-artificial-intelligence-development-teams-sometimes-are-under-staffed-with-engineers">Applied Artificial Intelligence Development Teams Sometimes Are Under-staffed with Engineers<a class="headerlink" href="#applied-artificial-intelligence-development-teams-sometimes-are-under-staffed-with-engineers" title="Permanent link">¶</a></h3>
+<h3 id="applied-artificial-intelligence-development-teams-sometimes-are-under-staffed-with-engineers">Applied Artificial Intelligence Development Teams Sometimes Are Under-staffed with Engineers<a class="headerlink" href="#applied-artificial-intelligence-development-teams-sometimes-are-under-staffed-with-engineers" title="Permanent link"> </a></h3>
 <p><img alt="Photo from https://365datascience.com" src="https://cdn-images-1.medium.com/max/3840/1*xpUqKX-YapqRSKpXA6HHrw.jpeg"/><em>Photo from <a href="https://365datascience.com/data-scientist-profile-2019/">https://365datascience.com</a></em></p>
 <p>You don’t necessarily need to have a master’s degree or Ph.D. to do data science work, but the <a href="https://365datascience.com/data-scientist-profile-2019/">statistics show</a> that the majority of the data scientists in the industry at least have a master’s degree. A big part of them even has a Ph.D. This is very well justified since Artificial Intelligence and Data Science are not trivial areas. It requires many years of training in math, computer science and a wide variety of technologies. This has been the consensus of the industry. A consensus so strong, sometimes people forgot other parts of the equally important roles to make a real-life <span class="caps">AI</span> project such as self-driving cars successful. Most importantly, <strong>engineering</strong>. If what required is to prove the performance of an algorithm for some single-purpose task ( like Radiology Image Recognition), you don’t need much engineering power. A solid Data Scientist will probably do the job well enough. If developing and deploying a machine learning application on the web to analyze comments sentiment is the task, then you might want to hire more solid developers and DevOps engineers to make sure the application is well structured, carefully coded and easily maintainable. So what if you want to build a self-driving car system that needs to sustain many hours without any incident in the real world? You might want to hire car designers, regulatory specialists, car safety experts, physicists, and some top-notch data scientists to create a diversified team so the task can be properly tackled. For this Uber self-driving car incident, one reason the self-driving car failed to respond quickly is that neither of the Lidar and Radar systems picked up the woman crossing the street. Uber changed from using 7 Lidar sensors to use only one on top of the car, which creates some ‘blind spot’ around the car. What is the reason for that? Are there any other engineering debts that need to be covered for safety reasons? Are there any design flaws in the placement of the sensors? Are there any interference issues in the environment? Does the communication channel between sensors and the central computer work smoothly? This is not to say these are the exact cases, it’s just these are the question need to be asked and addressed, and the best type of talents to address these issues are <strong>engineers</strong>, not data scientists.</p>
-<h3 id="small-data">Small Data<a class="headerlink" href="#small-data" title="Permanent link">¶</a></h3>
+<h3 id="small-data">Small Data<a class="headerlink" href="#small-data" title="Permanent link"> </a></h3>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/8000/1*e8Yb7usjwMDLm-sqTdJiKQ.jpeg"/></p>
 <p>Now small data <span class="caps">IS</span> a data science issue to address. What is means is to build an efficient model, a large amount of data for each situation would be required to train the model. But sometimes imbalanced data issue is hard and costly to solve. Take the self-driving car as an example. When it comes to safety, what matters most is when things do go wrong. The more data for different accident types are collected, the better it will be to train a model that are robust enough to handle itself in all conditions. But unlike airplanes with the black boxes, car accident data is much harder to gather. Firstly it’s hard to ‘generate’ or ‘create’ an accident. Secondly, not all cars are equipped with sensors to gather those data while the accident happens(some more ‘smart’ cars like Tesla probably can, but the majority of the cars are not there yet). As data scientists, it’s a consensus that the bottleneck for a high-performance model usually is not the algorithm, but the data. Without enough relevant data about car accidents, it will be very hard for the data scientists to develop a model that can handle those accident types very well. To make a self-driving car system that can drive a car on the street, turn, accelerate/decelerate properly is not the hardest task. The hardest task is creating a model that handles all the accidents well, without enough data.</p>
-<h3 id="handle-edge-cases">Handle Edge Cases<a class="headerlink" href="#handle-edge-cases" title="Permanent link">¶</a></h3>
+<h3 id="handle-edge-cases">Handle Edge Cases<a class="headerlink" href="#handle-edge-cases" title="Permanent link"> </a></h3>
 <p>This is actually a more extreme case of the small data issue, but worth single it out. One rule of thumb for safety is to consider all the edge cases that things could go wrong and be prepared for it. This is less of a problem for humans since a human has common sense and a broader situational awareness than any algorithms, so humans are more prepared to handle the edge cases, but algorithms are usually not sophisticated enough, thus need more work.</p>
 <p><img alt="Photo from https://www.chron.com" src="https://cdn-images-1.medium.com/max/2000/1*sfiPiQQ_00Zw9pC9046vYw.jpeg"/><em>Photo from <a href="https://www.chron.com/news/houston-texas/article/Impressive-video-show-why-people-should-drive-on-7963621.php">https://www.chron.com</a></em></p>
 <p>Let’s imagine some of those edge cases.</p>
@@ -146,18 +149,18 @@
 <p><strong>Road with graffiti on it:</strong> Human can easily know what’s going on and will not make mistake but <span class="caps">AI</span> if not trained by road with graffiti on, it might mistake the graffiti with real road guidelines.</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*vsuG8oaiVrNAzOdlrmtIxw.jpeg"/></p>
 <p>The list goes on and on. If you can think of other edge cases you encounter from your past driving experience, please leave a response below. The bottom line is, driving in real-world need way more sophisticated system to handle all weird cases and humans are very good at that (thus taking that as guaranteed). While <span class="caps">AI</span> needs to train on every case. No shortcut. The ability to come up with those edge cases and design the self-driving system around it will gain robustness and safety scores and possibly gain an edge over the competition.</p>
-<h2 id="where-to-improve">Where to Improve<a class="headerlink" href="#where-to-improve" title="Permanent link">¶</a></h2>
+<h2 id="where-to-improve">Where to Improve<a class="headerlink" href="#where-to-improve" title="Permanent link"> </a></h2>
 <p>So should self-driving car accidents stop the development of the technology? Of course not! The technology has huge potential in saving a lot of lives. The <span class="caps">AI</span> might be biased or not sophisticated enough, but it has one treat that humans don’t. They never become emotional, or reckless, or sleepy. Done right, it should out-perform humans on safety in most situations, but obviously it is not there yet. So which parts of the process can be improved? (<em>I’m not a self-driving car expert myself and just wanted to explore possibilities in this article so take the following with a grain of salts. If you have better ideas, please feel free to leave a response below!</em>)</p>
-<h3 id="testing-process">Testing Process<a class="headerlink" href="#testing-process" title="Permanent link">¶</a></h3>
+<h3 id="testing-process">Testing Process<a class="headerlink" href="#testing-process" title="Permanent link"> </a></h3>
 <p>Again, before delving deep into technology, people-related issues need to be tackled first. One thing that was especially surprising about the incident is the car actually <span class="caps">HAS</span> a safety driver. The whole thing could have been avoided if the safety driver did her job and not looked at her cellphone and kept her eyes on the road. It’s not that hard to do but her failure to do so indirectly costs a life. This has nothing to do with technology but has everything to do with how the self-driving test process can be improved. It’s a good start to put a paid safety driver behind the wheel to add another layer of safety for the test, yet humans make mistake. Since the car already has an internal camera monitoring the driver, why not develop an algorithm to monitors her/his behavior and give alerts/scores when her/his eye wonders off the road?</p>
-<h3 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">¶</a></h3>
+<h3 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link"> </a></h3>
 <p><img alt="Photo from https://labs.sogeti.com" src="https://cdn-images-1.medium.com/max/2444/1*RSz_QgfBmq8FCJZmdU6oDA.png"/><em>Photo from <a href="https://labs.sogeti.com/driverless-cars-ultimate-use-case-telecom-industry/">https://labs.sogeti.com</a></em></p>
 <p>The Lidar/Radar fails to trigger in this accident. What was the reason? Will add more than one sensors work better? Adding more types of sensors? Optimize the position of the sensors? The sensors need to work on all weather conditions. Hot, code, snow, extreme sunburn, windy, etc. If not, have a backup plan. Prepare for the extreme.</p>
-<h3 id="software">Software<a class="headerlink" href="#software" title="Permanent link">¶</a></h3>
+<h3 id="software">Software<a class="headerlink" href="#software" title="Permanent link"> </a></h3>
 <p>Is the central driving system has a prioritized control system, means some special events triggered on the sensor or image recognition system will cause the car to immediately stop to avoid severe accidents, surpass all other driving control system. ( e.g. hard code <a href="https://en.wikipedia.org/wiki/Assured_clear_distance_ahead">assured clear distance ahead</a>) The prioritized system needs to be carefully designed and adjusted for maximum safety.</p>
-<h3 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">¶</a></h3>
+<h3 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link"> </a></h3>
 <p>One thing that is very essential for all machine learning models is the <em>validation set</em>. A good validation set defines how well the model generalizes and thus heavily determines the success/failure of a project in real life. This also applies to the self-driving car. What would be a good validation set here? Well, driving a car is not as simple as our classifier problem thus not very clearly defined. This is exactly where the problem is. Should all the self-driving car companies and regulatory bodies team up together and develop a good ‘test routine’ that captures all the extreme situations, edge cases, test scenarios, automatic test software, etc., to effectively serve as the ‘validation set’ for self-driving cars? I think a collateral consensus and efforts here from all players is essential and less explored.</p>
-<h2 id="final-thoughts">Final Thoughts<a class="headerlink" href="#final-thoughts" title="Permanent link">¶</a></h2>
+<h2 id="final-thoughts">Final Thoughts<a class="headerlink" href="#final-thoughts" title="Permanent link"> </a></h2>
 <p><img alt="Photo by Ciprian Morar on Unsplash" src="https://cdn-images-1.medium.com/max/15816/0*M7s_oT6fMTResmis"/><em>Photo by <a href="https://unsplash.com/@ciprianmorar?utm_source=medium&amp;utm_medium=referral">Ciprian Morar</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
 <p>No matter how much progress has been made on self-driving cars, sometimes it felts like just scratching the surface and the size of the iceberg lurks beneath the water remains unknown. Also, the self-driving car accident usually gets high media attention. According to Wired, nearly 40,000 people died in road incidents last year in the <span class="caps">US</span> alone, but very few (if any) made headlines the way the Uber incident did. Unfair? No really. This is actually a good thing. Strict and close scrutiny is a good thing to push the limits of how safe the self-driving car can be. Because it’s human lives that are on the line.</p>
 <p>Update: The final result of the investigation is out on Nov 20, 2019. You can refer to <a href="https://www.theverge.com/2019/11/20/20973971/uber-self-driving-car-crash-investigation-human-error-results">this article by The Verge</a>.</p>
@@ -168,10 +171,11 @@
             
                 <hr />
     <div class="author_blurb">
-        <a href="" target="_blank" rel="nofollow noopener noreferrer">
+        <a href="https://medium.com/@lymenlee" target="_blank" rel="nofollow noopener noreferrer">
+            <img src=/images/avatars/miachel.png alt="Michael Li Avatar" title="Michael Li">
             <span class="author_name">Michael Li</span>
         </a>
-        
+        is the creator and lead developer of this site.
     </div>
 
             
@@ -181,62 +185,12 @@
 
 
 
-<section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   data-disqus-identifier="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html"
-                   href="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html#comment_thread"
-                   id="comment-accordion-toggle">
-                    Comments
-                </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-    var disqus_shortname = 'way-of-numbers';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    var disqus_identifier = 'https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html';
-    var disqus_url = 'https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-
-<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
             <hr/>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html" title="Previous: How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers - A different approach to Kaggle Blue Book Bulldozers Competition">How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers <small class="subtitle">A different approach to Kaggle Blue Book Bulldozers Competition</small></a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html" title="Next: How to Build Your Own PyTorch Neural Network Layer from Scratch - And learn a thing or two about weight initialization">How to Build Your Own PyTorch Neural Network Layer from Scratch <small class="subtitle">And learn a thing or two about weight initialization</small></a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c" title="Previous: How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers - A different approach to Kaggle Blue Book Bulldozers Competition">How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers <small class="subtitle">A different approach to Kaggle Blue Book Bulldozers Competition</small></a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6" title="Next: How to Build Your Own PyTorch Neural Network Layer from Scratch - And learn a thing or two about weight initialization">How to Build Your Own PyTorch Neural Network Layer from Scratch <small class="subtitle">And learn a thing or two about weight initialization</small></a> »</li>
             </ul>
             </nav>
             </aside>
@@ -245,25 +199,25 @@
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-01-30T11:13:54-06:00">Jan 30, 2020</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
+            <a class="category-link" href="https://wayofnumbers.com/categories#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.com/tags.html#artificial-intelligence-ref">Artificial Intelligence
+                <li><a href="https://wayofnumbers.com/tags#artificial-intelligence-ref">Artificial Intelligence
                     <span>7</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#machine-learning-ref">Machine Learning
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
                     <span>20</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
+<h4>Stay in Touch</h4>
 <div id="sidebar-social-link">
-    <a href="https://twitter.com/lymenlee" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://twitter.com/lymenlee" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
     </a>
-    <a href="https://github.com/wayofnumbers" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://github.com/wayofnumbers" title="GitHub" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
     </a>
-    <a href="www.linkedin.com/in/michael-li-dfw" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="www.linkedin.com/in/michael-li-dfw" title="LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
     </a>
 </div>
@@ -288,8 +242,6 @@
 
 
 
-
-
         </section>
 </div>
 </article>
@@ -302,7 +254,7 @@
     <div>
         Content licensed under <a rel="license nofollow noopener noreferrer"
     href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        Creative Commons Attribution 4.0 International License</a>.
+    Creative Commons Attribution 4.0 International License</a>.
     </div>
 
     <div>

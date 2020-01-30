@@ -6,20 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael Li" />
 
-        <meta name="twitter:creator" content="@lymenlee">
+        <meta name="description" content="My notes on how to tweak a Pelican theme, in this article, Elegant.
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
 <meta name="keywords" content="Pelican, Blog, Github, Theme, Tools, " />
 
 <meta property="og:title" content="Tweaking Pelican Elegant Theme "/>
-<meta property="og:url" content="https://wayofnumbers.com/Tweak-Pelican-Elegant-Theme.html" />
+<meta property="og:url" content="https://wayofnumbers.com/Tweak-Pelican-Elegant-Theme" />
 <meta property="og:description" content="My notes on how to tweak a Pelican theme, in this article, Elegant." />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
 <meta property="og:article:published_time" content="2018-02-24T20:00:00-06:00" />
 <meta name="twitter:title" content="Tweaking Pelican Elegant Theme ">
 <meta name="twitter:description" content="My notes on how to tweak a Pelican theme, in this article, Elegant.">
+<meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
 
         <title>Tweaking Pelican Elegant Theme  · Way of Numbers
 </title>
@@ -68,11 +71,11 @@
                                        https://wayofnumbers.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wayofnumbers.com/pages/about-me.html">About&nbsp;Me</a></li>
-                                <li ><a href="https://wayofnumbers.com/categories.html">Categories</a></li>
-                                <li ><a href="https://wayofnumbers.com/tags.html">Tags</a></li>
-                                <li ><a href="https://wayofnumbers.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://wayofnumbers.com/about-me">About&nbsp;Me</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wayofnumbers.com/Tweak-Pelican-Elegant-Theme.html">
+            <a href="https://wayofnumbers.com/Tweak-Pelican-Elegant-Theme">
                 Tweaking Pelican Elegant&nbsp;Theme
             </a>
         </h1>
@@ -117,15 +120,15 @@ Some themes are really easy to setup and configure, others need some efforts. Th
 <div class="highlight"><pre><span></span><span class="s1">'THEME'</span> <span class="o">=</span> <span class="s1">'theme/themename'</span>
 </pre></div>
 <p>For Elegant, it’s way more than that, and it’s a good thing. Elegant packed a lot of great features and thorough considerations to the reader. And that’s why I choose it as the theme for my site. Good things come with a price they say. So let’s find out. </p>
-<h2 id="search">Search<a class="headerlink" href="#search" title="Permanent link">¶</a></h2>
+<h2 id="search">Search<a class="headerlink" href="#search" title="Permanent link"> </a></h2>
 <p>Search is useful when you have a lot of articles. All serious blog need to have it. To use it, add ‘tipue_search’ and ‘sitemap’ to your plugins and it will automatically be enabled. </p>
-<h2 id="about-me-and-my-project">About Me and My Project<a class="headerlink" href="#about-me-and-my-project" title="Permanent link">¶</a></h2>
+<h2 id="about-me-and-my-project">About Me and My Project<a class="headerlink" href="#about-me-and-my-project" title="Permanent link"> </a></h2>
 <p>Elegant’s home page layout put the blogger himself front and center with ‘About Me’ and the ‘My Project’ at the top, followed with ‘Recent Posts’. To use them, you need to set the ‘LANDING_PAGE_ABOUT’ and ‘<span class="caps">PROJECTS</span>’ variables in the <code>pelicanconf.py</code>. </p>
-<h2 id="jquery-issue">jQuery Issue<a class="headerlink" href="#jquery-issue" title="Permanent link">¶</a></h2>
+<h2 id="jquery-issue">jQuery Issue<a class="headerlink" href="#jquery-issue" title="Permanent link"> </a></h2>
 <p>I’ve enabled all the nice features, like search, collasible comments, collasible comments. But they all won’t work on Chrome because it’s considered ‘unsafe scripts’. After some digging, it turns out the site is using <span class="caps">HTTPS</span>, while the original theme’s template uses <span class="caps">HTTP</span> to load the jQuery that did all these nice features. Once I replaced the <span class="caps">HTTP</span> with its <span class="caps">HTTPS</span> counterpart, everything works like a charm. </p>
-<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">¶</a></h2>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link"> </a></h2>
 <p>Took me some time to get table of contents to work. Firstly ‘extract_toc’ plugin needs to be added into the ‘<span class="caps">PLUGINS</span>’ variable. Then ‘markdown’ Python module needs to be installed and configured for it to work as the Elegant website instructions. But after all this, it still didn’t work. Turns out, you need to add <code>[TOC]</code> in the Markdown file, after all the meta data, to actually add the table of contents into your post. After I did that, everything works. </p>
-<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h2>
 <p>Install and tweaking a Pelican theme isn’t that hard. Look into the static folder for <span class="caps">CSS</span>, tweak them if you want, or add custom <span class="caps">CSS</span> of your own and load them in the template. Then go into the template folder to check the html files. With basic <span class="caps">HTML</span>/<span class="caps">CSS</span>/Javascripts knowledge, you already can achieve a lot on tweaking any theme of your liking. </p>
 
 
@@ -134,10 +137,11 @@ Some themes are really easy to setup and configure, others need some efforts. Th
             
                 <hr />
     <div class="author_blurb">
-        <a href="" target="_blank" rel="nofollow noopener noreferrer">
+        <a href="https://medium.com/@lymenlee" target="_blank" rel="nofollow noopener noreferrer">
+            <img src=/images/avatars/miachel.png alt="Michael Li Avatar" title="Michael Li">
             <span class="author_name">Michael Li</span>
         </a>
-        
+        is the creator and lead developer of this site.
     </div>
 
             
@@ -147,62 +151,12 @@ Some themes are really easy to setup and configure, others need some efforts. Th
 
 
 
-<section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   data-disqus-identifier="https://wayofnumbers.com/Tweak-Pelican-Elegant-Theme.html"
-                   href="https://wayofnumbers.com/Tweak-Pelican-Elegant-Theme.html#comment_thread"
-                   id="comment-accordion-toggle">
-                    Comments
-                </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-    var disqus_shortname = 'way-of-numbers';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    var disqus_identifier = 'https://wayofnumbers.com/Tweak-Pelican-Elegant-Theme.html';
-    var disqus_url = 'https://wayofnumbers.com/Tweak-Pelican-Elegant-Theme.html';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-
-<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
             <hr/>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.com/The-AI-Shortage.html" title="Previous: The AI Shortage">The AI Shortage</a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/Typtes-of-optimization-algorithms.html" title="Next: Types of Optimization Algorithms used in Neural Networks and Ways to Optimize Gradient Descent">Types of Optimization Algorithms used in Neural Networks and Ways to Optimize Gradient Descent</a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/The-AI-Shortage" title="Previous: The AI Shortage">The AI Shortage</a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/Typtes-of-optimization-algorithms" title="Next: Types of Optimization Algorithms used in Neural Networks and Ways to Optimize Gradient Descent">Types of Optimization Algorithms used in Neural Networks and Ways to Optimize Gradient Descent</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -211,31 +165,31 @@ Some themes are really easy to setup and configure, others need some efforts. Th
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2018-02-24T20:00:00-06:00">Feb 24, 2018</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://wayofnumbers.com/categories.html#tools-ref">Tools</a>
+            <a class="category-link" href="https://wayofnumbers.com/categories#tools-ref">Tools</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.com/tags.html#blog-ref">Blog
+                <li><a href="https://wayofnumbers.com/tags#blog-ref">Blog
                     <span>2</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#github-ref">Github
+                <li><a href="https://wayofnumbers.com/tags#github-ref">Github
                     <span>3</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#pelican-ref">Pelican
+                <li><a href="https://wayofnumbers.com/tags#pelican-ref">Pelican
                     <span>3</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#theme-ref">Theme
+                <li><a href="https://wayofnumbers.com/tags#theme-ref">Theme
                     <span>1</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
+<h4>Stay in Touch</h4>
 <div id="sidebar-social-link">
-    <a href="https://twitter.com/lymenlee" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://twitter.com/lymenlee" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
     </a>
-    <a href="https://github.com/wayofnumbers" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://github.com/wayofnumbers" title="GitHub" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
     </a>
-    <a href="www.linkedin.com/in/michael-li-dfw" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="www.linkedin.com/in/michael-li-dfw" title="LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
     </a>
 </div>
@@ -260,8 +214,6 @@ Some themes are really easy to setup and configure, others need some efforts. Th
 
 
 
-
-
         </section>
 </div>
 </article>
@@ -274,7 +226,7 @@ Some themes are really easy to setup and configure, others need some efforts. Th
     <div>
         Content licensed under <a rel="license nofollow noopener noreferrer"
     href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        Creative Commons Attribution 4.0 International License</a>.
+    Creative Commons Attribution 4.0 International License</a>.
     </div>
 
     <div>

@@ -6,20 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael Li" />
 
-        <meta name="twitter:creator" content="@lymenlee">
+        <meta name="description" content="Introduced Polynote, Netflix’s new open source notebook for data science research.
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
 <meta name="keywords" content="Machine Learning, AI, Polynote, Netflix, Jupyter Notebook, Machine Learning, " />
 
 <meta property="og:title" content="What You Need to Know About Netflix’s ‘Jupyter Killer’: Polynote 📖  - It’s about time Jupyter Notebook has its worthy competitor "/>
-<meta property="og:url" content="https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote.html" />
+<meta property="og:url" content="https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote" />
 <meta property="og:description" content="Introduced Polynote, Netflix’s new open source notebook for data science research." />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
 <meta property="og:article:published_time" content="2019-10-25T20:00:00-05:00" />
 <meta name="twitter:title" content="What You Need to Know About Netflix’s ‘Jupyter Killer’: Polynote 📖  - It’s about time Jupyter Notebook has its worthy competitor ">
 <meta name="twitter:description" content="Introduced Polynote, Netflix’s new open source notebook for data science research.">
+<meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
 
         <title>What You Need to Know About Netflix’s ‘Jupyter Killer’: Polynote 📖  - It’s about time Jupyter Notebook has its worthy competitor  · Way of Numbers
 </title>
@@ -68,11 +71,11 @@
                                        https://wayofnumbers.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wayofnumbers.com/pages/about-me.html">About&nbsp;Me</a></li>
-                                <li ><a href="https://wayofnumbers.com/categories.html">Categories</a></li>
-                                <li ><a href="https://wayofnumbers.com/tags.html">Tags</a></li>
-                                <li ><a href="https://wayofnumbers.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://wayofnumbers.com/about-me">About&nbsp;Me</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote.html">
+            <a href="https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote">
                 What You Need to Know About Netflix’s ‘Jupyter Killer’: Polynote&nbsp;📖
                 <small class="subtitle">
                     It’s about time Jupyter Notebook has its worthy competitor
@@ -119,33 +122,33 @@
             
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2490/0*MCKD9v7ezPD7yXrX"/></p>
 <p>Today, Netflix open-sourced <a href="http://www.polynote.org/">Polynote</a>, the internal notebook they developed, to the public. It’s not rare these days that big tech companies open sources their internal tools or services, then got popular and adopted by the industry. Amazon <span class="caps">AWS</span>, Facebook’s React.js, etc. are two of them. It makes sense. These big tech companies have the best engineers in the industry and more often than not they are facing the biggest challenges that will drive the development of great tools. Netflix’s Polynote could be another one of those great tools and the data science/machine learning industry does need better tools in terms of how to write code, experiment algorithms and visualize data. Here are several things you need to know about this new tool. I’ll try to keep this succinct and to the point so you can quickly read through it and be knowledgeable about the pros and cons of this new choice of our development/research environment.</p>
-<h3 id="polynote-is-more-like-a-simple-version-of-ide-rather-than-nicer-version-of-a-repl">Polynote is more like a simple version of <span class="caps">IDE</span> rather than nicer version of a <span class="caps">REPL</span><a class="headerlink" href="#polynote-is-more-like-a-simple-version-of-ide-rather-than-nicer-version-of-a-repl" title="Permanent link">¶</a></h3>
+<h3 id="polynote-is-more-like-a-simple-version-of-ide-rather-than-nicer-version-of-a-repl">Polynote is more like a simple version of <span class="caps">IDE</span> rather than nicer version of a <span class="caps">REPL</span><a class="headerlink" href="#polynote-is-more-like-a-simple-version-of-ide-rather-than-nicer-version-of-a-repl" title="Permanent link"> </a></h3>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*ekzSzXwlM_3FLniZ0IQD5g.png"/></p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*K2Pfk9OWcw9VmgW4Rr68Cg.png"/></p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*30lhxh_hNfdnEZdPUOmAqw.png"/></p>
 <p><img alt="auto-completion, error indication, better text editor, LaTex support" src="https://cdn-images-1.medium.com/max/2000/1*Nb7HgK1vpzZK6OGccmFvJQ.png"/><em>auto-completion, error indication, better text editor, LaTex support</em></p>
 <p>Polynote put some emphasis on making the notebook work more like an <span class="caps">IDE</span> or code editors like <span class="caps">VS</span> Code. It supports better auto-completion, linting, rich text editor, and LaTex. This might be a bit of an overstatement, but that’s the direction it is going. You can say better syntax highlighting and better auto-completion are trivial, but these little quality-of-life improvements could go a long way and make you focus more on the real tasks. <span class="caps">BTW</span>, most of the editing capabilities are powered by the <a href="https://microsoft.github.io/monaco-editor/">Monaco</a> editor which powers the experience of Visual Studio Code, showing potential to be even better.</p>
-<h3 id="multi-language-support">Multi-language Support<a class="headerlink" href="#multi-language-support" title="Permanent link">¶</a></h3>
+<h3 id="multi-language-support">Multi-language Support<a class="headerlink" href="#multi-language-support" title="Permanent link"> </a></h3>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/0*oqEdsGYz4i50jLTj.gif"/></p>
 <p>Currently, it only supports Python, Scala, and <span class="caps">SQL</span>. You might argue that Jupyter Notebook also supports Python, R, and Julia. But how they support multi-languages is different. For Jupyter Notebook, you can only choose one language for one notebook. Whereas Polynote can support all these languages working seamlessly in one notebook. It achieves this by sharing variables between cells so different language cells can work under same context. Needless to say, this has the potential to be very powerful. With more languages it supports, a skilled data scientist can use the best language for the right tasks. It increased the skill-cap yet also raise the performance bar.</p>
-<h3 id="data-visualization-and-data-awareness">Data Visualization and Data Awareness<a class="headerlink" href="#data-visualization-and-data-awareness" title="Permanent link">¶</a></h3>
+<h3 id="data-visualization-and-data-awareness">Data Visualization and Data Awareness<a class="headerlink" href="#data-visualization-and-data-awareness" title="Permanent link"> </a></h3>
 <p>In Polynote, data visualization is built-in. It means developers won’t need to write any code to visualize their data, they can just use a <span class="caps">GUI</span> interface and see the data the way they want. Also, developers won’t need to type in any code in order to see the value of the variable, you can just use the <span class="caps">GUI</span>. When code is running, there is also a progress window at the right side of the screen so you always have an idea of which part of the code is currently running.</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/0*2WOpp02MSITUTTq9.gif"/></p>
 <p>These will all add up to better data intuition.</p>
-<h3 id="configuration-and-dependency-management-built-in">Configuration and dependency management built-in<a class="headerlink" href="#configuration-and-dependency-management-built-in" title="Permanent link">¶</a></h3>
+<h3 id="configuration-and-dependency-management-built-in">Configuration and dependency management built-in<a class="headerlink" href="#configuration-and-dependency-management-built-in" title="Permanent link"> </a></h3>
 <p>Another quality-of-life improvement. Gone of the days you have to run things like:</p>
 <div class="highlight"><pre><span></span>! pip install packages
 </pre></div>
 <p>You can simply specify what dependencies you need for your code to run smoothly and <span class="caps">BOOM</span>, Polynote will set it up for you. This will result in less clutter in code. How good is that!</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/3200/0*aUB7r2JbsRMhM39w"/></p>
-<h2 id="reproducible-code">Reproducible Code<a class="headerlink" href="#reproducible-code" title="Permanent link">¶</a></h2>
+<h2 id="reproducible-code">Reproducible Code<a class="headerlink" href="#reproducible-code" title="Permanent link"> </a></h2>
 <p>Simply put, Polynote is not using the good old <span class="caps">REPL</span> model for code execution. It uses its own code interpreter instead. The biggest difference is: for Jupyter Notebook that uses <span class="caps">REPL</span>, you can safely execute cells not in the order they are written. You can execute cell 3, then cell 2, then cell 1. It’s all up to you. This brings flexibility but decreases the sharability of the notebook. Polynote handles cell execution differently:</p>
 <blockquote>
 <p>By keeping track of the variables defined in each cell, Polynote constructs the input state for a given cell based on the cells that have run above it. Making the position of a cell important in its execution semantics enforces the principle of least surprise, allowing users to read the notebook from top to bottom.</p>
 </blockquote>
 <p>It seems to be more like you are writing a script instead of a notebook. You take more notice of making sure things are in order when writing it. But you get the benefit of consistent code results and better sharability. See the animation below:</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/0*Zky40q2ZMyTr7e85.gif"/></p>
-<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h3>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h3>
 <p>We’ll see how well the industry will adopt Polynote but definitely it shows potential and making some sound decisions. One question is whether the big cloud platforms like <span class="caps">GCP</span>, <span class="caps">AWS</span> or Azure will adopt it. This is quite important because, without the support of these cloud platforms, people rely on them to do research/experiment won’t have access to Polynote and thus won’t use it.</p>
 <p>Found this article useful? Follow me (<a href="undefined">Michael Li</a>) on Medium or you can find me on Twitter <a href="https://twitter.com/lymenlee">@lymenlee</a> or my blog site <a href="https://wayofnumbers.com">wayofnumbers.com</a>. You could also check out my most popular articles below!</p>
 <p><a href="https://towardsdatascience.com/this-is-cs50-a-pleasant-way-to-kick-off-your-data-science-education-d6075a6e761a"><strong>“This is <span class="caps">CS50</span>”: A Pleasant Way to Kick Off Your Data Science Education</strong>
@@ -161,10 +164,11 @@
             
                 <hr />
     <div class="author_blurb">
-        <a href="" target="_blank" rel="nofollow noopener noreferrer">
+        <a href="https://medium.com/@lymenlee" target="_blank" rel="nofollow noopener noreferrer">
+            <img src=/images/avatars/miachel.png alt="Michael Li Avatar" title="Michael Li">
             <span class="author_name">Michael Li</span>
         </a>
-        
+        is the creator and lead developer of this site.
     </div>
 
             
@@ -174,62 +178,12 @@
 
 
 
-<section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   data-disqus-identifier="https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote.html"
-                   href="https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote.html#comment_thread"
-                   id="comment-accordion-toggle">
-                    Comments
-                </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-    var disqus_shortname = 'way-of-numbers';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    var disqus_identifier = 'https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote.html';
-    var disqus_url = 'https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote.html';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-
-<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
             <hr/>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.com/hidden-gem-a-great-pytorch-youtube-tutorial-series-by-deeplizard.html" title="Previous: 💎Hidden Gem: A Great PyTorch YouTube Tutorial Series by deeplizard - A must watch before you delve down deeper into fast.ai source code">💎Hidden Gem: A Great PyTorch YouTube Tutorial Series by deeplizard <small class="subtitle">A must watch before you delve down deeper into fast.ai source code</small></a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/neon-life-your-real-virtual-assistant-for-real-this-time-6de4a52e66c4.html" title="Next: NEON.LIFE: Your REAL Virtual Assistant, For Real This Time? - The anatomy and theory-crafting of NEON.LIFE, Samsung’s new ‘Artificial Human’">NEON.LIFE: Your REAL Virtual Assistant, For Real This Time? <small class="subtitle">The anatomy and theory-crafting of NEON.LIFE, Samsung’s new ‘Artificial Human’</small></a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/hidden-gem-a-great-pytorch-youtube-tutorial-series-by-deeplizard" title="Previous: 💎Hidden Gem: A Great PyTorch YouTube Tutorial Series by deeplizard - A must watch before you delve down deeper into fast.ai source code">💎Hidden Gem: A Great PyTorch YouTube Tutorial Series by deeplizard <small class="subtitle">A must watch before you delve down deeper into fast.ai source code</small></a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/neon-life-your-real-virtual-assistant-for-real-this-time-6de4a52e66c4" title="Next: NEON.LIFE: Your REAL Virtual Assistant, For Real This Time? - The anatomy and theory-crafting of NEON.LIFE, Samsung’s new ‘Artificial Human’">NEON.LIFE: Your REAL Virtual Assistant, For Real This Time? <small class="subtitle">The anatomy and theory-crafting of NEON.LIFE, Samsung’s new ‘Artificial Human’</small></a> »</li>
             </ul>
             </nav>
             </aside>
@@ -238,34 +192,34 @@
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2019-10-25T20:00:00-05:00">Oct 25, 2019</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
+            <a class="category-link" href="https://wayofnumbers.com/categories#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.com/tags.html#ai-ref">AI
+                <li><a href="https://wayofnumbers.com/tags#ai-ref">AI
                     <span>11</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#jupyter-notebook-ref">Jupyter Notebook
+                <li><a href="https://wayofnumbers.com/tags#jupyter-notebook-ref">Jupyter Notebook
                     <span>3</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#machine-learning-ref">Machine Learning
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
                     <span>20</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#netflix-ref">Netflix
+                <li><a href="https://wayofnumbers.com/tags#netflix-ref">Netflix
                     <span>1</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#polynote-ref">Polynote
+                <li><a href="https://wayofnumbers.com/tags#polynote-ref">Polynote
                     <span>1</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
+<h4>Stay in Touch</h4>
 <div id="sidebar-social-link">
-    <a href="https://twitter.com/lymenlee" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://twitter.com/lymenlee" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
     </a>
-    <a href="https://github.com/wayofnumbers" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://github.com/wayofnumbers" title="GitHub" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
     </a>
-    <a href="www.linkedin.com/in/michael-li-dfw" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="www.linkedin.com/in/michael-li-dfw" title="LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
     </a>
 </div>
@@ -290,8 +244,6 @@
 
 
 
-
-
         </section>
 </div>
 </article>
@@ -304,7 +256,7 @@
     <div>
         Content licensed under <a rel="license nofollow noopener noreferrer"
     href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        Creative Commons Attribution 4.0 International License</a>.
+    Creative Commons Attribution 4.0 International License</a>.
     </div>
 
     <div>

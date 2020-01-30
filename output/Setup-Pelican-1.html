@@ -6,20 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael Li" />
 
-        <meta name="twitter:creator" content="@lymenlee">
+        <meta name="description" content="My notes on how to setup Data Science blog using Pelican static site generater and GitHub Pages.
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
 <meta name="keywords" content="Pelican, Data Science, Blog, Github, Jupyter Notebook, Disqus, Google Analytics, Tools, " />
 
 <meta property="og:title" content="Setup Data Science Blog with Pelican + GitHub Pages "/>
-<meta property="og:url" content="https://wayofnumbers.com/Setup-Pelican-1.html" />
+<meta property="og:url" content="https://wayofnumbers.com/Setup-Pelican-1" />
 <meta property="og:description" content="My notes on how to setup Data Science blog using Pelican static site generater and GitHub Pages." />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
 <meta property="og:article:published_time" content="2018-02-14T20:00:00-06:00" />
 <meta name="twitter:title" content="Setup Data Science Blog with Pelican + GitHub Pages ">
 <meta name="twitter:description" content="My notes on how to setup Data Science blog using Pelican static site generater and GitHub Pages.">
+<meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
 
         <title>Setup Data Science Blog with Pelican + GitHub Pages  · Way of Numbers
 </title>
@@ -68,11 +71,11 @@
                                        https://wayofnumbers.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wayofnumbers.com/pages/about-me.html">About&nbsp;Me</a></li>
-                                <li ><a href="https://wayofnumbers.com/categories.html">Categories</a></li>
-                                <li ><a href="https://wayofnumbers.com/tags.html">Tags</a></li>
-                                <li ><a href="https://wayofnumbers.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://wayofnumbers.com/about-me">About&nbsp;Me</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wayofnumbers.com/Setup-Pelican-1.html">
+            <a href="https://wayofnumbers.com/Setup-Pelican-1">
                 Setup Data Science Blog with Pelican + GitHub&nbsp;Pages
             </a>
         </h1>
@@ -118,12 +121,12 @@
             
 <p><img alt="Coding Background" src="https://wayofnumbers.com/images/coding.png"/></p>
 <p>First of all, this is by no means a thorough tutorial. I’ve followed Dataquest’s blog post: <a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/">Building a data science portfolio: Making a data science blog</a> to get this one setup. Here are some insights and hiccups that may be helpful to others who want to do the same thing.</p>
-<h2 id="static-sites-and-static-sites-generator">Static sites and static sites generator<a class="headerlink" href="#static-sites-and-static-sites-generator" title="Permanent link">¶</a></h2>
+<h2 id="static-sites-and-static-sites-generator">Static sites and static sites generator<a class="headerlink" href="#static-sites-and-static-sites-generator" title="Permanent link"> </a></h2>
 <p>If you have never experienced the web development world, static site might be a new word to you. Actually it’s quite simple, it’s just plan web-site with <span class="caps">HTML</span> files, <span class="caps">CSS</span> sheets and Javascript files. These file never changes unless you make them, thus the word ‘static’. The ‘dynamic’ site, on the other hand, use database and complex post-end technology to ‘dynamically’ generate these <span class="caps">HTML</span>/<span class="caps">CSS</span>/Javascripts files. It’s much harder to develop and maintain. 
 But I don’t want that complexity you say. I just want to write something and post them and make them look neat. Then, my friend, look no further than a static site. Good news to us, there are a lot of static sites generators out there that can help us do the heavy-lifting of developing a website. 
 The static sites generators come with many flavors, <a href="https://jekyllrb.com/">Jekyell(based on Ruby)</a>, <a href="https://blog.getpelican.com/">Pelican(based on Python</a> are too popular one. Since I’m more familiar with Python. I decided to use Pelican to build my data science blog.</p>
 <p>The beautiful thing here is, since Pelican is written in Python, it’s quite easy to make it work with Jupyter Notebook, which is a huge bonus for data science. This means you can write your blog posts using Jupyter Notebook, leverage all the powerful snippets, data visualization and code executing it has and roll all those into your post, with ease.</p>
-<h2 id="install-pelican">Install Pelican<a class="headerlink" href="#install-pelican" title="Permanent link">¶</a></h2>
+<h2 id="install-pelican">Install Pelican<a class="headerlink" href="#install-pelican" title="Permanent link"> </a></h2>
 <p>Usually install Pelican will be easy, but if we also want to support Jupyter Notebook it will be harder. Many python modules will need to be installed using <strong>pip</strong>. </p>
 <p>Here is a list I used:</p>
 <div class="highlight"><pre><span></span><span class="nv">Markdown</span><span class="o">==</span><span class="m">2</span>.6.6    <span class="c1"># Markdown support</span>
@@ -146,7 +149,7 @@ Add these into the bottom:</p>
 <span class="n">PLUGIN_PATH</span> <span class="o">=</span> <span class="s1">'./plugins'</span>
 <span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'ipynb.markup'</span><span class="p">]</span>
 </pre></div>
-<h2 id="write-post">Write Post<a class="headerlink" href="#write-post" title="Permanent link">¶</a></h2>
+<h2 id="write-post">Write Post<a class="headerlink" href="#write-post" title="Permanent link"> </a></h2>
 <p>Well this is the easier part. Just put your Jupyter Notebook file into the <code>'content'</code> folder. Also, for each post, we’ll need a meta file to include some meta data of the post. The meta file should have the extension: <code>.ipynb-meta</code>. Here is an example:</p>
 <div class="highlight"><pre><span></span><span class="n">Title</span><span class="o">:</span> <span class="n">First</span> <span class="n">Post</span>
 <span class="n">Slug</span><span class="o">:</span> <span class="n">first</span><span class="o">-</span><span class="n">post</span>
@@ -157,27 +160,27 @@ Add these into the bottom:</p>
 <span class="n">Summary</span><span class="o">:</span> <span class="n">My</span> <span class="n">first</span> <span class="n">post</span><span class="o">,</span> <span class="n">read</span> <span class="n">it</span> <span class="n">to</span> <span class="n">find</span> <span class="n">out</span><span class="o">.</span>
 </pre></div>
 <p>It’s quite easy to figure out what they are so I won’t bother explain here. When done, save. </p>
-<h2 id="generating-html">Generating <span class="caps">HTML</span><a class="headerlink" href="#generating-html" title="Permanent link">¶</a></h2>
+<h2 id="generating-html">Generating <span class="caps">HTML</span><a class="headerlink" href="#generating-html" title="Permanent link"> </a></h2>
 <p>Exit out of content folder, and run <code>pelican content</code> to generate the <span class="caps">HTML</span>. Enter <code>output</code> again and run:</p>
 <div class="highlight"><pre><span></span>python -m pelican.server
 </pre></div>
 <p>Then visit: <code>localhost:8000</code> to see your new site. </p>
-<h2 id="putting-it-on-github-pages">Putting it on GitHub Pages<a class="headerlink" href="#putting-it-on-github-pages" title="Permanent link">¶</a></h2>
+<h2 id="putting-it-on-github-pages">Putting it on GitHub Pages<a class="headerlink" href="#putting-it-on-github-pages" title="Permanent link"> </a></h2>
 <p>Create a GitHub Page is simple and there are many tutorials out there. Once created, edit your <code>SITEURL</code> in <code>publishconf.py</code> file, make it into <code>https://username.github.io</code>, substitute <code>username</code> with your site name. </p>
 <hr/>
 <p>Run <code>pelican content -s publishconf.py</code> to generate the real stuff. </p>
 <p>Run <code>ghp-import output -b master</code> to import everything into the <code>output</code> folder to the <code>master</code> branch. </p>
 <p>Run <code>git push origin master</code> to push changes to GitHub repo. </p>
 <hr/>
-<h2 id="themes">Themes<a class="headerlink" href="#themes" title="Permanent link">¶</a></h2>
+<h2 id="themes">Themes<a class="headerlink" href="#themes" title="Permanent link"> </a></h2>
 <p>There are a lot of <a href="https://github.com/getpelican/pelican-themes">themes</a> to choose from. What you need to do is to configure your <code>pelicanconf.py</code> file and assign the theme name. Some themes may need to install extra Python modules or have access to other services to work. But overall the process is straight forward.</p>
-<h2 id="google-analytics">Google Analytics<a class="headerlink" href="#google-analytics" title="Permanent link">¶</a></h2>
+<h2 id="google-analytics">Google Analytics<a class="headerlink" href="#google-analytics" title="Permanent link"> </a></h2>
 <p>Pelican have Google Analytics support out of the box. Register the site on <span class="caps">GA</span>, then get the <code>UA-XXXXxxxxx</code> id, put it into the <code>pelicanconf.py</code> file and you’re golden. </p>
-<h2 id="disqus">Disqus<a class="headerlink" href="#disqus" title="Permanent link">¶</a></h2>
+<h2 id="disqus">Disqus<a class="headerlink" href="#disqus" title="Permanent link"> </a></h2>
 <p>Disqus support come out of the box too. Register the site on Disqus, get your <strong>shortname</strong> correct, and put into <code>pelicanconf.py</code> and you should be good too. Some turorial suggest put into <code>publishconf.py</code>, well mine only works on <code>pelicanconf.py</code> so use your own judgement. </p>
-<h2 id="seo"><span class="caps">SEO</span><a class="headerlink" href="#seo" title="Permanent link">¶</a></h2>
+<h2 id="seo"><span class="caps">SEO</span><a class="headerlink" href="#seo" title="Permanent link"> </a></h2>
 <p>Basic <span class="caps">SEO</span> can be achieved using <strong>sitemap</strong> plugin. Search for it and put into <code>pelicanconf.py</code>, it will work automatically.</p>
-<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h2>
 <p>Overall the process is not hard at all. Once everything is set. Just focus on putting in solid content using Jupyter Notebook. Enjoy coding, visualizing and writing!</p>
 
 
@@ -186,10 +189,11 @@ Add these into the bottom:</p>
             
                 <hr />
     <div class="author_blurb">
-        <a href="" target="_blank" rel="nofollow noopener noreferrer">
+        <a href="https://medium.com/@lymenlee" target="_blank" rel="nofollow noopener noreferrer">
+            <img src=/images/avatars/miachel.png alt="Michael Li Avatar" title="Michael Li">
             <span class="author_name">Michael Li</span>
         </a>
-        
+        is the creator and lead developer of this site.
     </div>
 
             
@@ -199,62 +203,12 @@ Add these into the bottom:</p>
 
 
 
-<section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   data-disqus-identifier="https://wayofnumbers.com/Setup-Pelican-1.html"
-                   href="https://wayofnumbers.com/Setup-Pelican-1.html#comment_thread"
-                   id="comment-accordion-toggle">
-                    Comments
-                </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-    var disqus_shortname = 'way-of-numbers';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    var disqus_identifier = 'https://wayofnumbers.com/Setup-Pelican-1.html';
-    var disqus_url = 'https://wayofnumbers.com/Setup-Pelican-1.html';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-
-<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
             <hr/>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.com/MLN-Numpyandpandas.html" title="Previous: Machine Learning Notes : Numpy and Pandas">Machine Learning Notes : Numpy and Pandas</a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/MLN-Text-data-analysis.html" title="Next: Machine Learning Notes : Text Data Analysis">Machine Learning Notes : Text Data Analysis</a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/MLN-Numpyandpandas" title="Previous: Machine Learning Notes : Numpy and Pandas">Machine Learning Notes : Numpy and Pandas</a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/MLN-Text-data-analysis" title="Next: Machine Learning Notes : Text Data Analysis">Machine Learning Notes : Text Data Analysis</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -263,40 +217,40 @@ Add these into the bottom:</p>
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2018-02-14T20:00:00-06:00">Feb 14, 2018</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://wayofnumbers.com/categories.html#tools-ref">Tools</a>
+            <a class="category-link" href="https://wayofnumbers.com/categories#tools-ref">Tools</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.com/tags.html#blog-ref">Blog
+                <li><a href="https://wayofnumbers.com/tags#blog-ref">Blog
                     <span>2</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#data-science-ref">Data Science
+                <li><a href="https://wayofnumbers.com/tags#data-science-ref">Data Science
                     <span>2</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#disqus-ref">Disqus
+                <li><a href="https://wayofnumbers.com/tags#disqus-ref">Disqus
                     <span>1</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#github-ref">Github
+                <li><a href="https://wayofnumbers.com/tags#github-ref">Github
                     <span>3</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#google-analytics-ref">Google Analytics
+                <li><a href="https://wayofnumbers.com/tags#google-analytics-ref">Google Analytics
                     <span>1</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#jupyter-notebook-ref">Jupyter Notebook
+                <li><a href="https://wayofnumbers.com/tags#jupyter-notebook-ref">Jupyter Notebook
                     <span>3</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#pelican-ref">Pelican
+                <li><a href="https://wayofnumbers.com/tags#pelican-ref">Pelican
                     <span>3</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
+<h4>Stay in Touch</h4>
 <div id="sidebar-social-link">
-    <a href="https://twitter.com/lymenlee" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://twitter.com/lymenlee" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
     </a>
-    <a href="https://github.com/wayofnumbers" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://github.com/wayofnumbers" title="GitHub" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
     </a>
-    <a href="www.linkedin.com/in/michael-li-dfw" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="www.linkedin.com/in/michael-li-dfw" title="LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
     </a>
 </div>
@@ -321,8 +275,6 @@ Add these into the bottom:</p>
 
 
 
-
-
         </section>
 </div>
 </article>
@@ -335,7 +287,7 @@ Add these into the bottom:</p>
     <div>
         Content licensed under <a rel="license nofollow noopener noreferrer"
     href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        Creative Commons Attribution 4.0 International License</a>.
+    Creative Commons Attribution 4.0 International License</a>.
     </div>
 
     <div>

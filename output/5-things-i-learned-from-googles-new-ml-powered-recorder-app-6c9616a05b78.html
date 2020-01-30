@@ -6,20 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael Li" />
 
-        <meta name="twitter:creator" content="@lymenlee">
+        <meta name="description" content="5 Things I Learned from Google’s New ML-Powered Recorder App
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
 <meta name="keywords" content="Machine Learning, Artificial Intelligence, Machine Learning, " />
 
 <meta property="og:title" content="5 Things I Learned from Google’s New ML-Powered Recorder App  - And what future ML-enabled apps should look like "/>
-<meta property="og:url" content="https://wayofnumbers.com/5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78.html" />
+<meta property="og:url" content="https://wayofnumbers.com/5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78" />
 <meta property="og:description" content="5 Things I Learned from Google’s New ML-Powered Recorder App" />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
 <meta property="og:article:published_time" content="2020-01-30T11:13:51-06:00" />
 <meta name="twitter:title" content="5 Things I Learned from Google’s New ML-Powered Recorder App  - And what future ML-enabled apps should look like ">
 <meta name="twitter:description" content="5 Things I Learned from Google’s New ML-Powered Recorder App">
+<meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
 
         <title>5 Things I Learned from Google’s New ML-Powered Recorder App  - And what future ML-enabled apps should look like  · Way of Numbers
 </title>
@@ -68,11 +71,11 @@
                                        https://wayofnumbers.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wayofnumbers.com/pages/about-me.html">About&nbsp;Me</a></li>
-                                <li ><a href="https://wayofnumbers.com/categories.html">Categories</a></li>
-                                <li ><a href="https://wayofnumbers.com/tags.html">Tags</a></li>
-                                <li ><a href="https://wayofnumbers.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://wayofnumbers.com/about-me">About&nbsp;Me</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wayofnumbers.com/5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78.html">
+            <a href="https://wayofnumbers.com/5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78">
                 5 Things I Learned from Google’s New <span class="caps">ML</span>-Powered Recorder&nbsp;App
                 <small class="subtitle">
                     And what future ML-enabled apps should look like
@@ -120,40 +123,40 @@
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2560/0*JE6uwXDJJhVYci-9.jpg"/></p>
 <p>There are tons of audio recording apps in the app store, but you know things will be a bit different if Google developed a brand new one. Google recently released a new ‘<a href="https://play.google.com/store/apps/details?id=com.google.android.apps.recorder">Recorder</a>’ app that is powered by its state-of-the-art Machine Learning algorithm that can transcribe what it hears with impressive precision in real-time. This is not the first time Google tried to bless its product with some <span class="caps">AI</span> ‘superpower’. Some of their prior attempts failed (I’m talking to you <a href="https://www.engadget.com/2019/10/16/google-discontinues-clips-camera/">Google Clips</a>!) and some had quite formidable success, for example, Google’s Pixel phone camera app. With the camera hardware spec a little below industry mainstream, Google’s Pixel flagship phone managed to pull off as <a href="https://www.androidauthority.com/best-camera-phones-670620/">one of the best smartphone cameras on the market</a> thanks to its Machine Learning algorithms for image post-processing. The ‘Recorder’ app is yet another attempt by Google to spice up competition using <span class="caps">AI</span>, this time on audio.</p>
 <p>After digging deeper into what the app can do differently and how <span class="caps">AI</span> played a core role in it, I found some very interesting insights on how Google handles app, <span class="caps">AI</span> and user experience that could shed some light on future app development in the <span class="caps">AI</span>-era.</p>
-<h2 id="what-is-google-recorder">What is Google Recorder?<a class="headerlink" href="#what-is-google-recorder" title="Permanent link">¶</a></h2>
+<h2 id="what-is-google-recorder">What is Google Recorder?<a class="headerlink" href="#what-is-google-recorder" title="Permanent link"> </a></h2>
 <p>You can refer to the following short YouTube video on what Recorder does. In short, you can use it to do real-time transcription, search recorded audio by keywords, automatically generate tags or segment the audio into different categories like music, speech, etc.</p>
 <p><center><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/RVMqB4W_EH4" width="560"></iframe></center></p>
 <p>I’ve been using it for more than a week and found it to be useful, slick and pleasant to use. Recording audio is not a complicated task, but the <span class="caps">AI</span> part makes it even easier. I can see this little app makes a big difference for students and people attending meetings regularly.</p>
-<h2 id="1-adoption-of-edge-first-model-design">#1 Adoption of Edge-First Model Design<a class="headerlink" href="#1-adoption-of-edge-first-model-design" title="Permanent link">¶</a></h2>
+<h2 id="1-adoption-of-edge-first-model-design">#1 Adoption of Edge-First Model Design<a class="headerlink" href="#1-adoption-of-edge-first-model-design" title="Permanent link"> </a></h2>
 <p><img alt="Image from WishDesk" src="https://cdn-images-1.medium.com/max/2000/0*ln5CfxKmWRUMQTsG.jpg"/><em>Image from<a href="https://www.google.com/url?sa=i&amp;source=images&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwi8qsaS4c7mAhVFXawKHXf6BSsQjB16BAgBEAM&amp;url=https%3A%2F%2Fwishdesk.com%2Fblog%2Fwhat-mobile-first-design&amp;psig=AOvVaw1Z2T4KkHv8kJl4UFvKoWF-&amp;ust=1577293156997339"> WishDesk</a></em></p>
 <p>We all heard of the term ‘Mobile-First Design’. When companies develop their applications, they will design and optimize their app based on mobile experience first, then to other platforms like desktop or web. I think the same idea can also be applied to <span class="caps">AI</span>-powered application design, hence ‘Edge-First Design’.</p>
 <p>Usually, Machine Learning based applications run on the cloud, this is due to the heavy computation requirements for most state-of-the-art <span class="caps">ML</span> models. For enterprise applications, this approach is fine since the hardware is hardly a real issue. But if a company wants to build impactful <span class="caps">AI</span>-based apps for the consumers, then a cloud-based system often won’t cut it. Running <span class="caps">AI</span>-based apps from the cloud is not only slow but also has serious privacy concerns. Also to the normal consumer, they are used to the snappiness modern mobile apps offers. They can care less whether your app is based on some <span class="caps">SOTA</span> models or not, if the experience cannot match the high standard they get used to, boosted by many years of modern smartphone hardware/software development. So putting the <span class="caps">AI</span> on the ‘Edge’, e.g. user’s phone, tablet, smart home devices will be a better way to success.</p>
 <p><img alt="Image from Lann" src="https://cdn-images-1.medium.com/max/2400/0*qaLMK3_40cM494G1.png"/><em>Image from Lann</em></p>
 <p>Google Recorder app did a great job on this. It uses a new model called ‘<a href="https://arxiv.org/pdf/1211.3711.pdf">**<span class="caps">RNN</span> transducer(<span class="caps">RNN</span>-T)</a>**’ that is compact enough to reside on the phone while powerful enough to do real-time transcription. Instead of the traditional ‘pipeline’ approach, the <span class="caps">RNN</span>-T model uses a <a href="https://www.youtube.com/watch?v=ImUoubi_t7s">single neural network, end-to-end approach</a> which is growingly more popular to solve complicated problems. Until recently, we’ve seen a lot of research progress being made on increasing the prediction performance by using bigger and bigger models, yet the opposite direction is equally important: Using as compact a model as possible to achieve similar performance so the model can be put on the edge. I expect more research to be done in this area when machine learning matures in the coming years.</p>
-<h2 id="2-use-different-technology-stack-for-performance">#2 Use Different Technology Stack for Performance<a class="headerlink" href="#2-use-different-technology-stack-for-performance" title="Permanent link">¶</a></h2>
+<h2 id="2-use-different-technology-stack-for-performance">#2 Use Different Technology Stack for Performance<a class="headerlink" href="#2-use-different-technology-stack-for-performance" title="Permanent link"> </a></h2>
 <p>Another interesting development is the introduction of <a href="https://www.tensorflow.org/swift">Swift for TensorFlow</a>. Created by the creator of Swift programming language, <a href="https://en.wikipedia.org/wiki/Chris_Lattner">Chris Lattner</a>. It uses open-source Swift language with TensorFlow and promises both fast development time like Python and high-level performance like C++. <a href="http://fast.ai">Fast.ai</a> has a great <a href="https://blog.tensorflow.org/2019/06/fastais-deep-learning-from-foundations_28.html">introductory course</a> on it. With <span class="caps">ML</span> moving more and more from research labs to commercial applications, the performance of <span class="caps">ML</span> models will play a much bigger role and Swift for TensorFlow has great potential on that. According to the founder of <a href="http://fast.ai">fast.ai</a>, Jeremy Howard:
 <a href="https://developer.apple.com/videos/play/wwdc2019/209/"><strong>What’s New in Machine Learning - <span class="caps">WWDC</span> 2019 - Videos - Apple Developer</strong>
 <em>Core <span class="caps">ML</span> 3 has been greatly expanded to enable even more amazing, on-device machine learning capabilities in your app…</em>developer.apple.com</a></p>
 <blockquote>
 <p><em>“Swift can match the performance of hand-tuned assembly code from numerical library vendors. Swift for TensorFlow is the first serious effort I’ve seen to incorporate differentiable programming deep into the heart of a widely used language that is designed from the ground up for performance”</em></p>
 </blockquote>
-<h2 id="3-privacy-matters">#3 Privacy Matters<a class="headerlink" href="#3-privacy-matters" title="Permanent link">¶</a></h2>
+<h2 id="3-privacy-matters">#3 Privacy Matters<a class="headerlink" href="#3-privacy-matters" title="Permanent link"> </a></h2>
 <p><img alt="Photo by Matthew Henry on Unsplash" src="https://cdn-images-1.medium.com/max/11520/0*rw-NMk45j3aa8EF9"/><em>Photo by <a href="https://unsplash.com/@matthewhenry?utm_source=medium&amp;utm_medium=referral">Matthew Henry</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
 <p>One of the biggest concerns for <span class="caps">AI</span> applications is privacy. For <span class="caps">AI</span> to really show value, it has to know a lot about the user, often times their personal life details people don’t feel comfortable sharing. Take audio recording as an example, you might want to record your family meeting discussing your next Christmas plan but don’t want it to be transferred onto the cloud and get 10 Christmas travel agents calling you to sell their products. This gives ‘offline’ <span class="caps">ML</span> apps an advantage. Since the model is deployed locally on the edge and no data need to be transferred to the cloud, the user can feel assured that their privacy can be protected. The Recorder app runs all the models on-device and makes it a bit less reluctance for people to adopt it.</p>
-<h2 id="4-user-experience-design-is-still-the-key">#4 User Experience Design is Still the Key<a class="headerlink" href="#4-user-experience-design-is-still-the-key" title="Permanent link">¶</a></h2>
+<h2 id="4-user-experience-design-is-still-the-key">#4 User Experience Design is Still the Key<a class="headerlink" href="#4-user-experience-design-is-still-the-key" title="Permanent link"> </a></h2>
 <p>The Recorder app has a very slick and elegant <span class="caps">UI</span>. It’s a simple app with minimal clutters. You can easily start/pause your recording, toggle between ‘Audio’ or ‘Transcript’ mode to check your recorded content and getting suggestions on tags from the content recorded. All works without friction.</p>
 <p>During recording, the app will automatically categorize sections of audio as ‘Speech’, ‘Music’, ‘Whistling’ … etc. and color code them accordingly.</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2560/0*Dxe5mkbWE1L-trgT.gif"/></p>
 <p>When playback your recorded audio, you can see each word get highlighted when being spoken in the transcript mode and you can search through the transcripts use the keyword you want. Very intuitive.</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2560/0*nEF5vXInKw71Nf2y.gif"/></p>
 <p>What I’m trying to say is: User experience design will make or break a great <span class="caps">AI</span> model. Only when working seamlessly with other parts of the app can an <span class="caps">AI</span> feature delivers its value to the end-user. A model that can address the user’s paint-point with high performance is only a start, not the end. <span class="caps">AI</span> should serve silently behind the scenes rather take the center stage.</p>
-<h2 id="5-responsiveness-come-with-a-price">#5 Responsiveness Come with a Price<a class="headerlink" href="#5-responsiveness-come-with-a-price" title="Permanent link">¶</a></h2>
+<h2 id="5-responsiveness-come-with-a-price">#5 Responsiveness Come with a Price<a class="headerlink" href="#5-responsiveness-come-with-a-price" title="Permanent link"> </a></h2>
 <p>In the mobile world, companies strive to offer more responsiveness. Consumers nowadays are very impatient and the last thing they want is to wait. Snappy experience means the user can focus on the content they want or the tasks at hand. But responsiveness on mobile devices is not easy to come by. Computing power, screen size, system resources are all very limited compare to desktop or cloud. To achieve the best responsiveness, more thoughts and research need to be put into the design and development of the app. This includes better use of <span class="caps">CPU</span>/<span class="caps">GPU</span>, memory optimization, choose fast programming languages for the implementation and reduce dependence on back-end servers. The Machine Learning industry has made great progress on research for the past few years, yet to have more impact on people’s day-to-day life, more investment and work has to be done on the engineering side. And a switch from research to engineering is a sign of matureness for new technology.</p>
-<h2 id="the-right-way-of-developing-ai-applications">The Right Way of Developing <span class="caps">AI</span> Applications?<a class="headerlink" href="#the-right-way-of-developing-ai-applications" title="Permanent link">¶</a></h2>
+<h2 id="the-right-way-of-developing-ai-applications">The Right Way of Developing <span class="caps">AI</span> Applications?<a class="headerlink" href="#the-right-way-of-developing-ai-applications" title="Permanent link"> </a></h2>
 <p><img alt="Image from Overwatch" src="https://cdn-images-1.medium.com/max/3840/0*jIEExvGIlAay-wgq"/><em>Image from Overwatch</em></p>
 <p>People have this fantasy of scary <span class="caps">AI</span> taking over humanity for many years. Movies, novels, <span class="caps">TV</span> Shows all painted a very dramatic future of <span class="caps">AI</span> for mankind. To counter this public (biased?) impression on <span class="caps">AI</span>, special cautions need to be taken. It’s beneficial to adopt an ‘<span class="caps">AI</span> exist as a tool to help human’ mentality instead of an ‘<span class="caps">AI</span> vs Mankind’ one. <span class="caps">AI</span> can do a lot of things, but rather than develop <span class="caps">AI</span> apps that can ‘replace’ humans, it’s better to have <span class="caps">AI</span> that exists to help humans perform their tasks easier and faster. Like the Recorder app to help taking notes, image recognition systems to help the doctor diagnose better, augment reality app to help people better navigate the neighborhood, etc.</p>
 <blockquote>
-<h1 id="a-quiet-friendly-yet-powerful-ai-diligently-working-behind-the-scenes-to-help-people-do-whatever-they-do-better-is-so-much-more-comfortable-and-approachable-for-people-compare-to-a-robotic-killing-machine-in-a-scifi-movie"><em>A quiet, friendly, yet powerful <span class="caps">AI</span> diligently working behind the scenes to help people do whatever they do better is so much more comfortable and approachable for people, compare to a robotic killing machine in a SciFi movie.</em><a class="headerlink" href="#a-quiet-friendly-yet-powerful-ai-diligently-working-behind-the-scenes-to-help-people-do-whatever-they-do-better-is-so-much-more-comfortable-and-approachable-for-people-compare-to-a-robotic-killing-machine-in-a-scifi-movie" title="Permanent link">¶</a></h1>
+<h1 id="a-quiet-friendly-yet-powerful-ai-diligently-working-behind-the-scenes-to-help-people-do-whatever-they-do-better-is-so-much-more-comfortable-and-approachable-for-people-compare-to-a-robotic-killing-machine-in-a-scifi-movie"><em>A quiet, friendly, yet powerful <span class="caps">AI</span> diligently working behind the scenes to help people do whatever they do better is so much more comfortable and approachable for people, compare to a robotic killing machine in a SciFi movie.</em><a class="headerlink" href="#a-quiet-friendly-yet-powerful-ai-diligently-working-behind-the-scenes-to-help-people-do-whatever-they-do-better-is-so-much-more-comfortable-and-approachable-for-people-compare-to-a-robotic-killing-machine-in-a-scifi-movie" title="Permanent link"> </a></h1>
 </blockquote>
 
 
@@ -162,10 +165,11 @@
             
                 <hr />
     <div class="author_blurb">
-        <a href="" target="_blank" rel="nofollow noopener noreferrer">
+        <a href="https://medium.com/@lymenlee" target="_blank" rel="nofollow noopener noreferrer">
+            <img src=/images/avatars/miachel.png alt="Michael Li Avatar" title="Michael Li">
             <span class="author_name">Michael Li</span>
         </a>
-        
+        is the creator and lead developer of this site.
     </div>
 
             
@@ -175,62 +179,12 @@
 
 
 
-<section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   data-disqus-identifier="https://wayofnumbers.com/5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78.html"
-                   href="https://wayofnumbers.com/5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78.html#comment_thread"
-                   id="comment-accordion-toggle">
-                    Comments
-                </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-    var disqus_shortname = 'way-of-numbers';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    var disqus_identifier = 'https://wayofnumbers.com/5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78.html';
-    var disqus_url = 'https://wayofnumbers.com/5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78.html';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-
-<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
             <hr/>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.com/neon-life-your-real-virtual-assistant-for-real-this-time-6de4a52e66c4.html" title="Previous: NEON.LIFE: Your REAL Virtual Assistant, For Real This Time? - The anatomy and theory-crafting of NEON.LIFE, Samsung’s new ‘Artificial Human’">NEON.LIFE: Your REAL Virtual Assistant, For Real This Time? <small class="subtitle">The anatomy and theory-crafting of NEON.LIFE, Samsung’s new ‘Artificial Human’</small></a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/no-human-can-beat-alphago-so-what-3401b40fa0f0.html" title="Next: No Human Can Beat AlphaGo, and It’s a Good Thing - Why Go master Lee Se-Dol should not feel sorry for losing to AlphaGo">No Human Can Beat AlphaGo, and It’s a Good Thing <small class="subtitle">Why Go master Lee Se-Dol should not feel sorry for losing to AlphaGo</small></a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/neon-life-your-real-virtual-assistant-for-real-this-time-6de4a52e66c4" title="Previous: NEON.LIFE: Your REAL Virtual Assistant, For Real This Time? - The anatomy and theory-crafting of NEON.LIFE, Samsung’s new ‘Artificial Human’">NEON.LIFE: Your REAL Virtual Assistant, For Real This Time? <small class="subtitle">The anatomy and theory-crafting of NEON.LIFE, Samsung’s new ‘Artificial Human’</small></a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/no-human-can-beat-alphago-so-what-3401b40fa0f0" title="Next: No Human Can Beat AlphaGo, and It’s a Good Thing - Why Go master Lee Se-Dol should not feel sorry for losing to AlphaGo">No Human Can Beat AlphaGo, and It’s a Good Thing <small class="subtitle">Why Go master Lee Se-Dol should not feel sorry for losing to AlphaGo</small></a> »</li>
             </ul>
             </nav>
             </aside>
@@ -239,25 +193,25 @@
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-01-30T11:13:51-06:00">Jan 30, 2020</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
+            <a class="category-link" href="https://wayofnumbers.com/categories#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.com/tags.html#artificial-intelligence-ref">Artificial Intelligence
+                <li><a href="https://wayofnumbers.com/tags#artificial-intelligence-ref">Artificial Intelligence
                     <span>7</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#machine-learning-ref">Machine Learning
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
                     <span>20</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
+<h4>Stay in Touch</h4>
 <div id="sidebar-social-link">
-    <a href="https://twitter.com/lymenlee" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://twitter.com/lymenlee" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
     </a>
-    <a href="https://github.com/wayofnumbers" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://github.com/wayofnumbers" title="GitHub" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
     </a>
-    <a href="www.linkedin.com/in/michael-li-dfw" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="www.linkedin.com/in/michael-li-dfw" title="LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
     </a>
 </div>
@@ -282,8 +236,6 @@
 
 
 
-
-
         </section>
 </div>
 </article>
@@ -296,7 +248,7 @@
     <div>
         Content licensed under <a rel="license nofollow noopener noreferrer"
     href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        Creative Commons Attribution 4.0 International License</a>.
+    Creative Commons Attribution 4.0 International License</a>.
     </div>
 
     <div>

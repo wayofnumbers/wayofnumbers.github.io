@@ -6,20 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael Li" />
 
-        <meta name="twitter:creator" content="@lymenlee">
+        <meta name="description" content="Guide to deploy your Machine Learning web app to DigitalOcean
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
 <meta name="keywords" content="Machine Learning, AI, Deep Learning, fast.ai, DigitalOcean, Docker, Starlette, Machine Learning, " />
 
 <meta property="og:title" content="How to Deploy Your Machine Learning Web App to Digital Ocean  - Using Fast.ai, Docker, GitHub, and Starlette ASGI Framework "/>
-<meta property="og:url" content="https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO.html" />
+<meta property="og:url" content="https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO" />
 <meta property="og:description" content="Guide to deploy your Machine Learning web app to DigitalOcean" />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
 <meta property="og:article:published_time" content="2019-09-21T20:00:00-05:00" />
 <meta name="twitter:title" content="How to Deploy Your Machine Learning Web App to Digital Ocean  - Using Fast.ai, Docker, GitHub, and Starlette ASGI Framework ">
 <meta name="twitter:description" content="Guide to deploy your Machine Learning web app to DigitalOcean">
+<meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
 
         <title>How to Deploy Your Machine Learning Web App to Digital Ocean  - Using Fast.ai, Docker, GitHub, and Starlette ASGI Framework  · Way of Numbers
 </title>
@@ -68,11 +71,11 @@
                                        https://wayofnumbers.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wayofnumbers.com/pages/about-me.html">About&nbsp;Me</a></li>
-                                <li ><a href="https://wayofnumbers.com/categories.html">Categories</a></li>
-                                <li ><a href="https://wayofnumbers.com/tags.html">Tags</a></li>
-                                <li ><a href="https://wayofnumbers.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://wayofnumbers.com/about-me">About&nbsp;Me</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO.html">
+            <a href="https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO">
                 How to Deploy Your Machine Learning Web App to Digital&nbsp;Ocean
                 <small class="subtitle">
                     Using Fast.ai, Docker, GitHub, and Starlette ASGI Framework
@@ -122,11 +125,11 @@
 </blockquote>
 <p>Share it with the world of course! It has such great potential and no one has done this before, you want everyone to try it out! How? You ask.</p>
 <p>In this tutorial, I’ll introduce you to an affordable and flexible way of deploying your trained Machine Learning model. I’ll walk you through every step in the way and hopefully, after reading this article, you’ll have no issue deploying your ‘next big thing(model)’ to the world.</p>
-<h2 id="how-to-trainand-export-your-dragonmodel">How to Train(and export) Your Dragon(Model)<a class="headerlink" href="#how-to-trainand-export-your-dragonmodel" title="Permanent link">¶</a></h2>
+<h2 id="how-to-trainand-export-your-dragonmodel">How to Train(and export) Your Dragon(Model)<a class="headerlink" href="#how-to-trainand-export-your-dragonmodel" title="Permanent link"> </a></h2>
 <p><img alt="Image from https://www.facebook.com/HowToTrainYourDragon/" src="https://cdn-images-1.medium.com/max/2000/0*Xd6meR5pp9AfdpXu"/><em>Image from <a href="https://www.facebook.com/HowToTrainYourDragon/">https://www.facebook.com/HowToTrainYourDragon/</a></em></p>
 <p>First of all, you need to train your model and export it. In this article, we’ll use Fast.ai’s library to showcase how it’s done. You may want to refer to my <a href="https://medium.com/datadriveninvestor/deep-learning-models-by-fast-ai-library-c1cccc13e2b3">two-part articles</a> about how to collect data and train a <strong>Chinese Calligraphy Classifier</strong> model or you can also use your own model. For the purpose of this article, I’ll assume that you already trained the model and achieved your desired accuracy rate.</p>
 <p>Fast.ai uses a learn object to train the model, to export your model, use methodlearn.export() to export and save your trained model to a export.pkl file(<em>my model export file from the <a href="https://medium.com/datadriveninvestor/deep-learning-models-by-fast-ai-library-c1cccc13e2b3">link</a> above is around <span class="caps">100MB</span></em>). Save this file, we’ll use that later.</p>
-<h2 id="github-driven-web-development">‘GitHub-Driven’ Web Development<a class="headerlink" href="#github-driven-web-development" title="Permanent link">¶</a></h2>
+<h2 id="github-driven-web-development">‘GitHub-Driven’ Web Development<a class="headerlink" href="#github-driven-web-development" title="Permanent link"> </a></h2>
 <p>With the model ready, the next step is web app development. I assume you are a full-stack web developer, so let’s jump right into coding. No, I’m just kidding here. We’ll use a boilerplate web app template on GitHub to quickly get your web app ready. You only need to do some minor tweaks and you’ll be ready to go. If you don’t know what <a href="https://github.com">GitHub</a> is, it is a place to hold the source code of a lot of open-source applications. I already put a ready-made web app’s code there so you can easily download and reuse.</p>
 <p>Go to this<a href="https://github.com/wayofnumbers/fastai-vision-uvicorn-gunicorn-starlette-docker"> GitHub repository</a>, click the big green button ‘<strong>Clone or download</strong>’ on the right side, like below:</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/3534/1*jys25uR-Djp3uWpXCJEcOw.png"/></p>
@@ -144,7 +147,7 @@ export.pkl
 <p>This is where your Starlette web app source code resides. It has a very simple Python file main.py. The <a href="https://www.starlette.io/">**Starlette </a>**is a lightweight <a href="https://asgi.readthedocs.io/en/latest/"><span class="caps">ASGI</span></a> framework/toolkit, which is ideal for building high-performance asyncio services.</p>
 <p>It also has the saved model fileexport.pkl. The template folder holds an <span class="caps">HTML</span> template file app.html which will serve as your web app <span class="caps">UI</span>.</p>
 <p>Remember the exported export.pkl file you saved? Pull that out and replace the one in this app folder. So the app will use your model. You are also welcomed to update the app.html file for better-looking <span class="caps">UI</span>, but it’s not necessary as far as deployment is concerned. Now the source code of your web app is ready, we need to wrap it into a <a href="https://www.docker.com/">Docker </a>container and do some testing. We use the <strong>Dockerfile</strong> as the config file. We’ll explore more in the next section.</p>
-<h2 id="lets-dockerize-it">Let’s Dockerize it!<a class="headerlink" href="#lets-dockerize-it" title="Permanent link">¶</a></h2>
+<h2 id="lets-dockerize-it">Let’s Dockerize it!<a class="headerlink" href="#lets-dockerize-it" title="Permanent link"> </a></h2>
 <p>We will use Docker to create a container where our web app runs. If you don’t know what <a href="https://www.docker.com/">Docker</a> is, just know that it is kind of a mini virtual machine, with all the necessary libraries and dependencies installed so the app can run smoothly. It is smaller and more flexible than real Virtual Machine and can be created and deployed very easily.</p>
 <p>First, you need to install Docker. <a href="https://docs.docker.com/install/">Here </a>is a very thorough guide for your reference. After installation, if you are running Ubuntu, then it’s beneficial to run the following commands:</p>
 <div class="highlight"><pre><span></span>sudo groupadd docker
@@ -183,12 +186,12 @@ test_app      latest xxxxxxxxx   1 minutes ago  4.05GB
 <p>If you don’t see any error, your docker container should now be up and running. Head over to your browser and type 127.0.0.1 and hit enter, <a href="https://context.reverso.net/translation/english-spanish/voil%C3%A0">voilà</a>! You should see the web app. Give it a ‘Kaishu’, ‘Lishu’ or ‘Xiaozhuan’ calligraphy image and hit ‘<strong>Classify</strong>’, you should see something like this:</p>
 <p><img alt="Very rough web app UI" src="https://cdn-images-1.medium.com/max/2000/1*YvDNYLszPZgfC16I5NO2cg.png"/><em>Very rough web app <span class="caps">UI</span></em></p>
 <p>You can see the app classified this as ‘KaiShu’, which is correct. Now that your app is up and running on the local machine, we are 80% done. What’s left is to deploy it on the cloud. Let’s head to the cloud next!</p>
-<h2 id="next-step-cloud">Next Step, Cloud!<a class="headerlink" href="#next-step-cloud" title="Permanent link">¶</a></h2>
+<h2 id="next-step-cloud">Next Step, Cloud!<a class="headerlink" href="#next-step-cloud" title="Permanent link"> </a></h2>
 <p>For the cloud hosting service, we’ll use <a href="https://www.digitalocean.com">DigitalOcean</a>. Comparing to the more incumbent players like Amazon <span class="caps">AWS</span>, <span class="caps">GCP</span>, or Azure, it’s more friendly to developers and cheaper. You can follow <a href="https://www.digitalocean.com/docs/droplets/how-to/create/">this well written and concise tutorial</a> to create an account and a ‘Droplet’ of your own. (‘Droplet’ is a virtual machine running by Digital Ocean where you can install your app in, much like an <span class="caps">AWS</span> instance.) If you want, you can use <a href="https://m.do.co/c/bc334d488542">this link</a> to create your account and get $50 credit for free, which will be enough to get you started. Use the following configuration as a reference:</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2428/1*lmMuFFvGN6jnxDRr0q2U1g.png"/></p>
 <p>It is recommended that you create your Droplets with at least <strong>4G</strong> memory since installing PyTorch will require a lot of memory. You can resize it down to 2G later.</p>
 <p>You can choose the default ‘Data Center’ and set up your authentication method. Use <span class="caps">SSH</span> key or password, whichever way you feel more comfortable. I personally prefer <span class="caps">SSH</span> key, fewer keypresses and more secure. Once the Droplet is created, <span class="caps">SSH</span> into it and we are ready for the final deployment!</p>
-<h2 id="deploy-deploy-deploy">Deploy! Deploy! Deploy！<a class="headerlink" href="#deploy-deploy-deploy" title="Permanent link">¶</a></h2>
+<h2 id="deploy-deploy-deploy">Deploy! Deploy! Deploy！<a class="headerlink" href="#deploy-deploy-deploy" title="Permanent link"> </a></h2>
 <p>Now you should be able to <span class="caps">SSH</span> into your server as root. It’s recommended to create a normal user with sudo privilege, you can follow <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart">this tutorial</a>. Once a normal user is created, log out of your root user and <span class="caps">SSH</span> back into the server with your normal user account. The final deployment is very similar to what we’ve already done on our local machine, only this time we do it on the remote droplet server. First, let’s git clone our repo so we have the source code:</p>
 <div class="highlight"><pre><span></span>git clone [https://github.com/wayofnumbers/fastai-vision-uvicorn-gunicorn-starlette-docker.git](https://github.com/wayofnumbers/fastai-vision-uvicorn-gunicorn-starlette-docker.git)
 cd fastai-vision-uvicorn-gunicorn-starlette-docker
@@ -205,7 +208,7 @@ cd fastai-vision-uvicorn-gunicorn-starlette-docker
         test_app
 </pre></div>
 <p>Once the docker container is up and running, head over to your browser and enter your Droplet’s <span class="caps">IP</span> address, hit Enter. Congratulations! You’ve successfully deployed your Deep Learning model to the Internet!</p>
-<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h2>
 <p>Not that hard, huh? Deployment using standard DigitalOcean Droplet offers a lot of flexibilities. You can do whatever you want to your Droplets since you have root access. You can run multiple apps on it, and pay very little($5 - $10 tier should be enough). If your app gets some traction and needs more resources, you can easily scale up.</p>
 <p>I hope this tutorial somewhat help you deploy your <span class="caps">AI</span> app. If you have any question or want to share your deployment experience, please write a response below. Happy Deploying!</p>
 
@@ -215,10 +218,11 @@ cd fastai-vision-uvicorn-gunicorn-starlette-docker
             
                 <hr />
     <div class="author_blurb">
-        <a href="" target="_blank" rel="nofollow noopener noreferrer">
+        <a href="https://medium.com/@lymenlee" target="_blank" rel="nofollow noopener noreferrer">
+            <img src=/images/avatars/miachel.png alt="Michael Li Avatar" title="Michael Li">
             <span class="author_name">Michael Li</span>
         </a>
-        
+        is the creator and lead developer of this site.
     </div>
 
             
@@ -228,62 +232,12 @@ cd fastai-vision-uvicorn-gunicorn-starlette-docker
 
 
 
-<section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   data-disqus-identifier="https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO.html"
-                   href="https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO.html#comment_thread"
-                   id="comment-accordion-toggle">
-                    Comments
-                </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-    var disqus_shortname = 'way-of-numbers';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    var disqus_identifier = 'https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO.html';
-    var disqus_url = 'https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO.html';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-
-<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
             <hr/>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.com/openai-catch-me-if-you-can.html" title="Previous: OpenAI: Catch Me If You Can - What OpenAI’s Multi-Agent Hide and Seek Break Through Means">OpenAI: Catch Me If You Can <small class="subtitle">What OpenAI’s Multi-Agent Hide and Seek Break Through Means</small></a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/two-sides-of-the-same-coin.html" title="Next: Two Sides of the Same Coin: Jeremy Howard’s fast.ai vs Andrew Ng’s deeplearning.ai - How Not to ‘Overfit’ Your AI Learning by Taking Both fast.ai and deeplearning.ai courses">Two Sides of the Same Coin: Jeremy Howard’s fast.ai vs Andrew Ng’s deeplearning.ai <small class="subtitle">How Not to ‘Overfit’ Your AI Learning by Taking Both fast.ai and deeplearning.ai courses</small></a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/openai-catch-me-if-you-can" title="Previous: OpenAI: Catch Me If You Can - What OpenAI’s Multi-Agent Hide and Seek Break Through Means">OpenAI: Catch Me If You Can <small class="subtitle">What OpenAI’s Multi-Agent Hide and Seek Break Through Means</small></a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/two-sides-of-the-same-coin" title="Next: Two Sides of the Same Coin: Jeremy Howard’s fast.ai vs Andrew Ng’s deeplearning.ai - How Not to ‘Overfit’ Your AI Learning by Taking Both fast.ai and deeplearning.ai courses">Two Sides of the Same Coin: Jeremy Howard’s fast.ai vs Andrew Ng’s deeplearning.ai <small class="subtitle">How Not to ‘Overfit’ Your AI Learning by Taking Both fast.ai and deeplearning.ai courses</small></a> »</li>
             </ul>
             </nav>
             </aside>
@@ -292,40 +246,40 @@ cd fastai-vision-uvicorn-gunicorn-starlette-docker
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2019-09-21T20:00:00-05:00">Sep 21, 2019</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
+            <a class="category-link" href="https://wayofnumbers.com/categories#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.com/tags.html#ai-ref">AI
+                <li><a href="https://wayofnumbers.com/tags#ai-ref">AI
                     <span>11</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#deep-learning-ref">Deep Learning
+                <li><a href="https://wayofnumbers.com/tags#deep-learning-ref">Deep Learning
                     <span>6</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#digitalocean-ref">DigitalOcean
+                <li><a href="https://wayofnumbers.com/tags#digitalocean-ref">DigitalOcean
                     <span>1</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#docker-ref">Docker
+                <li><a href="https://wayofnumbers.com/tags#docker-ref">Docker
                     <span>1</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#fastai-ref">fast.ai
+                <li><a href="https://wayofnumbers.com/tags#fastai-ref">fast.ai
                     <span>5</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#machine-learning-ref">Machine Learning
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
                     <span>20</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#starlette-ref">Starlette
+                <li><a href="https://wayofnumbers.com/tags#starlette-ref">Starlette
                     <span>1</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
+<h4>Stay in Touch</h4>
 <div id="sidebar-social-link">
-    <a href="https://twitter.com/lymenlee" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://twitter.com/lymenlee" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
     </a>
-    <a href="https://github.com/wayofnumbers" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://github.com/wayofnumbers" title="GitHub" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
     </a>
-    <a href="www.linkedin.com/in/michael-li-dfw" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="www.linkedin.com/in/michael-li-dfw" title="LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
     </a>
 </div>
@@ -350,8 +304,6 @@ cd fastai-vision-uvicorn-gunicorn-starlette-docker
 
 
 
-
-
         </section>
 </div>
 </article>
@@ -364,7 +316,7 @@ cd fastai-vision-uvicorn-gunicorn-starlette-docker
     <div>
         Content licensed under <a rel="license nofollow noopener noreferrer"
     href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        Creative Commons Attribution 4.0 International License</a>.
+    Creative Commons Attribution 4.0 International License</a>.
     </div>
 
     <div>

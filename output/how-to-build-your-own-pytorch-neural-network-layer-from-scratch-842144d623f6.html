@@ -6,20 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael Li" />
 
-        <meta name="twitter:creator" content="@lymenlee">
+        <meta name="description" content="How to Build Your Own PyTorch Neural Network Layer from Scratch
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
 <meta name="keywords" content="Machine Learning, Artificial Intelligence, Machine Learning, " />
 
 <meta property="og:title" content="How to Build Your Own PyTorch Neural Network Layer from Scratch  - And learn a thing or two about weight initialization "/>
-<meta property="og:url" content="https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html" />
+<meta property="og:url" content="https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6" />
 <meta property="og:description" content="How to Build Your Own PyTorch Neural Network Layer from Scratch" />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
 <meta property="og:article:published_time" content="2020-01-30T11:13:56-06:00" />
 <meta name="twitter:title" content="How to Build Your Own PyTorch Neural Network Layer from Scratch  - And learn a thing or two about weight initialization ">
 <meta name="twitter:description" content="How to Build Your Own PyTorch Neural Network Layer from Scratch">
+<meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
 
         <title>How to Build Your Own PyTorch Neural Network Layer from Scratch  - And learn a thing or two about weight initialization  · Way of Numbers
 </title>
@@ -68,11 +71,11 @@
                                        https://wayofnumbers.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wayofnumbers.com/pages/about-me.html">About&nbsp;Me</a></li>
-                                <li ><a href="https://wayofnumbers.com/categories.html">Categories</a></li>
-                                <li ><a href="https://wayofnumbers.com/tags.html">Tags</a></li>
-                                <li ><a href="https://wayofnumbers.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://wayofnumbers.com/about-me">About&nbsp;Me</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html">
+            <a href="https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6">
                 How to Build Your Own PyTorch Neural Network Layer from&nbsp;Scratch
                 <small class="subtitle">
                     And learn a thing or two about weight initialization
@@ -120,7 +123,7 @@
 <p>Also, once you’re done, you’ll have more confidence in implementing and using all these libraries, knowing how things work. There will be no myth to you.</p>
 <p>And last but not least, you’ll be able to modify/tweak these modules should the situation require. And this is the difference between a noob and a pro.</p>
 <p><span class="caps">OK</span>, enough of the motivation, let’s get to it.</p>
-<h3 id="simple-mnist-one-layer-nn-as-the-backdrop">Simple <span class="caps">MNIST</span> one layer <span class="caps">NN</span> as the backdrop<a class="headerlink" href="#simple-mnist-one-layer-nn-as-the-backdrop" title="Permanent link">¶</a></h3>
+<h3 id="simple-mnist-one-layer-nn-as-the-backdrop">Simple <span class="caps">MNIST</span> one layer <span class="caps">NN</span> as the backdrop<a class="headerlink" href="#simple-mnist-one-layer-nn-as-the-backdrop" title="Permanent link"> </a></h3>
 <p>First of all, we need some ‘backdrop’ codes to test whether and how well our module performs. Let’s build a very simple one-layer neural network to solve the good-old <span class="caps">MNIST</span> dataset. The code (running in Jupyter Notebook) snippet below:</p>
 <div class="highlight"><pre><span></span><span class="c1"># We'll use fast.ai to showcase how to build your own 'nn.Linear' module</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -188,7 +191,7 @@
 </pre></div>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*p2sKZABskEsunz6WcZdf7A.png"/></p>
 <p>These codes are quite self-explanatory. We used the <a href="https://github.com/fastai">fast.ai</a> library for this project. Download the <span class="caps">MNIST</span> pickle file and unzip it, transfer it into a PyTorch tensor, then stuff it into a fast.ai DataBunch object for further training. Then we created a simple neural network with only one Linear layer. We also write our own update function instead of using the torch.optim optimizers since we could be writing our own optimizers from scratch as the next step of our PyTorch learning journey. Finally, we iterate through the dataset and plot the losses to see whether and how well it works.</p>
-<h3 id="first-iteration-just-make-it-work">First Iteration: Just make it work<a class="headerlink" href="#first-iteration-just-make-it-work" title="Permanent link">¶</a></h3>
+<h3 id="first-iteration-just-make-it-work">First Iteration: Just make it work<a class="headerlink" href="#first-iteration-just-make-it-work" title="Permanent link"> </a></h3>
 <p>All PyTorch modules/layers are extended from thetorch.nn.Module.</p>
 <div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">myLinear</span><span class="p">(</span><span class="nx">nn</span><span class="p">.</span><span class="nx">Module</span><span class="p">)</span><span class="o">:</span>
 </pre></div>
@@ -244,7 +247,7 @@ my(a)
         <span class="nx">output</span> <span class="o">=</span> <span class="nx">input</span> <span class="err">@</span> <span class="nx">self</span><span class="p">.</span><span class="nx">weight</span><span class="p">.</span><span class="nx">t</span><span class="p">()</span> <span class="o">+</span> <span class="nx">self</span><span class="p">.</span><span class="nx">bias</span>
         <span class="k">return</span> <span class="nx">output</span>
 </pre></div>
-<h3 id="second-iteration-proper-weight-initialization-and-bias-handling">Second iteration: Proper weight initialization and bias handling<a class="headerlink" href="#second-iteration-proper-weight-initialization-and-bias-handling" title="Permanent link">¶</a></h3>
+<h3 id="second-iteration-proper-weight-initialization-and-bias-handling">Second iteration: Proper weight initialization and bias handling<a class="headerlink" href="#second-iteration-proper-weight-initialization-and-bias-handling" title="Permanent link"> </a></h3>
 <p>We’ve handled <strong>init</strong> and forward, but remember we also have a bias attribute that if False, will not learn additive bias. We have not implemented that yet. Also, we used torch.nn.randn to initialize the weight and bias, which is not optimum. Let’s fix this. The updated <strong>init</strong> function looks like this:</p>
 <div class="highlight"><pre><span></span>def __init__(self, in_features, out_features, bias=True):
         super().__init__()
@@ -318,10 +321,10 @@ my(a)
 <p>Rerun the code, you should be able to see this plot:</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*6nUlBO7nIt9t2E0xrfgP-w.png"/></p>
 <p>We can see it converges much faster to a 0.5 loss in one epoch.</p>
-<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h3>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h3>
 <p>I hope this helps you clear the cloud on these PyTorchnn.modules a bit. It might seem boring and redundant, but sometimes the fastest( and shortest) way is the ‘boring’ way. Once you get to the very bottom of this, the feeling of knowing that there’s nothing ‘more’ is priceless. You’ll come to the realization that:</p>
 <blockquote>
-<h1 id="underneath-pytorch-theres-no-trick-no-myth-no-catch-just-rock-solid-python-code">Underneath PyTorch, there’s no trick, no myth, no catch, just rock-solid Python code.<a class="headerlink" href="#underneath-pytorch-theres-no-trick-no-myth-no-catch-just-rock-solid-python-code" title="Permanent link">¶</a></h1>
+<h1 id="underneath-pytorch-theres-no-trick-no-myth-no-catch-just-rock-solid-python-code">Underneath PyTorch, there’s no trick, no myth, no catch, just rock-solid Python code.<a class="headerlink" href="#underneath-pytorch-theres-no-trick-no-myth-no-catch-just-rock-solid-python-code" title="Permanent link"> </a></h1>
 </blockquote>
 <p>Also by writing your own code, then compare it with official source code, you’ll be able to see where the difference is and learn from the best in the industry. How cool is that?</p>
 
@@ -331,10 +334,11 @@ my(a)
             
                 <hr />
     <div class="author_blurb">
-        <a href="" target="_blank" rel="nofollow noopener noreferrer">
+        <a href="https://medium.com/@lymenlee" target="_blank" rel="nofollow noopener noreferrer">
+            <img src=/images/avatars/miachel.png alt="Michael Li Avatar" title="Michael Li">
             <span class="author_name">Michael Li</span>
         </a>
-        
+        is the creator and lead developer of this site.
     </div>
 
             
@@ -344,62 +348,12 @@ my(a)
 
 
 
-<section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   data-disqus-identifier="https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html"
-                   href="https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html#comment_thread"
-                   id="comment-accordion-toggle">
-                    Comments
-                </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-    var disqus_shortname = 'way-of-numbers';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    var disqus_identifier = 'https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html';
-    var disqus_url = 'https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-
-<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
             <hr/>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html" title="Previous: Another Self-Driving Car Accident, Another AI Development Lesson - What could be learned from Uber’s Self-Driving Car accident as a Data Scientist">Another Self-Driving Car Accident, Another AI Development Lesson <small class="subtitle">What could be learned from Uber’s Self-Driving Car accident as a Data Scientist</small></a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style-efb297e22582.html" title="Next: Let’s Build a Fashion-MNIST CNN, PyTorch Style - A Line-by-line guide on how to structure a PyTorch ML project from scratch using Google Colab and TensorBoard">Let’s Build a Fashion-MNIST CNN, PyTorch Style <small class="subtitle">A Line-by-line guide on how to structure a PyTorch ML project from scratch using Google Colab and TensorBoard</small></a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444" title="Previous: Another Self-Driving Car Accident, Another AI Development Lesson - What could be learned from Uber’s Self-Driving Car accident as a Data Scientist">Another Self-Driving Car Accident, Another AI Development Lesson <small class="subtitle">What could be learned from Uber’s Self-Driving Car accident as a Data Scientist</small></a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style-efb297e22582" title="Next: Let’s Build a Fashion-MNIST CNN, PyTorch Style - A Line-by-line guide on how to structure a PyTorch ML project from scratch using Google Colab and TensorBoard">Let’s Build a Fashion-MNIST CNN, PyTorch Style <small class="subtitle">A Line-by-line guide on how to structure a PyTorch ML project from scratch using Google Colab and TensorBoard</small></a> »</li>
             </ul>
             </nav>
             </aside>
@@ -408,25 +362,25 @@ my(a)
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-01-30T11:13:56-06:00">Jan 30, 2020</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
+            <a class="category-link" href="https://wayofnumbers.com/categories#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.com/tags.html#artificial-intelligence-ref">Artificial Intelligence
+                <li><a href="https://wayofnumbers.com/tags#artificial-intelligence-ref">Artificial Intelligence
                     <span>7</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#machine-learning-ref">Machine Learning
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
                     <span>20</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
+<h4>Stay in Touch</h4>
 <div id="sidebar-social-link">
-    <a href="https://twitter.com/lymenlee" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://twitter.com/lymenlee" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
     </a>
-    <a href="https://github.com/wayofnumbers" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://github.com/wayofnumbers" title="GitHub" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
     </a>
-    <a href="www.linkedin.com/in/michael-li-dfw" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="www.linkedin.com/in/michael-li-dfw" title="LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
     </a>
 </div>
@@ -451,8 +405,6 @@ my(a)
 
 
 
-
-
         </section>
 </div>
 </article>
@@ -465,7 +417,7 @@ my(a)
     <div>
         Content licensed under <a rel="license nofollow noopener noreferrer"
     href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        Creative Commons Attribution 4.0 International License</a>.
+    Creative Commons Attribution 4.0 International License</a>.
     </div>
 
     <div>

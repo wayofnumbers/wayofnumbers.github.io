@@ -6,20 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael Li" />
 
-        <meta name="twitter:creator" content="@lymenlee">
+        <meta name="description" content="Fine-tune model for Chinese Calligraphy Classifier with fast.ai library
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
 <meta name="keywords" content="Machine Learning, AI, Deep Learning, fast.ai, calligraphy, Machine Learning, " />
 
 <meta property="og:title" content="How I Trained Computer to Learn Calligraphy Styles: Part 2  - Build a Deep Learning Model with fast.ai Library "/>
-<meta property="og:url" content="https://wayofnumbers.com/chinese-calligraphy-classifier-2.html" />
+<meta property="og:url" content="https://wayofnumbers.com/chinese-calligraphy-classifier-2" />
 <meta property="og:description" content="Fine-tune model for Chinese Calligraphy Classifier with fast.ai library" />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
 <meta property="og:article:published_time" content="2019-09-16T20:00:00-05:00" />
 <meta name="twitter:title" content="How I Trained Computer to Learn Calligraphy Styles: Part 2  - Build a Deep Learning Model with fast.ai Library ">
 <meta name="twitter:description" content="Fine-tune model for Chinese Calligraphy Classifier with fast.ai library">
+<meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
 
         <title>How I Trained Computer to Learn Calligraphy Styles: Part 2  - Build a Deep Learning Model with fast.ai Library  · Way of Numbers
 </title>
@@ -68,11 +71,11 @@
                                        https://wayofnumbers.com
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wayofnumbers.com/pages/about-me.html">About&nbsp;Me</a></li>
-                                <li ><a href="https://wayofnumbers.com/categories.html">Categories</a></li>
-                                <li ><a href="https://wayofnumbers.com/tags.html">Tags</a></li>
-                                <li ><a href="https://wayofnumbers.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://wayofnumbers.com/about-me">About&nbsp;Me</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wayofnumbers.com/chinese-calligraphy-classifier-2.html">
+            <a href="https://wayofnumbers.com/chinese-calligraphy-classifier-2">
                 How I Trained Computer to Learn Calligraphy Styles: Part&nbsp;2
                 <small class="subtitle">
                     Build a Deep Learning Model with fast.ai Library
@@ -119,12 +122,12 @@
 <p><img alt="Photo by Kon Karampelas on Unsplash" src="https://cdn-images-1.medium.com/max/12000/0*gzpUfcpouuU10xO1"/><em>Photo by <a href="https://unsplash.com/@konkarampelas?utm_source=medium&amp;utm_medium=referral">Kon Karampelas</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
 <p>I wanted to start a series of posts for the projects I finished/polished for my <a href="https://course.fast.ai/">Practical Deep Learning for Coders</a> fast.ai course. Since I’m pretty green on <span class="caps">ML</span>/<span class="caps">DL</span> field, I hope the challenges I faced and overcome could be of value for other people experiencing the same journey.</p>
 <p>Model <a href="https://medium.com/@lymenlee/deep-learning-models-by-fast-ai-library-c1cccc13e2b3">1</a> ・<a href="https://medium.com/datadriveninvestor/chinese-calligraphy-classifier-fine-tuning-cbfbf0e304d8">1a</a></p>
-<h3 id="making-it-even-better">Making It Even Better<a class="headerlink" href="#making-it-even-better" title="Permanent link">¶</a></h3>
+<h3 id="making-it-even-better">Making It Even Better<a class="headerlink" href="#making-it-even-better" title="Permanent link"> </a></h3>
 <p>In my <a href="https://medium.com/datadriveninvestor/deep-learning-models-by-fast-ai-library-c1cccc13e2b3">last post</a>, I explained the approach I take for this image recognition problem using fast.ai library. As you can see, once we get the data down to a fast.ai ImageDataBunch, the code is rather simple and we achieve a 90% accuracy rate, which is quite impressive considering the quality of our data(randomly downloaded from Google/Baidu search without much data cleaning). Now, can we do better?
 <a href="https://www.datadriveninvestor.com/2019/03/03/editors-pick-5-machine-learning-books/"><strong><span class="caps">DDI</span> Editor’s Pick: 5 Machine Learning Books That Turn You from Novice to Expert | Data Driven…</strong>
 <em>The booming growth in the Machine Learning industry has brought renewed interest in people about Artificial…</em>www.datadriveninvestor.com</a></p>
 <blockquote>
-<h1 id="turns-out-we-can">Turns out, we can!<a class="headerlink" href="#turns-out-we-can" title="Permanent link">¶</a></h1>
+<h1 id="turns-out-we-can">Turns out, we can!<a class="headerlink" href="#turns-out-we-can" title="Permanent link"> </a></h1>
 </blockquote>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*sz46EDt2HU_N2YecCXJ9ng.jpeg"/></p>
 <p>How? Well, there are two things in our prior pipeline that could improve:</p>
@@ -137,7 +140,7 @@
 </li>
 </ol>
 <p>Let’s dive deeper.</p>
-<h3 id="image-pre-processing-tweak">Image Pre-Processing Tweak<a class="headerlink" href="#image-pre-processing-tweak" title="Permanent link">¶</a></h3>
+<h3 id="image-pre-processing-tweak">Image Pre-Processing Tweak<a class="headerlink" href="#image-pre-processing-tweak" title="Permanent link"> </a></h3>
 <p>Remember when we import our data into fast.ai ImageDataBunch, we used the following code:</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/0*Prt5fbhL-qj1OoQE.png"/></p>
 <p>Notice that on our image pre-processing, i.e. get_transforms function, we didn’t give it any parameter and just used the default. The default will try to apply a variety of image augmentation techniques to make the image data-set generalize better, like flipping, warping, rotating, cropping, etc. This is good, fast.ai library helped us do the ‘best practice’ for the majority of the cases. But in our case here, some default might not work that well.</p>
@@ -145,7 +148,7 @@
 <p>To fix this, we tweaked our code as below:</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*9Gv0vDlF12MPKznehyU1LA.png"/></p>
 <p>Notice we pass do_flip=False into the get_transforms function, thus telling the module to not randomly flipping our images during importing.</p>
-<h3 id="model-training-fine-tune">Model Training Fine Tune<a class="headerlink" href="#model-training-fine-tune" title="Permanent link">¶</a></h3>
+<h3 id="model-training-fine-tune">Model Training Fine Tune<a class="headerlink" href="#model-training-fine-tune" title="Permanent link"> </a></h3>
 <p>Now that the image pre-processing is done. We can re-structure out model training to avoid overfitting and achieve better accuracy. This approach is introduced in the fast.ai <a href="https://course.fast.ai/">Practical Deep Learning for Coders</a> course <a href="https://course.fast.ai/videos/?lesson=3">lesson 3</a>.</p>
 <blockquote>
 <p>Instead of training the model directly from a 256x256 image size, we’ll gradually scaling up the image size. More concretely, we will first train a <span class="caps">CNN</span> to classify the images of 128x128 size, once we achieved best accuracy, we’ll then use transfer learning and keep training the model on the same data-set, except with 256x256 image size. We’ll call the 128x128 image size training ‘stage 1’ and 256x256 image size training ‘stage 2’</p>
@@ -158,7 +161,7 @@
 <p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*CAwRb2bFZFpgTe8u5UA9JQ.png"/></p>
 <p>After unfreeze, we trained the model with another 4 epochs, the accuracy broke into <strong>96.5%</strong>. Observed that valudation_losshas already surpassed training_loss, suggesting a sign of overfitting. We’ll stop our training here.</p>
 <p>This simple technique is also called ‘<strong>Progressive resizing</strong>’ by <a href="undefined">Jeremy Howard</a> from <a href="https://www.fast.ai/2018/08/10/fastai-diu-imagenet/">fast.ai</a> and helped his team <a href="https://www.theverge.com/2018/5/7/17316010/fast-ai-speed-test-stanford-dawnbench-google-intel">beat Google in a competition of speed training <span class="caps">IMAGENET</span> in *DAWNBench</a> by training the <span class="caps">IMAGGNET</span> in a whopping<strong>18</strong> minutes and <strong>\$40</strong> Amazon <span class="caps">AWS</span> cost.*</p>
-<h3 id="to-wrap-it-up">To Wrap It Up<a class="headerlink" href="#to-wrap-it-up" title="Permanent link">¶</a></h3>
+<h3 id="to-wrap-it-up">To Wrap It Up<a class="headerlink" href="#to-wrap-it-up" title="Permanent link"> </a></h3>
 <p><img alt="Photo by Franki Chamaki on Unsplash" src="https://cdn-images-1.medium.com/max/8064/0*ccqj05oUPQjsG_Jk"/><em>Photo by <a href="https://unsplash.com/@franki?utm_source=medium&amp;utm_medium=referral">Franki Chamaki</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
 <p>With two simple tweaks, we managed to increase the accuracy around 6.5%, breaking into the state-of-the-art range of results. Major takeaways:</p>
 <ol>
@@ -183,10 +186,11 @@
             
                 <hr />
     <div class="author_blurb">
-        <a href="" target="_blank" rel="nofollow noopener noreferrer">
+        <a href="https://medium.com/@lymenlee" target="_blank" rel="nofollow noopener noreferrer">
+            <img src=/images/avatars/miachel.png alt="Michael Li Avatar" title="Michael Li">
             <span class="author_name">Michael Li</span>
         </a>
-        
+        is the creator and lead developer of this site.
     </div>
 
             
@@ -196,62 +200,12 @@
 
 
 
-<section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   data-disqus-identifier="https://wayofnumbers.com/chinese-calligraphy-classifier-2.html"
-                   href="https://wayofnumbers.com/chinese-calligraphy-classifier-2.html#comment_thread"
-                   id="comment-accordion-toggle">
-                    Comments
-                </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-    var disqus_shortname = 'way-of-numbers';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    var disqus_identifier = 'https://wayofnumbers.com/chinese-calligraphy-classifier-2.html';
-    var disqus_url = 'https://wayofnumbers.com/chinese-calligraphy-classifier-2.html';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-
-<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
             <hr/>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.com/chinese-calligraphy-classifier-1.html" title="Previous: How I Trained Computer to Learn Calligraphy Styles: Part 1 - Build a Deep Learning Model with fast.ai Library">How I Trained Computer to Learn Calligraphy Styles: Part 1 <small class="subtitle">Build a Deep Learning Model with fast.ai Library</small></a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/openai-catch-me-if-you-can.html" title="Next: OpenAI: Catch Me If You Can - What OpenAI’s Multi-Agent Hide and Seek Break Through Means">OpenAI: Catch Me If You Can <small class="subtitle">What OpenAI’s Multi-Agent Hide and Seek Break Through Means</small></a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/chinese-calligraphy-classifier-1" title="Previous: How I Trained Computer to Learn Calligraphy Styles: Part 1 - Build a Deep Learning Model with fast.ai Library">How I Trained Computer to Learn Calligraphy Styles: Part 1 <small class="subtitle">Build a Deep Learning Model with fast.ai Library</small></a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/openai-catch-me-if-you-can" title="Next: OpenAI: Catch Me If You Can - What OpenAI’s Multi-Agent Hide and Seek Break Through Means">OpenAI: Catch Me If You Can <small class="subtitle">What OpenAI’s Multi-Agent Hide and Seek Break Through Means</small></a> »</li>
             </ul>
             </nav>
             </aside>
@@ -260,34 +214,34 @@
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2019-09-16T20:00:00-05:00">Sep 16, 2019</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
+            <a class="category-link" href="https://wayofnumbers.com/categories#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.com/tags.html#ai-ref">AI
+                <li><a href="https://wayofnumbers.com/tags#ai-ref">AI
                     <span>11</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#calligraphy-ref">calligraphy
+                <li><a href="https://wayofnumbers.com/tags#calligraphy-ref">calligraphy
                     <span>2</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#deep-learning-ref">Deep Learning
+                <li><a href="https://wayofnumbers.com/tags#deep-learning-ref">Deep Learning
                     <span>6</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#fastai-ref">fast.ai
+                <li><a href="https://wayofnumbers.com/tags#fastai-ref">fast.ai
                     <span>5</span>
 </a></li>
-                <li><a href="https://wayofnumbers.com/tags.html#machine-learning-ref">Machine Learning
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
                     <span>20</span>
 </a></li>
             </ul>
-<h4>Contact</h4>
+<h4>Stay in Touch</h4>
 <div id="sidebar-social-link">
-    <a href="https://twitter.com/lymenlee" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://twitter.com/lymenlee" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
     </a>
-    <a href="https://github.com/wayofnumbers" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="https://github.com/wayofnumbers" title="GitHub" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
     </a>
-    <a href="www.linkedin.com/in/michael-li-dfw" title="" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="www.linkedin.com/in/michael-li-dfw" title="LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
     </a>
 </div>
@@ -312,8 +266,6 @@
 
 
 
-
-
         </section>
 </div>
 </article>
@@ -326,7 +278,7 @@
     <div>
         Content licensed under <a rel="license nofollow noopener noreferrer"
     href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        Creative Commons Attribution 4.0 International License</a>.
+    Creative Commons Attribution 4.0 International License</a>.
     </div>
 
     <div>

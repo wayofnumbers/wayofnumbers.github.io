@@ -5,233 +5,233 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://wayofnumbers.com/</loc>
-<lastmod>2020-01-30T14:40:29-00:00</lastmod>
-<changefreq>hourly</changefreq>
+<lastmod>2020-01-30T15:17:07-00:00</lastmod>
+<changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/archives.html</loc>
-<lastmod>2020-01-30T14:40:29-00:00</lastmod>
-<changefreq>hourly</changefreq>
+<lastmod>2020-01-30T15:17:07-00:00</lastmod>
+<changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/tags.html</loc>
-<lastmod>2020-01-30T14:40:29-00:00</lastmod>
-<changefreq>hourly</changefreq>
+<lastmod>2020-01-30T15:17:07-00:00</lastmod>
+<changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://wayofnumbers.com/categories.html</loc>
-<lastmod>2020-01-30T14:40:29-00:00</lastmod>
-<changefreq>hourly</changefreq>
+<lastmod>2020-01-30T15:17:07-00:00</lastmod>
+<changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/pages/about-me.html</loc>
+<loc>https://wayofnumbers.com/about-me</loc>
 <lastmod>2018-02-15T17:00:00-06:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style-efb297e22582.html</loc>
+<loc>https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style-efb297e22582</loc>
 <lastmod>2020-01-30T11:13:57-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html</loc>
+<loc>https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6</loc>
 <lastmod>2020-01-30T11:13:56-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html</loc>
+<loc>https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444</loc>
 <lastmod>2020-01-30T11:13:54-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html</loc>
+<loc>https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c</loc>
 <lastmod>2020-01-30T11:13:53-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/no-human-can-beat-alphago-so-what-3401b40fa0f0.html</loc>
+<loc>https://wayofnumbers.com/no-human-can-beat-alphago-so-what-3401b40fa0f0</loc>
 <lastmod>2020-01-30T11:13:52-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78.html</loc>
+<loc>https://wayofnumbers.com/5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78</loc>
 <lastmod>2020-01-30T11:13:51-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/neon-life-your-real-virtual-assistant-for-real-this-time-6de4a52e66c4.html</loc>
+<loc>https://wayofnumbers.com/neon-life-your-real-virtual-assistant-for-real-this-time-6de4a52e66c4</loc>
 <lastmod>2020-01-30T11:13:50-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote.html</loc>
+<loc>https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote</loc>
 <lastmod>2019-10-25T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/hidden-gem-a-great-pytorch-youtube-tutorial-series-by-deeplizard.html</loc>
+<loc>https://wayofnumbers.com/hidden-gem-a-great-pytorch-youtube-tutorial-series-by-deeplizard</loc>
 <lastmod>2019-10-17T10:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/this-is-cs50-a-pleasant-way-to-kick-off-your-data-science-education.html</loc>
+<loc>https://wayofnumbers.com/this-is-cs50-a-pleasant-way-to-kick-off-your-data-science-education</loc>
 <lastmod>2019-10-13T10:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/attack-toxic-comments-kaggle-competition-using-fast-ai.html</loc>
+<loc>https://wayofnumbers.com/attack-toxic-comments-kaggle-competition-using-fast-ai</loc>
 <lastmod>2019-10-08T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/9-things-i-learned-from-blogging-on-medium-for-the-first-month.html</loc>
+<loc>https://wayofnumbers.com/9-things-i-learned-from-blogging-on-medium-for-the-first-month</loc>
 <lastmod>2019-10-04T10:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/On-the-Internet-Nobody-Knows-You-Are-a-Dog-or-AI.html</loc>
+<loc>https://wayofnumbers.com/On-the-Internet-Nobody-Knows-You-Are-a-Dog-or-AI</loc>
 <lastmod>2019-10-01T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/when-growth-hack-meets-growing-pain.html</loc>
+<loc>https://wayofnumbers.com/when-growth-hack-meets-growing-pain</loc>
 <lastmod>2019-09-27T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/how-I-migrated-my-blog-from-github-pages-to-netlify.html</loc>
+<loc>https://wayofnumbers.com/how-I-migrated-my-blog-from-github-pages-to-netlify</loc>
 <lastmod>2019-09-26T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/how-long-until-boston-dynamics-robot-can-be-a-kungfu-master.html</loc>
+<loc>https://wayofnumbers.com/how-long-until-boston-dynamics-robot-can-be-a-kungfu-master</loc>
 <lastmod>2019-09-24T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/two-sides-of-the-same-coin.html</loc>
+<loc>https://wayofnumbers.com/two-sides-of-the-same-coin</loc>
 <lastmod>2019-09-24T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO.html</loc>
+<loc>https://wayofnumbers.com/how-to-deploy-ML-web-app-to-DO</loc>
 <lastmod>2019-09-21T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/openai-catch-me-if-you-can.html</loc>
+<loc>https://wayofnumbers.com/openai-catch-me-if-you-can</loc>
 <lastmod>2019-09-19T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/chinese-calligraphy-classifier-2.html</loc>
+<loc>https://wayofnumbers.com/chinese-calligraphy-classifier-2</loc>
 <lastmod>2019-09-16T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/chinese-calligraphy-classifier-1.html</loc>
+<loc>https://wayofnumbers.com/chinese-calligraphy-classifier-1</loc>
 <lastmod>2019-09-15T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/andrewng-ml-course-review.html</loc>
+<loc>https://wayofnumbers.com/andrewng-ml-course-review</loc>
 <lastmod>2019-09-06T20:00:00-05:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/Typtes-of-optimization-algorithms.html</loc>
+<loc>https://wayofnumbers.com/Typtes-of-optimization-algorithms</loc>
 <lastmod>2018-02-26T17:00:00-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/Tweak-Pelican-Elegant-Theme.html</loc>
+<loc>https://wayofnumbers.com/Tweak-Pelican-Elegant-Theme</loc>
 <lastmod>2018-02-24T20:00:00-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/The-AI-Shortage.html</loc>
+<loc>https://wayofnumbers.com/The-AI-Shortage</loc>
 <lastmod>2018-02-23T17:00:00-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/MLN-Text-data-analysis.html</loc>
+<loc>https://wayofnumbers.com/MLN-Text-data-analysis</loc>
 <lastmod>2018-02-19T17:00:00-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/Setup-Pelican-1.html</loc>
+<loc>https://wayofnumbers.com/Setup-Pelican-1</loc>
 <lastmod>2018-02-14T20:00:00-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://wayofnumbers.com/MLN-Numpyandpandas.html</loc>
+<loc>https://wayofnumbers.com/MLN-Numpyandpandas</loc>
 <lastmod>2018-02-14T17:00:00-06:00</lastmod>
-<changefreq>always</changefreq>
-<priority>1</priority>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>
 
 </urlset>
