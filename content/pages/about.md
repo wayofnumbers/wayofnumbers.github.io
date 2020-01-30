@@ -5,8 +5,4 @@ date: 2018-02-15 17:00
 author: Michael Li
 status: hidden
 
-
-Data science blog for the rest of us.
-
-### Michael Li
-Designer, Developer.
+This is the homepage and blog of Michael Li. For more about me, see here.
