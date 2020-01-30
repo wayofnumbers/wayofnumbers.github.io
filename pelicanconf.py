@@ -32,7 +32,6 @@ PLUGINS = ['ipynb.markup',
 	    'neighbors', 
             'tipue_search', 
             'readtime',
-            'disqus_static',
         ]
 SITEMAP = {
     "format": "xml",
@@ -134,7 +133,7 @@ AUTHORS = {
     "Michael Li": {
         "url": "https://medium.com/@lymenlee",
         "blurb": "is the creator and lead developer of this site.",
-        "avatar": "/images/avatars/michael.png",
+        "avatar": "/images/michael.png",
     },
     
 }
