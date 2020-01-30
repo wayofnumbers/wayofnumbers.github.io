@@ -45,6 +45,10 @@
     </header>
 </div>
 
+    {% if article.readtime %}
+    <span><p style="text-align:right; color:#aaaaaa; ">&nbsp Estimated read time: {{article.readtime.minutes}} min.</p></span>
+    {% endif %}
+
 <div class="row-fluid">
     {% if article.toc %}
     <div class="span2 table-of-content">
@@ -145,6 +149,39 @@
 </div>
 </article>
 {% endblock content %}
+
+{% if article.disqus_comments %}
+<div id="disqus_static_comments">
+    <h4>{{ article.disqus_comment_count }} comments</h4>
+    <ul class="post-list">
+        {% for comment in article.disqus_comments recursive %}
+        <li class="post">
+            <div class="post-content">
+                <div class="avatar hovercard">
+                    <img alt="Avatar" src="{{ comment.author.avatar.small.cache }}">
+                </div>
+                <div class="post-body">
+                    <header>
+                        <span class="publisher-anchor-color">{{ comment.author.name }}</span>
+                        <span class="time-ago" title="{{ comment.createdAt }}">{{ comment.createdAt }}</span>
+                    </header>
+                    <div class="post-message-container">
+                        <div class="post-message publisher-anchor-color ">
+                            {{ comment.message }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if comment.children %}
+            <ul class="children">
+                {{ loop(comment.children) }}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
 
 {% block script %}
     {{ super() }}
