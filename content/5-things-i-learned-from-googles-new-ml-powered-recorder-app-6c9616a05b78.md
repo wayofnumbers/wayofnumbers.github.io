@@ -1,4 +1,5 @@
 Title: 5 Things I Learned from Google’s New ML-Powered Recorder App
+Subtitle: And what future ML-enabled apps should look like
 Slug: 5-things-i-learned-from-googles-new-ml-powered-recorder-app-6c9616a05b78
 Date: Thu Jan 30 11:13:51 CST 2020
 Category: Machine Learning
@@ -7,7 +8,6 @@ author: Michael Li
 Summary: 5 Things I Learned from Google’s New ML-Powered Recorder App
 [TOC]
 
-And what future ML-enabled apps should look like
 
 ![](https://cdn-images-1.medium.com/max/2560/0*JE6uwXDJJhVYci-9.jpg)
 
