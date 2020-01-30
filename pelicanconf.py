@@ -6,6 +6,9 @@ IGNORE_FILES = ['.ipynb_checkpoints']
 # AUTHOR = 'Michael Li'
 SITENAME = 'Way of Numbers'
 SITEURL = 'https://wayofnumbers.com'
+SITE_LICENSE = """Content licensed under <a rel="license nofollow noopener noreferrer"
+    href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
+        Creative Commons Attribution 4.0 International License</a>."""
 
 PATH = 'content'
 
@@ -91,6 +94,10 @@ AUTHOR_SAVE_AS = ''
 USE_SHORTCUT_ICONS = True
 # LANDING_PAGE_ABOUT = {'title': "Data science for the rest of us.",
 #                      'details': "We are a small team of researchers, designers, developers that likes to explore. Data science don't have to be boring, and we are here to help."}
+HOSTED_ON = {
+            "name": "Netlify",
+                "url": "https://www.netlify.com/"
+                    }
 SITESUBTITLE = "Data science for the rest of us."
 LANDING_PAGE_TITLE = "Data Science for the Rest of Us."
 
