@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Michael Li" />
+
+        <meta name="twitter:creator" content="@lymenlee">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Machine Learning, AI, CNN, PyTorch, Deep Learning, Google Colab, Tensor Board, Machine Learning, " />
+
+<meta property="og:title" content="Build a Fashion-MNIST CNN, PyTorch Style "/>
+<meta property="og:url" content="https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style.html" />
+<meta property="og:description" content="A detailed instruction on how to build a Fashion MNIST convolution neural networks with PyTorch, Google Colab and Tensor Board." />
+<meta property="og:site_name" content="Way of Numbers" />
+<meta property="og:article:author" content="Michael Li" />
+<meta property="og:article:published_time" content="2019-10-23T20:00:00-05:00" />
+<meta name="twitter:title" content="Build a Fashion-MNIST CNN, PyTorch Style ">
+<meta name="twitter:description" content="A detailed instruction on how to build a Fashion MNIST convolution neural networks with PyTorch, Google Colab and Tensor Board.">
+
+        <title>Build a Fashion-MNIST CNN, PyTorch Style  · Way of Numbers
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/custom.css" media="screen">
+
+        <link rel="shortcut icon" href="https://wayofnumbers.com/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://wayofnumbers.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://wayofnumbers.com/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://wayofnumbers.com/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://wayofnumbers.com/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://wayofnumbers.com/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://wayofnumbers.com/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://wayofnumbers.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://wayofnumbers.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://wayofnumbers.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link href="https://wayofnumbers.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-148798026-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://wayofnumbers.com/"><span class=site-name>Way of Numbers</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://wayofnumbers.com
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://wayofnumbers.com/pages/about.html">About</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style.html"> Build a Fashion-<span class="caps">MNIST</span> <span class="caps">CNN</span>, PyTorch&nbsp;Style  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#in-2019-the-war-for-ml-frameworks-has-two-remaining-main-contenders-pytorch-and-tensorflow-my-analysis-suggests-that-researchers-are-abandoning-tensorflow-and-flocking-to-pytorch-in-droves-meanwhile-in-industry-tensorflow-is-currently-the-platform-of-choice-but-that-may-not-be-true-for-long-the-gradient">In 2019, the war for <span class="caps">ML</span> frameworks has two remaining main contenders: PyTorch and TensorFlow. My analysis suggests that researchers are abandoning TensorFlow and flocking to PyTorch in droves. Meanwhile in industry, Tensorflow is currently the platform of choice, but that may not be true for long. — The Gradient</a><ul>
+<li><a href="#import">Import</a><ul>
+<li><a href="#torch">torch</a></li>
+<li><a href="#torchnn-and-torchnnfunctional">torch.nn and torch.nn.functional</a></li>
+<li><a href="#torchoptim">torch.optim</a></li>
+<li><a href="#torchvision">torchvision</a></li>
+<li><a href="#summarywriter-tensor-board">SummaryWriter (Tensor Board)</a></li>
+</ul>
+</li>
+<li><a href="#dataset">Dataset</a></li>
+<li><a href="#network">Network</a></li>
+<li><a href="#hyperparameters">Hyperparameters</a><ul>
+<li><a href="#runbuilder">RunBuilder</a></li>
+<li><a href="#runmanager">RunManager</a></li>
+</ul>
+</li>
+<li><a href="#training">Training</a></li>
+<li><a href="#tensor-board">Tensor Board</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<p>A Line-by-line guide on how to structure a PyTorch <span class="caps">ML</span> project from scratch using Google Colab and TensorBoard</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/4000/1*cz0q6YuI0H8dSd5N9Km5_A.png"/></p>
+<p>When it comes to frameworks in technology, one interesting thing is that from the very beginning, there always seems to be a variety of choices. But over time, the competitions will evolve into having only two strong contenders left. Cases in point being ‘<span class="caps">PC</span> vs Mac’, ‘iOS vs Android’, ‘React.js vs Vue.js’, etc. And now, we have ‘PyTorch vs TensorFlow’ in machine learning.</p>
+<p><a href="https://github.com/tensorflow/tensorflow">TensorFlow</a>, backed by Google, is undoubtedly the front-runner here. Released in 2015 as an open-source machine learning framework, it quickly gained a lot of attention and acceptance, especially in industries where production readiness and deployment is key. <a href="https://github.com/pytorch/pytorch">PyTorch </a>is introduced much later by Facebook in 2017 but quickly gaining a lot of love from practitioners and researchers because of its dynamic computational graph and ‘<a href="https://legacy.python.org/dev/peps/pep-0020/">pythonic</a>’ style.</p>
+<p><img alt="Image from The Gradient" src="https://cdn-images-1.medium.com/max/2360/1*FfvNjEbtpC33GS_sqcW1Kg.png"/><em>Image from <a href="https://thegradient.pub/state-of-ml-frameworks-2019-pytorch-dominates-research-tensorflow-dominates-industry/">The Gradient</a></em></p>
+<p>Recent research by <a href="https://thegradient.pub/state-of-ml-frameworks-2019-pytorch-dominates-research-tensorflow-dominates-industry/">The Gradient </a>shows that PyTorch is doing great with researchers and TensorFlow is dominating the industry world:</p>
+<blockquote>
+<h1 id="in-2019-the-war-for-ml-frameworks-has-two-remaining-main-contenders-pytorch-and-tensorflow-my-analysis-suggests-that-researchers-are-abandoning-tensorflow-and-flocking-to-pytorch-in-droves-meanwhile-in-industry-tensorflow-is-currently-the-platform-of-choice-but-that-may-not-be-true-for-long-the-gradient">In 2019, the war for <span class="caps">ML</span> frameworks has two remaining main contenders: PyTorch and TensorFlow. My analysis suggests that researchers are abandoning TensorFlow and flocking to PyTorch in droves. Meanwhile in industry, Tensorflow is currently the platform of choice, but that may not be true for long. — <a href="https://thegradient.pub/state-of-ml-frameworks-2019-pytorch-dominates-research-tensorflow-dominates-industry/">The Gradient</a><a class="headerlink" href="#in-2019-the-war-for-ml-frameworks-has-two-remaining-main-contenders-pytorch-and-tensorflow-my-analysis-suggests-that-researchers-are-abandoning-tensorflow-and-flocking-to-pytorch-in-droves-meanwhile-in-industry-tensorflow-is-currently-the-platform-of-choice-but-that-may-not-be-true-for-long-the-gradient" title="Permanent link">¶</a></h1>
+</blockquote>
+<p>The recent release of <a href="https://pytorch.org/blog/pytorch-1-dot-3-adds-mobile-privacy-quantization-and-named-tensors/">PyTorch 1.3</a> introduced PyTorch Mobile, quantization and other goodies that are all in the right direction to close the gap. If you are somewhat familiar with neural network basics but want to try PyTorch as a different style, then please read on. I’ll try to explain how to build a Convolutional Neural Network classifier from scratch for the Fashion-<span class="caps">MNIST</span> dataset using PyTorch. The code here can be used on Google Colab and Tensor Board if you don’t have a powerful local environment. Without further ado, let’s get started. You can find the Google Colab Notebook and GitHub link below:</p>
+<p><a href="https://colab.research.google.com/drive/1YWzAjpAnLI23irBQtLvDTYT1A94uCloM">📙 **Google Colab Notebook</a>**</p>
+<p>👽 <a href="https://github.com/wayofnumbers/SideProjects/blob/master/PyTorch_Tutorial_Basic_v1.ipynb">**GitHub</a>**</p>
+<h2 id="import">Import<a class="headerlink" href="#import" title="Permanent link">¶</a></h2>
+<p>First, let’s import the necessary modules.</p>
+<iframe frameborder="0" src="https://medium.com/media/40df38a26b60b84b45c661ee9feffce8"></iframe>
+<p>PyTorch modules are quite straight forward.</p>
+<h3 id="torch">torch<a class="headerlink" href="#torch" title="Permanent link">¶</a></h3>
+<p>torch is the main module that holds all the things you need for <strong>Tensor </strong>computation. You can build a fully functional neural network using Tensor computation alone, but this is not what this article is about. We’ll make use of the more powerful and convenient torch.nn, torch.optim and torchvision classes to quickly build our <span class="caps">CNN</span>. For those of you interested in knowing how to do this from ‘<em>scratch scratch</em>’, visit this <a href="https://pytorch.org/tutorials/beginner/nn_tutorial.html">fantastic PyTorch official tutoria</a>l by <a href="undefined">Jeremy Howard</a>.</p>
+<h3 id="torchnn-and-torchnnfunctional">torch.nn and torch.nn.functional<a class="headerlink" href="#torchnn-and-torchnnfunctional" title="Permanent link">¶</a></h3>
+<p><img alt="Photo by Alphacolor on Unsplash" src="https://cdn-images-1.medium.com/max/9470/0*zmhp4AMV_HCUa5rH"/><em>Photo by <a href="https://unsplash.com/@duck58cth?utm_source=medium&amp;utm_medium=referral">Alphacolor</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
+<p>The torch.nnmodule provides many classes and functions to build neural networks. You can think of it as the fundamental building blocks of neural networks: models, all kinds of layers, activation functions, parameter classes, etc. It allows us to build the model like putting some <span class="caps">LEGO</span> set together.</p>
+<h3 id="torchoptim">torch.optim<a class="headerlink" href="#torchoptim" title="Permanent link">¶</a></h3>
+<p>torch.optim offers all the optimizers like <span class="caps">SGD</span>, <span class="caps">ADAM</span>, etc., so you don’t have to write it from scratch.</p>
+<h3 id="torchvision">torchvision<a class="headerlink" href="#torchvision" title="Permanent link">¶</a></h3>
+<p>torchvision contains a lot of popular datasets, model architectures, and common image transformations for computer vision. We get our Fashion <span class="caps">MNIST</span> dataset from it and also use its transforms.</p>
+<h3 id="summarywriter-tensor-board">SummaryWriter (Tensor Board)<a class="headerlink" href="#summarywriter-tensor-board" title="Permanent link">¶</a></h3>
+<p>SummaryWriter enables PyTorch to generate the report for Tensor Board. We’ll use Tensor Board to look at our training data, compare results and gain intuition. Tensor Board used to be TensorFlow’s biggest advantage over PyTorch, but it is now officially supported by PyTorch from v1.2.</p>
+<p>We also imported some other utility modules like time, json, pandas, etc.</p>
+<h2 id="dataset">Dataset<a class="headerlink" href="#dataset" title="Permanent link">¶</a></h2>
+<p>torchvision already has the Fashion <span class="caps">MNIST</span> dataset. If you’re not familiar with Fashion <span class="caps">MNIST</span> dataset:</p>
+<blockquote>
+<p>Fashion-<span class="caps">MNIST</span> is a dataset of <a href="https://jobs.zalando.com/tech/">Zalando</a>‘s article images—consisting of a training set of 60,000 examples and a test set of 10,000 examples. Each example is a 28x28 grayscale image, associated with a label from 10 classes. We intend Fashion-<span class="caps">MNIST</span> to serve as a direct drop-in replacement for the original <a href="http://yann.lecun.com/exdb/mnist/"><span class="caps">MNIST</span> dataset</a> for benchmarking machine learning algorithms. It shares the same image size and structure of training and testing splits. — <a href="https://github.com/zalandoresearch/fashion-mnist">From Github</a></p>
+</blockquote>
+<p><img alt="Fashion MNIST Dataset — From GitHub" src="https://cdn-images-1.medium.com/max/3600/1*RCXpLibVCgoRYckEd2kU8Q.png"/><em>Fashion <span class="caps">MNIST</span> Dataset — <a href="https://github.com/zalandoresearch/fashion-mnist">From GitHub</a></em></p>
+<iframe frameborder="0" src="https://medium.com/media/b8062445a754494a0b22665a76d2b9d4"></iframe>
+<p>This doesn’t need much explanation. We specified the root directory to store the dataset, snatch the training data, allow it to be downloaded if not present at the local machine, and then apply the transforms.ToTensor to turn images into <strong>Tensor </strong>so we can directly use it with our network. The dataset is stored in the dataset class named train_set.</p>
+<h2 id="network">Network<a class="headerlink" href="#network" title="Permanent link">¶</a></h2>
+<p>Building the actual neural network in PyTorch is fun and easy. I assume you have some basic concept of how a Convolutional Neural Network works. If you don’t, you can refer to this video from deeplizard:</p>
+<p><center><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/videoseries" width="560"></iframe></center></p>
+<p>The Fashion <span class="caps">MNIST</span> is only 28x28 px in size, so we actually don’t need a very complicated network. We can just build a simple <span class="caps">CNN</span> like this:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2098/1*PceBlGfN_G7xyIkAfI7BuA.png"/></p>
+<p>We have two convolution layers, each with 5x5 kernels. After each convolution layer, we have a max-pooling layer with a stride of 2. This allows us to extract the necessary features from the images. Then we flatten the tensors and put them into a dense layer, pass through a Multi-Layer Perceptron (<span class="caps">MLP</span>) to carry out the task of classification of our 10 categories.</p>
+<p>Now that we are clear about the structure of the network, let’s see how we can use PyTorch to build it:</p>
+<iframe frameborder="0" src="https://medium.com/media/fa1078f63ce3b28fa519d78cfe67541c"></iframe>
+<p>First of all, all network classes in PyTorch expand on the base class: nn.Module. It packs all the basics: <strong>weights, biases, forward method</strong> and also some utility attributes and methods like .parameters() and .zero_grad()which we will be using too.</p>
+<p>The structure of our network is defined in the <strong>init</strong> dunder function.</p>
+<div class="highlight"><pre><span></span>def __init__(self): 
+  super().__init__()
+
+  # define layers 
+  self.conv1 = nn.Conv2d(in_channels=1, out_channels=6, kernel_size=5)
+  self.conv2 = nn.Conv2d(in_channels=6, out_channels=12, kernel_size=5)
+  self.fc1 = nn.Linear(in_features=12*4*4, out_features=120)
+  self.fc2 = nn.Linear(in_features=120, out_features=60)
+  self.out = nn.Linear(in_features=60, out_features=10)
+</pre></div>
+<p>nn.Conv2d and nn.Linear are two standard PyTorch layers defined within the torch.nn module. These are quite self-explanatory. One thing to note is that we only defined the actual layers here. The activation and max-pooling <strong>operations</strong> are included in the forward function that is explained below.</p>
+<div class="highlight"><pre><span></span># define forward function  
+def forward(self, t):  
+  # conv 1  
+  t = self.conv1(t)  
+  t = F.relu(t)  
+  t = F.max_pool2d(t, kernel_size=2, stride=2)
+
+  # conv 2  
+  t = self.conv2(t)   
+  t = F.relu(t)  
+  t = F.max_pool2d(t, kernel_size=2, stride=2)
+
+  # fc1   
+  t = t.reshape(-1, 12*4*4)  
+  t = self.fc1(t)  
+  t = F.relu(t)
+
+  # fc2  
+  t = self.fc2(t)  
+  t = F.relu(t)
+
+  # output  
+  t = self.out(t)
+
+  # don't need softmax here since we'll use cross-entropy as activation.   
+  return t
+</pre></div>
+<p>Once the layer is defined, we can then use the layer itself to compute the forward results of each layer, coupled with the activation function(ReLu) and Max Pooling operations, we can easily write the forward function of our network as above. Notice that on fc1(Fully Connect layer 1), we used PyTorch’s tensor operation t.reshape to flatten the tensor so it can be passed to the dense layer afterward. Also, we didn’t add the softmax activation function at the output layer since PyTorch’s <strong>CrossEntropy</strong> function will take care of that for us.</p>
+<h2 id="hyperparameters">Hyperparameters<a class="headerlink" href="#hyperparameters" title="Permanent link">¶</a></h2>
+<p>Normally, we can just handpick one set of hyperparameters and do some experiments with them. In this example, we want to do a bit more by introducing some structuring. We’ll build a system to generate different hyperparameter combinations and use them to carry out training ‘runs’. Each ‘run’ uses one set of hyperparameter combinations. Export the training data/results of each run to Tensor Board so we can directly compare and see which hyperparameters set performs the best.</p>
+<p>We store all our hyperparameters in an <a href="https://www.geeksforgeeks.org/ordereddict-in-python/">**OrderedDict</a>**:</p>
+<iframe frameborder="0" src="https://medium.com/media/ea6dce47e8a4e79a9ea51d68203d5fca"></iframe>
+<p>lr: Learning Rate. We want to try 0.01 and 0.001 for our models.</p>
+<p>batch_size: Batch Size to speed up the training process. We’ll use 100 and 1000.</p>
+<p>shuffle: Shuffle toggle, whether we shuffle the batch before training.</p>
+<p>Once the parameters are down. We use two helper classes: RunBuilder and RunManager to manage our hyperparameters and training process.</p>
+<h3 id="runbuilder">RunBuilder<a class="headerlink" href="#runbuilder" title="Permanent link">¶</a></h3>
+<p>The main purpose of the class RunBuilder is to offer a static method get_runs. It takes the OrderedDict (with all hyperparameters stored in it) as a parameter and generates a named tuple Run, each element of runrepresent one possible combination of the hyperparameters. This named tuple is later consumed by the training loop. The code is easy to understand.</p>
+<iframe frameborder="0" src="https://medium.com/media/9b995dc1d1a8392407a9af7a045d32b9"></iframe>
+<h3 id="runmanager">RunManager<a class="headerlink" href="#runmanager" title="Permanent link">¶</a></h3>
+<p>There are four main purposes of the RunManager class.</p>
+<ol>
+<li>
+<p>Calculate and record the duration of each epoch and run.</p>
+</li>
+<li>
+<p>Calculate the training loss and accuracy of each epoch and run.</p>
+</li>
+<li>
+<p>Record the training data (e.g. loss, accuracy, weights, gradients, computational graph, etc.) for each epoch and run, then export them into Tensor Board for further analysis.</p>
+</li>
+<li>
+<p>Save all training results in csv and json for future reference or <span class="caps">API</span> extraction.</p>
+</li>
+</ol>
+<p>As you can see, it helps us take care of the logistics which is also important for our success in training the model. Let’s look at the code. It’s a bit long so bear with me:</p>
+<iframe frameborder="0" src="https://medium.com/media/fae2d90180f0a022940e07e8f4704d78"></iframe>
+<p><strong><strong>init</strong></strong>: Initialize necessary attributes like count, loss, number of correct predictions, start time, etc.</p>
+<p><strong>begin_run</strong>: Record run start time so when a run is finished, the duration of the run can be calculated. Create a SummaryWriter object to store everything we want to export into Tensor Board during the run. Write the network graph and sample images into the SummaryWriter object.</p>
+<p><strong>end_run</strong>: When run is finished, close the SummaryWriter object and reset the epoch count to 0 (getting ready for next run).</p>
+<p><strong>begin_epoch</strong>: Record epoch start time so epoch duration can be calculated when epoch ends. Reset epoch_loss and epoch_num_correct.</p>
+<p><strong>end_epoch</strong>: This function is where most things happen. When an epoch ends, we’ll calculate the epoch duration and the run duration(up to this epoch, not the final run duration unless for the last epoch of the run). We’ll calculate the total loss and accuracy for this epoch, then export the loss, accuracy, weights/biases, gradients we recorded into Tensor Board. For ease of tracking within the Jupyter Notebook, we also created an <strong>OrderedDict</strong> object results and put all our run data(loss, accuracy, run count, epoch count, run duration, epoch duration, all hyperparameters) into it. Then we’ll use <strong>Pandas </strong>to read it in and display it in a neat table format.</p>
+<p><strong>track_loss, track_num_correct, _get_num_correct</strong>: These are utility functions to accumulate the loss, number of correct predictions of each batch so the epoch loss and accuracy can be calculated later.</p>
+<p><strong>save</strong>: Save all run data (a list of results <strong>OrderedDict </strong>objects for all runs) into csv and json format for further analysis or <span class="caps">API</span> access.</p>
+<p>There is a lot to take in for this RunManager class. Congrats on coming to this far! The hardest part is already behind you. From now on everything will start to come together and make sense.</p>
+<h2 id="training">Training<a class="headerlink" href="#training" title="Permanent link">¶</a></h2>
+<p>Finally, we are ready to do some training! With the help of our RunBuilder and RunManager classes, the training process is a breeze:</p>
+<iframe frameborder="0" src="https://medium.com/media/0351af16476f98a685175e5aefd9bc50"></iframe>
+<p>First, we use RunBuilder to create an iterator of hyperparameters, then loop through each hyperparameter combination to carry out our training:</p>
+<div class="highlight"><pre><span></span>for run in RunBuilder.get_runs(params):
+</pre></div>
+<p>Then, we create our network object from the Network class defined above. network = Network() . This network objects hold all our weights/biases we need to train.</p>
+<p>We also need to create a DataLoader object. It is a PyTorch class that holds our training/validation/test dataset, and it will iterate through the dataset and gives us training data in batches equal to the batch_size specied.</p>
+<div class="highlight"><pre><span></span>loader = torch.utils.data.DataLoader(train_set, batch_size = run.batch_size)
+</pre></div>
+<p>After that, we’ll create an optimizer using torch.optim class. The optim class gets network parameters and learning rate as input and will help us step through the training process and updates the gradients, etc. We’ll use Adam as our optimization algorithm here.</p>
+<div class="highlight"><pre><span></span>optimizer = optim.Adam(network.parameters(), lr=run.lr)
+</pre></div>
+<p><span class="caps">OK</span>. Now we have our network created, data loader prepared and optimizer chosen. Let’s get the training rolling!</p>
+<p>We will loop through all the epochs we want (3 here) to train, so we wrap everything in a ‘epoch’ loop. We also use the begin_run method of our RunManager class to start tracking run training data.</p>
+<div class="highlight"><pre><span></span>m.begin_run(run, network, loader)    
+for epoch in range(epochs):
+</pre></div>
+<p>For each epoch, we’ll loop through each batch of images to carry out the training.</p>
+<div class="highlight"><pre><span></span>m.begin_epoch()    
+for batch in loader:              
+  images = batch[0]      
+  labels = batch[1]      
+  preds = network(images)      
+  loss = F.cross_entropy(preds, labels)
+
+  optimizer.zero_grad()  
+  loss.backward()      
+  optimizer.step()
+
+  m.track_loss(loss)      
+  m.track_num_correct(preds, labels)
+</pre></div>
+<p>The above code is where real training happens. We read in the images and labels from the batch, use network class to do the forward propagation (remember the forward method above?) and get the predictions. With predictions, we can calculate the loss of this batch using cross_entropy function. Once the loss is calculated, we reset the gradients (otherwise PyTorch will accumulate the gradients which is not what we want) with .zero_grad(), do one back propagation use loss.backward()method to calculate all the gradients of the weights/biases. Then, we use the optimizer defined above to update the weights/biases. Now that the network is updated for the current batch, we’ll calculate the loss and number of correct predictions and accumulate/track them using track_loss and track_num_correct methods of our RunManager class.</p>
+<p>Once all is finished, we’ll save the results in files usingm.save(‘results’).</p>
+<p>The output of the runs in the notebook looks like this:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*qgEb42V3ubSA9P8BKryv2w.png"/></p>
+<h2 id="tensor-board">Tensor Board<a class="headerlink" href="#tensor-board" title="Permanent link">¶</a></h2>
+<p><img alt="Image from Tensorboard.org" src="https://cdn-images-1.medium.com/max/2000/0*dOWdO9wmi8tNgjKF.gif"/><em>Image from Tensorboard.org</em></p>
+<p>Tensor Board is a TensorFlow visualization tool now also supported by PyTorch. We’ve already taken the efforts to export everything into the ‘./runs’ folder where Tensor Board will be looking into for records to consume. What we need to do now is just to launch the Tensor Board and check. Since I’m running this model on Google Colab, we’ll use a service called ngrok to proxy and access our Tensor Board running on Colab virtual machine. Install ngrok first:</p>
+<div class="highlight"><pre><span></span><span class="sx">!wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip</span>
+
+<span class="sx">!unzip ngrok-stable-linux-amd64.zip</span>
+</pre></div>
+<p>Then, specify the folder we want to run Tensor Board from and launch the Tensor Board web interface (./runs is the default):</p>
+<div class="highlight"><pre><span></span>LOG_DIR = './runs'
+
+get_ipython().system_raw(
+
+'tensorboard --logdir {} --host 0.0.0.0 --port 6006 &amp;'
+
+.format(LOG_DIR)
+
+)
+</pre></div>
+<p>Launch ngrok proxy:</p>
+<div class="highlight"><pre><span></span>get_ipython().system_raw('./ngrok http 6006 &amp;')
+</pre></div>
+<p>Generate an <span class="caps">URL</span> so we can access our Tensor Board from within the Jupyter Notebook:</p>
+<div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">4040</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">tunnels</span> <span class="o">|</span> <span class="n">python3</span> <span class="o">-</span><span class="n">c</span> \
+
+<span class="s2">"import sys, json; print(json.load(sys.stdin)['tunnels'][0]['public_url'])"</span>
+</pre></div>
+<p>As we can see below, TensorBoard is a very convenient visualization tool for us to get insights into our training and can help greatly with the hyperparameter tuning process. We can easily spot which hyperparameter comp performs the best and then using it to do our real training.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*L5xNeZ1A4cENWc0tmvbwWg.png"/></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*jjAFS756-DntXAgu_ryMdA.png"/></p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2224/1*m_ap-x42L9h53Phfa47ZtA.png"/></p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<p>As you can see, PyTorch as a machine learning framework is flexible, powerful and expressive. You just write Python code. Since the main focus of this article is to showcase how to use PyTorch to build a Convolutional Neural Network and training it in a structured way, I didn’t finish the whole training epochs and the accuracy is not optimum. You can try it yourself and see how well the model performs.</p>
+<p>This article is heavily inspired by <a href="https://towardsdatascience.com/hidden-gem-a-great-pytorch-youtube-tutorial-series-by-deeplizard-8de677411bc5">deeplizard’s PyTorch video series on YouTube</a>. Even most of the code snippets are directly copied from it. I’d like to thank them for the great content and if you feel the need to delve down deeper, feel free to go check it out and subscribe to their channel.</p>
+<p>Found this article useful? Follow me (<a href="undefined">Michael Li</a>) on Medium or you can find me on Twitter <a href="https://twitter.com/lymenlee">@lymenlee</a> or my blog site <a href="https://wayofnumbers.com">wayofnumbers.com</a>. You could also check out my most popular articles below!
+<a href="https://towardsdatascience.com/this-is-cs50-a-pleasant-way-to-kick-off-your-data-science-education-d6075a6e761a"><strong>“This is <span class="caps">CS50</span>”: A Pleasant Way to Kick Off Your Data Science Education</strong>
+<em>Why <span class="caps">CS50</span> is especially good to solidify your software engineering foundation</em>towardsdatascience.com</a>
+<a href="https://towardsdatascience.com/two-sides-of-the-same-coin-fast-ai-vs-deeplearning-ai-b67e9ec32133"><strong>Two Sides of the Same Coin: Jeremy Howard’s fast.ai vs Andrew Ng’s deeplearning.ai</strong>
+<em>How Not to ‘Overfit’ Your <span class="caps">AI</span> Learning by Taking Both fast.ai and deeplearning.ai courses</em>towardsdatascience.com</a>
+<a href="https://medium.com/datadriveninvestor/thoughts-on-andrew-ngs-machine-learning-course-7724df76320f"><strong>I finished Andrew Ng’s Machine Learning Course and I Felt Great!</strong>
+<em>The good, the bad, and the beautiful</em>medium.com</a></p>
+
+
+            <div>
+            <span class="author_blurb"><a href=""><span class="author_name">Michael Li</span></a> -
+                </span><br />
+</div>
+
+            
+            <section>
+<p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style.html#disqus_thread",
+                id="disqus-accordion-toggle">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'way-of-numbers';
+        var disqus_identifier = 'https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style.html';
+    var disqus_url = 'https://wayofnumbers.com/build-a-fashion-mnist-cnn-pytorch-style.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://wayofnumbers.com/hidden-gem-a-great-pytorch-youtube-tutorial-series-by-deeplizard.html" title="Previous: 💎Hidden Gem: A Great PyTorch YouTube Tutorial Series by deeplizard">💎Hidden Gem: A Great PyTorch YouTube Tutorial Series by deeplizard</a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/what-you-need-to-know-about-netflixs-jupyter-killer-polynote.html" title="Next: What You Need to Know About Netflix’s ‘Jupyter Killer’: Polynote 📖">What You Need to Know About Netflix’s ‘Jupyter Killer’: Polynote 📖</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2019-10-23T20:00:00-05:00">Oct 23, 2019</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://wayofnumbers.com/tags#ai-ref">AI
+                    <span>12</span>
+</a></li>
+                <li><a href="https://wayofnumbers.com/tags#cnn-ref">CNN
+                    <span>1</span>
+</a></li>
+                <li><a href="https://wayofnumbers.com/tags#deep-learning-ref">Deep Learning
+                    <span>7</span>
+</a></li>
+                <li><a href="https://wayofnumbers.com/tags#google-colab-ref">Google Colab
+                    <span>1</span>
+</a></li>
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
+                    <span>20</span>
+</a></li>
+                <li><a href="https://wayofnumbers.com/tags#pytorch-ref">PyTorch
+                    <span>2</span>
+</a></li>
+                <li><a href="https://wayofnumbers.com/tags#tensor-board-ref">Tensor Board
+                    <span>1</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="https://twitter.com/lymenlee" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+    <a href="https://medium.com/@lymenlee" title="My Medium Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-medium sidebar-social-links"></i></a>
+    <a href="https://github.com/wayofnumbers" title="My GitHub Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="www.linkedin.com/in/michael-li-dfw" title="My LinkedIn Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-linkedin sidebar-social-links"></i></a>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="https://github.us17.list-manage.com/subscribe/post?u=c212184cc0965bdf1658f69f0&amp;id=5677a7b75e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Get Monthly Updates</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Send me Free Updates" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+        </div>
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+    <div>
+        <span class="site-name">Way of Numbers</span> - Data science for the rest of us.
+    </div>
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+            <script type="text/javascript">
+var disqus_shortname = 'way-of-numbers';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script  language="javascript" type="text/javascript">
+function uncollapse() {
+    if (window.location.hash.match(/^#comment-\d+$/)) {
+        $('#disqus_thread').collapse('show');
+    }
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+uncollapse();
+window.onhashchange=function(){
+    if (window.location.hash.match(/^#comment-\d+$/))
+        window.location.reload(true);
+}
+</script>
+<script>
+$('#disqus_thread').on('shown', function () {
+    var link = document.getElementById('disqus-accordion-toggle');
+    var old_innerHTML = link.innerHTML;
+    $(link).fadeOut(500, function() {
+        $(this).text('Click here to hide comments').fadeIn(500);
+    });
+    $('#disqus_thread').on('hidden', function () {
+        $(link).fadeOut(500, function() {
+            $(this).text(old_innerHTML).fadeIn(500);
+        });
+    })
+})
+</script>
+
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

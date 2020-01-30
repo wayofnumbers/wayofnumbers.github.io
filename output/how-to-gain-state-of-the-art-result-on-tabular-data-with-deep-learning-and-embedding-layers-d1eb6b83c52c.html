@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Michael Li" />
+
+        <meta name="twitter:creator" content="@lymenlee">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Machine Learning, Artificial Intelligence, Machine Learning, " />
+
+<meta property="og:title" content="How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers "/>
+<meta property="og:url" content="https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html" />
+<meta property="og:description" content="How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers" />
+<meta property="og:site_name" content="Way of Numbers" />
+<meta property="og:article:author" content="Michael Li" />
+<meta property="og:article:published_time" content="2020-01-29T15:40:08-06:00" />
+<meta name="twitter:title" content="How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers ">
+<meta name="twitter:description" content="How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers">
+
+        <title>How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding Layers  · Way of Numbers
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/custom.css" media="screen">
+
+        <link rel="shortcut icon" href="https://wayofnumbers.com/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://wayofnumbers.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://wayofnumbers.com/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://wayofnumbers.com/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://wayofnumbers.com/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://wayofnumbers.com/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://wayofnumbers.com/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://wayofnumbers.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://wayofnumbers.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://wayofnumbers.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link href="https://wayofnumbers.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-148798026-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://wayofnumbers.com/"><span class=site-name>Way of Numbers</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://wayofnumbers.com
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://wayofnumbers.com/pages/about.html">About</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html"> How to Gain State-Of-The-Art Result on Tabular Data with Deep Learning and Embedding&nbsp;Layers  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#loading-data">Loading Data</a></li>
+<li><a href="#sorting-the-training-set">Sorting the Training Set</a></li>
+<li><a href="#data-pre-processing">Data Pre-Processing</a></li>
+<li><a href="#building-the-model">Building the Model</a></li>
+<li><a href="#building-the-model_1">Building the Model</a></li>
+<li><a href="#a-couple-of-more-words-on-embedding-layers">A Couple of More Words on Embedding Layers</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<p>A different approach to Kaggle Blue Book Bulldozers Competition</p>
+<p><img alt="Embeddings can be use other than word representations" src="https://cdn-images-1.medium.com/max/3010/0*iYOn4JtwX9d4pj-U.png"/><em>Embeddings can be use other than word representations</em></p>
+<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">¶</a></h2>
+<p>Tree-based models like Random Forest and XGBoost have become very popular in solving tabular(structured) data problems and gained a lot of tractions in Kaggle competitions lately. It has its very deserving reasons. However, in this article, I want to introduce a different approach from fast.ai’s <strong>Tabular</strong> module leveraging:</p>
+<blockquote>
+<p><strong>Deep Learning and Embedding Layers.</strong></p>
+</blockquote>
+<p>This is a bit against industry consensus that Deep Learning is more for unstructured data like image, audio or <span class="caps">NLP</span>, and usually not suitable for handling tabular data. Yet, the introduction of embedding layers for the categorical data changed this perspective and we’ll try to use<a href="http://fast.ai"> fast.ai</a>’s tabular module on the <a href="https://www.kaggle.com/c/bluebook-for-bulldozers/overview">Blue Book Bulldozers Competition</a> on <a href="http://kaggle.com">Kaggle</a> and see how far this approach can go.</p>
+<p><em>You can find the Kaggle Notebook 📔: <a href="https://www.kaggle.com/lymenlee/blue-book-bulldozer-fast-ai-deep-learning">here</a>.</em></p>
+<h2 id="loading-data">Loading Data<a class="headerlink" href="#loading-data" title="Permanent link">¶</a></h2>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2880/1*xxZSbdIS_g_6A5vydjOBdg.png"/></p>
+<p>First, let’s import the necessary modules. The core one here is <strong>fastai.tabular</strong>:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastai</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fastai.tabular</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+<p>Then we’ll read the data into a Pandas DataFrame. You can find the specific code in the Kaggle Notebook link on top of this article but for here, I’ll only show necessary code snippets to keep things as concise as possible. We will read in the <span class="caps">CSV</span> file into train_df and this will be the DataFrame we’ll be mainly working on. We will also read in test_df which is the test set.</p>
+<p>Let’s take a brief look at the data we’re dealing with:</p>
+<div class="highlight"><pre><span></span>len(train_df), len(test_df)
+(401125, 12457)
+</pre></div>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/3006/1*-NlhS8DO3zNgsGA5TG3x8A.png"/></p>
+<h2 id="sorting-the-training-set">Sorting the Training Set<a class="headerlink" href="#sorting-the-training-set" title="Permanent link">¶</a></h2>
+<p>This is to create a good validation set. It cannot be emphasized enough how important a good validation set is in making a successful model. Since we are predicting sales price data in the future, we need to make a validation set that all of its data is collected in the ‘future’ of the training set. So we need to sort the training set first, then split the ‘future’ part as the validation set.</p>
+<div class="highlight"><pre><span></span>train_df = train_df.sort_values(by='saledate', ascending=False)
+train_df = train_df.reset_index(drop=True)
+</pre></div>
+<h2 id="data-pre-processing">Data Pre-Processing<a class="headerlink" href="#data-pre-processing" title="Permanent link">¶</a></h2>
+<p>The competition’s evaluation methods use <span class="caps">RMSLE</span> (root mean squared log error). So if we take the log of our prediction, we can just use the good old <span class="caps">RMSE</span> as our loss function. It’s just easier this way.</p>
+<div class="highlight"><pre><span></span>train_df.SalePrice = np.log(train_df.SalePrice)
+</pre></div>
+<p>For <strong>Feature Engineering</strong>, since we will be using deep learning to tackle the problem and it is very good at feature extraction, we’ll only do it on the saledate. This is the advantage of using a Deep Learning approach, it requires way less feature engineering and less dependent on domain knowledge. We’ll use the fast.ai’s add_datepart function to for adding some more features related to the sale date.</p>
+<div class="highlight"><pre><span></span># The only feature engineering we do is add some meta-data from the sale date column, using 'add_datepart' function in fast.ai
+add_datepart(train_df, "saledate", drop=False)
+add_datepart(test_df, "saledate", drop=False)
+</pre></div>
+<p>What add_datepart does is it takes the saledate column and added a bunch of other columns like day of week, day of month, whether it is the start or end of a month, quarter and year, etc. These added features will offer more insights into the date and are relevant to user purchasing behaviors. For example, at the end of the year, the company will usually run promotions and prices will usually decrease.</p>
+<p>Let’s check whether all these date related features got added into our DataFrame:</p>
+<div class="highlight"><pre><span></span># check and see whether all date related meta data is added.
+def display_all(df):
+    with pd.option_context("display.max_rows", 1000, "display.max_columns", 1000): 
+        display(df)
+
+display_all(train_df.tail(10).T)
+</pre></div>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2862/1*oUayXXrPx9t-Wdtb4VmPYw.png"/></p>
+<p>They did get added. Good. Now we need to do some data pre-processing since this DataFrame has quite some missing data and we also want to categorify and normalize the columns. With the fast.ai library, this is rather simple. We just specify the pre-processing methods we want into a Python list, like so:</p>
+<div class="highlight"><pre><span></span># Defining pre-processing we want for our fast.ai DataBunch
+procs=[FillMissing, Categorify, Normalize]
+</pre></div>
+<p>This variable procs will later be used to create the fast.ai DataBunch for training.</p>
+<h2 id="building-the-model">Building the Model<a class="headerlink" href="#building-the-model" title="Permanent link">¶</a></h2>
+<p>Let’s look at the data types of each column to decide which ones are categorical and which ones are continuous:</p>
+<div class="highlight"><pre><span></span>train_df.dtypes
+g = train_df.columns.to_series().groupby(train_df.dtypes).groups
+g
+</pre></div>
+<p>Here are the results:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*5tpHQuP9t2XjvX3z9mgPXA.png"/></p>
+<p>Then we’ll put all categorical columns into a list cat_vars and all continuous columns into a list cont_vars. These two variables will also be used to construct fast.ai DataBunch.</p>
+<div class="highlight"><pre><span></span># prepare categorical and continous data columns for building Tabular DataBunch.
+cat_vars = ['SalesID', 'YearMade', 'MachineID', 'ModelID', 'datasource', 'auctioneerID', 'UsageBand', 'fiModelDesc', 'fiBaseModel', 'fiSecondaryDesc', 'fiModelSeries', 'fiModelDescriptor', 'ProductSize', 
+            'fiProductClassDesc', 'state', 'ProductGroup', 'ProductGroupDesc', 'Drive_System', 'Enclosure', 'Forks', 'Pad_Type', 'Ride_Control', 'Stick', 'Transmission', 'Turbocharged', 'Blade_Extension', 
+            'Blade_Width', 'Enclosure_Type', 'Engine_Horsepower', 'Hydraulics', 'Pushblock', 'Ripper', 'Scarifier', 'Tip_Control', 'Tire_Size', 'Coupler', 'Coupler_System', 'Grouser_Tracks', 'Hydraulics_Flow', 
+            'Track_Type', 'Undercarriage_Pad_Width', 'Stick_Length', 'Thumb', 'Pattern_Changer', 'Grouser_Type', 'Backhoe_Mounting', 'Blade_Type', 'Travel_Controls', 'Differential_Type', 'Steering_Controls', 
+            'saleYear', 'saleMonth', 'saleWeek', 'saleDay', 'saleDayofweek', 'saleDayofyear', 'saleIs_month_end', 'saleIs_month_start', 'saleIs_quarter_end', 'saleIs_quarter_start', 'saleIs_year_end', 
+            'saleIs_year_start'
+           ]
+
+cont_vars = ['MachineHoursCurrentMeter', 'saleElapsed']
+</pre></div>
+<p>We’ll create another DataFrame df to feed into the DataBunch. We also specify the dependent variable as dep_var .</p>
+<div class="highlight"><pre><span></span># rearrange training set before feed into the databunch
+dep_var = 'SalePrice'
+df = train_df[cat_vars + cont_vars + [dep_var,'saledate']].copy()
+</pre></div>
+<p>Now is the time to create our validation set. We do this by cutting out a block of the most recent entries from the training set. How big the block should be? Well, the same size as the test set. Let’s see the code:</p>
+<div class="highlight"><pre><span></span># Look at the time period of test set, make sure it's more recent
+test_df['saledate'].min(), test_df['saledate'].max()
+
+# Calculate where we should cut the validation set. We pick the most recent 'n' records in training set where n is the number of entries in test set. 
+cut = train_df['saledate'][(train_df['saledate'] == train_df['saledate'][len(test_df)])].index.max()
+cut
+
+12621
+
+# specify the valid_idx variable as the cut out range.
+valid_idx = range(cut)
+</pre></div>
+<p>We first look at the time period of the test set and make sure it is more recent than all our training set. Then we calculate how many records we need to cut out.</p>
+<p>Finally, let’s construct our DataBunch for training using fast.ai’s datablock <span class="caps">API</span>:</p>
+<div class="highlight"><pre><span></span># Use fast.ai datablock api to put our training data into the DataBunch, getting ready for training
+data = (TabularList.from_df(df, path=path, cat_names=cat_vars, cont_names=cont_vars, procs=procs)
+                   .split_by_idx(valid_idx)
+                   .label_from_df(cols=dep_var, label_cls=FloatList)
+                   .databunch())
+</pre></div>
+<h2 id="building-the-model_1">Building the Model<a class="headerlink" href="#building-the-model_1" title="Permanent link">¶</a></h2>
+<p>We will fire up a fast.ai tabular.learner from the DataBunch we just created. We want to limit the price range for our prediction to be within the history sale price range, so we need to calculate the y_range. Note that we multiplied the maximum of SalePrice by 1.2 so when we apply sigmoid, the upper limit will also be covered. This is a small trick to squeeze a bit more performance out of the model.</p>
+<div class="highlight"><pre><span></span>max_y = np.max(train_df['SalePrice'])*1.2
+y_range = torch.tensor([0, max_y], device=defaults.device)
+y_range
+
+tensor([ 0.0000, 14.2363], device='cuda:0')
+</pre></div>
+<p>Now we can create our learner:</p>
+<div class="highlight"><pre><span></span># Create our tabular learner. The dense layer is 1000 and 500 two layer NN. We used dropout, hai 
+learn = tabular_learner(data, layers=[1000,500], ps=[0.001,0.01], emb_drop=0.04, y_range=y_range, metrics=rmse)
+</pre></div>
+<p>The single most important thing about fast.ai tabular_learner is the use of embedding layers for categorical data. This is the ‘<strong>secret sauce</strong>’ that enables Deep Learning to be competitive in handling tabular data. With one embedding layer for each categorical variable, we introduced good interaction for the categorical variables and leverage Deep Learning’s biggest strength: Automatic Feature Extraction. We also used Drop Out for both the dense layers and embedding layers for better regularization. The metrics of the learner is <span class="caps">RMSE</span> since we’ve already taken the log of SalePrice. Let’s look at the model.</p>
+<div class="highlight"><pre><span></span>TabularModel(
+  (embeds): ModuleList(
+    (0): Embedding(388505, 600)
+    (1): Embedding(72, 18)
+    (2): Embedding(331868, 600)
+    (3): Embedding(5155, 192)
+   ...
+    (60): Embedding(3, 3)
+    (61): Embedding(2, 2)
+    (62): Embedding(3, 3)
+  )
+  (emb_drop): Dropout(p=0.04, inplace=False)
+  (bn_cont): BatchNorm1d(2, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (layers): Sequential(
+    (0): Linear(in_features=2102, out_features=1000, bias=True)
+    (1): ReLU(inplace=True)
+    (2): BatchNorm1d(1000, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Dropout(p=0.001, inplace=False)
+    (4): Linear(in_features=1000, out_features=500, bias=True)
+    (5): ReLU(inplace=True)
+    (6): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): Dropout(p=0.01, inplace=False)
+    (8): Linear(in_features=500, out_features=1, bias=True)
+  )
+)
+</pre></div>
+<p>As can be seen from the above, we have embedding layers for categorical columns, then followed by a drop out layer. We have a batch norm layer for the continuous columns, then we concatenate all of them (categorical embeddings + continuous variables) together and throw them into two fully connected layers with 1000 and 500 nodes, with Relu, BatchNorm, and Dropout in between. Quite standard stuff.</p>
+<p>Now that we have the model, let’s use fast.ai’s learning rate finder to find a good learning rate:</p>
+<div class="highlight"><pre><span></span>learn.lr_find()
+learn.recorder.plot()
+</pre></div>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*V3leQPn16_RoGHmS-GJp3A.png"/></p>
+<p>We’ll pick the learning rate at the end of the biggest learning rate curve slope: le-02</p>
+<p>Let’s do some training using fast.ai’s One-Cycle Training approach. Note that we added some weight decay (0.2) for regularization.</p>
+<div class="highlight"><pre><span></span>learn.fit_one_cycle(2, 1e-2, wd=0.2)
+</pre></div>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*iTSVogV--iXyWqMtz7Gf6Q.png"/></p>
+<p>We can train some more cycles with smaller learning rate:</p>
+<div class="highlight"><pre><span></span>learn.fit_one_cycle(5, 3e-4, wd=0.2)
+</pre></div>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*TpG8gJ4UoD_n74QyzJML3w.png"/></p>
+<p>We’ve reached a score of <strong>0.223</strong> on our validation set. Since the competition is not accepting submissions, we can only look at the leaderboard to get a rough idea of how well this model performs:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2854/1*IuacQ30L1265EdtwImuMtw.png"/></p>
+<p>The top place is <strong>0.229</strong>. Compare to this model’s <strong>0.223</strong>. We don’t know how well it works on the test set but overall I think the result we got isn’t bad at all.</p>
+<h2 id="a-couple-of-more-words-on-embedding-layers">A Couple of More Words on Embedding Layers<a class="headerlink" href="#a-couple-of-more-words-on-embedding-layers" title="Permanent link">¶</a></h2>
+<p>What makes everything click here is the embedding layers. Embedding is just a fancy word of saying mapping something to a vector. Like the word embedding that is getting more popular in <span class="caps">NLP</span>, it means using a vector (the size is arbitrary though, depending on tasks) to represent words, and those vectors are weights and can be trained via back-prop.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/3104/0*9dWEOVdmzHOgrFj5"/></p>
+<p>Similarly, for our case, we used embeddings on our categorical variables. Each column gets an embedding matrix that can be trained. And each unique column value gets a specific vector mapped to it. The beautiful thing about this is: <strong>with embedding, we can now develop ‘semantics’ to the variable</strong>, ‘semantics’ in the form of weights that matters to our sale price and can be extracted and trained via our deep neural network. The model will have the ‘<strong>depth</strong>’ it needs to fit a big data set well.</p>
+<p>But don’t take my words for it, or just look at the results of my humble little project. In a more glory case, there was <a href="https://arxiv.org/abs/1604.06737">this paper</a> by the folks who came 3rd in a Kaggle competition for something called <a href="https://www.kaggle.com/c/rossmann-store-sales/overview">Rossman</a> (prediction future sales). Among the top teams in the leaderboard, everyone else used some kind of heavy feature engineering, but by using embedding layers, they managed to score 3rd place with way less feature engineering.</p>
+<p>What’s more interesting is, with embedding layers, you can actually visualize the variable projection in the embedding matrix space. Take the Rossman project as an example. They took a two-dimensional projection of the embedding matrix for the German states.</p>
+<blockquote>
+<p>And if you circle some states on the embedding space and same states on the actual map. You’ll find out that they are scarily similar. The embedding layer actually discovered geography.</p>
+</blockquote>
+
+
+            <div>
+            <span class="author_blurb"><a href=""><span class="author_name">Michael Li</span></a> -
+                </span><br />
+</div>
+
+            
+            <section>
+<p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html#disqus_thread",
+                id="disqus-accordion-toggle">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'way-of-numbers';
+        var disqus_identifier = 'https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html';
+    var disqus_url = 'https://wayofnumbers.com/how-to-gain-state-of-the-art-result-on-tabular-data-with-deep-learning-and-embedding-layers-d1eb6b83c52c.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://wayofnumbers.com/no-human-can-beat-alphago-so-what-3401b40fa0f0.html" title="Previous: No Human Can Beat AlphaGo, and It’s a Good Thing">No Human Can Beat AlphaGo, and It’s a Good Thing</a></li>
+                <li class="next-article"><a href="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html" title="Next: Another Self-Driving Car Accident, Another AI Development Lesson">Another Self-Driving Car Accident, Another AI Development Lesson</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2020-01-29T15:40:08-06:00">Jan 29, 2020</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://wayofnumbers.com/tags#artificial-intelligence-ref">Artificial Intelligence
+                    <span>6</span>
+</a></li>
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
+                    <span>20</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="https://twitter.com/lymenlee" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+    <a href="https://medium.com/@lymenlee" title="My Medium Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-medium sidebar-social-links"></i></a>
+    <a href="https://github.com/wayofnumbers" title="My GitHub Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="www.linkedin.com/in/michael-li-dfw" title="My LinkedIn Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-linkedin sidebar-social-links"></i></a>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="https://github.us17.list-manage.com/subscribe/post?u=c212184cc0965bdf1658f69f0&amp;id=5677a7b75e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Get Monthly Updates</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Send me Free Updates" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+        </div>
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+    <div>
+        <span class="site-name">Way of Numbers</span> - Data science for the rest of us.
+    </div>
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+            <script type="text/javascript">
+var disqus_shortname = 'way-of-numbers';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script  language="javascript" type="text/javascript">
+function uncollapse() {
+    if (window.location.hash.match(/^#comment-\d+$/)) {
+        $('#disqus_thread').collapse('show');
+    }
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+uncollapse();
+window.onhashchange=function(){
+    if (window.location.hash.match(/^#comment-\d+$/))
+        window.location.reload(true);
+}
+</script>
+<script>
+$('#disqus_thread').on('shown', function () {
+    var link = document.getElementById('disqus-accordion-toggle');
+    var old_innerHTML = link.innerHTML;
+    $(link).fadeOut(500, function() {
+        $(this).text('Click here to hide comments').fadeIn(500);
+    });
+    $('#disqus_thread').on('hidden', function () {
+        $(link).fadeOut(500, function() {
+            $(this).text(old_innerHTML).fadeIn(500);
+        });
+    })
+})
+</script>
+
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

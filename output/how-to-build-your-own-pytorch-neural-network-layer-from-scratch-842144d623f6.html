@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Michael Li" />
+
+        <meta name="twitter:creator" content="@lymenlee">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Machine Learning, Artificial Intelligence, Machine Learning, " />
+
+<meta property="og:title" content="How to Build Your Own PyTorch Neural Network Layer from Scratch "/>
+<meta property="og:url" content="https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html" />
+<meta property="og:description" content="How to Build Your Own PyTorch Neural Network Layer from Scratch" />
+<meta property="og:site_name" content="Way of Numbers" />
+<meta property="og:article:author" content="Michael Li" />
+<meta property="og:article:published_time" content="2020-01-29T15:40:11-06:00" />
+<meta name="twitter:title" content="How to Build Your Own PyTorch Neural Network Layer from Scratch ">
+<meta name="twitter:description" content="How to Build Your Own PyTorch Neural Network Layer from Scratch">
+
+        <title>How to Build Your Own PyTorch Neural Network Layer from Scratch  · Way of Numbers
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/custom.css" media="screen">
+
+        <link rel="shortcut icon" href="https://wayofnumbers.com/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://wayofnumbers.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://wayofnumbers.com/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://wayofnumbers.com/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://wayofnumbers.com/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://wayofnumbers.com/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://wayofnumbers.com/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://wayofnumbers.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://wayofnumbers.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://wayofnumbers.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link href="https://wayofnumbers.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-148798026-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://wayofnumbers.com/"><span class=site-name>Way of Numbers</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://wayofnumbers.com
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://wayofnumbers.com/pages/about.html">About</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html"> How to Build Your Own PyTorch Neural Network Layer from&nbsp;Scratch  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#simple-mnist-one-layer-nn-as-the-backdrop">Simple <span class="caps">MNIST</span> one layer <span class="caps">NN</span> as the backdrop</a></li>
+<li><a href="#first-iteration-just-make-it-work">First Iteration: Just make it work</a></li>
+<li><a href="#second-iteration-proper-weight-initialization-and-bias-handling">Second iteration: Proper weight initialization and bias handling</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#underneath-pytorch-theres-no-trick-no-myth-no-catch-just-rock-solid-python-code">Underneath PyTorch, there’s no trick, no myth, no catch, just rock-solid Python code.</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<p>And learn a thing or two about weight initialization</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/4000/1*oLcN6Vlpa-PrxnRYJGnXDQ.png"/></p>
+<p>This is actually an assignment from <a href="undefined">Jeremy Howard</a>’s <a href="https://www.fast.ai/2019/01/24/course-v3/">fast.ai course</a>, lesson 5. I’ve showcased <a href="https://towardsdatascience.com/build-a-fashion-mnist-cnn-pytorch-style-efb297e22582">how easy it is to build a Convolutional Neural Networks from scratch</a> using PyTorch. Today, let’s try to delve down even deeper and see if we could write our own nn.Linear module. Why waste your time writing your own PyTorch module while it’s already been written by the devs over at Facebook?</p>
+<p>Well, for one, you’ll gain a deeper understanding of how all the pieces are put together. By comparing your code with the PyTorch code, you will gain knowledge of why and how these libraries are developed.</p>
+<p>Also, once you’re done, you’ll have more confidence in implementing and using all these libraries, knowing how things work. There will be no myth to you.</p>
+<p>And last but not least, you’ll be able to modify/tweak these modules should the situation require. And this is the difference between a noob and a pro.</p>
+<p><span class="caps">OK</span>, enough of the motivation, let’s get to it.</p>
+<h3 id="simple-mnist-one-layer-nn-as-the-backdrop">Simple <span class="caps">MNIST</span> one layer <span class="caps">NN</span> as the backdrop<a class="headerlink" href="#simple-mnist-one-layer-nn-as-the-backdrop" title="Permanent link">¶</a></h3>
+<p>First of all, we need some ‘backdrop’ codes to test whether and how well our module performs. Let’s build a very simple one-layer neural network to solve the good-old <span class="caps">MNIST</span> dataset. The code (running in Jupyter Notebook) snippet below:</p>
+<iframe frameborder="0" src="https://medium.com/media/ebfff9b2780b077023072e413883bade"></iframe>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*p2sKZABskEsunz6WcZdf7A.png"/></p>
+<p>These codes are quite self-explanatory. We used the <a href="https://github.com/fastai">fast.ai</a> library for this project. Download the <span class="caps">MNIST</span> pickle file and unzip it, transfer it into a PyTorch tensor, then stuff it into a fast.ai DataBunch object for further training. Then we created a simple neural network with only one Linear layer. We also write our own update function instead of using the torch.optim optimizers since we could be writing our own optimizers from scratch as the next step of our PyTorch learning journey. Finally, we iterate through the dataset and plot the losses to see whether and how well it works.</p>
+<h3 id="first-iteration-just-make-it-work">First Iteration: Just make it work<a class="headerlink" href="#first-iteration-just-make-it-work" title="Permanent link">¶</a></h3>
+<p>All PyTorch modules/layers are extended from thetorch.nn.Module.</p>
+<div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">myLinear</span><span class="p">(</span><span class="nx">nn</span><span class="p">.</span><span class="nx">Module</span><span class="p">)</span><span class="o">:</span>
+</pre></div>
+<p>Within the class, we’ll need an <strong>init</strong> dunder function to initialize our linear layer and a forward function to do the forward calculation. Let’s look at the <strong>init</strong> function first.</p>
+<p>We’ll use the PyTorch official document as a guideline to build our module. From the document, an nn.Linear module has the following attributes:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2198/1*eDRvelSa-3eugiKZ2X_fdw.png"/></p>
+<p>So we’ll get these three attributes in:</p>
+<div class="highlight"><pre><span></span>def __init__(self, **in_features, out_features, bias=True**):
+        super().__init__()
+       ** self.in_features = in_features
+        self.out_features = out_features
+        self.bias = bias**
+</pre></div>
+<p>The class also needs to hold weight and bias parameters so it can be trained. We also initialize those.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2028/1*bxuSixoCvOkpt9HijP_4Mg.png"/></p>
+<div class="highlight"><pre><span></span>       ** self.weight** = torch.nn.Parameter(torch.randn(out_features, in_features))
+       ** self.bias** = torch.nn.Parameter(torch.randn(out_features))
+</pre></div>
+<p>Here we used torch.nn.Parameter to set our weight and bias, otherwise, it won’t train.</p>
+<p>Also, note that we used <a href="https://pytorch.org/docs/stable/torch.html#torch.randn">torch.rand</a>n instead of what’s described in the document to initialize the parameters. This is not the best way of doing weights initialization, but our purpose is to get it to work first, we’ll tweak it in our next iteration.</p>
+<p><span class="caps">OK</span>, now that the <strong>init</strong> part is done, let’s move on to forward function. This is actually the easy part:</p>
+<div class="highlight"><pre><span></span>def forward(self, input):
+        _, y = input.shape
+        if y != self.in_features:
+            sys.exit(f'Wrong Input Features. Please use tensor with {self.in_features} Input Features')
+        **output = input @ self.weight.t() + self.bias
+        return output**
+</pre></div>
+<p>We first get the shape of the input, figure out how many columns are in the input, then check whether the input size match. Then we do the matrix multiplication (Note we did a transpose here to align the weights) and return the results. We can test whether it works by giving it some data:</p>
+<div class="highlight"><pre><span></span>my = myLinear(20,10)
+a = torch.randn(5,20)
+my(a)
+</pre></div>
+<p>We have a 5x20 input, it goes through our layer and gets a 5x10 output. You should get results like this:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2816/1*uz_Hb4rul6pYs0bMIcTEBQ.png"/></p>
+<p><span class="caps">OK</span>, now go back to our neural network codes and find the Mnist_Logistic class, change self.lin = nn.Linear(784,10, bias=True) to self.lin = myLinear(784, 10, bias=True). Run the code, you should see something like this plot:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*IdvjAdDwEwhgLw0hRi2zwg.png"/></p>
+<p>As you can see it doesn’t converge quite well (around 2.5 loss with one epoch). That’s probably because of our poor initialization. Also, we didn’t take care of the bias part. Let’s fix that in the next iteration. The final code for <strong>iteration 1</strong> looks like this:</p>
+<iframe frameborder="0" src="https://medium.com/media/b7f8cb6179f2fbcf782d4557998676e8"></iframe>
+<h3 id="second-iteration-proper-weight-initialization-and-bias-handling">Second iteration: Proper weight initialization and bias handling<a class="headerlink" href="#second-iteration-proper-weight-initialization-and-bias-handling" title="Permanent link">¶</a></h3>
+<p>We’ve handled <strong>init</strong> and forward, but remember we also have a bias attribute that if False, will not learn additive bias. We have not implemented that yet. Also, we used torch.nn.randn to initialize the weight and bias, which is not optimum. Let’s fix this. The updated <strong>init</strong> function looks like this:</p>
+<div class="highlight"><pre><span></span>def __init__(self, in_features, out_features, bias=True):
+        super().__init__()
+        self.in_features = in_features
+        self.out_features = out_features
+        self.bias = bias
+        **self.weight = torch.nn.Parameter(torch.Tensor(out_features, in_features))
+        if bias:
+            self.bias = torch.nn.Parameter(torch.Tensor(out_features))
+        else:
+            self.register_parameter('bias', None)**
+
+**        self.reset_parameters()**
+</pre></div>
+<p>First of all, when we create the weight and bias parameters, we didn’t initialize them as the last iteration. We just allocate a regular Tensor object to it. The actual initialization is done in another function reset_parameters(<em>will explain later</em>).</p>
+<p>For bias, we added a condition that if True, do what we did the last iteration, but if False, will use register_parameter(‘bias’, None) to give it None value. Now for reset_parameter function, it looks like this:</p>
+<div class="highlight"><pre><span></span>def reset_parameters(self):
+        **torch.nn.init.kaiming_uniform_(self.weight, a=math.sqrt(5))**
+        if self.bias is not None:
+            **fan_in, _ torch.nn.init._calculate_fan_in_and_fan_out(self.weight)
+            bound = 1 / math.sqrt(fan_in)
+            torch.nn.init.uniform_(self.bias, -bound, bound)**
+</pre></div>
+<p>The above code is taken directly from PyTorch source code. What PyTorch did with weight initialization is called kaiming_uniform_. It’s from a paper <a href="https://arxiv.org/pdf/1502.01852.pdf">Delving deep into rectifiers: Surpassing human-level performance on ImageNet classification — He, K. et al. (2015)</a>.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*cq0NDktwlKPtWQ2OrhL67Q.png"/></p>
+<p>What it actually does is by initializing weight with a normal distribution <strong>with mean 0 and variance bound</strong>, it avoids the issue of <strong>vanishing/exploding gradients</strong> issue(<em>though we only have one layer here, when writing the Linear class, we should still keep <span class="caps">MLN</span> in mind</em>).</p>
+<p>Notice that for self.weight, we actually give the a a value of math.sqrt(5) instead of the math.sqrt(fan_in) , this is explained in <a href="https://github.com/pytorch/pytorch/issues/15314">this GitHub issue</a> of PyTorch repo for whom might be interested.</p>
+<p>Also, we can add some extra_repr string to the model:</p>
+<div class="highlight"><pre><span></span>def extra_repr(self):
+        return 'in_features={}, out_features={}, bias={}'.format(
+            self.in_features, self.out_features, self.bias is not None
+        )
+</pre></div>
+<p>The final model looks like this:</p>
+<iframe frameborder="0" src="https://medium.com/media/014b75ca4e4dd27b1212b432a0397871"></iframe>
+<p>Rerun the code, you should be able to see this plot:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*6nUlBO7nIt9t2E0xrfgP-w.png"/></p>
+<p>We can see it converges much faster to a 0.5 loss in one epoch.</p>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h3>
+<p>I hope this helps you clear the cloud on these PyTorchnn.modules a bit. It might seem boring and redundant, but sometimes the fastest( and shortest) way is the ‘boring’ way. Once you get to the very bottom of this, the feeling of knowing that there’s nothing ‘more’ is priceless. You’ll come to the realization that:</p>
+<blockquote>
+<h1 id="underneath-pytorch-theres-no-trick-no-myth-no-catch-just-rock-solid-python-code">Underneath PyTorch, there’s no trick, no myth, no catch, just rock-solid Python code.<a class="headerlink" href="#underneath-pytorch-theres-no-trick-no-myth-no-catch-just-rock-solid-python-code" title="Permanent link">¶</a></h1>
+</blockquote>
+<p>Also by writing your own code, then compare it with official source code, you’ll be able to see where the difference is and learn from the best in the industry. How cool is that?</p>
+
+
+            <div>
+            <span class="author_blurb"><a href=""><span class="author_name">Michael Li</span></a> -
+                </span><br />
+</div>
+
+            
+            <section>
+<p id="comment-message">So what do you think? Did I miss anything? Is any part unclear? Leave your comments below. </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html#disqus_thread",
+                id="disqus-accordion-toggle">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'way-of-numbers';
+        var disqus_identifier = 'https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html';
+    var disqus_url = 'https://wayofnumbers.com/how-to-build-your-own-pytorch-neural-network-layer-from-scratch-842144d623f6.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://wayofnumbers.com/another-self-driving-car-accident-another-ai-development-lesson-b2ce3dbb4444.html" title="Previous: Another Self-Driving Car Accident, Another AI Development Lesson">Another Self-Driving Car Accident, Another AI Development Lesson</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2020-01-29T15:40:11-06:00">Jan 29, 2020</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://wayofnumbers.com/categories.html#machine-learning-ref">Machine Learning</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://wayofnumbers.com/tags#artificial-intelligence-ref">Artificial Intelligence
+                    <span>6</span>
+</a></li>
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
+                    <span>20</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="https://twitter.com/lymenlee" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+    <a href="https://medium.com/@lymenlee" title="My Medium Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-medium sidebar-social-links"></i></a>
+    <a href="https://github.com/wayofnumbers" title="My GitHub Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="www.linkedin.com/in/michael-li-dfw" title="My LinkedIn Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-linkedin sidebar-social-links"></i></a>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="https://github.us17.list-manage.com/subscribe/post?u=c212184cc0965bdf1658f69f0&amp;id=5677a7b75e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Get Monthly Updates</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Send me Free Updates" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+        </div>
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+    <div>
+        <span class="site-name">Way of Numbers</span> - Data science for the rest of us.
+    </div>
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+            <script type="text/javascript">
+var disqus_shortname = 'way-of-numbers';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script  language="javascript" type="text/javascript">
+function uncollapse() {
+    if (window.location.hash.match(/^#comment-\d+$/)) {
+        $('#disqus_thread').collapse('show');
+    }
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+uncollapse();
+window.onhashchange=function(){
+    if (window.location.hash.match(/^#comment-\d+$/))
+        window.location.reload(true);
+}
+</script>
+<script>
+$('#disqus_thread').on('shown', function () {
+    var link = document.getElementById('disqus-accordion-toggle');
+    var old_innerHTML = link.innerHTML;
+    $(link).fadeOut(500, function() {
+        $(this).text('Click here to hide comments').fadeIn(500);
+    });
+    $('#disqus_thread').on('hidden', function () {
+        $(link).fadeOut(500, function() {
+            $(this).text(old_innerHTML).fadeIn(500);
+        });
+    })
+})
+</script>
+
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
