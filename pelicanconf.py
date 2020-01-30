@@ -31,8 +31,7 @@ PLUGINS = ['ipynb.markup',
 	'extract_toc',
 	'neighbors', 
 	'tipue_search', 
-	'readtime',
-        u"disqus_static",
+        "disqus_static",
         'pelican-readtime',
         ]
 SITEMAP = {
