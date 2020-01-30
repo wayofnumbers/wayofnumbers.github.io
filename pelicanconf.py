@@ -132,7 +132,7 @@ AUTHORS = {
     "Michael Li": {
         "url": "https://medium.com/@lymenlee",
         "blurb": "is the creator and lead developer of this site.",
-        "avatar": "/images/avatars/miachel.png",
+        "avatar": "/images/avatars/michael.png",
     },
     
 }
