@@ -116,7 +116,7 @@ SITE_DESCRIPTION = (
 )
 
 # Landing Page
-PROJECTS_TITLE = "Related Projects"
+PROJECTS_TITLE = "Projects"
 PROJECTS = [{
     'name': 'Mucraft.net',
     'url': 'http://mucraft.net',
