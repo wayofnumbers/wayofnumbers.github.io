@@ -127,7 +127,7 @@ PROJECTS = [{
     'description': 'A Pelican plugin that can display estimated read time on the website'},
 ]
 
-LANDING_PAGE_TITLE = "Data Science for the Rest of Us."
+LANDING_PAGE_TITLE = "Data Science for the Rest of Us"
 
 AUTHORS = {
     "Michael Li": {
