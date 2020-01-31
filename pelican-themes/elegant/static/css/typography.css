@@ -13,7 +13,7 @@ h5,
 h6 {
   font-family: "PT Sans Narrow","Helvetica Neue",Helvetica,Arial,sans-serif;
     
-  font-weight: normal;
+  font-weight: bold;
   margin: 10px 0px;
   text-align: left;
   & small {
