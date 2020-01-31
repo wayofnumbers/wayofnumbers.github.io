@@ -1,13 +1,12 @@
-Title: NEON.LIFE: Your REAL Virtual Assistant, For Real This Time?
-Subtitle: The anatomy and theory-crafting of NEON.LIFE, Samsung’s new ‘Artificial Human’
+Title: 
 Slug: neon-life-your-real-virtual-assistant-for-real-this-time-6de4a52e66c4
-Date: Thu Jan 30 11:13:50 CST 2020
+Subtitle: 
+Date: Fri Jan 31 15:34:27 CST 2020
 Category: Machine Learning
 Tags: Machine Learning, Artificial Intelligence
 author: Michael Li
-Summary: NEON.LIFE: Your REAL Virtual Assistant, For Real This Time?
+Summary: 
 [TOC]
-
 
 ![](https://cdn-images-1.medium.com/max/2500/0*pbfygQlozOYzIXYx.jpg)
 
