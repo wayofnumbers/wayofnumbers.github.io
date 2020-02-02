@@ -6,25 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael Li" />
 
-        <meta name="description" content="Explored the impact and potential solutions for deep fake comments.
+        <meta name="description" content="How to Port Your Medium Articles to Personal Blog with a Simple Bash Script
 " />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Machine Learning, NLP, Deep Fake, Machine Learning, " />
+<meta name="keywords" content="Machine Learning, Artificial Intelligence, Machine Learning, " />
 
-<meta property="og:title" content="On the Internet, Nobody Knows You Are a Dog, or AI  - An inevitable slide into online community anarchy "/>
-<meta property="og:url" content="https://wayofnumbers.com/On-the-Internet-Nobody-Knows-You-Are-a-Dog-or-AI" />
-<meta property="og:description" content="Explored the impact and potential solutions for deep fake comments." />
+<meta property="og:title" content="How to Port Your Medium Articles to Personal Blog with a Simple Bash Script  - ‘Quick and Dirty’ Blogging Automation "/>
+<meta property="og:url" content="https://wayofnumbers.com/how-to-port-your-medium-articles-to-personal-blog-with-a-simple-bash-script-4422aa7b9be" />
+<meta property="og:description" content="How to Port Your Medium Articles to Personal Blog with a Simple Bash Script" />
 <meta property="og:site_name" content="Way of Numbers" />
 <meta property="og:article:author" content="Michael Li" />
-<meta property="og:article:published_time" content="2019-10-01T20:00:00-05:00" />
-<meta name="twitter:title" content="On the Internet, Nobody Knows You Are a Dog, or AI  - An inevitable slide into online community anarchy ">
-<meta name="twitter:description" content="Explored the impact and potential solutions for deep fake comments.">
+<meta property="og:article:published_time" content="2020-02-01T20:17:31-06:00" />
+<meta name="twitter:title" content="How to Port Your Medium Articles to Personal Blog with a Simple Bash Script  - ‘Quick and Dirty’ Blogging Automation ">
+<meta name="twitter:description" content="How to Port Your Medium Articles to Personal Blog with a Simple Bash Script">
 <meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
 <meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
 
-        <title>On the Internet, Nobody Knows You Are a Dog, or AI  - An inevitable slide into online community anarchy  · Way of Numbers
+        <title>How to Port Your Medium Articles to Personal Blog with a Simple Bash Script  - ‘Quick and Dirty’ Blogging Automation  · Way of Numbers
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/elegant.prod.css" media="screen">
@@ -89,10 +89,10 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wayofnumbers.com/On-the-Internet-Nobody-Knows-You-Are-a-Dog-or-AI">
-                On the Internet, Nobody Knows You Are a Dog, or <span class="caps">AI</span>
+            <a href="https://wayofnumbers.com/how-to-port-your-medium-articles-to-personal-blog-with-a-simple-bash-script-4422aa7b9be">
+                How to Port Your Medium Articles to Personal Blog with a Simple Bash&nbsp;Script
                 <small class="subtitle">
-                    An inevitable slide into online community anarchy
+                    ‘Quick and Dirty’ Blogging Automation
                 </small>
             </a>
         </h1>
@@ -107,10 +107,9 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#like-censoring-but-more-aggressive">Like Censoring, But More Aggressive</a></li>
-<li><a href="#fine-grained-yet-massive-in-scale">Fine-Grained, yet Massive in Scale</a></li>
-<li><a href="#all-hope-has-not-lost-yet">All Hope has Not Lost, Yet</a></li>
-<li><a href="#what-can-we-do">What Can We Do</a></li>
+<li><a href="#structure-the-script">Structure the Script</a></li>
+<li><a href="#lets-write-the-code">Let’s Write the Code</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
 </ul>
 </div>
         </nav>
@@ -118,28 +117,101 @@
     <div class="span8 article-content">
             
             
-<p><img alt="Photo by Andy Kelly on Unsplash" src="https://cdn-images-1.medium.com/max/10944/0*-Gl0VJUpNJfYzaoq"/><em>Photo by <a href="https://unsplash.com/@askkell?utm_source=medium&amp;utm_medium=referral">Andy Kelly</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
-<p>I came across the following tweet today and I wanted to talk about it. It is a new paper get accepted into <span class="caps">EMLNP</span> about generating deep fake comments according to a title and the article. There is already a lot of discussions about the ethical implication of this. Since it is a paper developed by Chinese researchers, as a Chinese myself, I think I can probably read more into it given that I’m more in the context of the Chinese online community and what are the possible uses of this new technology.</p>
-<h2 id="like-censoring-but-more-aggressive">Like Censoring, But More Aggressive<a class="headerlink" href="#like-censoring-but-more-aggressive" title="Permanent link"> </a></h2>
-<p>Generating deep fake comments is somewhat the opposite of censoring, in a bad way. Instead of blocking/removing information you <strong>don’t want</strong>, it generates/adds information that you do <strong>want</strong>. Censoring sometimes is not easy to spot, say your content is not recommended on YouTube or your tweet is hard to search on Twitter for some reason. These all happen in the background and usually done by algorithms. You don’t know exactly what happened. A lot of the times, censoring has plausible deniability. Also, nobody can censor you if you don’t put content up, so it’s passive. But deep fake comments are different. It’s more in-your-face, everybody can see it and they don’t have to wait for you to post anything to act on it. It can flood your channel or timeline and render the real message/information less obvious. Compare to censoring, which is a passive way to shaping public opinions, deep fake comments is a very aggressive way to create some ‘artificial trends’ in an effort of engineering people’s view on certain things. It could be some movie reviews, it can also be some report on social events to spin what happened. Nonetheless, the potential impact is big.</p>
-<h2 id="fine-grained-yet-massive-in-scale">Fine-Grained, yet Massive in Scale<a class="headerlink" href="#fine-grained-yet-massive-in-scale" title="Permanent link"> </a></h2>
-<p><img alt="Photo by hue12 photography on Unsplash" src="https://cdn-images-1.medium.com/max/10944/0*0TRjNASnDgQZobcN"/><em>Photo by <a href="https://unsplash.com/@hue12_photography?utm_source=medium&amp;utm_medium=referral">hue12 photography</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
-<p>Deep fake comments might be in the early stage of development, but it has the potential of being fine-grained in quality and massive in quantity. The recent development in <span class="caps">NLP</span> often leverage transfer learning in training models with fewer data and more quickly. Researchers can utilize currently <a href="https://www.kdnuggets.com/2017/11/building-wikipedia-text-corpus-nlp.html">pre-trained model like the one trained on Wikipedia</a> as a base, and fine-tune more specific models to gain state-of-the-art results much quicker with fewer data. The pre-trained model already knows how English as a language work overall, just needs to learn how certain type of English is spoken (e.g. Reddit, or <span class="caps">IMDB</span> movie comments). Utilizing transfer learning, deep fake comments have the potential of quickly developing multiple models for many niches and achieve fine-grained quality, generating very relevant and ‘real’ comments on different areas.</p>
-<p>Also, since it doesn’t rely on human intervention (like the ‘<a href="https://en.wikipedia.org/wiki/50_Cent_Party">50-cents Party</a>’ in Chinese Internet), theoretically you can have thousands of scripts, running slightly different styled models and generating comments trying to push the same agenda. Think of how well Google’s targeted ads can do, and you’ll have an idea of how much potential this ‘targeted comments’ has. I would even go so far as claiming it could be some kind of ‘weapon’ in some sense.</p>
-<p>In an <a href="https://en.wikipedia.org/wiki/On_the_Internet,_nobody_knows_you%27re_a_dog">Internet where no one knows you are a dog</a>, people stopped trusting articles since it can be crafted to convince you buying some products or pushing some agenda, but people by and large still trust comments, thinking it’s more human and more private thus more trustworthy. Now with the deep fake comments, even the comments cannot be trusted. What else on the Internet is still legit then?</p>
-<h2 id="all-hope-has-not-lost-yet">All Hope has Not Lost, Yet<a class="headerlink" href="#all-hope-has-not-lost-yet" title="Permanent link"> </a></h2>
-<p><center><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/DMlX7GV-axI" width="560"></iframe></center></p>
-<p>Having discussed all the scary indications of the deep fake comments can have. It’s not without weakness. As we all know that comments alone won’t have much influence if it cannot form a high-quality conversation. It’s the exchange of idea and emotion that really touches people. One comments, no matter how ‘real’ or ‘relevant’ it is, won’t have the optimum impact. When real people replied on the comment and expect a clever or powerful reply back, the algorithm will most likely fall short, at least for now. This is why a lot of the chatbot or ‘Siri’ like voice assistants have not gone mainstream yet. Being able to address this challenge is to say the <span class="caps">AI</span> has already passed the <a href="https://en.wikipedia.org/wiki/Turing_test">Turing Test</a>, which is a very high bar and I don’t believe we are there yet. <a href="https://towardsdatascience.com/did-google-duplex-beat-the-turing-test-yes-and-no-a2b87d1c9f58">Google’s Duplex is currently the closest</a>, but still not quite.</p>
-<p>So for now, I think the algorithm could create a lot of hassle, but cannot really touch people and have a very deep impact.</p>
-<blockquote>
-<p>Yet.</p>
-</blockquote>
-<h2 id="what-can-we-do">What Can We Do<a class="headerlink" href="#what-can-we-do" title="Permanent link"> </a></h2>
-<p>I honestly don’t know the answer to this. We can regulate the development and publication of this kind of technology, or we can foster self-discipline like what <a href="https://www.wired.com/story/dangerous-ai-open-source/">OpenAI was doing with their famous <span class="caps">GPT</span>-2 model</a> (a respective move and should be encouraged, though far from solving the bigger issue though).</p>
-<p>Another way is to accept that the algorithm will be developed one way or another, and try to developed a counter-<span class="caps">AI</span> to detect the deep-fakes, like what <a href="https://ai.facebook.com/blog/deepfake-detection-challenge/">Facebook </a>and <a href="https://ai.googleblog.com/2019/09/contributing-data-to-deepfake-detection.html">Google </a>are doing right now.</p>
-<p>If we can detect the deep-fake, we can censor the deep-fake, right? <strong>Right?</strong></p>
-<p>What do you think is the best way to deal with this? Please leave your comments (No Deep Fake Please!) below.</p>
-<p>Any feedback or constructive criticism are welcomed. You can either find me on Twitter <a href="https://twitter.com/lymenlee">@lymenlee</a> or my blog site <a href="https://wayofnumbers.com/">wayofnumbers.com</a>.</p>
+<p><img alt="Photo by Annie Spratt on Unsplash" src="https://cdn-images-1.medium.com/max/15904/0*lwNGcCCG8j0H_5mz"/><em>Photo by <a href="https://unsplash.com/@anniespratt?utm_source=medium&amp;utm_medium=referral">Annie Spratt</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
+<p>Medium is a great publication platform. It has good exposure, quality content, readers that really appreciate good articles and a neat and easy to use <span class="caps">UI</span>. It’s especially great for writers that just start their journey.</p>
+<p>As good as it is, having your own blog outside of Medium is still not a bad idea. It enables you to have another channel you can totally own to communicate with your readers. And who knows, no company can last forever, what if Medium got acquired by some other company or something even worse happen. You can still sleep well at night knowing you won’t lose all your articles.</p>
+<p>I built <a href="https://wayofnumbers.com/">my own</a> using <a href="https://github.com/getpelican/pelican">Pelican</a>, a Python-based <a href="https://en.wikipedia.org/wiki/Static_web_page">static site generator</a>. I wrote an <a href="https://towardsdatascience.com/my-experience-migrating-my-blog-from-github-pages-to-netlify-92ff6c85fb04">article</a> explaining the whole process. For every Medium article, I need to copy the <span class="caps">URL</span>, run some command to transfer it into Markdown file, then generate the blog site using Pelican. It is simple, but not as simple as I like it to be. So this is a great opportunity for some quick and dirty Bash script to come for the rescue. Let’s see what we can do.</p>
+<h2 id="structure-the-script">Structure the Script<a class="headerlink" href="#structure-the-script" title="Permanent link"> </a></h2>
+<p>Before start writing the script, it helps to structure out what we want to accomplish, makes it easier to write quality code. Basically, we need to:</p>
+<ol>
+<li>
+<p>Put all article URLs into one text file manually(plan to automate this part too in the future, using some scraping framework maybe)</p>
+</li>
+<li>
+<p>Read every line of the file, and for each line.</p>
+</li>
+<li>
+<p>Extract the title and subtitle</p>
+</li>
+<li>
+<p>Use the title and subtitle to create meta-data needed for Pelican to turn the Markdown file into a post.</p>
+</li>
+<li>
+<p>Run Pelican command to generate the static site.</p>
+</li>
+<li>
+<p>Push the site to GitHub and trigger Netlify’s auto-build</p>
+</li>
+<li>
+<p>Profit.</p>
+</li>
+</ol>
+<h2 id="lets-write-the-code">Let’s Write the Code<a class="headerlink" href="#lets-write-the-code" title="Permanent link"> </a></h2>
+<p><img alt="Photo by Shahadat Rahman on Unsplash" src="https://cdn-images-1.medium.com/max/10368/0*wZqyc6jNLf1vwg3o"/><em>Photo by <a href="https://unsplash.com/@hishahadat?utm_source=medium&amp;utm_medium=referral">Shahadat Rahman</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
+<p>First of all, define our variables:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash </span>
+<span class="c1"># Define variables</span>
+<span class="nv">filename</span><span class="o">=</span><span class="s1">'articles.txt'</span>
+<span class="nv">n</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</td></tr></table>
+<p>The structure the loop to read every line of the text file:</p>
+<div class="highlight"><pre><span></span># Read in file and do processing on each one
+while read line; do 
+    # reading each line
+    n=$((n+1)) 
+    slug=$(echo $line | sed 's/https:\/\/towardsdatascience.com\///' )  # get slug from URL 
+    FILE="$HOME/wayofnumbers.github.io/content/$slug.md"   # generate Markdown file name from slug 
+    mediumexporter $line &gt; $FILE   # convert medium article to markdown file    
+    # some processing ...
+done &lt; $filename
+</pre></div>
+<p>We used the sed command to remove the first part of the <span class="caps">URL</span>: <a href="https://towardsdatascience.com/">https://towardsdatascience.com/</a> so the rest could be used as our slug. For example, <a href="https://towardsdatascience.com/9-things-i-learned-from-blogging-on-medium-for-the-first-month-2bace214b814">https://towardsdatascience.com/9-things-i-learned-from-blogging-on-medium-for-the-first-month-2bace214b814</a> turns into <a href="https://towardsdatascience.com/9-things-i-learned-from-blogging-on-medium-for-the-first-month-2bace214b814">9-things-i-learned-from-blogging-on-medium-for-the-first-month-2bace214b814</a>, perfect for a slug. Here we also uses the slug to create the filename for the MarkDown file. Then we use mediumexporter to transfer <span class="caps">URL</span> into the Markdown file. You can find out more about mediumexporter <a href="https://medium.com/@macropus/export-your-medium-posts-to-markdown-b5ccc8cb0050">here</a>.</p>
+<p>Now that we have the Markdown file, let’s fill in the processing code we want:</p>
+<div class="highlight"><pre><span></span># Processing the markdown file 
+    tail -n +2 "$FILE" &gt; "$FILE.tmp" &amp;&amp; mv "$FILE.tmp" "$FILE"  # remove the first line 
+    fl=$(head -n 1 $FILE) # put first line (title) into fl 
+    firstline=$(echo $fl | sed 's/# //') # Remove '# ' 
+    tail -n +3 "$FILE" &gt; "$FILE.tmp" &amp;&amp; mv "$FILE.tmp" "$FILE"  # remove the first line 
+    subtitle=$(head -n 1 $FILE) # put first line (subtitle) into subtitle 
+    tail -n +2 "$FILE" &gt; "$FILE.tmp" &amp;&amp; mv "$FILE.tmp" "$FILE"  # remove the first two line
+</pre></div>
+<p>These lines are rather self-explanatory. Now we have firstline variable as the title and subtitle variable as the subtitle, we are now ready to construct the Markdown file meta-data for Pelican:</p>
+<div class="highlight"><pre><span></span># handle metadata for Pelican  
+meta="
+Title: $firstline
+Slug: $slug
+Subtitle: $subtitle
+Date: $(date)
+Category: Machine Learning
+Tags: Machine Learning, Artificial Intelligence
+author: Michael Li
+Summary: $firstline
+[TOC]
+"
+</pre></div>
+<p>You can refer to Pelican’s document <a href="https://docs.getpelican.com/en/stable/content.html#file-metadata">here</a> for more information about the meta-data format. Simply put, the Markdown file doesn’t need to specifically write the title and subtitle, as long as we specify the title and subtitle field in our meta-data, Pelican will automatically generate them for you in the post, with specific styles per the theme you choose.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2400/0*WUqf8uBnOPArexxL"/></p>
+<p>With the correct meta-data, now we can finally update the Markdown and get it ready for site generation:</p>
+<div class="highlight"><pre><span></span>{ echo -n "$meta"; cat $FILE; } &gt;$FILE.new # sticth meta-data and article content together 
+mv $FILE{.new,} 
+head -n -8 $FILE &gt; $FILE.new # Remove medium's recommended articles
+mv $FILE{.new,}
+done &lt; $filename  # don't forget to enclose the loop.
+</pre></div>
+<p>All my Medium articles have several recommendations for further readings. I removed those for my blog(the last line of code above). Now that the Markdown file is ready, time to generate the site and push it to the server:</p>
+<div class="highlight"><pre><span></span># push to server
+cd $HOME/wayofnumbers.github.io
+pelican content -s publishconf.py 
+git add .
+git commit -m "fix"
+git push origin dev
+</pre></div>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h2>
+<p>So there you go. This script only works on Pelican static site generator, but the gist of it can be applied to any of your blogging platforms. I hope you learned a thing or two. And happy blogging/coding!</p>
 
 
              
@@ -165,27 +237,23 @@
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://wayofnumbers.com/when-growth-hack-meets-growing-pain" title="Previous: When ‘Growth Hacks’ Meets ‘Growing Pain’ - What I think about Siraj Raval’ s recent controversial ‘ML course’">When ‘Growth Hacks’ Meets ‘Growing Pain’ <small class="subtitle">What I think about Siraj Raval’ s recent controversial ‘ML course’</small></a></li>
-                <li class="next-article"><a href="https://wayofnumbers.com/9-things-i-learned-from-blogging-on-medium-for-the-first-month" title="Next: 9 Things I Learned from Blogging on Medium for the First Month - Why Medium is a good platform to exchange ideas">9 Things I Learned from Blogging on Medium for the First Month <small class="subtitle">Why Medium is a good platform to exchange ideas</small></a> »</li>
+                <li class="previous-article">« <a href="https://wayofnumbers.com/neon-life-your-real-virtual-assistant-for-real-this-time-6de4a52e66c4" title="Previous: NEON.LIFE: Your REAL Virtual Assistant, For Real This Time? - The anatomy and theory-crafting of NEON.LIFE, Samsung’s new ‘Artificial Human’">NEON.LIFE: Your REAL Virtual Assistant, For Real This Time? <small class="subtitle">The anatomy and theory-crafting of NEON.LIFE, Samsung’s new ‘Artificial Human’</small></a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2019-10-01T20:00:00-05:00">Oct 1, 2019</time>
+            <time itemprop="dateCreated" datetime="2020-02-01T20:17:31-06:00">Feb 1, 2020</time>
             <h4>Category</h4>
             <a class="category-link" href="https://wayofnumbers.com/categories#machine-learning-ref">Machine Learning</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wayofnumbers.com/tags#deep-fake-ref">Deep Fake
-                    <span>1</span>
+                <li><a href="https://wayofnumbers.com/tags#artificial-intelligence-ref">Artificial Intelligence
+                    <span>8</span>
 </a></li>
                 <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
                     <span>21</span>
-</a></li>
-                <li><a href="https://wayofnumbers.com/tags#nlp-ref">NLP
-                    <span>2</span>
 </a></li>
             </ul>
 <h4>Stay in Touch</h4>
