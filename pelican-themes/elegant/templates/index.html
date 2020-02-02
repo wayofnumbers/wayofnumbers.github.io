@@ -112,11 +112,9 @@
                 <div class="recent-posts-posted">
                     posted in
                     <a href="{{ SITEURL }}/{{ CATEGORIES_URL }}#{{ article.category.slug }}-ref">{{ article.category }}</a>
-
     {% if article.readtime %}
-    <span><p style="text-align:right; color:#aaaaaa; ">&nbsp Estimated read time: {{article.readtime.minutes}} min.</p></span>
+    <span><p style="color:#aaaaaa; ">&nbsp Estimated read time: {{article.readtime.minutes}} min.</p></span>
     {% endif %}
-
                     <div class="recent-posts-time">
                         <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
                     </div>
