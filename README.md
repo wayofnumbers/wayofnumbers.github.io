@@ -12,3 +12,6 @@ Change .page-header .h1 h2 h3 h4 h5 etc's font-family to 'PT Sans Narrow', Helve
 	- Run Pelican to generate site
 	- Push to GitHub
 	- Auto deploy to Netlify
+
+## favicon
+https://stackoverflow.com/questions/31270373/how-to-add-a-favicon-to-a-pelican-blog
