@@ -1,5 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Way of Numbers</title><link href="https://wayofnumbers.com/" rel="alternate"></link><link href="https://wayofnumbers.com/feeds/all-en.atom.xml" rel="self"></link><id>https://wayofnumbers.com/</id><updated>2020-02-01T20:17:31-06:00</updated><subtitle>Data science for the rest of us.</subtitle><entry><title>How to Port Your Medium Articles to Personal Blog with a Simple Bash Script</title><link href="https://wayofnumbers.com/how-to-port-your-medium-articles-to-personal-blog-with-a-simple-bash-script-4422aa7b9be" rel="alternate"></link><published>2020-02-01T20:17:31-06:00</published><updated>2020-02-01T20:17:31-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.com,2020-02-01:/how-to-port-your-medium-articles-to-personal-blog-with-a-simple-bash-script-4422aa7b9be</id><summary type="html">&lt;p&gt;How to Port Your Medium Articles to Personal Blog with a Simple Bash&amp;nbsp;Script&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Way of Numbers</title><link href="https://wayofnumbers.com/" rel="alternate"></link><link href="https://wayofnumbers.com/feeds/all-en.atom.xml" rel="self"></link><id>https://wayofnumbers.com/</id><updated>2020-02-07T13:51:05-06:00</updated><subtitle>Data science for the rest of us.</subtitle><entry><title>How to Extract Knowledge from Wikipedia, Data Science Style</title><link href="https://wayofnumbers.com/how-to-extract-knowledge-from-wikipedia-data-science-style-35f50f095d1a" rel="alternate"></link><published>2020-02-07T13:51:05-06:00</published><updated>2020-02-07T13:51:05-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.com,2020-02-07:/how-to-extract-knowledge-from-wikipedia-data-science-style-35f50f095d1a</id><summary type="html">&lt;p&gt;How to Extract Knowledge from Wikipedia, Data Science&amp;nbsp;Style&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/4000/1*uIpayAKY-E2Aj48EqBuBGw.png"/&gt;&lt;/p&gt;
+&lt;p&gt;As Data Scientists, people tend to think what they do is developing and experimenting with sophisticated and complicated algorithms, and produce state of the art results. This is largely true. It is what a data scientist is mostly proud of and the most innovative and rewarding part. But what people usually don’t see is the sweat they go through to gather, process, and massage the data that leads to the great results. That’s why you can see &lt;span class="caps"&gt;SQL&lt;/span&gt; appears on most of the data scientist position requirements.&lt;/p&gt;
+&lt;h2 id="what-is-sparql"&gt;What is &lt;span class="caps"&gt;SPARQL&lt;/span&gt;?&lt;a class="headerlink" href="#what-is-sparql" title="Permanent link"&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;There is another query language that could prove very useful in acquiring data from multiple sources and databases, Wikipedia the biggest among them. The query language is called &lt;a href="https://en.wikipedia.org/wiki/SPARQL"&gt;&lt;span class="caps"&gt;SPARQL&lt;/span&gt;&lt;/a&gt;. According to Wikipedia:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class="caps"&gt;SPARQL&lt;/span&gt;&lt;/strong&gt; (pronounced “&lt;a href="https://en.wiktionary.org/wiki/sparkle"&gt;sparkle&lt;/a&gt;”, a &lt;a href="https://en.wikipedia.org/wiki/Recursive_acronym"&gt;recursive acronym&lt;/a&gt;&lt;a href="https://en.wikipedia.org/wiki/SPARQL#cite_note-2"&gt;[2]&lt;/a&gt; for &lt;strong&gt;&lt;span class="caps"&gt;SPARQL&lt;/span&gt; Protocol and &lt;span class="caps"&gt;RDF&lt;/span&gt; Query Language&lt;/strong&gt;) is an &lt;a href="https://en.wikipedia.org/wiki/RDF_query_language"&gt;&lt;span class="caps"&gt;RDF&lt;/span&gt; query language&lt;/a&gt; — that is, a &lt;a href="https://en.wikipedia.org/wiki/Semantic_Query"&gt;semantic&lt;/a&gt; &lt;a href="https://en.wikipedia.org/wiki/Query_language"&gt;query language&lt;/a&gt; for &lt;a href="https://en.wikipedia.org/wiki/Database"&gt;databases&lt;/a&gt; — able to retrieve and manipulate data stored in &lt;a href="https://en.wikipedia.org/wiki/Resource_Description_Framework"&gt;Resource Description Framework (&lt;span class="caps"&gt;RDF&lt;/span&gt;)&lt;/a&gt; format&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Well, this is not a very good definition. It hardly tells you what it can do. To translate it into human-readable language:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class="caps"&gt;SPARQL&lt;/span&gt; is a query language similar to &lt;span class="caps"&gt;SQL&lt;/span&gt; in syntax but works on a knowledge graph database like Wikipedia, that allows you to extract knowledge and information by defining a series of filters and constraints.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If this is still too abstract to you, look at the image below:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Awarded Chemistry Nobel Prizes" src="https://cdn-images-1.medium.com/max/3678/1*ETRq9qAH__AxcScjgV3J3g.png"/&gt;&lt;em&gt;Awarded Chemistry Nobel Prizes&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;It is a timeline of awarded chemistry Nobel prizes, generated by the &lt;a href="https://w.wiki/4EU"&gt;WikiData Query Service&lt;/a&gt; website, using the code below:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#Awarded Chemistry Nobel Prizes
+#defaultView:Timeline
+SELECT DISTINCT ?item ?itemLabel ?when (YEAR(?when) as ?date) ?pic
+WHERE {
+  ?item p:P166 ?awardStat . # … with an awarded(P166) statement
+  ?awardStat ps:P166 wd:Q44585 . # … that has the value Nobel Prize in Chemistry (Q35637)
+  ?awardStat pq:P585 ?when . # when did he receive the Nobel prize
+
+SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
+OPTIONAL { ?item wdt:P18 ?pic }
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Anyone familiar with &lt;span class="caps"&gt;SQL&lt;/span&gt; will find the above code quite intuitive. I’ll use another example to explain basically how to formulate similar queries to achieve the results you interested in.&lt;/p&gt;
+&lt;h2 id="starting-point-wikipedia-page"&gt;Starting Point: Wikipedia Page&lt;a class="headerlink" href="#starting-point-wikipedia-page" title="Permanent link"&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span class="caps"&gt;SPARQL&lt;/span&gt; works on multiple knowledge graph databases. To know what knowledge graph is, let’s start with something everyone is familiar with: Wikipedia. Wikipedia is the go-to place for most people when they want to research a topic/subject. If you go to Python creator Guido van Rossum’s page, you’ll see a detailed page with all kinds of good information.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/2006/1*gy5Rtamq6tljmSGYi3tkqg.png"/&gt;&lt;/p&gt;
+&lt;h2 id="organized-page-wikidata"&gt;Organized Page: WikiData&lt;a class="headerlink" href="#organized-page-wikidata" title="Permanent link"&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The problem with this page is it’s not organized. You can search on keywords, but you cannot easily find out the relationship between the information nodes. That’s where the knowledge graph comes into play. The red rectangle on the above page spells “Wikidata Item”, click it will bring you to the knowledge graph view of the same page:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/2022/1*uxmaEbK9lTe_R_pztxP_6w.png"/&gt;&lt;/p&gt;
+&lt;h2 id="start-the-query"&gt;Start the Query&lt;a class="headerlink" href="#start-the-query" title="Permanent link"&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Here we can see all information about Guido is well organized into categories, each category has multiple items. Use &lt;span class="caps"&gt;SPARQL&lt;/span&gt;, you can easily query this information. To do this, Wikipedia provides another page, a user-friendly query service called &lt;a href="https://query.wikidata.org"&gt;Wikidata Query Service&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/2064/1*LLZ7jonrSLTH96uR1HnNSA.png"/&gt;&lt;/p&gt;
+&lt;p&gt;This is where we can experiment with &lt;span class="caps"&gt;SPARQL&lt;/span&gt;. On the WikiData page, we observed that Guido is a programmer (obviously!), now what if we want to know other programmers that have an entry on Wikipedia? Let’s see the &lt;span class="caps"&gt;SPARQL&lt;/span&gt; code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;SELECT ?person
+
+WHERE {
+
+?person wdt:P106 wd:Q5482740 .
+
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here we defined a ?person as the &lt;strong&gt;subject &lt;/strong&gt;of interest, this is also what will appear as a column in our query results. Then we specify some constraints with &lt;span class="caps"&gt;WHERE&lt;/span&gt; . The constraints are wdt:P106 need to be wd:Q5482740. What? You say. Let me explain it in more detail. wdt is a prefix of a ‘predicate’ or ‘attribute’ of the subject while wd is the prefix of a value(object in &lt;span class="caps"&gt;SPARQL&lt;/span&gt; terms, but that’s not important) of the attribute. wdt: means I am gonna specify an attribute of the subject here, and wd: means I will specify what the value of this attribute is. So what is P106 and Q5482740 ? These are just a code for the specific attribute and value. P106 stands for ‘occupation’ and Q5482740 stands for ‘programmer’. This line of code means, I want the ?person subject to have an attribute of ‘occupation’ of ‘programmer’. Not that scary anymore, right? You can find these codes easily on the WikiData page mentioned above.&lt;/p&gt;
+&lt;p&gt;Run the query and you’ll get the following results:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/2068/1*lAz6legzUdahHVQDRkIYdw.png"/&gt;&lt;/p&gt;
+&lt;h2 id="from-code-to-name"&gt;From Code to Name&lt;a class="headerlink" href="#from-code-to-name" title="Permanent link"&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We got a bunch of person items with different wd:value . If you look closer at the value, they are actually the code for a different person. For example, the first one wd:Q80 is &lt;a href="https://www.wikidata.org/wiki/Q80"&gt;Tim Berners-Lee&lt;/a&gt;, the inventor of &lt;span class="caps"&gt;WWW&lt;/span&gt;. This is not intuitive, we want to be able to directly see the names. To do that, we add a WikiData ‘label service’ that helps us translate the code to name, like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;SELECT ?person ?personLabel
+
+WHERE {
+
+  ?person wdt:P106 wd:Q5482740 .
+  ?person rdfs:label ?personLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?personLabel ), "fr" ) )
+
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Similar syntax, we want the person to have a ‘label’ attribute, and we define a personLabel value variable to hold these values so we can display them in the query results. Also, we added the personLabel into our &lt;span class="caps"&gt;SELECT&lt;/span&gt; phrase so it will be displayed. Please be noted that I also added a &lt;span class="caps"&gt;FILTER&lt;/span&gt; below to only display the French language label, otherwise it will show multiple language labels for one person, which is not what we want:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/2068/1*YOPEjLCa4cb0J0A8iV7B8g.png"/&gt;&lt;/p&gt;
+&lt;h2 id="narrowing-down"&gt;Narrowing Down&lt;a class="headerlink" href="#narrowing-down" title="Permanent link"&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;From the above results, we can see that we have some 790 results. This is way too many. Let’s narrow them down to the ones that are ‘somebody’ in the industry. Someone that has an attribute of ‘notable work’:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;SELECT ?person ?personLabel ?notableworkLabel
+
+WHERE {
+
+?person wdt:P106 wd:Q5482740 .
+  ?person rdfs:label ?personLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?personLabel ), "fr" ) )
+
+  ?person wdt:P800 ?notablework .
+  ?notablework rdfs:label ?notableworkLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?notableworkLabel ), "fr" ) )
+
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Again, wdt:P800 means ‘notable work’ attribute, everything else is similar. We then get the following results:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/2062/1*bm_RqgE7k3h1QJL4JlBDew.png"/&gt;&lt;/p&gt;
+&lt;h2 id="group-multiple-labels"&gt;Group Multiple Labels&lt;a class="headerlink" href="#group-multiple-labels" title="Permanent link"&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Now we have only 175 results, with each person’s notable work also listed. But wait, why we have five Richard Stallman? Turns out, Richard has more than one notable work, thus listed multiple times in the results. Let’s fix this by grouping all the notable work into one attribute:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;SELECT ?person ?personLabel ( GROUP_CONCAT ( DISTINCT ?notableworkLabel; separator="; " ) AS ?works )
+
+WHERE {
+
+?person wdt:P106 wd:Q5482740 .
+  ?person rdfs:label ?personLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?personLabel ), "fr" ) )
+
+  ?person wdt:P800 ?notablework .
+  ?notablework rdfs:label ?notableworkLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?notableworkLabel ), "fr" ) )
+
+}
+
+GROUP BY ?person ?personLabel
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here ‘&lt;span class="caps"&gt;GROUP&lt;/span&gt; &lt;span class="caps"&gt;BY&lt;/span&gt;’ is used. Also, GROUP_CONCAT function is used to concatenate multiple notableworkLabel into a new column works (&lt;em&gt;I will not explain how these functions work, just want to quickly show you what &lt;span class="caps"&gt;SPARQL&lt;/span&gt; can do. Please feel free to Google if you want to know more, there are plenty of tutorial articles and videos out there)&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/2068/1*0mw90V_sdEcAh6iC1GfEYA.png"/&gt;&lt;/p&gt;
+&lt;h2 id="faces"&gt;Faces&lt;a class="headerlink" href="#faces" title="Permanent link"&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Now we have a 90 results list, with all the ‘who-is-who’ in the software engineering world. But &lt;span class="caps"&gt;SPARQL&lt;/span&gt; can do more. Let’s add some faces to the names:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;SELECT ?person ?personLabel ( GROUP_CONCAT ( DISTINCT ?notableworkLabel; separator="; " ) AS ?works ) ?image
+
+WHERE {
+
+?person wdt:P106 wd:Q5482740 .
+  ?person rdfs:label ?personLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?personLabel ), "fr" ) )
+
+  ?person wdt:P800 ?notablework .
+  ?notablework rdfs:label ?notableworkLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?notableworkLabel ), "fr" ) )
+
+  OPTIONAL {?person wdt:P18 ?image}
+
+}
+
+GROUP BY ?person ?personLabel ?image
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The same pattern, we just added an &lt;span class="caps"&gt;OPTIONAL&lt;/span&gt; keyword prior since we don’t want to exclude someone if he doesn’t have an image in his profile. We also switch the view into ‘Image Grid’ :&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/2008/1*CV1Nh0HXqUcSr3bNyEzbTQ.png"/&gt;&lt;/p&gt;
+&lt;h2 id="where-are-they"&gt;Where are they?&lt;a class="headerlink" href="#where-are-they" title="Permanent link"&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Wow! This is much better. I saw quite some familiar faces! Maybe you wonder where are these guys located? Let’s find out:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#defaultView:ImageGrid
+
+SELECT ?person ?personLabel ( GROUP_CONCAT ( DISTINCT ?notableworkLabel; separator="; " ) AS ?works ) ?image ?countryLabel ?cood
+
+WHERE {
+  ?person wdt:P106 wd:Q5482740 .
+  ?person rdfs:label ?personLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?personLabel ), "fr" ) )
+
+  ?person wdt:P800 ?notablework .
+  ?notablework rdfs:label ?notableworkLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?notableworkLabel ), "fr" ) )
+
+
+  OPTIONAL {?person wdt:P18 ?image}
+
+  OPTIONAL {?person wdt:P19 ?country .
+           ?country rdfs:label ?countryLabel .
+            ?country wdt:P625 ?cood .
+            FILTER ( LANGMATCHES ( LANG ( ?countryLabel ), "fr" ) )
+           }
+
+}
+
+GROUP BY ?person ?personLabel ?image ?countryLabel ?cood
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can decipher the code above yourself maybe. It basically says I want this person to have an attribute of country, put into a variable country, then find out the coordinates of the country and put into a variable cood. With the coordinates, we can activate the ‘map’ view:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/2000/1*1DJ6txmZ7n6OCuU0NuPD3A.png"/&gt;&lt;/p&gt;
+&lt;p&gt;We can see we have a lot of them in the &lt;span class="caps"&gt;US&lt;/span&gt;, some in Europe and others scattered around other parts of the world.&lt;/p&gt;
+&lt;h2 id="more-examples"&gt;More Examples&lt;a class="headerlink" href="#more-examples" title="Permanent link"&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;With a few lines of codes, we figured out the big influencers in the software industry, what they are known of, where they are and how they look. As you can see the potential here is limitless.&lt;/p&gt;
+&lt;p&gt;You can click the ‘&lt;strong&gt;Example&lt;/strong&gt;’ button on the WikiData page to find out more fun and interesting examples you can do with it.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/2000/1*8fzA238U6A1nRtJB1Emx_A.png"/&gt;&lt;/p&gt;
+&lt;p&gt;As an assignment for this article, can you figure out how to add the ‘date of birth’ attribute and generate a timeline graph like the one at the beginning of this article?&lt;/p&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;a class="headerlink" href="#conclusion" title="Permanent link"&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In this article, we used WikiData as a knowledge graph example to introduce &lt;span class="caps"&gt;SPARQL&lt;/span&gt; query language. There are other knowledge graphs out there like &lt;a href="https://en.wikipedia.org/wiki/DBpedia"&gt;DBpedia&lt;/a&gt;, etc. This article is by no means a comprehensive tutorial. I just want to introduce the language to more people, so knowledge and information extraction can be done a bit more efficiently.&lt;/p&gt;</content><category term="Machine Learning"></category><category term="Artificial Intelligence"></category></entry><entry><title>How to Port Your Medium Articles to Personal Blog with a Simple Bash Script</title><link href="https://wayofnumbers.com/how-to-port-your-medium-articles-to-personal-blog-with-a-simple-bash-script-4422aa7b9be" rel="alternate"></link><published>2020-02-01T20:17:31-06:00</published><updated>2020-02-01T20:17:31-06:00</updated><author><name>Michael Li</name></author><id>tag:wayofnumbers.com,2020-02-01:/how-to-port-your-medium-articles-to-personal-blog-with-a-simple-bash-script-4422aa7b9be</id><summary type="html">&lt;p&gt;How to Port Your Medium Articles to Personal Blog with a Simple Bash&amp;nbsp;Script&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;&lt;img alt="Photo by Annie Spratt on Unsplash" src="https://cdn-images-1.medium.com/max/15904/0*lwNGcCCG8j0H_5mz"/&gt;&lt;em&gt;Photo by &lt;a href="https://unsplash.com/@anniespratt?utm_source=medium&amp;amp;utm_medium=referral"&gt;Annie Spratt&lt;/a&gt; on &lt;a href="https://unsplash.com?utm_source=medium&amp;amp;utm_medium=referral"&gt;Unsplash&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Medium is a great publication platform. It has good exposure, quality content, readers that really appreciate good articles and a neat and easy to use &lt;span class="caps"&gt;UI&lt;/span&gt;. It’s especially great for writers that just start their journey.&lt;/p&gt;
 &lt;p&gt;As good as it is, having your own blog outside of Medium is still not a bad idea. It enables you to have another channel you can totally own to communicate with your readers. And who knows, no company can last forever, what if Medium got acquired by some other company or something even worse happen. You can still sleep well at night knowing you won’t lose all your articles.&lt;/p&gt;

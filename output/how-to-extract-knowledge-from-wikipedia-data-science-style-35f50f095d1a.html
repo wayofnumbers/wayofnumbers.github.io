@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Michael Li" />
+
+        <meta name="description" content="How to Extract Knowledge from Wikipedia, Data Science Style
+" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Machine Learning, Artificial Intelligence, Machine Learning, " />
+
+<meta property="og:title" content="How to Extract Knowledge from Wikipedia, Data Science Style  - A Brief Introduction to WikiData and SPARQL query language "/>
+<meta property="og:url" content="https://wayofnumbers.com/how-to-extract-knowledge-from-wikipedia-data-science-style-35f50f095d1a" />
+<meta property="og:description" content="How to Extract Knowledge from Wikipedia, Data Science Style" />
+<meta property="og:site_name" content="Way of Numbers" />
+<meta property="og:article:author" content="Michael Li" />
+<meta property="og:article:published_time" content="2020-02-07T13:51:05-06:00" />
+<meta name="twitter:title" content="How to Extract Knowledge from Wikipedia, Data Science Style  - A Brief Introduction to WikiData and SPARQL query language ">
+<meta name="twitter:description" content="How to Extract Knowledge from Wikipedia, Data Science Style">
+<meta property="og:image" content="/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="/theme/images/apple-touch-icon-152x152.png" >
+
+        <title>How to Extract Knowledge from Wikipedia, Data Science Style  - A Brief Introduction to WikiData and SPARQL query language  · Way of Numbers
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/elegant.prod.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://wayofnumbers.com/theme/css/custom.css" media="screen">
+
+        <link rel="shortcut icon" href="https://wayofnumbers.com/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://wayofnumbers.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://wayofnumbers.com/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://wayofnumbers.com/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://wayofnumbers.com/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://wayofnumbers.com/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://wayofnumbers.com/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://wayofnumbers.com/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://wayofnumbers.com/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://wayofnumbers.com/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://wayofnumbers.com/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+        <link href="https://wayofnumbers.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Way of Numbers - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-148798026-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://wayofnumbers.com/"><span class=site-name>Way of Numbers</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://wayofnumbers.com
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://wayofnumbers.com/about-me">About&nbsp;Me</a></li>
+                                <li ><a href="https://wayofnumbers.com/categories">Categories</a></li>
+                                <li ><a href="https://wayofnumbers.com/tags">Tags</a></li>
+                                <li ><a href="https://wayofnumbers.com/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://wayofnumbers.com/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://wayofnumbers.com/how-to-extract-knowledge-from-wikipedia-data-science-style-35f50f095d1a">
+                How to Extract Knowledge from Wikipedia, Data Science&nbsp;Style
+                <small class="subtitle">
+                    A Brief Introduction to WikiData and SPARQL query language
+                </small>
+            </a>
+        </h1>
+    </header>
+</div>
+
+    <span><p style="text-align:right; color:#aaaaaa; ">&nbsp Estimated read time: 11 min.</p></span>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#what-is-sparql">What is <span class="caps">SPARQL</span>?</a></li>
+<li><a href="#starting-point-wikipedia-page">Starting Point: Wikipedia Page</a></li>
+<li><a href="#organized-page-wikidata">Organized Page: WikiData</a></li>
+<li><a href="#start-the-query">Start the Query</a></li>
+<li><a href="#from-code-to-name">From Code to Name</a></li>
+<li><a href="#narrowing-down">Narrowing Down</a></li>
+<li><a href="#group-multiple-labels">Group Multiple Labels</a></li>
+<li><a href="#faces">Faces</a></li>
+<li><a href="#where-are-they">Where are they?</a></li>
+<li><a href="#more-examples">More Examples</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<p><img alt="" src="https://cdn-images-1.medium.com/max/4000/1*uIpayAKY-E2Aj48EqBuBGw.png"/></p>
+<p>As Data Scientists, people tend to think what they do is developing and experimenting with sophisticated and complicated algorithms, and produce state of the art results. This is largely true. It is what a data scientist is mostly proud of and the most innovative and rewarding part. But what people usually don’t see is the sweat they go through to gather, process, and massage the data that leads to the great results. That’s why you can see <span class="caps">SQL</span> appears on most of the data scientist position requirements.</p>
+<h2 id="what-is-sparql">What is <span class="caps">SPARQL</span>?<a class="headerlink" href="#what-is-sparql" title="Permanent link"> </a></h2>
+<p>There is another query language that could prove very useful in acquiring data from multiple sources and databases, Wikipedia the biggest among them. The query language is called <a href="https://en.wikipedia.org/wiki/SPARQL"><span class="caps">SPARQL</span></a>. According to Wikipedia:</p>
+<blockquote>
+<p><strong><span class="caps">SPARQL</span></strong> (pronounced “<a href="https://en.wiktionary.org/wiki/sparkle">sparkle</a>”, a <a href="https://en.wikipedia.org/wiki/Recursive_acronym">recursive acronym</a><a href="https://en.wikipedia.org/wiki/SPARQL#cite_note-2">[2]</a> for <strong><span class="caps">SPARQL</span> Protocol and <span class="caps">RDF</span> Query Language</strong>) is an <a href="https://en.wikipedia.org/wiki/RDF_query_language"><span class="caps">RDF</span> query language</a> — that is, a <a href="https://en.wikipedia.org/wiki/Semantic_Query">semantic</a> <a href="https://en.wikipedia.org/wiki/Query_language">query language</a> for <a href="https://en.wikipedia.org/wiki/Database">databases</a> — able to retrieve and manipulate data stored in <a href="https://en.wikipedia.org/wiki/Resource_Description_Framework">Resource Description Framework (<span class="caps">RDF</span>)</a> format</p>
+</blockquote>
+<p>Well, this is not a very good definition. It hardly tells you what it can do. To translate it into human-readable language:</p>
+<blockquote>
+<p><span class="caps">SPARQL</span> is a query language similar to <span class="caps">SQL</span> in syntax but works on a knowledge graph database like Wikipedia, that allows you to extract knowledge and information by defining a series of filters and constraints.</p>
+</blockquote>
+<p>If this is still too abstract to you, look at the image below:</p>
+<p><img alt="Awarded Chemistry Nobel Prizes" src="https://cdn-images-1.medium.com/max/3678/1*ETRq9qAH__AxcScjgV3J3g.png"/><em>Awarded Chemistry Nobel Prizes</em></p>
+<p>It is a timeline of awarded chemistry Nobel prizes, generated by the <a href="https://w.wiki/4EU">WikiData Query Service</a> website, using the code below:</p>
+<div class="highlight"><pre><span></span>#Awarded Chemistry Nobel Prizes
+#defaultView:Timeline
+SELECT DISTINCT ?item ?itemLabel ?when (YEAR(?when) as ?date) ?pic
+WHERE {
+  ?item p:P166 ?awardStat . # … with an awarded(P166) statement
+  ?awardStat ps:P166 wd:Q44585 . # … that has the value Nobel Prize in Chemistry (Q35637)
+  ?awardStat pq:P585 ?when . # when did he receive the Nobel prize
+
+SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
+OPTIONAL { ?item wdt:P18 ?pic }
+}
+</pre></div>
+<p>Anyone familiar with <span class="caps">SQL</span> will find the above code quite intuitive. I’ll use another example to explain basically how to formulate similar queries to achieve the results you interested in.</p>
+<h2 id="starting-point-wikipedia-page">Starting Point: Wikipedia Page<a class="headerlink" href="#starting-point-wikipedia-page" title="Permanent link"> </a></h2>
+<p><span class="caps">SPARQL</span> works on multiple knowledge graph databases. To know what knowledge graph is, let’s start with something everyone is familiar with: Wikipedia. Wikipedia is the go-to place for most people when they want to research a topic/subject. If you go to Python creator Guido van Rossum’s page, you’ll see a detailed page with all kinds of good information.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2006/1*gy5Rtamq6tljmSGYi3tkqg.png"/></p>
+<h2 id="organized-page-wikidata">Organized Page: WikiData<a class="headerlink" href="#organized-page-wikidata" title="Permanent link"> </a></h2>
+<p>The problem with this page is it’s not organized. You can search on keywords, but you cannot easily find out the relationship between the information nodes. That’s where the knowledge graph comes into play. The red rectangle on the above page spells “Wikidata Item”, click it will bring you to the knowledge graph view of the same page:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2022/1*uxmaEbK9lTe_R_pztxP_6w.png"/></p>
+<h2 id="start-the-query">Start the Query<a class="headerlink" href="#start-the-query" title="Permanent link"> </a></h2>
+<p>Here we can see all information about Guido is well organized into categories, each category has multiple items. Use <span class="caps">SPARQL</span>, you can easily query this information. To do this, Wikipedia provides another page, a user-friendly query service called <a href="https://query.wikidata.org">Wikidata Query Service</a>:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2064/1*LLZ7jonrSLTH96uR1HnNSA.png"/></p>
+<p>This is where we can experiment with <span class="caps">SPARQL</span>. On the WikiData page, we observed that Guido is a programmer (obviously!), now what if we want to know other programmers that have an entry on Wikipedia? Let’s see the <span class="caps">SPARQL</span> code:</p>
+<div class="highlight"><pre><span></span>SELECT ?person
+
+WHERE {
+
+?person wdt:P106 wd:Q5482740 .
+
+}
+</pre></div>
+<p>Here we defined a ?person as the <strong>subject </strong>of interest, this is also what will appear as a column in our query results. Then we specify some constraints with <span class="caps">WHERE</span> . The constraints are wdt:P106 need to be wd:Q5482740. What? You say. Let me explain it in more detail. wdt is a prefix of a ‘predicate’ or ‘attribute’ of the subject while wd is the prefix of a value(object in <span class="caps">SPARQL</span> terms, but that’s not important) of the attribute. wdt: means I am gonna specify an attribute of the subject here, and wd: means I will specify what the value of this attribute is. So what is P106 and Q5482740 ? These are just a code for the specific attribute and value. P106 stands for ‘occupation’ and Q5482740 stands for ‘programmer’. This line of code means, I want the ?person subject to have an attribute of ‘occupation’ of ‘programmer’. Not that scary anymore, right? You can find these codes easily on the WikiData page mentioned above.</p>
+<p>Run the query and you’ll get the following results:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2068/1*lAz6legzUdahHVQDRkIYdw.png"/></p>
+<h2 id="from-code-to-name">From Code to Name<a class="headerlink" href="#from-code-to-name" title="Permanent link"> </a></h2>
+<p>We got a bunch of person items with different wd:value . If you look closer at the value, they are actually the code for a different person. For example, the first one wd:Q80 is <a href="https://www.wikidata.org/wiki/Q80">Tim Berners-Lee</a>, the inventor of <span class="caps">WWW</span>. This is not intuitive, we want to be able to directly see the names. To do that, we add a WikiData ‘label service’ that helps us translate the code to name, like so:</p>
+<div class="highlight"><pre><span></span>SELECT ?person ?personLabel
+
+WHERE {
+
+  ?person wdt:P106 wd:Q5482740 .
+  ?person rdfs:label ?personLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?personLabel ), "fr" ) )
+
+}
+</pre></div>
+<p>Similar syntax, we want the person to have a ‘label’ attribute, and we define a personLabel value variable to hold these values so we can display them in the query results. Also, we added the personLabel into our <span class="caps">SELECT</span> phrase so it will be displayed. Please be noted that I also added a <span class="caps">FILTER</span> below to only display the French language label, otherwise it will show multiple language labels for one person, which is not what we want:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2068/1*YOPEjLCa4cb0J0A8iV7B8g.png"/></p>
+<h2 id="narrowing-down">Narrowing Down<a class="headerlink" href="#narrowing-down" title="Permanent link"> </a></h2>
+<p>From the above results, we can see that we have some 790 results. This is way too many. Let’s narrow them down to the ones that are ‘somebody’ in the industry. Someone that has an attribute of ‘notable work’:</p>
+<div class="highlight"><pre><span></span>SELECT ?person ?personLabel ?notableworkLabel
+
+WHERE {
+
+?person wdt:P106 wd:Q5482740 .
+  ?person rdfs:label ?personLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?personLabel ), "fr" ) )
+
+  ?person wdt:P800 ?notablework .
+  ?notablework rdfs:label ?notableworkLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?notableworkLabel ), "fr" ) )
+
+}
+</pre></div>
+<p>Again, wdt:P800 means ‘notable work’ attribute, everything else is similar. We then get the following results:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2062/1*bm_RqgE7k3h1QJL4JlBDew.png"/></p>
+<h2 id="group-multiple-labels">Group Multiple Labels<a class="headerlink" href="#group-multiple-labels" title="Permanent link"> </a></h2>
+<p>Now we have only 175 results, with each person’s notable work also listed. But wait, why we have five Richard Stallman? Turns out, Richard has more than one notable work, thus listed multiple times in the results. Let’s fix this by grouping all the notable work into one attribute:</p>
+<div class="highlight"><pre><span></span>SELECT ?person ?personLabel ( GROUP_CONCAT ( DISTINCT ?notableworkLabel; separator="; " ) AS ?works )
+
+WHERE {
+
+?person wdt:P106 wd:Q5482740 .
+  ?person rdfs:label ?personLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?personLabel ), "fr" ) )
+
+  ?person wdt:P800 ?notablework .
+  ?notablework rdfs:label ?notableworkLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?notableworkLabel ), "fr" ) )
+
+}
+
+GROUP BY ?person ?personLabel
+</pre></div>
+<p>Here ‘<span class="caps">GROUP</span> <span class="caps">BY</span>’ is used. Also, GROUP_CONCAT function is used to concatenate multiple notableworkLabel into a new column works (<em>I will not explain how these functions work, just want to quickly show you what <span class="caps">SPARQL</span> can do. Please feel free to Google if you want to know more, there are plenty of tutorial articles and videos out there)</em>:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2068/1*0mw90V_sdEcAh6iC1GfEYA.png"/></p>
+<h2 id="faces">Faces<a class="headerlink" href="#faces" title="Permanent link"> </a></h2>
+<p>Now we have a 90 results list, with all the ‘who-is-who’ in the software engineering world. But <span class="caps">SPARQL</span> can do more. Let’s add some faces to the names:</p>
+<div class="highlight"><pre><span></span>SELECT ?person ?personLabel ( GROUP_CONCAT ( DISTINCT ?notableworkLabel; separator="; " ) AS ?works ) ?image
+
+WHERE {
+
+?person wdt:P106 wd:Q5482740 .
+  ?person rdfs:label ?personLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?personLabel ), "fr" ) )
+
+  ?person wdt:P800 ?notablework .
+  ?notablework rdfs:label ?notableworkLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?notableworkLabel ), "fr" ) )
+
+  OPTIONAL {?person wdt:P18 ?image}
+
+}
+
+GROUP BY ?person ?personLabel ?image
+</pre></div>
+<p>The same pattern, we just added an <span class="caps">OPTIONAL</span> keyword prior since we don’t want to exclude someone if he doesn’t have an image in his profile. We also switch the view into ‘Image Grid’ :</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2008/1*CV1Nh0HXqUcSr3bNyEzbTQ.png"/></p>
+<h2 id="where-are-they">Where are they?<a class="headerlink" href="#where-are-they" title="Permanent link"> </a></h2>
+<p>Wow! This is much better. I saw quite some familiar faces! Maybe you wonder where are these guys located? Let’s find out:</p>
+<div class="highlight"><pre><span></span>#defaultView:ImageGrid
+
+SELECT ?person ?personLabel ( GROUP_CONCAT ( DISTINCT ?notableworkLabel; separator="; " ) AS ?works ) ?image ?countryLabel ?cood
+
+WHERE {
+  ?person wdt:P106 wd:Q5482740 .
+  ?person rdfs:label ?personLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?personLabel ), "fr" ) )
+
+  ?person wdt:P800 ?notablework .
+  ?notablework rdfs:label ?notableworkLabel .
+  FILTER ( LANGMATCHES ( LANG ( ?notableworkLabel ), "fr" ) )
+
+
+  OPTIONAL {?person wdt:P18 ?image}
+
+  OPTIONAL {?person wdt:P19 ?country .
+           ?country rdfs:label ?countryLabel .
+            ?country wdt:P625 ?cood .
+            FILTER ( LANGMATCHES ( LANG ( ?countryLabel ), "fr" ) )
+           }
+
+}
+
+GROUP BY ?person ?personLabel ?image ?countryLabel ?cood
+</pre></div>
+<p>You can decipher the code above yourself maybe. It basically says I want this person to have an attribute of country, put into a variable country, then find out the coordinates of the country and put into a variable cood. With the coordinates, we can activate the ‘map’ view:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*1DJ6txmZ7n6OCuU0NuPD3A.png"/></p>
+<p>We can see we have a lot of them in the <span class="caps">US</span>, some in Europe and others scattered around other parts of the world.</p>
+<h2 id="more-examples">More Examples<a class="headerlink" href="#more-examples" title="Permanent link"> </a></h2>
+<p>With a few lines of codes, we figured out the big influencers in the software industry, what they are known of, where they are and how they look. As you can see the potential here is limitless.</p>
+<p>You can click the ‘<strong>Example</strong>’ button on the WikiData page to find out more fun and interesting examples you can do with it.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2000/1*8fzA238U6A1nRtJB1Emx_A.png"/></p>
+<p>As an assignment for this article, can you figure out how to add the ‘date of birth’ attribute and generate a timeline graph like the one at the beginning of this article?</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h2>
+<p>In this article, we used WikiData as a knowledge graph example to introduce <span class="caps">SPARQL</span> query language. There are other knowledge graphs out there like <a href="https://en.wikipedia.org/wiki/DBpedia">DBpedia</a>, etc. This article is by no means a comprehensive tutorial. I just want to introduce the language to more people, so knowledge and information extraction can be done a bit more efficiently.</p>
+
+
+             
+ 
+            
+                <hr />
+    <div class="author_blurb">
+        <a href="https://medium.com/@lymenlee" target="_blank" rel="nofollow noopener noreferrer">
+            <img src=/images/michael.png alt="Michael Li Avatar" title="Michael Li">
+            <span class="author_name">Michael Li</span>
+        </a>
+        is the creator and lead developer of this site.
+    </div>
+
+            
+
+
+
+
+
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://wayofnumbers.com/how-to-port-your-medium-articles-to-personal-blog-with-a-simple-bash-script-4422aa7b9be" title="Previous: How to Port Your Medium Articles to Personal Blog with a Simple Bash Script - ‘Quick and Dirty’ Blogging Automation">How to Port Your Medium Articles to Personal Blog with a Simple Bash Script <small class="subtitle">‘Quick and Dirty’ Blogging Automation</small></a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2020-02-07T13:51:05-06:00">Feb 7, 2020</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://wayofnumbers.com/categories#machine-learning-ref">Machine Learning</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://wayofnumbers.com/tags#artificial-intelligence-ref">Artificial Intelligence
+                    <span>9</span>
+</a></li>
+                <li><a href="https://wayofnumbers.com/tags#machine-learning-ref">Machine Learning
+                    <span>22</span>
+</a></li>
+            </ul>
+<h4>Stay in Touch</h4>
+<div id="sidebar-social-link">
+    <a href="https://twitter.com/lymenlee" title="My Twitter" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+    <a href="https://github.com/wayofnumbers" title="GitHub" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="www.linkedin.com/in/michael-li-dfw" title="LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+</div>
+            
+
+
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="https://github.us17.list-manage.com/subscribe/post?u=c212184cc0965bdf1658f69f0&amp;id=5677a7b75e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Get Monthly Updates</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Send me Free Updates" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+
+
+
+
+            
+
+
+
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+    <div>
+        Content licensed under <a rel="license nofollow noopener noreferrer"
+    href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
+    Creative Commons Attribution 4.0 International License</a>.
+    </div>
+
+    <div>
+        <span class="site-name">Way of Numbers</span> - Data science for the rest of us.
+    </div>
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+        Hosted on:
+        <a href=https://www.netlify.com/ target="_blank" rel="nofollow noopener noreferrer">
+            Netlify
+        </a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
