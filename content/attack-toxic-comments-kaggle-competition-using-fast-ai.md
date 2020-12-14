@@ -54,11 +54,15 @@ Notice here we imported everything from fastai.text and fastai modules. Are we a
     df = pd.read_csv(path/'train.csv')
     df.head()
 
-![The toxicity types are one-hot encoded](https://cdn-images-1.medium.com/max/2000/1*XhZcKKIvj9-r0RmksgoYXQ.png)*The toxicity types are one-hot encoded*
+![The toxicity types are one-hot encoded](https://cdn-images-1.medium.com/max/2000/1*XhZcKKIvj9-r0RmksgoYXQ.png)
+
+*The toxicity types are one-hot encoded*
 
 The comments are in comment_text column and all toxicity types are ‘one-hot’ encoded, we’ll have to do something about it to make it fit into our model later.
 
-![Have a look at one comment](https://cdn-images-1.medium.com/max/2000/1*9hNkR1Z0Y279_xNxfZ-bMw.png)*Have a look at one comment*
+![Have a look at one comment](https://cdn-images-1.medium.com/max/2000/1*9hNkR1Z0Y279_xNxfZ-bMw.png)
+
+*Have a look at one comment*
 
 ## Transfer Learning: Fine-Tune Our Language Model
 
@@ -86,7 +90,9 @@ We use fast.ai’s Data Block API for this task. It is a very flexible and power
 
 Now let’s look at the databunch we just built:
 
-![Notice we lost all the toxicity types](https://cdn-images-1.medium.com/max/2000/1*tZb2mpF3ybJizigXjZD7Vw.png)*Notice we lost all the toxicity types*
+![Notice we lost all the toxicity types](https://cdn-images-1.medium.com/max/2000/1*tZb2mpF3ybJizigXjZD7Vw.png)
+
+*Notice we lost all the toxicity types*
 
 Notice that the databunch doesn’t have all the toxicity type labels since we are only fine-tuning the language model.
 
@@ -131,7 +137,9 @@ Please note the difference this time:
 
 Now look at our classifier databunch :
 
-![Note that now we have all the toxicity styles labels](https://cdn-images-1.medium.com/max/2000/1*47Wryn1f-yDMfiu3l-bXMA.png)*Note that now we have all the toxicity styles labels*
+![Note that now we have all the toxicity styles labels](https://cdn-images-1.medium.com/max/2000/1*47Wryn1f-yDMfiu3l-bXMA.png)
+
+*Note that now we have all the toxicity styles labels*
 
 **Finally, time to put everything together!** We’ll put the databunch into the text_classifier_learner model and load the encoder we learned from the language model.
 
